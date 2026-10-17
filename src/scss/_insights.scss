@@ -1,0 +1,163 @@
+@import 'variables';
+@import 'mixins';
+
+.insights-section {
+  padding: 6rem 0;
+  background-color: #ffffff;
+
+  .insights-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @include md {
+      padding: 0 3.5rem;
+    }
+  }
+
+  .insights-header {
+    margin-bottom: 3.5rem;
+
+    .header-content {
+      max-width: 540px;
+
+      .insights-title {
+        font-size: clamp(2.2rem, 3.8vw, 3rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: $color-navy-900;
+        line-height: 1.15;
+        margin-bottom: 1.25rem;
+      }
+
+      .insights-desc {
+        font-size: 0.95rem;
+        line-height: 1.65;
+        color: $color-text-muted;
+        margin-bottom: 1.5rem;
+      }
+
+      .view-articles-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: $font-heading;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: $color-navy-900;
+
+        svg {
+          transition: transform 0.25s ease;
+        }
+
+        &:hover {
+          color: $color-accent-blue;
+          svg {
+            transform: translateX(4px);
+          }
+        }
+      }
+    }
+  }
+
+  .insights-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    @include md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .insight-card {
+    background: #ffffff;
+    border: 1px solid #eef2f6;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: $transition-smooth;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 30px -8px rgba(15, 23, 42, 0.08);
+      border-color: #cbd5e1;
+
+      .card-thumb img {
+        transform: scale(1.05);
+      }
+
+      .article-title {
+        color: $color-accent-blue;
+      }
+    }
+
+    .card-thumb {
+      width: 100%;
+      height: 190px;
+      overflow: hidden;
+      background: #f1f5f9;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.6s ease;
+      }
+    }
+
+    .card-body {
+      padding: 1.75rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      .article-date {
+        font-family: $font-body;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #94a3b8;
+        margin-bottom: 0.75rem;
+      }
+
+      .article-title {
+        font-size: 1.15rem;
+        font-weight: 700;
+        line-height: 1.35;
+        letter-spacing: -0.02em;
+        color: $color-navy-900;
+        margin-bottom: 1.5rem;
+        transition: color 0.2s ease;
+      }
+
+      .badge-tag {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        border-radius: 9999px;
+        font-family: $font-heading;
+        font-size: 0.725rem;
+        font-weight: 600;
+        margin-top: auto;
+        align-self: flex-start;
+
+        &.tag-talent {
+          background: #eff6ff;
+          color: #2563eb;
+        }
+
+        &.tag-engineering {
+          background: #f0fdf4;
+          color: #16a34a;
+        }
+
+        &.tag-transformation {
+          background: #faf5ff;
+          color: #9333ea;
+        }
+      }
+    }
+  }
+}

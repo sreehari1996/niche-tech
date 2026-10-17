@@ -1,0 +1,211 @@
+@import 'variables';
+@import 'mixins';
+
+.work-section {
+  padding: 6rem 0;
+  background-color: #0b1528;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+
+  .work-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @include md {
+      padding: 0 3.5rem;
+    }
+  }
+
+  .work-header {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+
+    @include lg {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .header-left {
+      max-width: 580px;
+
+      .section-eyebrow {
+        color: #94a3b8;
+      }
+
+      .work-title {
+        font-size: clamp(2.2rem, 3.8vw, 3rem);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: #ffffff;
+        line-height: 1.15;
+        margin-bottom: 1.25rem;
+      }
+
+      .work-desc {
+        font-size: 0.95rem;
+        line-height: 1.65;
+        color: #94a3b8;
+        margin-bottom: 1.5rem;
+      }
+
+      .view-projects-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: $font-heading;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #ffffff;
+        transition: $transition-smooth;
+
+        svg {
+          transition: transform 0.25s ease;
+        }
+
+        &:hover {
+          color: #60a5fa;
+          svg {
+            transform: translateX(4px);
+          }
+        }
+      }
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
+      .work-counter {
+        font-family: $font-heading;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #94a3b8;
+        letter-spacing: 0.05em;
+      }
+
+      .carousel-arrows {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        .btn-arrow {
+          width: 38px;
+          height: 38px;
+          border-radius: 50%;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          background: rgba(255, 255, 255, 0.05);
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: $transition-smooth;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.35);
+            transform: scale(1.05);
+          }
+
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+  }
+
+  // Work showcase cards
+  .work-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+
+    @include lg {
+      grid-template-columns: 62% 38%;
+      align-items: stretch;
+    }
+  }
+
+  .project-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #0f1c34;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: $transition-smooth;
+    cursor: pointer;
+    min-height: 340px;
+
+    @include lg {
+      min-height: 400px;
+    }
+
+    .project-img-wrapper {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+    }
+
+    .project-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(11, 21, 40, 0.1) 0%, rgba(11, 21, 40, 0.85) 75%, rgba(11, 21, 40, 0.98) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2.25rem 2rem;
+      transition: background 0.3s ease;
+    }
+
+    .project-meta {
+      transform: translateY(0);
+      transition: transform 0.3s ease;
+
+      .project-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.5rem;
+      }
+
+      .project-tags {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.825rem;
+        color: #94a3b8;
+        font-weight: 500;
+      }
+    }
+
+    &:hover {
+      border-color: rgba(96, 165, 250, 0.4);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+
+      .project-img-wrapper img {
+        transform: scale(1.04);
+      }
+
+      .project-overlay {
+        background: linear-gradient(180deg, rgba(11, 21, 40, 0.05) 0%, rgba(11, 21, 40, 0.75) 60%, rgba(11, 21, 40, 0.95) 100%);
+      }
+    }
+  }
+}

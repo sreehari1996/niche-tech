@@ -1,0 +1,210 @@
+@import 'variables';
+@import 'mixins';
+
+.services-section {
+  padding: 6rem 0;
+  background-color: #fafbfe;
+
+  .services-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @include md {
+      padding: 0 3.5rem;
+    }
+  }
+
+  .services-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+    align-items: flex-end;
+
+    @include lg {
+      grid-template-columns: 1fr 1fr;
+      justify-content: space-between;
+    }
+
+    .header-left {
+      .section-title {
+        font-size: clamp(2rem, 3.5vw, 2.75rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: $color-navy-900;
+      }
+    }
+
+    .header-right {
+      @include lg {
+        text-align: left;
+        max-width: 440px;
+        margin-left: auto;
+      }
+
+      .services-intro-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: $color-text-muted;
+        margin-bottom: 1rem;
+      }
+
+      .explore-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: $font-heading;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: $color-navy-900;
+
+        svg {
+          transition: transform 0.25s ease;
+        }
+
+        &:hover {
+          color: $color-accent-blue;
+          svg {
+            transform: translateX(4px);
+          }
+        }
+      }
+    }
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+    @include sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include xl {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .service-card {
+    background: #ffffff;
+    border: 1px solid #eef2f6;
+    border-radius: 16px;
+    padding: 2.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: $transition-smooth;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: transparent;
+      transition: background 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 30px -8px rgba(15, 23, 42, 0.08);
+      border-color: #cbd5e1;
+
+      &::before {
+        background: linear-gradient(90deg, $color-navy-900, $color-accent-blue);
+      }
+
+      .service-link svg {
+        transform: translateX(4px);
+      }
+
+      .icon-box {
+        transform: scale(1.05);
+      }
+    }
+
+    .card-top {
+      margin-bottom: 2rem;
+    }
+
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $color-navy-900;
+      margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+
+      &.icon-blue {
+        background: #eff6ff;
+        color: #2563eb;
+      }
+      &.icon-purple {
+        background: #f5f3ff;
+        color: #7c3aed;
+      }
+      &.icon-sky {
+        background: #f0f9ff;
+        color: #0284c7;
+      }
+      &.icon-emerald {
+        background: #ecfdf5;
+        color: #059669;
+      }
+    }
+
+    .service-index {
+      font-family: $font-heading;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .service-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: $color-navy-900;
+      margin-bottom: 0.85rem;
+      line-height: 1.25;
+    }
+
+    .service-desc {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: $color-text-muted;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: $font-heading;
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: #334155;
+      margin-top: auto;
+
+      svg {
+        transition: transform 0.25s ease;
+      }
+
+      &:hover {
+        color: $color-accent-blue;
+      }
+    }
+  }
+}

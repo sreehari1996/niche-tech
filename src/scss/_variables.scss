@@ -1,0 +1,45 @@
+// Variables & Design Tokens
+$font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+// Colors
+$color-dark-bg: #070e1b;
+$color-dark-surface: #0b1426;
+$color-dark-surface-elevated: #111d35;
+$color-dark-border: rgba(255, 255, 255, 0.08);
+
+$color-navy-900: #0a1120;
+$color-navy-800: #0f192d;
+$color-navy-700: #16243f;
+$color-navy-600: #1e3256;
+
+$color-text-main: #0c1524;
+$color-text-muted: #5e6b82;
+$color-text-light: #94a3b8;
+$color-text-white: #ffffff;
+
+$color-accent-blue: #3b82f6;
+$color-accent-blue-hover: #2563eb;
+$color-accent-blue-light: #eff6ff;
+$color-accent-blue-border: #bfdbfe;
+
+$color-card-border: #e2e8f0;
+$color-card-bg: #ffffff;
+$color-card-hover-border: #cbd5e1;
+
+$color-badge-talent: #e0f2fe;
+$color-badge-talent-text: #0369a1;
+$color-badge-eng: #f0fdf4;
+$color-badge-eng-text: #15803d;
+$color-badge-trans: #f3e8ff;
+$color-badge-trans-text: #7e22ce;
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+$shadow-card-hover: 0 20px 35px -10px rgba(15, 23, 42, 0.08), 0 10px 15px -5px rgba(15, 23, 42, 0.05);
+$shadow-dark: 0 20px 40px -15px rgba(0, 0, 0, 0.4);
+
+// Transitions
+$transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+$transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);

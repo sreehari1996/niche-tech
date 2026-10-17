@@ -1,0 +1,123 @@
+@import 'variables';
+@import 'mixins';
+
+.about-section {
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+  padding: 4rem 0;
+
+  @include lg {
+    padding: 6rem 0;
+  }
+
+  .about-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+
+    @include lg {
+      grid-template-columns: 48% 52%;
+      min-height: 480px;
+    }
+  }
+
+  .about-visual {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+
+    @include lg {
+      height: 100%;
+      min-height: 480px;
+      clip-path: polygon(0 0, 100% 0, 86% 100%, 0 100%);
+    }
+
+    .about-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 1.2s ease;
+    }
+
+    &:hover .about-img {
+      transform: scale(1.03);
+    }
+
+    .about-watermark {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      color: rgba(255, 255, 255, 0.7);
+      font-family: $font-heading;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+
+      .dot {
+        width: 3px;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .about-content {
+    padding: 3rem 2rem 1rem;
+
+    @include lg {
+      padding: 3rem 5rem 3rem 4rem;
+      max-width: 640px;
+    }
+
+    .section-eyebrow {
+      margin-bottom: 1.25rem;
+    }
+
+    .about-title {
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: $color-navy-900;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-description {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: $color-text-muted;
+      margin-bottom: 2rem;
+    }
+
+    .about-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: $font-heading;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: $color-navy-900;
+
+      svg {
+        transition: transform 0.25s ease;
+      }
+
+      &:hover {
+        color: $color-accent-blue;
+        svg {
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+}

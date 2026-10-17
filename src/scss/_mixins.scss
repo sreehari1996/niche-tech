@@ -1,0 +1,63 @@
+@import 'variables';
+
+// Responsive Mixins
+@mixin sm {
+  @media (min-width: 640px) { @content; }
+}
+
+@mixin md {
+  @media (min-width: 768px) { @content; }
+}
+
+@mixin lg {
+  @media (min-width: 1024px) { @content; }
+}
+
+@mixin xl {
+  @media (min-width: 1280px) { @content; }
+}
+
+@mixin 2xl {
+  @media (min-width: 1536px) { @content; }
+}
+
+// Layout Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Glassmorphism
+@mixin glass-dark {
+  background: rgba(11, 20, 38, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@mixin glass-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+// Geometric Clip-paths
+@mixin hero-diagonal-clip {
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@mixin about-diagonal-clip {
+  clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%);
+}
+
+@mixin testimonial-diagonal-clip {
+  clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+}

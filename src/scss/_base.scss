@@ -1,0 +1,106 @@
+@import 'variables';
+@import 'mixins';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: $font-body;
+  color: $color-text-main;
+  background-color: #ffffff;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-heading;
+  font-weight: 700;
+  color: $color-text-main;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: $transition-smooth;
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+// Global Eyebrows / Section Labels
+.section-eyebrow {
+  display: inline-block;
+  font-family: $font-heading;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #475569;
+  margin-bottom: 0.85rem;
+}
+
+.section-eyebrow-light {
+  color: #94a3b8;
+}
+
+// Arrow link style
+.interactive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: $font-heading;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: $color-text-main;
+  transition: $transition-smooth;
+
+  svg {
+    transition: transform 0.25s ease;
+  }
+
+  &:hover {
+    color: $color-accent-blue;
+    svg {
+      transform: translateX(4px);
+    }
+  }
+}
+
+.interactive-link-white {
+  color: #ffffff;
+  &:hover {
+    color: #93c5fd;
+  }
+}

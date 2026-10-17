@@ -1,0 +1,211 @@
+@import 'variables';
+@import 'mixins';
+
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.04);
+  transition: all 0.35s ease;
+
+  &.is-sticky {
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.08);
+  }
+
+  .header-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include md {
+      padding: 1.5rem 3.5rem;
+    }
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    z-index: 60;
+
+    .logo-symbol {
+      width: 22px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $color-navy-900;
+    }
+
+    .brand-name {
+      font-family: $font-heading;
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: $color-navy-900;
+    }
+  }
+
+  .nav-desktop {
+    display: none;
+
+    @include lg {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+    }
+
+    .nav-item {
+      font-family: $font-heading;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #334155;
+      position: relative;
+      padding: 0.25rem 0;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $color-navy-900;
+        transition: width 0.25s ease;
+      }
+
+      &:hover {
+        color: $color-navy-900;
+        &::after {
+          width: 100%;
+        }
+      }
+
+      &.active {
+        color: $color-navy-900;
+        font-weight: 600;
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .btn-talk {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: $color-navy-900;
+      color: #ffffff;
+      padding: 0.6rem 1.35rem;
+      border-radius: 9999px;
+      font-family: $font-heading;
+      font-size: 0.825rem;
+      font-weight: 600;
+      transition: $transition-smooth;
+      box-shadow: 0 4px 12px rgba(10, 17, 32, 0.15);
+
+      svg {
+        transition: transform 0.25s ease;
+      }
+
+      &:hover {
+        background: #1e293b;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 18px rgba(10, 17, 32, 0.25);
+
+        svg {
+          transform: translateX(3px);
+        }
+      }
+    }
+
+    .mobile-menu-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 2rem;
+      height: 2rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 60;
+
+      @include lg {
+        display: none;
+      }
+
+      span {
+        width: 1.75rem;
+        height: 2px;
+        background: $color-navy-900;
+        border-radius: 10px;
+        transition: all 0.3s linear;
+        position: relative;
+        transform-origin: 1px;
+      }
+
+      &.open {
+        span:first-child {
+          transform: rotate(45deg);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        span:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .nav-mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 380px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    padding: 6rem 2.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 55;
+
+    &.open {
+      right: 0;
+    }
+
+    .mobile-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      a {
+        font-family: $font-heading;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $color-navy-900;
+      }
+    }
+  }
+}
