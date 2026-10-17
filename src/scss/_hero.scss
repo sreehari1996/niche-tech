@@ -3,40 +3,55 @@
 
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #FAF9F5;
   overflow: hidden;
-  padding-top: 6rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
 
   @include lg {
-    padding-top: 0;
-    min-height: 720px;
-    height: 90vh;
-    max-height: 860px;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    min-height: 640px;
+    height: auto;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 380px;
+    height: 280px;
+    background: linear-gradient(135deg, transparent 40%, rgba(220, 228, 238, 0.45) 100%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    pointer-events: none;
+    z-index: 1;
   }
 
   .hero-container {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 2rem 2rem 4rem;
+    padding: 2.5rem 2rem 2.5rem;
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
+    gap: 2.5rem;
     position: relative;
     z-index: 10;
 
     @include lg {
-      grid-template-columns: 55% 45%;
-      padding: 0 3.5rem;
-      height: 100%;
+      grid-template-columns: 48% 52%;
+      padding: 2.5rem 3.5rem 2.5rem;
+      gap: 1.5rem;
     }
   }
 
   .hero-content {
-    max-width: 600px;
+    max-width: 580px;
     z-index: 20;
 
     .hero-eyebrow {
@@ -44,45 +59,44 @@
       font-family: $font-heading;
       font-size: 0.725rem;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #334155;
-      margin-bottom: 1.5rem;
+      color: #8898ac;
+      margin-bottom: 1.25rem;
     }
 
     .hero-title {
-      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+      font-size: clamp(2.35rem, 4.2vw, 3.5rem);
       font-weight: 800;
-      line-height: 1.08;
+      line-height: 1.14;
       letter-spacing: -0.035em;
-      color: $color-navy-900;
-      margin-bottom: 1.2rem;
+      color: #0c1524;
+      margin-bottom: 1.25rem;
 
       .highlight-blue {
-        color: #4378f5;
-        font-weight: 700;
+        color: #2563eb;
       }
     }
 
     .hero-description {
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: $color-text-muted;
-      margin-bottom: 1.75rem;
-      max-width: 480px;
+      font-size: 0.975rem;
+      line-height: 1.62;
+      color: #556477;
+      margin-bottom: 2rem;
+      max-width: 460px;
     }
 
     .hero-cta-group {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 1rem;
+      gap: 1.75rem;
+      flex-wrap: wrap;
 
       .btn-primary {
         display: inline-flex;
         align-items: center;
-        gap: 0.6rem;
-        background: $color-navy-900;
+        gap: 0.65rem;
+        background: #0d192d;
         color: #ffffff;
         padding: 0.85rem 1.75rem;
         border-radius: 9999px;
@@ -90,16 +104,16 @@
         font-size: 0.875rem;
         font-weight: 600;
         transition: $transition-smooth;
-        box-shadow: 0 4px 15px rgba(10, 17, 32, 0.15);
+        box-shadow: 0 4px 14px rgba(13, 25, 45, 0.18);
 
         svg {
           transition: transform 0.25s ease;
         }
 
         &:hover {
-          background: #1e293b;
+          background: #182844;
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(10, 17, 32, 0.25);
+          box-shadow: 0 6px 20px rgba(13, 25, 45, 0.28);
 
           svg {
             transform: translateX(4px);
@@ -107,149 +121,358 @@
         }
       }
 
-      .btn-secondary {
+      .btn-secondary,
+      .btn-our-works {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        background: #ffffff;
-        color: $color-navy-900;
-        padding: 0.85rem 1.75rem;
+        gap: 0.65rem;
+        color: #0d192d;
+        background: transparent;
+        padding: 0.82rem 1.65rem;
         border-radius: 9999px;
+        border: 1.5px solid rgba(13, 25, 45, 0.28);
         font-family: $font-heading;
         font-size: 0.875rem;
         font-weight: 600;
-        border: 1px solid #d1d5db;
+        cursor: pointer;
+        text-decoration: none;
         transition: $transition-smooth;
 
+        svg {
+          color: #0d192d;
+          transition: transform 0.25s ease, color 0.25s ease;
+        }
+
         &:hover {
-          border-color: $color-navy-900;
-          background: #f8fafc;
+          background: rgba(37, 99, 235, 0.05);
+          border-color: #2563eb;
+          color: #2563eb;
           transform: translateY(-2px);
+          box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+
+          svg {
+            color: #2563eb;
+            transform: translateX(4px);
+          }
+        }
+      }
+
+      .btn-watch-video {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        color: #0d192d;
+        font-family: $font-heading;
+        font-size: 0.875rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: $transition-smooth;
+
+        .video-play-icon {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          border: 1.5px solid #0d192d;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: $transition-smooth;
+
+          svg {
+            margin-left: 2px;
+            color: #0d192d;
+          }
+        }
+
+        &:hover {
+          color: #2563eb;
+
+          .video-play-icon {
+            border-color: #2563eb;
+            background: rgba(37, 99, 235, 0.08);
+            transform: scale(1.06);
+
+            svg {
+              color: #2563eb;
+            }
+          }
+        }
+      }
+    }
+
+    // Inline Stats Metrics Strip Under Text Content
+    .hero-stats-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem 1rem;
+      margin-top: 2.75rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(226, 232, 240, 0.85);
+      max-width: 580px;
+
+      @include sm {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+      }
+
+      .hero-stat-item {
+        display: flex;
+        flex-direction: column;
+
+        @media (max-width: 639px) {
+          &:nth-child(1),
+          &:nth-child(3) {
+            padding-right: 1.25rem;
+            border-right: 1px solid rgba(226, 232, 240, 0.85);
+          }
+          &:nth-child(2),
+          &:nth-child(4) {
+            padding-left: 1.25rem;
+          }
+        }
+
+        @include sm {
+          padding: 0 1.25rem;
+          border-right: 1px solid rgba(226, 232, 240, 0.85);
+
+          &:first-child {
+            padding-left: 0;
+          }
+
+          &:last-child {
+            border-right: none;
+            padding-right: 0;
+          }
+        }
+
+        .hero-stat-number,
+        .stat-number {
+          font-family: $font-heading;
+          font-size: clamp(1.75rem, 2.2vw, 2.25rem);
+          font-weight: 800;
+          letter-spacing: -0.03em;
+          color: #0c1524;
+          line-height: 1.1;
+          margin-bottom: 0.35rem;
+          display: flex;
+          align-items: baseline;
+        }
+
+        .hero-stat-label,
+        .stat-label {
+          font-family: $font-body;
+          font-size: 0.775rem;
+          font-weight: 500;
+          color: #64748b;
+          line-height: 1.35;
+          letter-spacing: -0.01em;
         }
       }
     }
   }
 
-  // Right side angled visual
+  // Right side composition visual (overlapping with header in desktop view)
   .hero-visual-wrapper {
     position: relative;
     width: 100%;
-    height: 380px;
-    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 
     @include lg {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50%;
-      height: 100%;
-      margin-top: 0;
-      z-index: 5;
+      margin-top: -4.5rem;
+      justify-content: flex-end;
     }
 
-    .hero-polygon-container {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
+    .hero-visual-composition {
       position: relative;
-
-      @include lg {
-        clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
-      }
-
-      .hero-bg-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center 30%;
-        transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(10, 17, 32, 0.15) 0%, rgba(10, 17, 32, 0.35) 100%);
-        pointer-events: none;
-      }
+      max-width: 680px;
+      width: 100%;
     }
 
-    // Top Right Floating Callout
-    .hero-float-badge {
+    .hero-ambient-glow {
       position: absolute;
-      top: 6rem;
-      right: 3.5rem;
-      z-index: 25;
-      color: #ffffff;
-      text-align: right;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-
-      .badge-heading {
-        font-family: $font-heading;
-        font-size: 1rem;
-        font-weight: 600;
-        line-height: 1.3;
-        letter-spacing: -0.01em;
-      }
-
-      .badge-sub {
-        font-family: $font-heading;
-        font-size: 1rem;
-        font-weight: 600;
-        line-height: 1.3;
-        margin-bottom: 0.4rem;
-      }
-
-      .badge-arrow {
-        display: inline-block;
-        font-size: 1.2rem;
-        transition: transform 0.3s ease;
-      }
-
-      &:hover .badge-arrow {
-        transform: translateX(4px);
-      }
+      inset: -5% -5% 0% -5%;
+      background: radial-gradient(circle at 55% 45%, rgba(37, 99, 235, 0.20), rgba(6, 182, 212, 0.14) 40%, rgba(99, 102, 241, 0.08) 60%, transparent 75%);
+      filter: blur(55px);
+      z-index: 1;
+      pointer-events: none;
+      animation: pulseAmbient 7s ease-in-out infinite alternate;
     }
 
-    // Bottom Right Scroll Indicator
-    .hero-scroll-indicator {
+    .hero-svg-art {
+      position: relative;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 680 / 560;
+      z-index: 5;
+      display: block;
+      filter: drop-shadow(0 25px 45px rgba(13, 25, 45, 0.08));
+    }
+
+    .hud-badge-talent {
       position: absolute;
-      bottom: 2rem;
-      right: 3.5rem;
-      z-index: 25;
+      top: 90px;
+      right: 15px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.09), 0 2px 6px rgba(15, 23, 42, 0.04);
+      padding: 0.8rem 1.15rem;
+      border-radius: 16px;
+      z-index: 20;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
-      color: #ffffff;
-      cursor: pointer;
-      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      gap: 0.45rem;
+      animation: floatHudTop 6s ease-in-out infinite alternate;
 
-      .scroll-text {
-        font-family: $font-heading;
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.05em;
+      @media (max-width: 1023px) {
+        display: none;
       }
 
-      .scroll-circle {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.7);
+      .hud-header {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+      }
+
+      .hud-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
         display: flex;
         align-items: center;
         justify-content: center;
-        animation: floatUpDown 2s infinite ease-in-out;
+        color: #2563eb;
+      }
+
+      .hud-status {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #64748b;
+      }
+
+      .pulse-live {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #10b981;
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+        animation: livePulse 2s infinite;
+      }
+
+      .hud-title {
+        font-size: 0.88rem;
+        font-weight: 700;
+        color: #0f172a;
+      }
+
+      .hud-pills {
+        display: flex;
+        gap: 0.35rem;
+      }
+
+      .hud-pill {
+        font-size: 0.65rem;
+        font-weight: 600;
+        padding: 0.2rem 0.5rem;
+        border-radius: 6px;
+        background: #f1f5f9;
+        color: #475569;
+
+        &.active {
+          background: #dbeafe;
+          color: #1d4ed8;
+        }
+      }
+    }
+
+    .hud-badge-speed {
+      position: absolute;
+      top: 50%;
+      left: -15px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+      padding: 0.6rem 1rem;
+      border-radius: 12px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      animation: floatHudMid 5.5s ease-in-out infinite alternate 0.5s;
+
+      @media (max-width: 1023px) {
+        display: none;
+      }
+
+      .speed-val {
+        font-size: 0.95rem;
+        font-weight: 800;
+        color: #2563eb;
+      }
+
+      .speed-desc {
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: #334155;
+        line-height: 1.2;
+      }
+    }
+
+    .hud-badge-match {
+      position: absolute;
+      bottom: 35px;
+      left: 10px;
+      background: #0d192d;
+      color: #ffffff;
+      box-shadow: 0 18px 40px rgba(13, 25, 45, 0.28);
+      padding: 0.75rem 1.3rem;
+      border-radius: 9999px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      animation: floatHudBottom 7s ease-in-out infinite alternate 1s;
+
+      @media (max-width: 640px) {
+        display: none;
+      }
+
+      .match-icon-circle {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: rgba(37, 99, 235, 0.28);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #38bdf8;
+      }
+
+      .match-val {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #38bdf8;
+        line-height: 1;
+      }
+
+      .match-text {
+        font-size: 0.72rem;
+        font-weight: 500;
+        color: #cbd5e1;
+        margin-top: 2px;
       }
     }
   }
-}
-
-@keyframes floatUpDown {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
 }

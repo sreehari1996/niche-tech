@@ -8,8 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initSmoothScroll();
   initProjectCarousel();
+  initTestimonialCarousel();
+  initBlogFilter();
   initFormHandler();
   initGsapAnimations();
+  initBackToTop();
 });
 
 // 1. Sticky Header
@@ -80,91 +83,162 @@ function initProjectCarousel() {
   const prevBtn = document.getElementById('work-prev');
   const nextBtn = document.getElementById('work-next');
   const counterEl = document.getElementById('work-counter');
-  const card1Title = document.getElementById('project-1-title');
-  const card1Tags = document.getElementById('project-1-tags');
-  const card1Img = document.getElementById('project-1-img');
-  
-  const card2Title = document.getElementById('project-2-title');
-  const card2Tags = document.getElementById('project-2-tags');
-  const card2Img = document.getElementById('project-2-img');
+  const workItems = document.querySelectorAll('.work-item');
 
-  if (!prevBtn || !nextBtn) return;
+  if (!workItems.length) return;
 
-  const projects = [
-    {
-      p1: { title: 'Enterprise Software Platform', tags: 'Web App • React • Node.js', img: 'assets/images/work-laptop-clean.jpg' },
-      p2: { title: 'Digital Product', tags: 'UI/UX', img: 'assets/images/work-digital-product-clean.jpg' }
-    },
-    {
-      p1: { title: 'Global Cloud Infrastructure', tags: 'AWS • Kubernetes • DevOps', img: 'assets/images/glass-tower-clean.jpg' },
-      p2: { title: 'Fintech AI Copilot', tags: 'Product Design • Python', img: 'assets/images/hero-clean.jpg' }
-    },
-    {
-      p1: { title: 'Omnichannel Digital Banking', tags: 'Microservices • Next.js', img: 'assets/images/work-laptop-clean.jpg' },
-      p2: { title: 'Enterprise SaaS Core', tags: 'Full Stack', img: 'assets/images/about-boardroom.png' }
-    },
-    {
-      p1: { title: 'Supply Chain Intelligence', tags: 'Data Ops • React Native', img: 'assets/images/glass-tower-clean.jpg' },
-      p2: { title: 'Talent Cloud Portal', tags: 'Design System', img: 'assets/images/contact-woman.png' }
+  const totalItems = workItems.length;
+  let currentIndex = 0;
+
+  function setActiveItem(index) {
+    currentIndex = (index + totalItems) % totalItems;
+    if (counterEl) {
+      counterEl.textContent = `0${currentIndex + 1} / 0${totalItems}`;
     }
-  ];
+
+    workItems.forEach((item, idx) => {
+      if (idx === currentIndex) {
+        item.classList.add('work-item-active');
+        item.style.background = 'rgba(255, 255, 255, 0.05)';
+        item.style.borderColor = 'rgba(56, 189, 248, 0.35)';
+      } else {
+        item.classList.remove('work-item-active');
+        item.style.background = '';
+        item.style.borderColor = '';
+      }
+    });
+  }
+
+  // Initial state
+  setActiveItem(0);
+
+  // Click row to select
+  workItems.forEach((item, idx) => {
+    item.addEventListener('click', () => {
+      setActiveItem(idx);
+    });
+  });
+
+  // Prev / Next button controls
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      setActiveItem(currentIndex - 1);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      setActiveItem(currentIndex + 1);
+    });
+  }
+}
+
+// 5. Testimonials Carousel Slider
+function initTestimonialCarousel() {
+  const track = document.getElementById('testimonialsTrack');
+  const prevBtn = document.getElementById('testimonialPrev');
+  const nextBtn = document.getElementById('testimonialNext');
+  if (!track) return;
+
+  const cards = track.querySelectorAll('.testimonial-card');
+  if (!cards.length) return;
 
   let currentIndex = 0;
 
-  function updateCarousel(index) {
-    currentIndex = index;
-    if (counterEl) {
-      counterEl.textContent = `0${currentIndex + 1} / 0${projects.length}`;
+  function getStep() {
+    const card = cards[0];
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 24;
+    return card.offsetWidth + gap;
+  }
+
+  function getMaxIndex() {
+    const container = track.parentElement;
+    if (!container) return 0;
+    const containerWidth = container.offsetWidth;
+    const totalWidth = track.scrollWidth;
+    const step = getStep();
+    const maxOffset = Math.max(0, totalWidth - containerWidth);
+    return Math.ceil(maxOffset / step);
+  }
+
+  function update() {
+    const maxIdx = getMaxIndex();
+    if (currentIndex > maxIdx) currentIndex = maxIdx;
+    if (currentIndex < 0) currentIndex = 0;
+
+    const step = getStep();
+    const container = track.parentElement;
+    const containerWidth = container.offsetWidth;
+    const totalWidth = track.scrollWidth;
+    const maxOffset = Math.max(0, totalWidth - containerWidth);
+
+    let offset = currentIndex * step;
+    if (offset > maxOffset) offset = maxOffset;
+
+    track.style.transform = `translateX(-${offset}px)`;
+
+    if (prevBtn) {
+      prevBtn.disabled = currentIndex === 0;
     }
-
-    const current = projects[currentIndex];
-
-    // GSAP Crossfade
-    if (window.gsap) {
-      gsap.to(['.project-card'], {
-        opacity: 0.5,
-        duration: 0.2,
-        y: 6,
-        onComplete: () => {
-          if (card1Title) card1Title.textContent = current.p1.title;
-          if (card1Tags) card1Tags.textContent = current.p1.tags;
-          if (card1Img) card1Img.src = current.p1.img;
-
-          if (card2Title) card2Title.textContent = current.p2.title;
-          if (card2Tags) card2Tags.textContent = current.p2.tags;
-          if (card2Img) card2Img.src = current.p2.img;
-
-          gsap.to(['.project-card'], {
-            opacity: 1,
-            duration: 0.35,
-            y: 0,
-            ease: 'power2.out'
-          });
-        }
-      });
-    } else {
-      if (card1Title) card1Title.textContent = current.p1.title;
-      if (card1Tags) card1Tags.textContent = current.p1.tags;
-      if (card1Img) card1Img.src = current.p1.img;
-
-      if (card2Title) card2Title.textContent = current.p2.title;
-      if (card2Tags) card2Tags.textContent = current.p2.tags;
-      if (card2Img) card2Img.src = current.p2.img;
+    if (nextBtn) {
+      nextBtn.disabled = currentIndex >= maxIdx;
     }
   }
 
-  prevBtn.addEventListener('click', () => {
-    const nextIdx = (currentIndex - 1 + projects.length) % projects.length;
-    updateCarousel(nextIdx);
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        update();
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const maxIdx = getMaxIndex();
+      if (currentIndex < maxIdx) {
+        currentIndex++;
+        update();
+      }
+    });
+  }
+
+  // Touch Swipe for mobile/tablet
+  let startX = 0;
+  let isDown = false;
+
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDown = true;
+  }, { passive: true });
+
+  track.addEventListener('touchend', (e) => {
+    if (!isDown) return;
+    isDown = false;
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0 && currentIndex < getMaxIndex()) {
+        currentIndex++;
+        update();
+      } else if (diff < 0 && currentIndex > 0) {
+        currentIndex--;
+        update();
+      }
+    }
+  }, { passive: true });
+
+  window.addEventListener('resize', () => {
+    update();
   });
 
-  nextBtn.addEventListener('click', () => {
-    const nextIdx = (currentIndex + 1) % projects.length;
-    updateCarousel(nextIdx);
-  });
+  // Initial calculation
+  setTimeout(update, 100);
 }
 
-// 5. Interactive Contact Form with Validation & Feedback Toast
+// 6. Interactive Contact Form with Validation & Feedback Toast
 function initFormHandler() {
   const form = document.getElementById('contact-form');
   if (!form) return;
@@ -193,7 +267,50 @@ function initFormHandler() {
   });
 }
 
-// 6. GSAP Animations & ScrollTrigger
+// 7. Interactive Blog Topic Filtering
+function initBlogFilter() {
+  const filterPills = document.querySelectorAll('.blog-filter-pills .filter-pill');
+  const cards = document.querySelectorAll('.blog-grid .blog-card');
+  if (!filterPills.length || !cards.length) return;
+
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const filter = pill.getAttribute('data-filter');
+
+      // Update active state
+      filterPills.forEach(p => {
+        p.classList.remove('active');
+        p.setAttribute('aria-selected', 'false');
+      });
+      pill.classList.add('active');
+      pill.setAttribute('aria-selected', 'true');
+
+      // Animate card display
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (filter === 'all' || cat === filter) {
+          card.style.display = 'flex';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(15px)';
+          setTimeout(() => {
+            card.style.transition = 'opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 30);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Refresh ScrollTrigger calculations after filter
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
+    });
+  });
+}
+
+// 8. GSAP Animations & ScrollTrigger
 function initGsapAnimations() {
   if (typeof gsap === 'undefined') return;
 
@@ -215,11 +332,7 @@ function initGsapAnimations() {
       opacity: 0,
       scale: 0.98,
       duration: 0.6
-    }, '<0.1')
-    .from('.hero-float-badge, .hero-scroll-indicator', {
-      opacity: 0,
-      duration: 0.4
-    }, '-=0.2');
+    }, '<0.1');
 
   // B. Counter Number Animation in Stats Strip
   if (typeof ScrollTrigger !== 'undefined') {
@@ -242,7 +355,7 @@ function initGsapAnimations() {
               ease: 'power2.out',
               snap: { innerText: 1 },
               onUpdate: function() {
-                counter.innerHTML = Math.floor(counter.innerText) + `<span class="text-blue-500">${suffix}</span>`;
+                counter.innerHTML = Math.floor(counter.innerText) + suffix;
               }
             }
           );
@@ -307,65 +420,139 @@ function initGsapAnimations() {
       clearProps: 'all'
     });
 
-    // F. Work Section Cards
-    gsap.from('.work-grid .project-card', {
+    // F. Work Section Items
+    gsap.from('.work-list .work-item', {
       scrollTrigger: {
         trigger: '.work-section',
         start: 'top 80%',
         once: true
       },
-      y: 30,
+      y: 25,
       opacity: 0,
-      stagger: 0.15,
-      duration: 0.7,
+      stagger: 0.1,
+      duration: 0.6,
       ease: 'power2.out',
       clearProps: 'all'
     });
 
-    // G. Insights Cards
-    gsap.from('.insight-card', {
-      scrollTrigger: {
-        trigger: '.insights-section',
-        start: 'top 80%',
-        once: true
-      },
-      y: 30,
-      opacity: 0,
-      stagger: 0.15,
-      duration: 0.7,
-      ease: 'power2.out',
-      clearProps: 'all'
-    });
+    // G. Product Section (Aladdin365)
+    if (document.querySelector('.product-section')) {
+      gsap.from('.product-info-col', {
+        scrollTrigger: {
+          trigger: '.product-section',
+          start: 'top 80%',
+          once: true
+        },
+        x: -30,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
 
-    // H. Testimonial Cards
-    gsap.from('.quote-card', {
+      gsap.from('.product-visual-card', {
+        scrollTrigger: {
+          trigger: '.product-section',
+          start: 'top 80%',
+          once: true
+        },
+        y: 35,
+        opacity: 0,
+        duration: 0.85,
+        delay: 0.15,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+
+      gsap.from('.product-feature-item', {
+        scrollTrigger: {
+          trigger: '.product-section',
+          start: 'top 80%',
+          once: true
+        },
+        x: 30,
+        opacity: 0,
+        stagger: 0.15,
+        duration: 0.75,
+        delay: 0.2,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+    }
+
+    // H. Testimonials Section
+    gsap.from('.testimonials-intro', {
       scrollTrigger: {
         trigger: '.testimonials-section',
         start: 'top 80%',
         once: true
       },
-      y: 30,
-      opacity: 0,
-      stagger: 0.15,
-      duration: 0.7,
-      ease: 'power2.out',
-      clearProps: 'all'
-    });
-
-    gsap.from('.testimonials-visual-banner', {
-      scrollTrigger: {
-        trigger: '.testimonials-section',
-        start: 'top 80%',
-        once: true
-      },
-      scale: 0.96,
+      x: -30,
       opacity: 0,
       duration: 0.8,
       ease: 'power2.out',
       clearProps: 'all'
     });
 
-    // I. Contact Box
+    gsap.from('.testimonial-card', {
+      scrollTrigger: {
+        trigger: '.testimonials-section',
+        start: 'top 80%',
+        once: true
+      },
+      x: 30,
+      opacity: 0,
+      stagger: 0.15,
+      duration: 0.8,
+      ease: 'power2.out',
+      clearProps: 'all'
+    });
+
+    // I. Blog Section
+    if (document.querySelector('.blog-section')) {
+      gsap.from('.blog-header', {
+        scrollTrigger: {
+          trigger: '.blog-section',
+          start: 'top 80%',
+          once: true
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.75,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+
+      gsap.from('.blog-card', {
+        scrollTrigger: {
+          trigger: '.blog-section',
+          start: 'top 75%',
+          once: true
+        },
+        y: 35,
+        opacity: 0,
+        stagger: 0.15,
+        duration: 0.8,
+        delay: 0.1,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+
+      gsap.from('.blog-bottom-strip', {
+        scrollTrigger: {
+          trigger: '.blog-bottom-strip',
+          start: 'top 85%',
+          once: true
+        },
+        y: 25,
+        opacity: 0,
+        duration: 0.75,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+    }
+
+    // J. Contact Box
     gsap.from('.contact-card-box', {
       scrollTrigger: {
         trigger: '.contact-section',
@@ -384,4 +571,50 @@ function initGsapAnimations() {
     });
   }
 }
+
+// 9. Back To Top Floating Button with Circular Scroll Progress
+function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  const progressFill = btn.querySelector('.progress-ring-fill');
+  const radius = 21;
+  const circumference = 2 * Math.PI * radius; // ~131.95
+
+  if (progressFill) {
+    progressFill.style.strokeDasharray = `${circumference}`;
+    progressFill.style.strokeDashoffset = `${circumference}`;
+  }
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+
+    // Show button after scrolling past 300px
+    if (scrollY > 300) {
+      btn.classList.add('is-visible');
+    } else {
+      btn.classList.remove('is-visible');
+    }
+
+    // Dynamic scroll progress calculation
+    if (progressFill && docHeight > 0) {
+      const scrollPercent = Math.min(Math.max(scrollY / docHeight, 0), 1);
+      const offset = circumference - (scrollPercent * circumference);
+      progressFill.style.strokeDashoffset = offset;
+    }
+  };
+
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+}
+
 

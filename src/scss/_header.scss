@@ -7,15 +7,30 @@
   left: 0;
   width: 100%;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(250, 249, 245, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
-  box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+  box-shadow: none;
   transition: all 0.35s ease;
 
+  @include lg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: none;
+  }
+
   &.is-sticky {
-    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    background: rgba(250, 249, 245, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+    box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05);
   }
 
   .header-container {
@@ -48,9 +63,10 @@
 
     .brand-name {
       font-family: $font-heading;
-      font-size: 1.125rem;
+      font-size: 1.15rem;
       font-weight: 700;
-      letter-spacing: -0.02em;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       color: $color-navy-900;
     }
   }
@@ -66,27 +82,30 @@
 
     .nav-item {
       font-family: $font-heading;
-      font-size: 0.85rem;
+      font-size: 0.875rem;
       font-weight: 500;
-      color: #334155;
+      color: #475569;
       position: relative;
-      padding: 0.25rem 0;
+      padding: 0.25rem 0.2rem;
+      transition: $transition-smooth;
 
       &::after {
         content: '';
         position: absolute;
-        bottom: -2px;
-        left: 0;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%);
         width: 0;
-        height: 2px;
-        background: $color-navy-900;
+        height: 2.5px;
+        background: #2563eb;
+        border-radius: 9999px;
         transition: width 0.25s ease;
       }
 
       &:hover {
         color: $color-navy-900;
         &::after {
-          width: 100%;
+          width: 22px;
         }
       }
 
@@ -94,7 +113,7 @@
         color: $color-navy-900;
         font-weight: 600;
         &::after {
-          width: 100%;
+          width: 22px;
         }
       }
     }
@@ -109,15 +128,15 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: $color-navy-900;
+      background: #0f1c30;
       color: #ffffff;
-      padding: 0.6rem 1.35rem;
+      padding: 0.65rem 1.45rem;
       border-radius: 9999px;
       font-family: $font-heading;
       font-size: 0.825rem;
       font-weight: 600;
       transition: $transition-smooth;
-      box-shadow: 0 4px 12px rgba(10, 17, 32, 0.15);
+      box-shadow: 0 4px 12px rgba(15, 28, 48, 0.15);
 
       svg {
         transition: transform 0.25s ease;
