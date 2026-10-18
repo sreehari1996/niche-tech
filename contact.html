@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Niche Techies | Let's Build Something Great Together</title>
+  <meta name="description"
+    content="Have a project in mind, need technical expertise, or want to explore partnerships? Contact Niche Techies today. Reach out and let's start a conversation.">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#070e1b',
+              900: '#0a1120',
+              850: '#0b1426',
+              800: '#0f192d',
+              700: '#16243f',
+            },
+            techBlue: {
+              400: '#60a5fa',
+              500: '#4378f5',
+              600: '#2563eb',
+            }
+          },
+          fontFamily: {
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Compiled Global SCSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Dedicated Contact Page Stylesheet -->
+  <link rel="stylesheet" href="css/contactpage.css">
+</head>
+
+<body class="contact-page bg-white text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- =========================================================================
+       1. Site Header & Navigation (Common Header identical to index.html)
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Niche Techies Home">
+        <img src="assets/images/logo.png" alt="Niche Techies" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html#home" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="index.html#services" class="nav-item">Services</a>
+        <a href="index.html#work" class="nav-item">Work</a>
+        <a href="index.html#product" class="nav-item">Product</a>
+        <a href="index.html#blog" class="nav-item">Blog</a>
+        <a href="career.html" class="nav-item">Careers</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <a href="contact.html" class="btn-talk" id="btn-header-talk">
+          <span>Get in Touch</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="nav-mobile-drawer">
+      <div class="mobile-links">
+        <a href="index.html#home">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#product">Product</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="career.html">Careers</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+      <div>
+        <a href="contact.html" class="btn-talk w-full justify-center">
+          <span>Get in Touch</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Main Contact Page Content
+       ========================================================================= -->
+  <main class="contact-page-main">
+
+    <!-- ---------------------------------------------------------------------
+         1. Contact Hero Section (Compact Text Layout with Optimal Placement)
+         --------------------------------------------------------------------- -->
+    <section class="contact-hero-section" id="hero">
+      <div class="contact-container">
+        <div class="contact-hero-grid">
+          <!-- Left Column: Eyebrow + Headline -->
+          <div class="contact-hero-left">
+            <div class="contact-eyebrow-row">
+              <span class="contact-hero-eyebrow">CONTACT US</span>
+            </div>
+            <h1 class="contact-hero-title">
+              Let's Build Something<br>
+              <span class="text-blue">Great Together.</span>
+            </h1>
+          </div>
+
+          <!-- Middle Vertical Divider Line -->
+          <div class="contact-hero-divider" aria-hidden="true"></div>
+
+          <!-- Right Column: Narrative + Direct Contact Details -->
+          <div class="contact-hero-right">
+            <p class="contact-hero-desc">
+              Have a project in mind, need technical expertise, or just want to explore how we can work together? We'd
+              love to hear from you. Reach out and our leadership team will respond within 24 hours.
+            </p>
+            <div class="contact-hero-direct">
+              <span class="direct-pill">
+                <span class="direct-pulse-dot"></span>
+                <span>Direct lines: <strong>+1 (614) 535-5738</strong> (USA) • <strong>+91 99953 33078</strong> (IND)</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         2. Send Us a Message Section (Executive Hub Card Layout)
+         --------------------------------------------------------------------- -->
+    <section class="contact-message-section" id="message">
+      <div class="contact-container">
+        <!-- Section Centered Header -->
+        <div class="section-center-header">
+          <div class="contact-eyebrow">
+            <span>GET IN TOUCH</span>
+            <span class="eyebrow-dash"></span>
+          </div>
+          <h2 class="section-title">Send us a message</h2>
+          <p class="section-desc">
+            Fill out the form below and our leadership team will respond within 24 hours. We're here to help you scale,
+            build, and transform.
+          </p>
+        </div>
+
+        <!-- Unified Executive Contact Hub Card -->
+        <div class="contact-hub-card">
+          <!-- Left Panel: Executive Dark Info Card -->
+          <div class="hub-info-panel">
+            <div class="panel-glow" aria-hidden="true"></div>
+
+            <div class="panel-header">
+              <span class="panel-badge">
+                <span class="pulse-dot"></span>
+                Direct Consultation
+              </span>
+              <h3 class="panel-title">Let's discuss your vision</h3>
+              <p class="panel-text">
+                Partner with seasoned architects and dedicated engineering squads to build high-performance digital
+                products.
+              </p>
+            </div>
+
+            <!-- Assurance / Benefits Badges -->
+            <div class="panel-assurances">
+              <div class="assurance-item">
+                <div class="assurance-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <div class="assurance-text">
+                  <h4>Rapid 24-Hour Response</h4>
+                  <p>Initial technical analysis &amp; estimate within one business day.</p>
+                </div>
+              </div>
+
+              <div class="assurance-item">
+                <div class="assurance-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <polyline points="9 12 11 14 15 10"></polyline>
+                  </svg>
+                </div>
+                <div class="assurance-text">
+                  <h4>Strict NDA Protection</h4>
+                  <p>Your intellectual property &amp; product ideas are 100% confidential.</p>
+                </div>
+              </div>
+
+              <div class="assurance-item">
+                <div class="assurance-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div class="assurance-text">
+                  <h4>Senior Leadership Access</h4>
+                  <p>Direct contact with our technical directors in the USA and India.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Contact Links -->
+            <div class="panel-contact-footer">
+              <div class="direct-contact-item">
+                <span class="direct-label">Direct Lines</span>
+                <div class="direct-links-wrap">
+                  <a href="tel:+16145355738" class="direct-link">
+                    <svg class="flag-svg" width="16" height="11" viewBox="0 0 18 12" fill="none" aria-hidden="true">
+                      <rect width="18" height="12" fill="#B22234" rx="1" />
+                      <rect y="1.85" width="18" height="0.92" fill="white" />
+                      <rect y="3.69" width="18" height="0.92" fill="white" />
+                      <rect y="5.54" width="18" height="0.92" fill="white" />
+                      <rect y="7.38" width="18" height="0.92" fill="white" />
+                      <rect y="9.23" width="18" height="0.92" fill="white" />
+                      <rect y="11.08" width="18" height="0.92" fill="white" />
+                      <rect width="7.5" height="6.5" fill="#3C3B6E" />
+                      <circle cx="2" cy="2" r="0.5" fill="white" />
+                      <circle cx="4" cy="2" r="0.5" fill="white" />
+                      <circle cx="6" cy="2" r="0.5" fill="white" />
+                      <circle cx="3" cy="3.5" r="0.5" fill="white" />
+                      <circle cx="5" cy="3.5" r="0.5" fill="white" />
+                      <circle cx="2" cy="5" r="0.5" fill="white" />
+                      <circle cx="4" cy="5" r="0.5" fill="white" />
+                      <circle cx="6" cy="5" r="0.5" fill="white" />
+                    </svg>
+                    <span>+1 (614) 535-5738</span>
+                  </a>
+                  <span class="direct-sep">•</span>
+                  <a href="tel:+919995333078" class="direct-link">
+                    <svg class="flag-svg" width="16" height="11" viewBox="0 0 18 12" fill="none" aria-hidden="true">
+                      <rect width="18" height="12" rx="1" fill="white" />
+                      <rect width="18" height="4" fill="#FF9933" />
+                      <rect y="8" width="18" height="4" fill="#138808" />
+                      <circle cx="9" cy="6" r="1.5" stroke="#000080" stroke-width="0.75" fill="none" />
+                      <circle cx="9" cy="6" r="0.5" fill="#000080" />
+                    </svg>
+                    <span>+91 99953 33078</span>
+                  </a>
+                </div>
+              </div>
+              <div class="direct-contact-item">
+                <span class="direct-label">Support Email</span>
+                <a href="mailto:info@nichetechies.com" class="direct-link-email">info@nichetechies.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Panel: Interactive Modern Form -->
+          <div class="hub-form-panel">
+            <form class="contact-main-form" id="contact-page-form"
+              onsubmit="event.preventDefault(); handleFormSubmit();">
+
+              <!-- Service Chips Selection -->
+              <div class="form-group-services">
+                <label class="field-heading-label">What service are you looking for?</label>
+                <div class="service-chips-grid" id="service-chips-container">
+                  <button type="button" class="service-chip active" data-service="Custom Software Development">
+                    <span class="chip-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                      </svg>
+                    </span>
+                    <span class="chip-text">Custom Software</span>
+                  </button>
+                  <button type="button" class="service-chip" data-service="Staff Augmentation">
+                    <span class="chip-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                      </svg>
+                    </span>
+                    <span class="chip-text">Staff Augmentation</span>
+                  </button>
+                  <button type="button" class="service-chip" data-service="DevOps & Cloud Engineering">
+                    <span class="chip-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                      </svg>
+                    </span>
+                    <span class="chip-text">DevOps &amp; Cloud</span>
+                  </button>
+                  <button type="button" class="service-chip" data-service="AI-Assisted Development">
+                    <span class="chip-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                      </svg>
+                    </span>
+                    <span class="chip-text">AI Engineering</span>
+                  </button>
+                  <button type="button" class="service-chip" data-service="Technology Consulting">
+                    <span class="chip-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                      </svg>
+                    </span>
+                    <span class="chip-text">Tech Consulting</span>
+                  </button>
+                  <button type="button" class="service-chip" data-service="QA & Software Testing">
+                    <span class="chip-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      </svg>
+                    </span>
+                    <span class="chip-text">QA &amp; Testing</span>
+                  </button>
+                </div>
+                <!-- Hidden input storing selected service value -->
+                <input type="hidden" id="selected-service-input" name="service" value="Custom Software Development">
+              </div>
+
+              <!-- Inputs Grid -->
+              <div class="form-row-2">
+                <div class="form-field">
+                  <label for="contact-name">Your Name *</label>
+                  <div class="input-with-icon">
+                    <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <input type="text" id="contact-name" name="name" placeholder="Your full name" required>
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label for="contact-email">Work Email *</label>
+                  <div class="input-with-icon">
+                    <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <input type="email" id="contact-email" name="email" placeholder="you@company.com" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-field">
+                  <label for="contact-company">Company Name</label>
+                  <div class="input-with-icon">
+                    <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                    <input type="text" id="contact-company" name="company" placeholder="Your company">
+                  </div>
+                </div>
+
+                <div class="form-field">
+                  <label for="contact-phone">Phone Number *</label>
+                  <div class="phone-input-wrap">
+                    <div class="phone-flag-select" title="India (+91)">
+                      <svg class="flag-svg" width="16" height="11" viewBox="0 0 18 12" fill="none" aria-hidden="true">
+                        <rect width="18" height="12" rx="1" fill="white" />
+                        <rect width="18" height="4" fill="#FF9933" />
+                        <rect y="8" width="18" height="4" fill="#138808" />
+                        <circle cx="9" cy="6" r="1.5" stroke="#000080" stroke-width="0.75" fill="none" />
+                        <circle cx="9" cy="6" r="0.5" fill="#000080" />
+                      </svg>
+                      <span class="phone-code-text">+91</span>
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </div>
+                    <input type="tel" id="contact-phone" name="phone" placeholder="98765 43210" required>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Message -->
+              <div class="form-field">
+                <label for="contact-message">Project Details &amp; Requirements *</label>
+                <textarea id="contact-message" name="message" rows="4"
+                  placeholder="Tell us about your project, timeline, scope, or questions..." required></textarea>
+              </div>
+
+              <!-- Submit Row -->
+              <div class="form-action-row">
+                <button type="submit" class="btn-submit-message" id="btn-submit-message">
+                  <span>Send Message</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+                  </svg>
+                </button>
+                <div class="form-privacy-note">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  <span>We guarantee 100% privacy and confidentiality. No spam.</span>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         3. Talk to the Right Person Section (Direct Team Contacts)
+         --------------------------------------------------------------------- -->
+    <section class="contact-team-section" id="team">
+      <div class="contact-container">
+        <!-- Section Header -->
+        <div class="team-section-header">
+          <div class="header-left">
+            <div class="contact-eyebrow">
+              <span>OUR TEAM</span>
+              <span class="eyebrow-dash"></span>
+            </div>
+            <h2 class="team-title">Talk to the right person</h2>
+            <p class="team-desc">
+              Get in touch with our business development team. We're here to understand your needs and help you find the
+              best solution.
+            </p>
+          </div>
+          <div class="header-right-action">
+            <span class="quick-call-note">Prefer a quick call?</span>
+            <a href="tel:+16145355738" class="btn-quick-call">
+              <span>Schedule a call</span>
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 2 Team Member Cards Grid -->
+        <div class="team-cards-grid">
+          <!-- Member 1: Anoj Bahuleyan -->
+          <div class="team-member-card">
+            <div class="member-top-info">
+              <img src="assets/images/team-anoj.jpg" alt="Anoj Bahuleyan" class="member-avatar">
+              <div class="member-meta">
+                <h3 class="member-name">Anoj Bahuleyan</h3>
+                <div class="member-role">Director, Niche Techies</div>
+                <div class="member-location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Columbus, USA</span>
+                </div>
+              </div>
+            </div>
+
+            <ul class="member-contacts-list">
+              <li>
+                <a href="tel:+16145355738">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z" />
+                  </svg>
+                  <span>+1 (614) 535-5738 (USA)</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:anoj@nichetechies.com">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>anoj@nichetechies.com</span>
+                </a>
+              </li>
+            </ul>
+
+            <a href="mailto:anoj@nichetechies.com?subject=Schedule%20a%20Discovery%20Call" class="btn-schedule-call">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Schedule a Call</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Member 2: Jithin Alias -->
+          <div class="team-member-card">
+            <div class="member-top-info">
+              <img src="assets/images/team-jithin.jpg" alt="Jithin Alias" class="member-avatar">
+              <div class="member-meta">
+                <h3 class="member-name">Jithin Alias</h3>
+                <div class="member-role">Business Development Manager, Niche Techies</div>
+                <div class="member-location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Kochi, India</span>
+                </div>
+              </div>
+            </div>
+
+            <ul class="member-contacts-list">
+              <li>
+                <a href="tel:+919995333078">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z" />
+                  </svg>
+                  <span>+91 99953 33078 (IND)</span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:careers@nichetechies.com">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>careers@nichetechies.com</span>
+                </a>
+              </li>
+            </ul>
+
+            <a href="mailto:careers@nichetechies.com?subject=Schedule%20a%20Discovery%20Call" class="btn-schedule-call">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Schedule a Call</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         4. Solutions for Your Success Section (Services Cards)
+         --------------------------------------------------------------------- -->
+    <section class="contact-services-section" id="services">
+      <div class="contact-container">
+        <!-- Section Header -->
+        <div class="services-section-header">
+          <div class="header-left">
+            <div class="contact-eyebrow">
+              <span>OUR SERVICES</span>
+              <span class="eyebrow-dash"></span>
+            </div>
+            <h2 class="services-title">Solutions for Your Success</h2>
+            <p class="services-desc">
+              We offer a range of IT services to help you build, scale and transform your business with the right
+              technology and talent.
+            </p>
+          </div>
+          <div class="header-right-action">
+            <a href="index.html#services" class="btn-explore-services">
+              <span>Explore all services</span>
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 3 Service Cards Grid -->
+        <div class="services-cards-grid">
+          <!-- Service Card 1 -->
+          <a href="index.html#services" class="service-card">
+            <div class="service-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="service-card-title">Software Development</h3>
+            <p class="service-card-desc">
+              Custom software, web &amp; mobile apps, product development, and more.
+            </p>
+            <span class="card-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+
+          <!-- Service Card 2 -->
+          <a href="index.html#services" class="service-card">
+            <div class="service-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="service-card-title">Staff Augmentation</h3>
+            <p class="service-card-desc">
+              Hire skilled developers, designers and IT professionals on demand.
+            </p>
+            <span class="card-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+
+          <!-- Service Card 3 -->
+          <a href="index.html#services" class="service-card">
+            <div class="service-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                </path>
+              </svg>
+            </div>
+            <h3 class="service-card-title">Technology Consulting</h3>
+            <p class="service-card-desc">
+              Strategy, architecture, and digital transformation consulting.
+            </p>
+            <span class="card-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         5. Frequently Asked Questions Section (Accordion)
+         --------------------------------------------------------------------- -->
+    <section class="contact-faq-section" id="faq">
+      <div class="contact-container">
+        <div class="faq-grid">
+          <!-- Left Column -->
+          <div class="faq-left-column">
+            <div class="contact-eyebrow">
+              <span>FAQ</span>
+              <span class="eyebrow-dash"></span>
+            </div>
+            <h2 class="faq-title">Frequently asked questions</h2>
+            <p class="faq-desc">
+              Find quick answers to common questions about working with Niche Techies.
+            </p>
+            <a href="index.html#faq" class="btn-view-faqs">
+              <span>View all FAQs</span>
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Right Column: Accordion List -->
+          <div class="faq-accordion-list">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false">
+                <span>What happens after I submit the form?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-content">
+                <p>
+                  Our team reviews your inquiry and responds within 24 hours. We will assign a dedicated technical lead
+                  or account manager to discuss your project scope, timeline, and requirements in detail.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false">
+                <span>How quickly can I expect a response?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-content">
+                <p>
+                  You will usually receive an acknowledgment immediately, followed by a personalized response from our
+                  business development team within a few business hours, or 24 hours at the latest.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false">
+                <span>Can I request a consultation?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-content">
+                <p>
+                  Yes, absolutely! You can choose to schedule a discovery call directly with our directors in the USA or
+                  India using the 'Schedule a Call' buttons above.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+              <button type="button" class="faq-trigger" aria-expanded="false">
+                <span>Do you work with startups?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-content">
+                <p>
+                  Yes, we actively partner with startups at all stages—from seed-stage MVPs to rapidly scaling
+                  scale-ups—providing agile software development and dedicated engineering squads.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       Site Footer (Common Footer identical to index.html and career.html)
+       ========================================================================= -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-container">
+      <!-- Top Tier: Navigation Columns -->
+      <div class="footer-top-grid">
+        <!-- Col 1: Software & Product Development -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Software &amp; Product Development</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#services">Custom Software Development</a></li>
+            <li><a href="index.html#services">AI-Assisted Development</a></li>
+            <li><a href="index.html#services">Product Development for Startups</a></li>
+            <li><a href="index.html#services">QA &amp; Software Testing</a></li>
+            <li><a href="index.html#services">DevOps &amp; Cloud Engineering</a></li>
+            <li><a href="index.html#services">Dedicated Engineering Teams</a></li>
+            <li><a href="index.html#services">Technology Consulting</a></li>
+            <li><a href="index.html#services">Industry Solutions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Staff Augmentation & Company -->
+        <div class="footer-col">
+          <div class="footer-subgroup">
+            <h4 class="footer-col-title">Staff Augmentation</h4>
+            <ul class="footer-links-list">
+              <li><a href="index.html#services">Hire a Developer</a></li>
+            </ul>
+          </div>
+          <div class="footer-subgroup footer-company-subgroup">
+            <h4 class="footer-col-title">Company</h4>
+            <ul class="footer-links-list">
+              <li><a href="about.html">About</a></li>
+              <li><a href="index.html#work">Case Studies</a></li>
+              <li><a href="career.html">Careers</a></li>
+              <li><a href="index.html#blog">Blogs</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Col 3: Socials -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Socials</h4>
+          <ul class="footer-social-list">
+            <li>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 0 0 1.45-1.45 1.45 1.45 0 0 0-1.45-1.45 1.45 1.45 0 0 0-1.45 1.45 1.45 1.45 0 0 0 1.45 1.45m1.37 9.74v-8.37H5.09v8.37h2.74z" />
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+                <span>Facebook</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Get in touch -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Get in touch</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <a href="tel:+16145355738">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z" />
+                </svg>
+                <span>+1 (614) 535–5738 (USA)</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+919995333078">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z" />
+                </svg>
+                <span>+91 99953 33078 (IND)</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@nichetechies.com">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@nichetechies.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:Careers@nichetechies.com">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Careers@nichetechies.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider Line -->
+      <div class="footer-divider-line"></div>
+
+      <!-- Middle Tier: Offices & Logo -->
+      <div class="footer-offices-grid">
+        <!-- Brand Logo Col -->
+        <div class="office-brand-col">
+          <img src="assets/images/niche-techies-logo.png" alt="Niche Techies" class="footer-brand-img">
+        </div>
+
+        <!-- USA Office Col -->
+        <div class="office-col border-left">
+          <div class="office-flag">
+            <svg width="24" height="16" viewBox="0 0 741 390" class="flag-icon flag-us">
+              <rect width="741" height="390" fill="#b22234" />
+              <path d="M0,45H741M0,105H741M0,165H741M0,225H741M0,285H741M0,345H741" stroke="#fff" stroke-width="30" />
+              <rect width="296.4" height="210" fill="#3c3b6e" />
+              <g fill="#fff">
+                <circle cx="30" cy="25" r="7" />
+                <circle cx="80" cy="25" r="7" />
+                <circle cx="130" cy="25" r="7" />
+                <circle cx="180" cy="25" r="7" />
+                <circle cx="230" cy="25" r="7" />
+                <circle cx="55" cy="55" r="7" />
+                <circle cx="105" cy="55" r="7" />
+                <circle cx="155" cy="55" r="7" />
+                <circle cx="205" cy="55" r="7" />
+                <circle cx="30" cy="85" r="7" />
+                <circle cx="80" cy="85" r="7" />
+                <circle cx="130" cy="85" r="7" />
+                <circle cx="180" cy="85" r="7" />
+                <circle cx="230" cy="85" r="7" />
+                <circle cx="55" cy="115" r="7" />
+                <circle cx="105" cy="115" r="7" />
+                <circle cx="155" cy="115" r="7" />
+                <circle cx="205" cy="115" r="7" />
+                <circle cx="30" cy="145" r="7" />
+                <circle cx="80" cy="145" r="7" />
+                <circle cx="130" cy="145" r="7" />
+                <circle cx="180" cy="145" r="7" />
+                <circle cx="230" cy="145" r="7" />
+                <circle cx="55" cy="175" r="7" />
+                <circle cx="105" cy="175" r="7" />
+                <circle cx="155" cy="175" r="7" />
+                <circle cx="205" cy="175" r="7" />
+              </g>
+            </svg>
+          </div>
+          <p class="office-address">
+            470 Olde Worthington Rd, Ste 200, PMB 5256,<br>
+            Westerville, OH 43082, United States of<br>
+            America
+          </p>
+        </div>
+
+        <!-- India Office Col -->
+        <div class="office-col border-left">
+          <div class="office-flag">
+            <svg width="22" height="22" viewBox="0 0 100 100" class="flag-icon flag-in">
+              <defs>
+                <clipPath id="circleClipIndiaContact">
+                  <circle cx="50" cy="50" r="50" />
+                </clipPath>
+              </defs>
+              <g clip-path="url(#circleClipIndiaContact)">
+                <rect width="100" height="33.33" fill="#FF9933" />
+                <rect y="33.33" width="100" height="33.33" fill="#FFFFFF" />
+                <rect y="66.66" width="100" height="33.34" fill="#138808" />
+                <circle cx="50" cy="50" r="11" fill="none" stroke="#000080" stroke-width="2.5" />
+                <circle cx="50" cy="50" r="2.5" fill="#000080" />
+                <g stroke="#000080" stroke-width="1.2">
+                  <line x1="50" y1="39" x2="50" y2="61" />
+                  <line x1="39" y1="50" x2="61" y2="50" />
+                  <line x1="42.22" y1="42.22" x2="57.78" y2="57.78" />
+                  <line x1="42.22" y1="57.78" x2="57.78" y2="42.22" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <p class="office-address">
+            8th floor, Vismaya Building, Infopark Kochi<br>
+            Phase-1, Kakkanad - 682042, Ernakulam,<br>
+            Kerala, India
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Tier: Copyright & Legal -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copyright">&copy;2026 Nichetechies. All Rights Reserved</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="21" />
+      <circle class="progress-ring-fill" cx="24" cy="24" r="21" />
+    </svg>
+    <span class="back-to-top-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </span>
+  </button>
+
+  <!-- Interactive JavaScript Engine -->
+  <script>
+    // 1. Mobile Menu Drawer Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navDrawer = document.querySelector('.nav-mobile-drawer');
+
+    if (mobileMenuBtn && navDrawer) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.classList.toggle('is-active');
+        navDrawer.classList.toggle('is-open');
+        document.body.classList.toggle('nav-open');
+      });
+    }
+
+    // 2. FAQ Accordion Toggle
+    const faqTriggers = document.querySelectorAll('.faq-trigger');
+
+    faqTriggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const item = trigger.closest('.faq-item');
+        const isOpen = item.classList.contains('is-open');
+
+        // Close other accordion items
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('is-open');
+            otherItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle current
+        if (isOpen) {
+          item.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          item.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // 3. Form Submission Simulation with feedback
+    function handleFormSubmit() {
+      const submitBtn = document.getElementById('btn-submit-message');
+      const originalHTML = submitBtn.innerHTML;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+        <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span>Sending Message...</span>
+      `;
+
+      setTimeout(() => {
+        submitBtn.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Message Sent Successfully!</span>
+        `;
+        submitBtn.style.backgroundColor = '#16a34a';
+
+        setTimeout(() => {
+          document.getElementById('contact-page-form').reset();
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalHTML;
+          submitBtn.style.backgroundColor = '';
+        }, 3500);
+      }, 1000);
+    }
+
+    // 3b. Interactive Service Chips Toggle
+    const serviceChips = document.querySelectorAll('.service-chip');
+    const hiddenServiceInput = document.getElementById('selected-service-input');
+
+    if (serviceChips.length > 0) {
+      serviceChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          serviceChips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          if (hiddenServiceInput) {
+            hiddenServiceInput.value = chip.getAttribute('data-service');
+          }
+        });
+      });
+    }
+
+    // 4. Back to Top Button Behavior
+    const backToTopBtn = document.getElementById('back-to-top');
+    const progressCircle = document.querySelector('.progress-ring-fill');
+
+    if (backToTopBtn) {
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+
+        if (scrollTop > 300) {
+          backToTopBtn.classList.add('is-visible');
+        } else {
+          backToTopBtn.classList.remove('is-visible');
+        }
+
+        if (progressCircle) {
+          const circumference = 2 * Math.PI * 21; // r = 21 -> 131.95
+          const offset = circumference - (progress * circumference);
+          progressCircle.style.strokeDasharray = `${circumference}`;
+          progressCircle.style.strokeDashoffset = `${offset}`;
+        }
+      });
+
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
+    // 5. Sticky Header Effect
+    const siteHeader = document.getElementById('site-header');
+    if (siteHeader) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+          siteHeader.classList.add('is-sticky');
+        } else {
+          siteHeader.classList.remove('is-sticky');
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

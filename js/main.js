@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectCarousel();
   initTestimonialCarousel();
   initBlogFilter();
+  initProductStackedDeck();
   initFormHandler();
   initGsapAnimations();
   initBackToTop();
@@ -310,6 +311,116 @@ function initBlogFilter() {
   });
 }
 
+// 7b. Product Stacked Cards Deck with GSAP ScrollTrigger
+function initProductStackedDeck() {
+  const section = document.querySelector('.product-section');
+  if (!section) return;
+
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+
+  const cards = gsap.utils.toArray('.product-stack-card');
+  if (!cards.length) return;
+
+  // Header entrance animation
+  gsap.from('.product-section-header', {
+    scrollTrigger: {
+      trigger: '.product-section',
+      start: 'top 82%',
+      once: true
+    },
+    y: 35,
+    opacity: 0,
+    duration: 0.8,
+    ease: 'power2.out'
+  });
+
+  // GSAP Responsive MatchMedia for Stacked Deck
+  const mm = gsap.matchMedia();
+
+  // Desktop (>= 1024px): Stacked Deck Sticking & Scale-Down Scrub
+  mm.add('(min-width: 1024px)', () => {
+    cards.forEach((card, i) => {
+      // Explicit z-index ensuring subsequent cards cleanly layer on top
+      card.style.zIndex = (i + 1) * 10;
+
+      // Scale down previous card slightly as next card covers it (NO OPACITY or FILTER to keep text 100% sharp and solid)
+      if (i < cards.length - 1) {
+        const nextCard = cards[i + 1];
+        const cardInner = card.querySelector('.card-inner');
+
+        gsap.to(cardInner, {
+          scale: 0.96 - (cards.length - 1 - i) * 0.02,
+          transformOrigin: 'top center',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: nextCard,
+            start: 'top top+=260',
+            end: 'top top+=86',
+            scrub: true
+          }
+        });
+      }
+
+      // Stagger elements inside each card as it arrives
+      const infoItems = card.querySelectorAll(
+        '.card-header-bar, .card-title, .card-desc, .card-metrics-grid, .card-feature-list li, .card-actions'
+      );
+      if (infoItems.length) {
+        gsap.from(infoItems, {
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            once: true
+          },
+          y: 20,
+          opacity: 0,
+          stagger: 0.04,
+          duration: 0.6,
+          ease: 'power2.out',
+          clearProps: 'all'
+        });
+      }
+
+      const mockup = card.querySelector('.mockup-frame');
+      if (mockup) {
+        gsap.from(mockup, {
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 80%',
+            once: true
+          },
+          scale: 0.95,
+          opacity: 0,
+          duration: 0.7,
+          ease: 'power2.out',
+          clearProps: 'all'
+        });
+      }
+    });
+  });
+
+  // Mobile / Tablet (< 1024px): Clean Staggered Scroll Reveal
+  mm.add('(max-width: 1023px)', () => {
+    cards.forEach(card => {
+      const cardInner = card.querySelector('.card-inner');
+      if (cardInner) {
+        gsap.from(cardInner, {
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 85%',
+            once: true
+          },
+          y: 30,
+          opacity: 0,
+          duration: 0.7,
+          ease: 'power2.out',
+          clearProps: 'all'
+        });
+      }
+    });
+  });
+}
+
 // 8. GSAP Animations & ScrollTrigger
 function initGsapAnimations() {
   if (typeof gsap === 'undefined') return;
@@ -435,50 +546,7 @@ function initGsapAnimations() {
       clearProps: 'all'
     });
 
-    // G. Product Section (Aladdin365)
-    if (document.querySelector('.product-section')) {
-      gsap.from('.product-info-col', {
-        scrollTrigger: {
-          trigger: '.product-section',
-          start: 'top 80%',
-          once: true
-        },
-        x: -30,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power2.out',
-        clearProps: 'all'
-      });
-
-      gsap.from('.product-visual-card', {
-        scrollTrigger: {
-          trigger: '.product-section',
-          start: 'top 80%',
-          once: true
-        },
-        y: 35,
-        opacity: 0,
-        duration: 0.85,
-        delay: 0.15,
-        ease: 'power2.out',
-        clearProps: 'all'
-      });
-
-      gsap.from('.product-feature-item', {
-        scrollTrigger: {
-          trigger: '.product-section',
-          start: 'top 80%',
-          once: true
-        },
-        x: 30,
-        opacity: 0,
-        stagger: 0.15,
-        duration: 0.75,
-        delay: 0.2,
-        ease: 'power2.out',
-        clearProps: 'all'
-      });
-    }
+    // G. Product Section animations are fully managed in initProductStackedDeck()
 
     // H. Testimonials Section
     gsap.from('.testimonials-intro', {
