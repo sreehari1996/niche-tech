@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Niche Techies | Innovative Solutions. Powered by People.</title>
+  <meta name="description"
+    content="Learn about Niche Techies: our story, our culture, our values, and the talented team building tomorrow's digital solutions.">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#070e1b',
+              900: '#0a1120',
+              850: '#0b1426',
+              800: '#0f192d',
+              700: '#16243f',
+            },
+            techBlue: {
+              400: '#60a5fa',
+              500: '#4378f5',
+              600: '#2563eb',
+            }
+          },
+          fontFamily: {
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Compiled Global SCSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Dedicated About Page Stylesheet -->
+  <link rel="stylesheet" href="css/aboutpage.css">
+</head>
+
+<body class="bg-white text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- =========================================================================
+       1. Site Header & Navigation (Common Header)
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Niche Techies Home">
+        <img src="assets/images/logo.png" alt="Niche Techies" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html#home" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item active">About</a>
+        <a href="index.html#services" class="nav-item">Services</a>
+        <a href="index.html#work" class="nav-item">Work</a>
+        <a href="index.html#product" class="nav-item">Product</a>
+        <a href="index.html#blog" class="nav-item">Blog</a>
+        <a href="index.html#careers" class="nav-item">Careers</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <a href="index.html#contact" class="btn-talk" id="btn-header-talk">
+          <span>Get in Touch</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="nav-mobile-drawer">
+      <div class="mobile-links">
+        <a href="index.html#home">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#product">Product</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#careers">Careers</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div>
+        <a href="index.html#contact" class="btn-talk w-full justify-center">
+          <span>Get in Touch</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Main About Page Content
+       ========================================================================= -->
+  <main class="about-page-main">
+
+    <!-- ---------------------------------------------------------------------
+         1. Hero Section: Innovative Solutions. Powered by People.
+         --------------------------------------------------------------------- -->
+    <section class="about-hero-section" id="hero">
+      <div class="aboutpage-container">
+        <div class="about-hero-grid">
+          <!-- Left Text Column -->
+          <div class="about-hero-content">
+            <span class="about-hero-eyebrow">ABOUT US</span>
+            <h1 class="about-hero-title">
+              Innovative Solutions.<br>
+              <span class="text-blue">Powered by People.</span>
+            </h1>
+            <p class="about-hero-desc">
+              We are a team of passionate thinkers, builders and problem solvers, creating digital experiences that help businesses grow and make a real impact.
+            </p>
+
+            <!-- 3 Stat Metrics -->
+            <div class="about-stats-strip">
+              <div class="about-stat-box">
+                <span class="stat-number">50+</span>
+                <span class="stat-caption">Team Members</span>
+              </div>
+              <div class="about-stat-separator"></div>
+              <div class="about-stat-box">
+                <span class="stat-number">5+</span>
+                <span class="stat-caption">Years of Excellence</span>
+              </div>
+              <div class="about-stat-separator"></div>
+              <div class="about-stat-box">
+                <span class="stat-number">100+</span>
+                <span class="stat-caption">Projects Delivered</span>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="#principles" class="btn-pill-outline" id="btn-about-story">
+              <span>Our Story</span>
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Right Image Column with Floating Badge -->
+          <div class="about-hero-visual">
+            <div class="about-visual-frame">
+              <img src="assets/images/about-hero-team.jpg" alt="Niche Techies Team Collaborating at Office Desk" loading="eager">
+              <div class="about-floating-badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text">Our team, our strength</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         2. Values Section: Built on Values. Driven by Purpose.
+         --------------------------------------------------------------------- -->
+    <section class="about-values-section" id="values">
+      <div class="aboutpage-container">
+        <div class="about-values-layout">
+          <!-- Left Intro Column -->
+          <div class="about-values-intro">
+            <span class="values-eyebrow">WHAT MAKES US DIFFERENT</span>
+            <h2 class="values-title">
+              Built on Values.<br>
+              Driven by Purpose.
+            </h2>
+            <p class="values-desc">
+              We don't just build software — we build long-term partnerships. Our values guide everything we do, from how we work to how we grow.
+            </p>
+            <a href="#principles" class="link-arrow-blue">
+              <span>Learn more</span>
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Right 6 Value Cards Grid -->
+          <div class="about-values-grid">
+            <!-- Card 1: People First -->
+            <div class="value-card">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3 class="value-card-title">People First</h3>
+              <p class="value-card-text">We value our people, our clients and our community.</p>
+            </div>
+
+            <!-- Card 2: Think Beyond -->
+            <div class="value-card">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 18h6"></path>
+                  <path d="M10 22h4"></path>
+                  <path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path>
+                </svg>
+              </div>
+              <h3 class="value-card-title">Think Beyond</h3>
+              <p class="value-card-text">We solve problems with curiosity and creativity.</p>
+            </div>
+
+            <!-- Card 3: Build with Integrity -->
+            <div class="value-card">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </div>
+              <h3 class="value-card-title">Build with Integrity</h3>
+              <p class="value-card-text">Transparency, trust and accountability in everything.</p>
+            </div>
+
+            <!-- Card 4: Keep Improving -->
+            <div class="value-card">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+              </div>
+              <h3 class="value-card-title">Keep Improving</h3>
+              <p class="value-card-text">We learn, adapt and stay ahead.</p>
+            </div>
+
+            <!-- Card 5: Make an Impact -->
+            <div class="value-card">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h3 class="value-card-title">Make an Impact</h3>
+              <p class="value-card-text">We create solutions that matter.</p>
+            </div>
+
+            <!-- Card 6: Grow Together -->
+            <div class="value-card">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <polyline points="16 11 18 13 22 9"></polyline>
+                </svg>
+              </div>
+              <h3 class="value-card-title">Grow Together</h3>
+              <p class="value-card-text">Success is better when shared.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         3. Principles Section: Shaping the Future, Our Way.
+         --------------------------------------------------------------------- -->
+    <section class="about-principles-section" id="principles">
+      <div class="aboutpage-container">
+        <div class="about-principles-grid">
+          <!-- Left Content & 4 Principles -->
+          <div class="about-principles-info">
+            <span class="principles-eyebrow">OUR PRINCIPLES</span>
+            <h2 class="principles-title">
+              Shaping the Future,<br>
+              <span class="text-blue">Our Way.</span>
+            </h2>
+            <p class="principles-desc">
+              We believe in building technology that's not just functional, but meaningful. Our principles shape how we work, think and grow — today and tomorrow.
+            </p>
+
+            <div class="principles-quad">
+              <!-- Principle 01 -->
+              <div class="principle-item">
+                <span class="principle-num">01</span>
+                <h3 class="principle-name">Customer Obsession</h3>
+                <p class="principle-text">We listen, understand and deliver.</p>
+              </div>
+
+              <!-- Principle 02 -->
+              <div class="principle-item">
+                <span class="principle-num">02</span>
+                <h3 class="principle-name">Collaborative Culture</h3>
+                <p class="principle-text">Better ideas, together.</p>
+              </div>
+
+              <!-- Principle 03 -->
+              <div class="principle-item">
+                <span class="principle-num">03</span>
+                <h3 class="principle-name">Continuous Learning</h3>
+                <p class="principle-text">Always curious, always evolving.</p>
+              </div>
+
+              <!-- Principle 04 -->
+              <div class="principle-item">
+                <span class="principle-num">04</span>
+                <h3 class="principle-name">Long-Term Thinking</h3>
+                <p class="principle-text">We build for what's next.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Image Frame -->
+          <div class="about-principles-visual">
+            <div class="principles-frame">
+              <img src="assets/images/about-principles-team.jpg" alt="Niche Techies Team Discussion with Tablet" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         Technologies We Use Section (Placed directly under OUR PRINCIPLES)
+         --------------------------------------------------------------------- -->
+    <section class="about-technologies-section" id="technologies">
+      <div class="aboutpage-container">
+        <!-- Section Header -->
+        <div class="tech-header">
+          <h2 class="tech-title">Technologies we <span class="tech-title-light">use</span></h2>
+          <p class="tech-subtitle">
+            Stack picked for the job, not the resume. We choose tools by fit: what the system needs to do, what the team can run reliably in production, and what stays maintainable years after launch.
+          </p>
+        </div>
+
+        <!-- 8x2 Technology Matrix Grid -->
+        <div class="tech-grid-wrapper">
+          <!-- Row 1 -->
+          <!-- 1. React Native -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="12" rx="10" ry="4.2"></ellipse>
+                <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"></ellipse>
+                <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)"></ellipse>
+                <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <span class="tech-label">REACT NATIVE</span>
+          </div>
+
+          <!-- 2. WordPress -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="7" width="13" height="13" rx="2"></rect>
+                <path d="M7 3h12a2 2 0 0 1 2 2v12"></path>
+              </svg>
+            </div>
+            <span class="tech-label">WORDPRESS</span>
+          </div>
+
+          <!-- 3. PHP & MySQL -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="8" ry="3"></ellipse>
+                <path d="M4 5v5c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path>
+                <path d="M4 10v5c0 1.66 3.58 3 8 3s8-1.34 8-3v-5"></path>
+                <path d="M4 15v4c0 1.66 3.58 3 8 3s8-1.34 8-3v-4"></path>
+              </svg>
+            </div>
+            <span class="tech-label">PHP &amp; MYSQL</span>
+          </div>
+
+          <!-- 4. Android Native -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 16a7 7 0 0 1 14 0H5z"></path>
+                <line x1="7" y1="6" x2="8.8" y2="9.5"></line>
+                <line x1="17" y1="6" x2="15.2" y2="9.5"></line>
+                <circle cx="9" cy="13" r="1" fill="currentColor"></circle>
+                <circle cx="15" cy="13" r="1" fill="currentColor"></circle>
+              </svg>
+            </div>
+            <span class="tech-label">ANDROID NATIVE</span>
+          </div>
+
+          <!-- 5. Node.js Engine -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c0 2.5-.5 4.5-1.5 10.2A7 7 0 0 1 11 20z"></path>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6"></path>
+              </svg>
+            </div>
+            <span class="tech-label">NODE.JS ENGINE</span>
+          </div>
+
+          <!-- 6. iOS & Swift -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 3a9 9 0 0 1 6.36 15.36"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M12 9v-6M12 21v-6M3 12h6M15 12h6"></path>
+              </svg>
+            </div>
+            <span class="tech-label">IOS &amp; SWIFT</span>
+          </div>
+
+          <!-- 7. TypeScript -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <path d="M8.5 14h3M10 14v4M13.5 15.2c.3-.4.8-.6 1.3-.6.7 0 1.2.3 1.2.8s-.4.7-1.1.9c-.8.2-1.4.5-1.4 1.1 0 .7.6 1.1 1.5 1.1.5 0 1-.2 1.3-.5"></path>
+              </svg>
+            </div>
+            <span class="tech-label">TYPESCRIPT</span>
+          </div>
+
+          <!-- 8. Microsoft .NET -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="3" y="3" width="8" height="8" rx="0.5"></rect>
+                <rect x="13" y="3" width="8" height="8" rx="0.5"></rect>
+                <rect x="3" y="13" width="8" height="8" rx="0.5"></rect>
+                <rect x="13" y="13" width="8" height="8" rx="0.5"></rect>
+              </svg>
+            </div>
+            <span class="tech-label">MICROSOFT .NET</span>
+          </div>
+
+          <!-- Row 2 -->
+          <!-- 9. Next.js -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3L2 21h20L12 3z"></path>
+              </svg>
+            </div>
+            <span class="tech-label">NEXT.JS</span>
+          </div>
+
+          <!-- 10. SASS / SCSS -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="13.5" cy="6.5" r="1" fill="currentColor"></circle>
+                <circle cx="17.5" cy="10.5" r="1" fill="currentColor"></circle>
+                <circle cx="8.5" cy="7.5" r="1" fill="currentColor"></circle>
+                <circle cx="6.5" cy="12.5" r="1" fill="currentColor"></circle>
+                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.6-.7 1.6-1.6 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.6 1.6-1.6H16c3.3 0 6-2.7 6-6 0-5.5-4.5-9.6-10-9.6z"></path>
+              </svg>
+            </div>
+            <span class="tech-label">SASS / SCSS</span>
+          </div>
+
+          <!-- 11. Modern HTML5 -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="M9 10l-2 2 2 2"></path>
+                <path d="M15 10l2 2-2 2"></path>
+                <line x1="13" y1="9" x2="11" y2="15"></line>
+              </svg>
+            </div>
+            <span class="tech-label">MODERN HTML5</span>
+          </div>
+
+          <!-- 12. Bootstrap 5 -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <line x1="10" y1="10" x2="10" y2="20"></line>
+              </svg>
+            </div>
+            <span class="tech-label">BOOTSTRAP 5</span>
+          </div>
+
+          <!-- 13. AWS Cloud -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                <polyline points="12 13 12 9 10 11"></polyline>
+                <polyline points="12 9 14 11"></polyline>
+              </svg>
+            </div>
+            <span class="tech-label">AWS CLOUD</span>
+          </div>
+
+          <!-- 14. Docker -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+            </div>
+            <span class="tech-label">DOCKER</span>
+          </div>
+
+          <!-- 15. DevOps / Git -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="18" r="3"></circle>
+                <circle cx="6" cy="6" r="3"></circle>
+                <circle cx="18" cy="6" r="3"></circle>
+                <path d="M18 9a9 9 0 0 1-9 9"></path>
+                <path d="M6 9a9 9 0 0 0 9 9"></path>
+              </svg>
+            </div>
+            <span class="tech-label">DEVOPS / GIT</span>
+          </div>
+
+          <!-- 16. PostgreSQL -->
+          <div class="tech-cell">
+            <div class="tech-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="8" ry="3"></ellipse>
+                <path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path>
+                <path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"></path>
+              </svg>
+            </div>
+            <span class="tech-label">POSTGRESQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         4. Culture Section: Life at Niche Techies
+         --------------------------------------------------------------------- -->
+    <section class="about-culture-section" id="culture">
+      <div class="aboutpage-container">
+        <div class="about-culture-layout">
+          <!-- Left Intro Column -->
+          <div class="about-culture-intro">
+            <span class="culture-eyebrow">OUR CULTURE</span>
+            <h2 class="culture-title">Life at Niche Techies</h2>
+            <p class="culture-desc">
+              Great work happens when great people feel at home. From team outings to learning sessions, we celebrate progress, encourage creativity and build lasting bonds.
+            </p>
+            <a href="#join" class="link-arrow-blue">
+              <span>See Our Culture</span>
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Right 2x2 Photo Gallery -->
+          <div class="about-culture-gallery">
+            <div class="culture-photo-frame">
+              <img src="assets/images/about-culture-banner.jpg" alt="Niche Techies Team Holding Banner" loading="lazy">
+            </div>
+            <div class="culture-photo-frame">
+              <img src="assets/images/about-culture-foosball.jpg" alt="Team Playing Foosball in Breakroom" loading="lazy">
+            </div>
+            <div class="culture-photo-frame">
+              <img src="assets/images/about-culture-outing.jpg" alt="Team Weekend Retreat by the Lake" loading="lazy">
+            </div>
+            <div class="culture-photo-frame">
+              <img src="assets/images/about-culture-talk.jpg" alt="Townhall Presentation in Auditorium" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         5. Join Our Team Section: Build What's Next.
+         --------------------------------------------------------------------- -->
+    <section class="about-join-section" id="join">
+      <div class="aboutpage-container">
+        <div class="about-join-grid">
+          <!-- Left Image Frame (Black & White Editorial Pair Photo) -->
+          <div class="about-join-visual">
+            <div class="join-frame">
+              <img src="assets/images/about-careers-pair.jpg" alt="Team Members Collaborating over Laptop" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Right Content Column -->
+          <div class="about-join-content">
+            <span class="join-eyebrow">JOIN OUR TEAM</span>
+            <h2 class="join-title">
+              Build What's Next.<br>
+              Become Who You're Meant To Be.
+            </h2>
+            <p class="join-desc">
+              We're always looking for curious minds, creative thinkers and passionate doers. If you're ready to grow, make an impact and be part of something meaningful — we'd love to hear from you.
+            </p>
+            <a href="index.html#careers" class="btn-pill-outline" id="btn-explore-careers">
+              <span>Explore Careers</span>
+              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Contact Section (Exact same as index.html)
+         ========================================================================= -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-card-box">
+          <!-- Left Side: Professional Portrait (portrait-female.png) -->
+          <div class="contact-visual">
+            <img src="assets/images/portrait-female.png" alt="Niche Global Tech Consultant in modern office" loading="lazy">
+          </div>
+
+          <!-- Right Side: Contact Area -->
+          <div class="contact-main-wrapper">
+            <!-- Form & Headings Column -->
+            <div class="contact-form-col">
+              <span class="contact-eyebrow">GET IN TOUCH</span>
+              <h2 class="contact-title">Empowering growth<br>through tech talent</h2>
+              <p class="contact-subtitle">
+                Whether you're looking to hire, build a team or transform your products, we're here to help. Let's start the conversation.
+              </p>
+
+              <form class="contact-form" id="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <input type="text" class="form-input" id="name" placeholder="Your Name" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-input" id="email" placeholder="Work Email" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-input" id="message" placeholder="How can we help you?" required>
+                </div>
+                <button type="submit" class="btn-submit" id="btn-submit-message">
+                  <span>Send Message</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </form>
+            </div>
+
+            <!-- Vertical Divider Line -->
+            <div class="contact-divider" aria-hidden="true"></div>
+
+            <!-- Contact Details Column -->
+            <div class="contact-details-col">
+              <!-- Phone -->
+              <a href="tel:+914442603457" class="contact-detail-item">
+                <div class="detail-icon-circle">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <span class="detail-text-primary">+91 44 4260 3457</span>
+              </a>
+
+              <!-- Email -->
+              <a href="mailto:hello@nicheglobal.com" class="contact-detail-item">
+                <div class="detail-icon-circle">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="3"></rect>
+                    <path d="M22 7l-10 7L2 7"></path>
+                  </svg>
+                </div>
+                <span class="detail-text-primary">hello@nicheglobal.com</span>
+              </a>
+
+              <!-- Location -->
+              <div class="contact-detail-item">
+                <div class="detail-icon-circle">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="detail-location-text">
+                  <span class="detail-text-primary">Chennai, India</span>
+                  <span class="detail-text-secondary">Global delivery capabilities</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       Site Footer (Common Footer identical to index.html)
+       ========================================================================= -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-container">
+      <!-- Top Tier: Navigation Columns -->
+      <div class="footer-top-grid">
+        <!-- Col 1: Software & Product Development -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Software &amp; Product Development</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#services">Custom Software Development</a></li>
+            <li><a href="index.html#services">AI-Assisted Development</a></li>
+            <li><a href="index.html#services">Product Development for Startups</a></li>
+            <li><a href="index.html#services">QA &amp; Software Testing</a></li>
+            <li><a href="index.html#services">DevOps &amp; Cloud Engineering</a></li>
+            <li><a href="index.html#services">Dedicated Engineering Teams</a></li>
+            <li><a href="index.html#services">Technology Consulting</a></li>
+            <li><a href="index.html#services">Industry Solutions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Staff Augmentation & Company -->
+        <div class="footer-col">
+          <div class="footer-subgroup">
+            <h4 class="footer-col-title">Staff Augmentation</h4>
+            <ul class="footer-links-list">
+              <li><a href="index.html#services">Hire a Developer</a></li>
+            </ul>
+          </div>
+          <div class="footer-subgroup footer-company-subgroup">
+            <h4 class="footer-col-title">Company</h4>
+            <ul class="footer-links-list">
+              <li><a href="about.html">About</a></li>
+              <li><a href="index.html#work">Case Studies</a></li>
+              <li><a href="index.html#careers">Careers</a></li>
+              <li><a href="index.html#blog">Blogs</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Col 3: Socials -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Socials</h4>
+          <ul class="footer-social-list">
+            <li>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 0 0 1.45-1.45 1.45 1.45 0 0 0-1.45-1.45 1.45 1.45 0 0 0-1.45 1.45 1.45 1.45 0 0 0 1.45 1.45m1.37 9.74v-8.37H5.09v8.37h2.74z"/>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+                <span>Facebook</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Get in touch -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Get in touch</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <a href="tel:+16145355738">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z"/>
+                </svg>
+                <span>+1 (614) 535–5738 (USA)</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+919995333078">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z"/>
+                </svg>
+                <span>+91 99953 33078 (IND)</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@nichetechies.com">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@nichetechies.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:Careers@nichetechies.com">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Careers@nichetechies.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider Line -->
+      <div class="footer-divider-line"></div>
+
+      <!-- Middle Tier: Offices & Logo -->
+      <div class="footer-offices-grid">
+        <!-- Brand Logo Col -->
+        <div class="office-brand-col">
+          <img src="assets/images/niche-techies-logo.png" alt="Niche Techies" class="footer-brand-img">
+        </div>
+
+        <!-- USA Office Col -->
+        <div class="office-col border-left">
+          <div class="office-flag">
+            <svg width="24" height="16" viewBox="0 0 741 390" class="flag-icon flag-us">
+              <rect width="741" height="390" fill="#b22234"/>
+              <path d="M0,45H741M0,105H741M0,165H741M0,225H741M0,285H741M0,345H741" stroke="#fff" stroke-width="30"/>
+              <rect width="296.4" height="210" fill="#3c3b6e"/>
+              <g fill="#fff">
+                <circle cx="30" cy="25" r="7"/><circle cx="80" cy="25" r="7"/><circle cx="130" cy="25" r="7"/><circle cx="180" cy="25" r="7"/><circle cx="230" cy="25" r="7"/>
+                <circle cx="55" cy="55" r="7"/><circle cx="105" cy="55" r="7"/><circle cx="155" cy="55" r="7"/><circle cx="205" cy="55" r="7"/>
+                <circle cx="30" cy="85" r="7"/><circle cx="80" cy="85" r="7"/><circle cx="130" cy="85" r="7"/><circle cx="180" cy="85" r="7"/><circle cx="230" cy="85" r="7"/>
+                <circle cx="55" cy="115" r="7"/><circle cx="105" cy="115" r="7"/><circle cx="155" cy="115" r="7"/><circle cx="205" cy="115" r="7"/>
+                <circle cx="30" cy="145" r="7"/><circle cx="80" cy="145" r="7"/><circle cx="130" cy="145" r="7"/><circle cx="180" cy="145" r="7"/><circle cx="230" cy="145" r="7"/>
+                <circle cx="55" cy="175" r="7"/><circle cx="105" cy="175" r="7"/><circle cx="155" cy="175" r="7"/><circle cx="205" cy="175" r="7"/>
+              </g>
+            </svg>
+          </div>
+          <p class="office-address">
+            470 Olde Worthington Rd, Ste 200, PMB 5256,<br>
+            Westerville, OH 43082, United States of<br>
+            America
+          </p>
+        </div>
+
+        <!-- India Office Col -->
+        <div class="office-col border-left">
+          <div class="office-flag">
+            <svg width="22" height="22" viewBox="0 0 100 100" class="flag-icon flag-in">
+              <defs>
+                <clipPath id="circleClipIndiaAbout">
+                  <circle cx="50" cy="50" r="50"/>
+                </clipPath>
+              </defs>
+              <g clip-path="url(#circleClipIndiaAbout)">
+                <rect width="100" height="33.33" fill="#FF9933"/>
+                <rect y="33.33" width="100" height="33.33" fill="#FFFFFF"/>
+                <rect y="66.66" width="100" height="33.34" fill="#138808"/>
+                <circle cx="50" cy="50" r="11" fill="none" stroke="#000080" stroke-width="2.5"/>
+                <circle cx="50" cy="50" r="2.5" fill="#000080"/>
+                <g stroke="#000080" stroke-width="1.2">
+                  <line x1="50" y1="39" x2="50" y2="61"/>
+                  <line x1="39" y1="50" x2="61" y2="50"/>
+                  <line x1="42.22" y1="42.22" x2="57.78" y2="57.78"/>
+                  <line x1="42.22" y1="57.78" x2="57.78" y2="42.22"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <p class="office-address">
+            8th floor, Vismaya Building, Infopark Kochi<br>
+            Phase-1, Kakkanad - 682042, Ernakulam,<br>
+            Kerala, India
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Tier: Copyright & Legal -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copyright">&copy;2026 Nichetechies. All Rights Reserved</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button with Scroll Progress Indicator -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="21" />
+      <circle class="progress-ring-fill" cx="24" cy="24" r="21" />
+    </svg>
+    <span class="back-to-top-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </svg>
+    </span>
+  </button>
+
+  <!-- Interactive JavaScript Engine -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

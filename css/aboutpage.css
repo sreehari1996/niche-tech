@@ -1,0 +1,975 @@
+/* =========================================================================
+   About Page Stylesheet
+   Niche Techies - Innovative Solutions. Powered by People.
+   ========================================================================= */
+
+.about-page-main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.aboutpage-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .aboutpage-container {
+    padding: 0 3.5rem;
+  }
+}
+
+.text-blue {
+  color: #2563eb !important;
+}
+
+.text-sky {
+  color: #38bdf8 !important;
+}
+
+.btn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: 9999px;
+  border: 1.5px solid #0f172a;
+  background: transparent;
+  color: #0f172a;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  width: fit-content;
+  text-decoration: none;
+}
+
+.btn-pill-outline svg {
+  transition: transform 0.25s ease;
+}
+
+.btn-pill-outline:hover {
+  background: #0f172a;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -6px rgba(15, 23, 42, 0.2);
+}
+
+.btn-pill-outline:hover svg {
+  transform: translateX(3px);
+}
+
+.link-arrow-blue {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #38bdf8;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.link-arrow-blue svg {
+  transition: transform 0.25s ease;
+}
+
+.link-arrow-blue:hover {
+  color: #7dd3fc;
+  transform: translateX(2px);
+}
+
+.link-arrow-blue:hover svg {
+  transform: translateX(4px);
+}
+
+/* =========================================================================
+   1. Hero Section ("Innovative Solutions. Powered by People.")
+   ========================================================================= */
+.about-hero-section {
+  background-color: #faf9f6;
+  padding: 8rem 0 5.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .about-hero-section {
+    padding: 9.5rem 0 6.5rem;
+  }
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about-hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 4.5rem;
+  }
+}
+
+.about-hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 1.25rem;
+}
+
+.about-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.2vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.about-hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #475569;
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+}
+
+.about-stats-strip {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  margin-bottom: 2.75rem;
+  padding-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .about-stats-strip {
+    gap: 2.5rem;
+  }
+}
+
+.about-stat-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-stat-box .stat-number {
+  font-family: var(--font-heading);
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+  margin-bottom: 0.45rem;
+  letter-spacing: -0.03em;
+}
+
+.about-stat-box .stat-caption {
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: #64748b;
+  line-height: 1.3;
+}
+
+.about-stat-separator {
+  width: 1px;
+  height: 42px;
+  background: #cbd5e1;
+}
+
+.about-hero-visual {
+  position: relative;
+}
+
+.about-hero-visual .about-visual-frame {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -15px rgba(15, 23, 42, 0.14);
+  background: #e2e8f0;
+}
+
+.about-hero-visual .about-visual-frame img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.about-hero-visual .about-visual-frame:hover img {
+  transform: scale(1.03);
+}
+
+.about-hero-visual .about-floating-badge {
+  position: absolute;
+  bottom: 1.35rem;
+  right: 1.35rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 0.55rem 1.15rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.15);
+}
+
+.about-hero-visual .about-floating-badge .badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2563eb;
+  display: inline-block;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.about-hero-visual .about-floating-badge .badge-text {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* =========================================================================
+   2. Values Section ("Built on Values. Driven by Purpose.")
+   ========================================================================= */
+.about-values-section {
+  background-color: #060e1d;
+  padding: 6.5rem 0;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .about-values-section {
+    padding: 7.5rem 0;
+  }
+}
+
+.about-values-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+  .about-values-layout {
+    grid-template-columns: 36% 64%;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+}
+
+.about-values-intro .values-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 1.25rem;
+}
+
+.about-values-intro .values-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.6vw, 3rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.about-values-intro .values-desc {
+  font-size: 0.975rem;
+  line-height: 1.7;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+  max-width: 420px;
+}
+
+.about-values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .about-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-values-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.value-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 1.85rem 1.5rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.value-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(56, 189, 248, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.value-card .value-icon {
+  width: 40px;
+  height: 40px;
+  color: #38bdf8;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.value-card .value-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.value-card .value-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
+}
+
+.value-card .value-card-text {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #94a3b8;
+}
+
+/* =========================================================================
+   3. Principles Section ("Shaping the Future, Our Way.")
+   ========================================================================= */
+.about-principles-section {
+  background-color: #faf9f6;
+  padding: 6.5rem 0;
+}
+
+@media (min-width: 1024px) {
+  .about-principles-section {
+    padding: 7.5rem 0;
+  }
+}
+
+.about-principles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about-principles-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4.5rem;
+  }
+}
+
+.about-principles-info .principles-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 1.25rem;
+}
+
+.about-principles-info .principles-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.3rem, 3.8vw, 3.25rem);
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.about-principles-info .principles-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 2.75rem;
+  max-width: 520px;
+}
+
+.principles-quad {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem 2.25rem;
+}
+
+@media (min-width: 640px) {
+  .principles-quad {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.principle-item .principle-num {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.principle-item .principle-name {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.45rem;
+  letter-spacing: -0.01em;
+}
+
+.principle-item .principle-text {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #64748b;
+}
+
+.about-principles-visual .principles-frame {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -15px rgba(15, 23, 42, 0.12);
+  background: #e2e8f0;
+}
+
+.about-principles-visual .principles-frame img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.about-principles-visual .principles-frame:hover img {
+  transform: scale(1.03);
+}
+
+/* =========================================================================
+   Technologies We Use Section (Under Our Principles)
+   ========================================================================= */
+.about-technologies-section {
+  background-color: #ffffff;
+  padding: 5.5rem 0 6rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+@media (min-width: 1024px) {
+  .about-technologies-section {
+    padding: 6.5rem 0 7rem;
+  }
+}
+
+.tech-header {
+  margin-bottom: 3rem;
+  max-width: 820px;
+}
+
+.tech-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.4vw, 3rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.tech-title .tech-title-light {
+  font-weight: 400;
+  color: #1e293b;
+}
+
+.tech-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.025rem;
+  line-height: 1.65;
+  color: #64748b;
+  max-width: 720px;
+}
+
+.tech-grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #e2e8f0;
+  gap: 1px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px -5px rgba(15, 23, 42, 0.03);
+}
+
+@media (min-width: 640px) {
+  .tech-grid-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .tech-grid-wrapper {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+.tech-cell {
+  background-color: #ffffff;
+  padding: 2.25rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.95rem;
+  transition: all 0.25s ease;
+  cursor: default;
+}
+
+.tech-cell:hover {
+  background-color: #f8fafc;
+}
+
+.tech-cell:hover .tech-icon {
+  transform: translateY(-2px);
+  color: #2563eb;
+}
+
+.tech-cell:hover .tech-label {
+  color: #2563eb;
+}
+
+.tech-icon {
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.tech-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.tech-label {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #0f172a;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+/* =========================================================================
+   4. Culture Section ("Life at Niche Techies")
+   ========================================================================= */
+.about-culture-section {
+  background-color: #060e1d;
+  padding: 6.5rem 0;
+}
+
+@media (min-width: 1024px) {
+  .about-culture-section {
+    padding: 7.5rem 0;
+  }
+}
+
+.about-culture-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+  .about-culture-layout {
+    grid-template-columns: 36% 64%;
+    gap: 4.5rem;
+    align-items: center;
+  }
+}
+
+.about-culture-intro .culture-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 1.25rem;
+}
+
+.about-culture-intro .culture-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.6vw, 3rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.about-culture-intro .culture-desc {
+  font-size: 0.975rem;
+  line-height: 1.75;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+  max-width: 440px;
+}
+
+.about-culture-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.15rem;
+}
+
+.culture-photo-frame {
+  border-radius: 16px;
+  overflow: hidden;
+  height: 190px;
+  position: relative;
+  background: #0b172a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 640px) {
+  .culture-photo-frame {
+    height: 220px;
+  }
+}
+
+@media (min-width: 768px) {
+  .culture-photo-frame {
+    height: 230px;
+  }
+}
+
+.culture-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.culture-photo-frame:hover img {
+  transform: scale(1.06);
+}
+
+/* =========================================================================
+   5. Join Our Team Section ("Build What's Next. Become Who You're Meant To Be.")
+   ========================================================================= */
+.about-join-section {
+  background-color: #faf9f6;
+  padding: 6.5rem 0;
+}
+
+@media (min-width: 1024px) {
+  .about-join-section {
+    padding: 7.5rem 0;
+  }
+}
+
+.about-join-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about-join-grid {
+    grid-template-columns: 46% 54%;
+    gap: 4.5rem;
+  }
+}
+
+.about-join-visual .join-frame {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -15px rgba(15, 23, 42, 0.12);
+  background: #e2e8f0;
+}
+
+.about-join-visual .join-frame img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.about-join-visual .join-frame:hover img {
+  transform: scale(1.03);
+}
+
+.about-join-content .join-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 1.25rem;
+}
+
+.about-join-content .join-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.3rem, 3.8vw, 3.25rem);
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.about-join-content .join-desc {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #475569;
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+}
+
+/* =========================================================================
+   6. Grow With Us / Shared Journey Section (Exact Mirror to index.html Contact Structure)
+   ========================================================================= */
+.about-career-banner-section {
+  padding: 0;
+  width: 100%;
+  background-color: #0b192e;
+  overflow: hidden;
+}
+
+.career-banner-wrapper {
+  background-color: #0b192e;
+  border-radius: 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+}
+
+@media (min-width: 1024px) {
+  .career-banner-wrapper {
+    grid-template-columns: 35% 65%;
+    min-height: 520px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .career-banner-wrapper {
+    grid-template-columns: 32% 68%;
+  }
+}
+
+.career-banner-photo {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  background-color: #0c1e36;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .career-banner-photo {
+    min-height: 100%;
+    height: 100%;
+  }
+}
+
+.career-banner-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 10%;
+  transform: scale(1.08);
+  transform-origin: center 14%;
+  display: block;
+}
+
+.career-banner-content {
+  background-color: #0b192e;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .career-banner-content {
+    padding: 3.75rem 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .career-banner-content {
+    padding: 4.25rem 4rem 4.25rem 3.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .career-banner-content {
+    padding: 4.75rem 5.5rem 4.75rem 4rem;
+  }
+}
+
+.career-banner-content .banner-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  margin-bottom: 0.85rem;
+}
+
+.career-banner-content .banner-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.1rem, 3.2vw, 2.85rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.15rem;
+}
+
+.career-banner-content .banner-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  margin-bottom: 2.25rem;
+  max-width: 560px;
+}
+
+.banner-features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+  max-width: 580px;
+}
+
+@media (min-width: 640px) {
+  .banner-features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.feature-item .feature-icon-bubble {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  flex-shrink: 0;
+}
+
+.feature-item .feature-icon-bubble svg {
+  width: 18px;
+  height: 18px;
+}
+
+.feature-item .feature-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-item .feature-info .feature-title {
+  font-family: var(--font-heading);
+  font-size: 0.925rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
+  line-height: 1.25;
+}
+
+.feature-item .feature-info .feature-sub {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.2;
+}
+
+.btn-pill-dark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 600;
+  width: fit-content;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-pill-dark svg {
+  transition: transform 0.25s ease;
+}
+
+.btn-pill-dark:hover {
+  background: #ffffff;
+  color: #0b192e;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px -5px rgba(255, 255, 255, 0.2);
+}
+
+.btn-pill-dark:hover svg {
+  transform: translateX(3px);
+}

@@ -1111,7 +1111,7 @@ button, input, textarea {
   overflow: hidden;
 }
 
-.about-container {
+.about-section .about-container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -1122,13 +1122,13 @@ button, input, textarea {
 }
 
 @media (min-width: 768px) {
-  .about-container {
+  .about-section .about-container {
     padding: 0 3.5rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .about-container {
+  .about-section .about-container {
     grid-template-columns: 48% 52%;
     gap: 4.5rem;
   }
