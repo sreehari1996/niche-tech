@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog &amp; Insights — Niche Techies | Technology Perspectives &amp; Engineering Insights</title>
+  <meta name="description"
+    content="Explore our latest perspectives on how modern software, AI, and cloud are shaping the future of global industries. Learn how leading companies scale their operations with specialized engineering teams.">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#070e1b',
+              900: '#0a1120',
+              850: '#0b1426',
+              800: '#0f192d',
+              700: '#16243f',
+            },
+            techBlue: {
+              400: '#60a5fa',
+              500: '#4378f5',
+              600: '#2563eb',
+            }
+          },
+          fontFamily: {
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Compiled Global SCSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Dedicated Blog Page Stylesheet -->
+  <link rel="stylesheet" href="css/blogpage.css">
+</head>
+
+<body class="bg-white text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- =========================================================================
+       1. Site Header & Navigation (Common Header from index.html)
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Niche Techies Home">
+        <img src="assets/images/logo.png" alt="Niche Techies" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="index.html#services" class="nav-item">Services</a>
+        <a href="index.html#work" class="nav-item">Work</a>
+        <a href="index.html#product" class="nav-item">Product</a>
+        <a href="blog.html" class="nav-item active">Blog</a>
+        <a href="career.html" class="nav-item">Careers</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <a href="contact.html" class="btn-talk" id="btn-header-talk">
+          <span>Get in Touch</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="nav-mobile-drawer">
+      <div class="mobile-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#product">Product</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="career.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <a href="contact.html" class="btn-talk w-full justify-center">
+          <span>Get in Touch</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. Blog Page Main Container
+       ========================================================================= -->
+  <main class="blog-page-main" id="main-content">
+
+    <!-- Hero Section (Top Split) -->
+    <section class="blog-hero-section">
+      <div class="blogpage-container">
+        <div class="blog-hero-grid">
+          <!-- Left Column -->
+          <div class="blog-hero-left">
+            <span class="blog-eyebrow">All in Company Blog</span>
+            <h1 class="blog-hero-title">Blog</h1>
+          </div>
+
+          <!-- Right Column -->
+          <div class="blog-hero-right">
+            <p>
+              Explore our latest perspectives on how modern software, AI, and cloud are shaping the future of global
+              industries. Learn how leading companies scale their operations with specialized engineering teams.
+            </p>
+            <p>
+              From product engineering insights to custom software and cloud migrations, find actionable advice to help
+              your business innovate, grow, and lead.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sub-Row / Insights Intro Section -->
+    <section class="blog-subhero-section">
+      <div class="blogpage-container">
+        <div class="blog-subhero-grid">
+          <!-- Left Column -->
+          <div class="blog-subhero-left">
+            <h2 class="blog-subhero-heading">Insights you can put into action</h2>
+          </div>
+
+          <!-- Right Column -->
+          <div class="blog-subhero-right">
+            <p class="blog-subhero-desc">
+              Our content is created for CTOs, product managers, and engineering leaders navigating today's complex
+              technology landscape. Discover practical guidance, industry benchmarks, and actionable roadmaps for
+              engineering your next project with confidence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Tabs & Search Controls Section -->
+    <section class="blog-filter-section">
+      <div class="blogpage-container">
+        <div class="blog-controls-bar">
+          <!-- Category Tabs -->
+          <div class="blog-filter-tabs" role="tablist" aria-label="Blog categories">
+            <button class="tab-btn active" role="tab" aria-selected="true" data-filter="all">All Articles</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-filter="ai-ml">AI &amp; Machine
+              Learning</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-filter="custom-software">Custom
+              Software</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-filter="devops-cloud">DevOps &amp;
+              Cloud</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-filter="product-eng">Product
+              Engineering</button>
+            <button class="tab-btn" role="tab" aria-selected="false" data-filter="talent">Career &amp; Talent</button>
+          </div>
+
+          <!-- Live Search Bar -->
+          <div class="blog-search-box">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" class="search-input" id="blog-search-input" placeholder="Search articles, topics..."
+              autocomplete="off">
+            <button type="button" class="search-clear-btn" id="blog-search-clear" aria-label="Clear search">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Search Feedback Bar -->
+        <div class="search-feedback-bar" id="search-feedback">
+          <span class="feedback-text" id="feedback-text">Showing <strong id="results-count">9</strong> articles</span>
+          <button type="button" class="btn-clear-filter" id="btn-reset-filters">Clear all filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-Column Blog Cards Grid Section (3 items in a single row) -->
+    <section class="blog-grid-section">
+      <div class="blogpage-container">
+        <div class="blog-grid" id="blog-grid">
+
+          <!-- Card 1: AI in Software Development -->
+          <article class="blog-card" data-category="ai-ml">
+            <a href="#" class="blog-card-img-wrap" aria-label="Read AI in Software Development">
+              <img src="assets/images/blog-ai-engineering.jpg"
+                alt="AI in Software Development: Transforming Modern Engineering" loading="lazy">
+            </a>
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">
+                <a href="#">AI in Software Development: How It's Transforming Modern Engineering</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                From automated code generation to intelligent debugging, discover how AI is reshaping how engineering
+                teams build software at scale.
+              </p>
+              <div class="blog-card-meta">
+                <span class="meta-tag">ARTICLE</span>
+                <span class="meta-dot"></span>
+                <span class="meta-date">OCTOBER 14, 2026</span>
+                <span class="meta-dot"></span>
+                <span class="meta-read">5 MIN READ</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Why Custom Software Gives Businesses a Competitive Advantage -->
+          <article class="blog-card" data-category="custom-software">
+            <a href="#" class="blog-card-img-wrap"
+              aria-label="Read Why Custom Software Gives Businesses a Competitive Advantage">
+              <img src="assets/images/blog-custom-software.jpg"
+                alt="Why Custom Software Gives Businesses a Competitive Advantage" loading="lazy">
+            </a>
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">
+                <a href="#">Why Custom Software Gives Businesses a Competitive Advantage</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                Explore the real impact of bespoke enterprise solutions that out-innovate off-the-shelf software and
+                fuel sustainable agility.
+              </p>
+              <div class="blog-card-meta">
+                <span class="meta-tag">INSIGHT</span>
+                <span class="meta-dot"></span>
+                <span class="meta-date">OCTOBER 10, 2026</span>
+                <span class="meta-dot"></span>
+                <span class="meta-read">6 MIN READ</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Why DevOps and Cloud Engineering Are Essential for Modern Businesses -->
+          <article class="blog-card" data-category="devops-cloud">
+            <a href="#" class="blog-card-img-wrap"
+              aria-label="Read Why DevOps and Cloud Engineering Are Essential for Modern Businesses">
+              <img src="assets/images/work-thumb-5.jpg"
+                alt="Why DevOps and Cloud Engineering Are Essential for Modern Businesses" loading="lazy">
+            </a>
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">
+                <a href="#">Why DevOps and Cloud Engineering Are Essential for Modern Businesses</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                Streamline deployment pipelines, optimize uptime, and accelerate time-to-market with proven cloud-native
+                architectural patterns.
+              </p>
+              <div class="blog-card-meta">
+                <span class="meta-tag">ARTICLE</span>
+                <span class="meta-dot"></span>
+                <span class="meta-date">SEPTEMBER 28, 2026</span>
+                <span class="meta-dot"></span>
+                <span class="meta-read">7 MIN READ</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: How AI Is Reshaping Business Development Strategies -->
+          <article class="blog-card" data-category="ai-ml">
+            <a href="#" class="blog-card-img-wrap"
+              aria-label="Read How AI Is Reshaping Business Development Strategies">
+              <img src="assets/images/work-laptop-clean.jpg" alt="How AI Is Reshaping Business Development Strategies"
+                loading="lazy">
+            </a>
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">
+                <a href="#">How AI Is Reshaping Business Development Strategies</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                AI-driven sales intelligence, client targeting, predictive modeling, and automated pipelines are
+                revolutionizing growth playbooks.
+              </p>
+              <div class="blog-card-meta">
+                <span class="meta-tag">ARTICLE</span>
+                <span class="meta-dot"></span>
+                <span class="meta-date">SEPTEMBER 22, 2026</span>
+                <span class="meta-dot"></span>
+                <span class="meta-read">4 MIN READ</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: No-Code vs Low-Code: Which One Is Right for Your Business? -->
+          <article class="blog-card" data-category="product-eng">
+            <a href="#" class="blog-card-img-wrap"
+              aria-label="Read No-Code vs Low-Code: Which One Is Right for Your Business?">
+              <img src="assets/images/blog-nocode-lowcode.jpg"
+                alt="No-Code vs Low-Code: Which One Is Right for Your Business?" loading="lazy">
+            </a>
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">
+                <a href="#">No-Code vs Low-Code: Which One Is Right for Your Business?</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                Understand the trade-offs between rapid visual development and full code extensibility when architecting
+                enterprise applications.
+              </p>
+              <div class="blog-card-meta">
+                <span class="meta-tag">GUIDE</span>
+                <span class="meta-dot"></span>
+                <span class="meta-date">SEPTEMBER 15, 2026</span>
+                <span class="meta-dot"></span>
+                <span class="meta-read">8 MIN READ</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: AI Can Solve Problems; But Who Defines Them? -->
+          <article class="blog-card" data-category="ai-ml">
+            <a href="#" class="blog-card-img-wrap" aria-label="Read AI Can Solve Problems; But Who Defines Them?">
+              <img src="assets/images/blog-smitha-quote.jpg"
+                alt="AI Can Solve Problems; But Who Defines Them? — Smitha Paskar" loading="lazy">
+            </a>
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">
+                <a href="#">AI Can Solve Problems; But Who Defines Them?</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                A deep dive into why human intuition, contextual awareness, and empathetic problem framing remain
+                critical in the AI era.
+              </p>
+              <div class="blog-card-meta">
+                <span class="meta-tag">OPINION</span>
+                <span class="meta-dot"></span>
+                <span class="meta-date">SEPTEMBER 05, 2026</span>
+                <span class="meta-dot"></span>
+                <span class="meta-read">5 MIN READ</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 7: Why Are Freshers Gaining Demand in the IT Job Market? -->
+          <article class="blog-card" data-category="talent">
+            <a href="#" class="blog-card-img-wrap"
+              aria-label="Read Why Are Freshers Gaining Demand in the IT Job Market?">
+              <img src="assets/images/work-thumb-4.jpg" alt="Why Are Freshers Gaining Demand in the IT Job Market?"
+                loading="lazy">
+            </a>
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">
+                <a href="#">Why Are Freshers Gaining Demand in the IT Job Market?</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                How forward-thinking tech companies are leveraging early-career talent to drive innovation, curiosity,
+                and rapid adaptability in agile teams.
+              </p>
+              <div class="blog-card-meta">
+                <span class="meta-tag">REPORT</span>
+                <span class="meta-dot"></span>
+                <span class="meta-date">AUGUST 28, 2026</span>
+                <span class="meta-dot"></span>
+                <span class="meta-read">6 MIN READ</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 8: Building Resilient Microservices -->
+          <article class="blog-card" data-category="custom-software">
+            <a href="#" class="blog-card-img-wrap" aria-label="Read Building Resilient Microservices">
+              <img src="assets/images/work-thumb-1.jpg" alt="Building Resilient Microservices: High-Scale Architecture"
+                loading="lazy">
+            </a>
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">
+                <a href="#">Building Resilient Microservices: High-Scale Enterprise Patterns</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                Architectural blueprints for fault isolation, circuit breakers, and event-driven decoupled systems in
+                mission-critical environments.
+              </p>
+              <div class="blog-card-meta">
+                <span class="meta-tag">ENGINEERING</span>
+                <span class="meta-dot"></span>
+                <span class="meta-date">AUGUST 19, 2026</span>
+                <span class="meta-dot"></span>
+                <span class="meta-read">7 MIN READ</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 9: Scaling Engineering Culture Across Distributed Global Teams -->
+          <article class="blog-card" data-category="talent">
+            <a href="#" class="blog-card-img-wrap"
+              aria-label="Read Scaling Engineering Culture Across Distributed Global Teams">
+              <img src="assets/images/work-thumb-3.jpg"
+                alt="Scaling Engineering Culture Across Distributed Global Teams" loading="lazy">
+            </a>
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">
+                <a href="#">Scaling Engineering Culture Across Distributed Global Teams</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                Proven leadership frameworks for maintaining code quality, asynchronous velocity, and high morale across
+                multiple international timezones.
+              </p>
+              <div class="blog-card-meta">
+                <span class="meta-tag">LEADERSHIP</span>
+                <span class="meta-dot"></span>
+                <span class="meta-date">AUGUST 11, 2026</span>
+                <span class="meta-dot"></span>
+                <span class="meta-read">6 MIN READ</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 10: Modern Cloud Migration -->
+          <article class="blog-card" data-category="devops-cloud">
+            <a href="#" class="blog-card-img-wrap" aria-label="Read Modern Cloud Migration: A Practical Roadmap for Enterprise CTOs">
+              <img src="assets/images/contact-hero-office.jpg" alt="Modern Cloud Migration: A Practical Roadmap for Enterprise CTOs" loading="lazy">
+            </a>
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">
+                <a href="#">Modern Cloud Migration: A Practical Roadmap for Enterprise CTOs</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                De-risk complex cloud transitions with incremental lift-and-shift, containerized re-architecting, and proactive cost governance.
+              </p>
+              <div class="blog-card-meta">
+                <span class="meta-tag">CLOUD</span>
+                <span class="meta-dot"></span>
+                <span class="meta-date">JULY 29, 2026</span>
+                <span class="meta-dot"></span>
+                <span class="meta-read">7 MIN READ</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 11: Next-Gen Product Design -->
+          <article class="blog-card" data-category="product-eng">
+            <a href="#" class="blog-card-img-wrap" aria-label="Read Next-Gen Product Design: Bridging Human Empathy and Machine Learning">
+              <img src="assets/images/work-digital-product-clean.jpg" alt="Next-Gen Product Design: Bridging Human Empathy and Machine Learning" loading="lazy">
+            </a>
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">
+                <a href="#">Next-Gen Product Design: Bridging Empathy &amp; Machine Intelligence</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                How modern UX designers are partnering with generative algorithms to deliver hyper-personalized user experiences without sacrificing warmth.
+              </p>
+              <div class="blog-card-meta">
+                <span class="meta-tag">DESIGN</span>
+                <span class="meta-dot"></span>
+                <span class="meta-date">JULY 15, 2026</span>
+                <span class="meta-dot"></span>
+                <span class="meta-read">5 MIN READ</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 12: The Future of Dedicated Engineering -->
+          <article class="blog-card" data-category="talent">
+            <a href="#" class="blog-card-img-wrap" aria-label="Read The Future of Dedicated Engineering: Hybrid Work & Agile Innovation">
+              <img src="assets/images/hero-team-innovation.jpg" alt="The Future of Dedicated Engineering: Hybrid Work & Agile Innovation" loading="lazy">
+            </a>
+            <div class="blog-card-body">
+              <h3 class="blog-card-title">
+                <a href="#">The Future of Dedicated Engineering: Hybrid Teams &amp; Agile Velocity</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                Analyzing the shift toward outcome-based staff augmentation and co-located agile pods for rapid cross-functional delivery.
+              </p>
+              <div class="blog-card-meta">
+                <span class="meta-tag">TALENT</span>
+                <span class="meta-dot"></span>
+                <span class="meta-date">JUNE 30, 2026</span>
+                <span class="meta-dot"></span>
+                <span class="meta-read">6 MIN READ</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Empty State Container -->
+        <div class="blog-empty-state" id="blog-empty-state">
+          <svg class="empty-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+          </svg>
+          <h3 id="empty-title">No articles found</h3>
+          <p id="empty-desc">We couldn't find any articles matching your search. Try different keywords or clear your
+            filters.</p>
+          <button type="button" class="btn-reset-empty" id="btn-empty-reset">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+              <path d="M3 3v5h5"></path>
+            </svg>
+            <span>Reset Search &amp; Filters</span>
+          </button>
+        </div>
+
+        <!-- Pagination Controls -->
+        <nav class="blog-pagination-wrap" id="blog-pagination" aria-label="Blog pagination">
+          <button type="button" class="pagination-btn btn-prev" id="btn-prev-page" aria-label="Previous page">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 12H5M12 19l-7-7 7-7" />
+            </svg>
+            <span>Previous</span>
+          </button>
+          
+          <div class="pagination-pages" id="pagination-pages">
+            <!-- Dynamically populated page buttons -->
+          </div>
+
+          <button type="button" class="pagination-btn btn-next" id="btn-next-page" aria-label="Next page">
+            <span>Next</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       3. Get In Touch / Contact Section (Exact mirror from index.html)
+       ========================================================================= -->
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <div class="contact-card-box">
+        <!-- Left Side: Professional Portrait (portrait-female.png) -->
+        <div class="contact-visual">
+          <img src="assets/images/portrait-female.png" alt="Niche Global Tech Consultant in modern office"
+            loading="lazy">
+        </div>
+
+        <!-- Right Side: Contact Area -->
+        <div class="contact-main-wrapper">
+          <!-- Form & Headings Column -->
+          <div class="contact-form-col">
+            <span class="contact-eyebrow">GET IN TOUCH</span>
+            <h2 class="contact-title">Empowering growth<br>through tech talent</h2>
+            <p class="contact-subtitle">
+              Whether you're looking to hire, build a team or transform your products, we're here to help. Let's start
+              the conversation.
+            </p>
+
+            <form class="contact-form" id="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <input type="text" class="form-input" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-input" id="email" placeholder="Work Email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-input" id="message" placeholder="How can we help you?" required>
+              </div>
+              <button type="submit" class="btn-submit" id="btn-submit-message">
+                <span>Send Message</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Vertical Divider Line -->
+          <div class="contact-divider" aria-hidden="true"></div>
+
+          <!-- Contact Details Column -->
+          <div class="contact-details-col">
+            <!-- Phone -->
+            <a href="tel:+914442603457" class="contact-detail-item">
+              <div class="detail-icon-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+              </div>
+              <span class="detail-text-primary">+91 44 4260 3457</span>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:hello@nicheglobal.com" class="contact-detail-item">
+              <div class="detail-icon-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="3"></rect>
+                  <path d="M22 7l-10 7L2 7"></path>
+                </svg>
+              </div>
+              <span class="detail-text-primary">hello@nicheglobal.com</span>
+            </a>
+
+            <!-- Location -->
+            <div class="contact-detail-item">
+              <div class="detail-icon-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="detail-location-text">
+                <span class="detail-text-primary">Chennai, India</span>
+                <span class="detail-text-secondary">Global delivery capabilities</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. Footer Section (Exact mirror from index.html)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Top Tier: 4 Columns -->
+      <div class="footer-top-grid">
+        <!-- Col 1: Services -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#services">Custom Software Development</a></li>
+            <li><a href="index.html#services">AI-Assisted Development</a></li>
+            <li><a href="index.html#services">Product Development for Startups</a></li>
+            <li><a href="index.html#services">QA &amp; Software Testing</a></li>
+            <li><a href="index.html#services">DevOps &amp; Cloud Engineering</a></li>
+            <li><a href="index.html#services">Dedicated Engineering Teams</a></li>
+            <li><a href="index.html#services">Technology Consulting</a></li>
+            <li><a href="index.html#services">Industry Solutions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Staff Augmentation & Company -->
+        <div class="footer-col">
+          <div class="footer-subgroup">
+            <h4 class="footer-col-title">Staff Augmentation</h4>
+            <ul class="footer-links-list">
+              <li><a href="index.html#services">Hire a Developer</a></li>
+            </ul>
+          </div>
+          <div class="footer-subgroup footer-company-subgroup">
+            <h4 class="footer-col-title">Company</h4>
+            <ul class="footer-links-list">
+              <li><a href="about.html">About</a></li>
+              <li><a href="index.html#work">Case Studies</a></li>
+              <li><a href="career.html">Careers</a></li>
+              <li><a href="blog.html">Blogs</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Col 3: Socials -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Socials</h4>
+          <ul class="footer-social-list">
+            <li>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 0 0 1.45-1.45 1.45 1.45 0 0 0-1.45-1.45 1.45 1.45 0 0 0-1.45 1.45 1.45 1.45 0 0 0 1.45 1.45m1.37 9.74v-8.37H5.09v8.37h2.74z" />
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+                <span>Facebook</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Get in touch -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Get in touch</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <a href="tel:+16145355738">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z" />
+                </svg>
+                <span>+1 (614) 535–5738 (USA)</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+919995333078">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z" />
+                </svg>
+                <span>+91 99953 33078 (IND)</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@nichetechies.com">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@nichetechies.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:Careers@nichetechies.com">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Careers@nichetechies.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider Line -->
+      <div class="footer-divider-line"></div>
+
+      <!-- Middle Tier: Offices & Logo -->
+      <div class="footer-offices-grid">
+        <!-- Brand Logo Col -->
+        <div class="office-brand-col">
+          <img src="assets/images/niche-techies-logo.png" alt="Niche Techies" class="footer-brand-img">
+        </div>
+
+        <!-- USA Office Col -->
+        <div class="office-col border-left">
+          <div class="office-flag">
+            <svg width="24" height="16" viewBox="0 0 741 390" class="flag-icon flag-us">
+              <rect width="741" height="390" fill="#b22234" />
+              <path d="M0,45H741M0,105H741M0,165H741M0,225H741M0,285H741M0,345H741" stroke="#fff" stroke-width="30" />
+              <rect width="296.4" height="210" fill="#3c3b6e" />
+              <g fill="#fff">
+                <circle cx="30" cy="25" r="7" />
+                <circle cx="80" cy="25" r="7" />
+                <circle cx="130" cy="25" r="7" />
+                <circle cx="180" cy="25" r="7" />
+                <circle cx="230" cy="25" r="7" />
+                <circle cx="55" cy="55" r="7" />
+                <circle cx="105" cy="55" r="7" />
+                <circle cx="155" cy="55" r="7" />
+                <circle cx="205" cy="55" r="7" />
+                <circle cx="30" cy="85" r="7" />
+                <circle cx="80" cy="85" r="7" />
+                <circle cx="130" cy="85" r="7" />
+                <circle cx="180" cy="85" r="7" />
+                <circle cx="230" cy="85" r="7" />
+                <circle cx="55" cy="115" r="7" />
+                <circle cx="105" cy="115" r="7" />
+                <circle cx="155" cy="115" r="7" />
+                <circle cx="205" cy="115" r="7" />
+                <circle cx="30" cy="145" r="7" />
+                <circle cx="80" cy="145" r="7" />
+                <circle cx="130" cy="145" r="7" />
+                <circle cx="180" cy="145" r="7" />
+                <circle cx="230" cy="145" r="7" />
+                <circle cx="55" cy="175" r="7" />
+                <circle cx="105" cy="175" r="7" />
+                <circle cx="155" cy="175" r="7" />
+                <circle cx="205" cy="175" r="7" />
+              </g>
+            </svg>
+          </div>
+          <p class="office-address">
+            470 Olde Worthington Rd, Ste 200, PMB 5256,<br>
+            Westerville, OH 43082, United States of<br>
+            America
+          </p>
+        </div>
+
+        <!-- India Office Col -->
+        <div class="office-col border-left">
+          <div class="office-flag">
+            <svg width="22" height="22" viewBox="0 0 100 100" class="flag-icon flag-in">
+              <defs>
+                <clipPath id="circleClipIndia">
+                  <circle cx="50" cy="50" r="50" />
+                </clipPath>
+              </defs>
+              <g clip-path="url(#circleClipIndia)">
+                <rect width="100" height="33.33" fill="#FF9933" />
+                <rect y="33.33" width="100" height="33.33" fill="#FFFFFF" />
+                <rect y="66.66" width="100" height="33.34" fill="#138808" />
+                <circle cx="50" cy="50" r="11" fill="none" stroke="#000080" stroke-width="2.5" />
+                <circle cx="50" cy="50" r="2.5" fill="#000080" />
+                <g stroke="#000080" stroke-width="1.2">
+                  <line x1="50" y1="39" x2="50" y2="61" />
+                  <line x1="39" y1="50" x2="61" y2="50" />
+                  <line x1="42.22" y1="42.22" x2="57.78" y2="57.78" />
+                  <line x1="42.22" y1="57.78" x2="57.78" y2="42.22" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <p class="office-address">
+            8th floor, Vismaya Building, Infopark Kochi<br>
+            Phase-1, Kakkanad - 682042, Ernakulam,<br>
+            Kerala, India
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Tier: Copyright & Legal -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copyright">&copy;2026 Nichetechies. All Rights Reserved</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button with Scroll Progress Indicator -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="21" />
+      <circle class="progress-ring-fill" cx="24" cy="24" r="21" />
+    </svg>
+    <span class="back-to-top-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </span>
+  </button>
+
+  <!-- Interactive JavaScript Engine -->
+  <script src="js/main.js"></script>
+
+  <!-- Dedicated Blog Page Interactive Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabButtons = document.querySelectorAll('.blog-filter-tabs .tab-btn');
+      const blogCards = Array.from(document.querySelectorAll('.blog-grid .blog-card'));
+      const searchInput = document.getElementById('blog-search-input');
+      const clearSearchBtn = document.getElementById('blog-search-clear');
+      const emptyState = document.getElementById('blog-empty-state');
+      const emptyDesc = document.getElementById('empty-desc');
+      const searchFeedback = document.getElementById('search-feedback');
+      const feedbackText = document.getElementById('feedback-text');
+      const resetFiltersBtn = document.getElementById('btn-reset-filters');
+      const emptyResetBtn = document.getElementById('btn-empty-reset');
+
+      // Pagination elements
+      const paginationWrap = document.getElementById('blog-pagination');
+      const paginationPages = document.getElementById('pagination-pages');
+      const prevPageBtn = document.getElementById('btn-prev-page');
+      const nextPageBtn = document.getElementById('btn-next-page');
+
+      const ITEMS_PER_PAGE = 6;
+      let currentPage = 1;
+      let currentCategory = 'all';
+      let currentQuery = '';
+
+      function filterAndPaginate(resetPage = false) {
+        if (resetPage) {
+          currentPage = 1;
+        }
+
+        const query = currentQuery.trim().toLowerCase();
+
+        // 1. Identify matching cards
+        const matchingCards = blogCards.filter(card => {
+          const category = card.getAttribute('data-category') || '';
+          const title = (card.querySelector('.blog-card-title')?.textContent || '').toLowerCase();
+          const excerpt = (card.querySelector('.blog-card-excerpt')?.textContent || '').toLowerCase();
+          const tag = (card.querySelector('.meta-tag')?.textContent || '').toLowerCase();
+
+          const matchesCategory = currentCategory === 'all' || category === currentCategory;
+          const matchesQuery = !query || title.includes(query) || excerpt.includes(query) || tag.includes(query);
+
+          return matchesCategory && matchesQuery;
+        });
+
+        const totalMatching = matchingCards.length;
+        const totalPages = Math.ceil(totalMatching / ITEMS_PER_PAGE) || 1;
+
+        if (currentPage > totalPages) {
+          currentPage = totalPages;
+        }
+        if (currentPage < 1) {
+          currentPage = 1;
+        }
+
+        // 2. Hide all cards, then reveal only those for the current page
+        const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+        const endIndex = startIndex + ITEMS_PER_PAGE;
+
+        blogCards.forEach(card => card.classList.add('hidden-card'));
+
+        matchingCards.forEach((card, index) => {
+          if (index >= startIndex && index < endIndex) {
+            card.classList.remove('hidden-card');
+          }
+        });
+
+        // 3. Render Pagination
+        renderPagination(totalPages, totalMatching);
+
+        // 4. Clear search button visibility
+        if (query.length > 0) {
+          clearSearchBtn.classList.add('visible');
+        } else {
+          clearSearchBtn.classList.remove('visible');
+        }
+
+        // 5. Search feedback bar
+        if (query.length > 0 || currentCategory !== 'all') {
+          searchFeedback.classList.add('active');
+          if (query.length > 0 && currentCategory !== 'all') {
+            feedbackText.innerHTML = `Showing <strong>${totalMatching}</strong> result${totalMatching === 1 ? '' : 's'} for "<strong>${escapeHtml(query)}</strong>" in selected category`;
+          } else if (query.length > 0) {
+            feedbackText.innerHTML = `Showing <strong>${totalMatching}</strong> result${totalMatching === 1 ? '' : 's'} for "<strong>${escapeHtml(query)}</strong>"`;
+          } else {
+            feedbackText.innerHTML = `Showing <strong>${totalMatching}</strong> article${totalMatching === 1 ? '' : 's'} in selected category`;
+          }
+        } else {
+          searchFeedback.classList.remove('active');
+        }
+
+        // 6. Empty state
+        if (totalMatching === 0) {
+          emptyState.classList.add('active');
+          if (query) {
+            emptyDesc.textContent = `We couldn't find any articles matching "${query}". Try different search terms or clear your filters.`;
+          } else {
+            emptyDesc.textContent = "We haven't published articles in this category yet. Check back soon!";
+          }
+        } else {
+          emptyState.classList.remove('active');
+        }
+      }
+
+      function renderPagination(totalPages, totalMatching) {
+        if (!paginationWrap || !paginationPages) return;
+
+        if (totalPages <= 1 || totalMatching === 0) {
+          paginationWrap.classList.add('hidden-pagination');
+          return;
+        }
+
+        paginationWrap.classList.remove('hidden-pagination');
+        paginationPages.innerHTML = '';
+
+        // Previous button state
+        if (prevPageBtn) {
+          prevPageBtn.disabled = currentPage === 1;
+        }
+
+        // Next button state
+        if (nextPageBtn) {
+          nextPageBtn.disabled = currentPage === totalPages;
+        }
+
+        // Build numbered page buttons
+        for (let i = 1; i <= totalPages; i++) {
+          const pageBtn = document.createElement('button');
+          pageBtn.type = 'button';
+          pageBtn.className = `pagination-btn ${i === currentPage ? 'active' : ''}`;
+          pageBtn.textContent = i;
+          pageBtn.setAttribute('aria-label', `Page ${i}`);
+          if (i === currentPage) {
+            pageBtn.setAttribute('aria-current', 'page');
+          }
+
+          pageBtn.addEventListener('click', () => {
+            if (currentPage !== i) {
+              currentPage = i;
+              filterAndPaginate(false);
+              scrollToGrid();
+            }
+          });
+
+          paginationPages.appendChild(pageBtn);
+        }
+      }
+
+      function scrollToGrid() {
+        const gridSection = document.querySelector('.blog-filter-section');
+        if (gridSection) {
+          gridSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+
+      function escapeHtml(str) {
+        return str.replace(/[&<>"']/g, m => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#039;'
+        }[m]));
+      }
+
+      function resetAll() {
+        currentCategory = 'all';
+        currentQuery = '';
+        if (searchInput) searchInput.value = '';
+        tabButtons.forEach(b => {
+          const isAll = b.getAttribute('data-filter') === 'all';
+          b.classList.toggle('active', isAll);
+          b.setAttribute('aria-selected', isAll ? 'true' : 'false');
+        });
+        filterAndPaginate(true);
+      }
+
+      // Prev & Next handlers
+      prevPageBtn?.addEventListener('click', () => {
+        if (currentPage > 1) {
+          currentPage--;
+          filterAndPaginate(false);
+          scrollToGrid();
+        }
+      });
+
+      nextPageBtn?.addEventListener('click', () => {
+        const matching = blogCards.filter(card => {
+          const category = card.getAttribute('data-category') || '';
+          const title = (card.querySelector('.blog-card-title')?.textContent || '').toLowerCase();
+          const excerpt = (card.querySelector('.blog-card-excerpt')?.textContent || '').toLowerCase();
+          const tag = (card.querySelector('.meta-tag')?.textContent || '').toLowerCase();
+          const query = currentQuery.trim().toLowerCase();
+          return (currentCategory === 'all' || category === currentCategory) &&
+                 (!query || title.includes(query) || excerpt.includes(query) || tag.includes(query));
+        });
+        const totalPages = Math.ceil(matching.length / ITEMS_PER_PAGE);
+        if (currentPage < totalPages) {
+          currentPage++;
+          filterAndPaginate(false);
+          scrollToGrid();
+        }
+      });
+
+      // Tab button clicks
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabButtons.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          currentCategory = btn.getAttribute('data-filter') || 'all';
+          filterAndPaginate(true);
+        });
+      });
+
+      // Search input typing
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentQuery = e.target.value;
+          filterAndPaginate(true);
+        });
+      }
+
+      // Clear search button click
+      if (clearSearchBtn) {
+        clearSearchBtn.addEventListener('click', () => {
+          searchInput.value = '';
+          currentQuery = '';
+          searchInput.focus();
+          filterAndPaginate(true);
+        });
+      }
+
+      // Reset filters button clicks
+      resetFiltersBtn?.addEventListener('click', resetAll);
+      emptyResetBtn?.addEventListener('click', resetAll);
+
+      // Initial run
+      filterAndPaginate(true);
+    });
+  </script>
+</body>
+
+</html>

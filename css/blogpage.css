@@ -1,0 +1,681 @@
+/* =========================================================================
+   Blog Page Stylesheet
+   Niche Techies - Insights & Perspectives
+   ========================================================================= */
+
+.blog-page-main {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+/* Common Container - Matches .header-container and .contact-container exactly (1440px / 3.5rem padding) */
+.blogpage-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .blogpage-container {
+    padding: 0 3.5rem;
+  }
+}
+
+/* =========================================================================
+   1. Blog Hero Section (Top Split)
+   ========================================================================= */
+.blog-hero-section {
+  padding: 7rem 0 2.25rem;
+  background-color: #ffffff;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .blog-hero-section {
+    padding: 8.25rem 0 2.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-hero-section {
+    padding: 9rem 0 3.25rem;
+  }
+}
+
+.blog-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .blog-hero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .blog-hero-grid {
+    gap: 4.5rem;
+  }
+}
+
+/* Left Column */
+.blog-hero-left .blog-eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 0.625rem;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.blog-hero-left .blog-hero-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #0c1524;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .blog-hero-left .blog-hero-title {
+    font-size: 2.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-hero-left .blog-hero-title {
+    font-size: 3.25rem;
+  }
+}
+
+/* Right Column */
+.blog-hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 0.25rem;
+}
+
+@media (min-width: 1024px) {
+  .blog-hero-right {
+    padding-top: 1.25rem;
+  }
+}
+
+.blog-hero-right p {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.96875rem;
+  line-height: 1.72;
+  color: #475569;
+  margin: 0;
+}
+
+.blog-hero-right p.highlight-text {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+/* =========================================================================
+   2. Sub-Row / Insights Intro
+   ========================================================================= */
+.blog-subhero-section {
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+@media (min-width: 768px) {
+  .blog-subhero-section {
+    padding: 2.25rem 0 3rem;
+  }
+}
+
+.blog-subhero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .blog-subhero-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .blog-subhero-grid {
+    gap: 4.5rem;
+  }
+}
+
+.blog-subhero-heading {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.28;
+  color: #0c1524;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .blog-subhero-heading {
+    font-size: 1.85rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-subhero-heading {
+    font-size: 2.15rem;
+  }
+}
+
+.blog-subhero-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.72;
+  color: #64748b;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .blog-subhero-desc {
+    font-size: 0.96875rem;
+  }
+}
+
+/* =========================================================================
+   3. Filter Tabs & Search Controls Bar
+   ========================================================================= */
+.blog-filter-section {
+  padding: 0 0 2rem;
+}
+
+.blog-controls-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.875rem;
+}
+
+@media (min-width: 1024px) {
+  .blog-controls-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+
+.blog-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem 1.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.blog-filter-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.blog-filter-tabs .tab-btn {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0.25rem;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #64748b;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.blog-filter-tabs .tab-btn:first-child {
+  padding-left: 0;
+}
+
+.blog-filter-tabs .tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -0.9375rem;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background-color: transparent;
+  transition: background-color 0.25s ease, transform 0.25s ease;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+.blog-filter-tabs .tab-btn:hover {
+  color: #0c1524;
+}
+
+.blog-filter-tabs .tab-btn.active {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.blog-filter-tabs .tab-btn.active::after {
+  background-color: #2563eb;
+  transform: scaleX(1);
+}
+
+/* Search Input Box */
+.blog-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .blog-search-box {
+    width: 320px;
+  }
+}
+
+.blog-search-box .search-icon {
+  position: absolute;
+  left: 1rem;
+  width: 17px;
+  height: 17px;
+  color: #94a3b8;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.blog-search-box .search-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 2.25rem 0 2.6rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  color: #0c1524;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.blog-search-box .search-input::placeholder {
+  color: #94a3b8;
+}
+
+.blog-search-box .search-input:focus {
+  background-color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.blog-search-box .search-clear-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.blog-search-box .search-clear-btn:hover {
+  color: #0c1524;
+  background: #e2e8f0;
+}
+
+.blog-search-box .search-clear-btn.visible {
+  display: flex;
+}
+
+/* Search Feedback Status Bar */
+.search-feedback-bar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.search-feedback-bar.active {
+  display: flex;
+}
+
+.search-feedback-bar .feedback-text {
+  font-weight: 500;
+}
+
+.search-feedback-bar .feedback-text strong {
+  color: #0c1524;
+}
+
+.search-feedback-bar .btn-clear-filter {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.8125rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.search-feedback-bar .btn-clear-filter:hover {
+  background-color: #eff6ff;
+  text-decoration: underline;
+}
+
+/* =========================================================================
+   4. Blog Cards Grid (3-Column Layout: 3 items in a single row)
+   ========================================================================= */
+.blog-grid-section {
+  padding: 1rem 0 6rem;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.75rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.25rem 2.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .blog-grid {
+    gap: 3.75rem 2.5rem;
+  }
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+}
+
+.blog-card:hover .blog-card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.blog-card:hover .blog-card-title a {
+  color: #2563eb;
+}
+
+.blog-card.hidden-card {
+  display: none !important;
+}
+
+/* Card Image Container */
+.blog-card-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background-color: #0c1524;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1.125rem;
+  box-shadow: 0 4px 15px -3px rgba(15, 23, 42, 0.08);
+}
+
+.blog-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Card Text Body */
+.blog-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-card-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  line-height: 1.38;
+  color: #0c1524;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.625rem;
+}
+
+@media (min-width: 768px) {
+  .blog-card-title {
+    font-size: 1.25rem;
+  }
+}
+
+.blog-card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.blog-card-excerpt {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.90625rem;
+  line-height: 1.62;
+  color: #64748b;
+  margin: 0 0 1.125rem;
+  flex-grow: 1;
+}
+
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.blog-card-meta .meta-tag {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.blog-card-meta .meta-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: #cbd5e1;
+}
+
+.blog-card-meta .meta-date {
+  color: #94a3b8;
+}
+
+.blog-card-meta .meta-read {
+  color: #94a3b8;
+}
+
+/* =========================================================================
+   5. Interactive Empty State
+   ======================================================================== */
+.blog-empty-state {
+  text-align: center;
+  padding: 4.5rem 1rem;
+  display: none;
+  grid-column: 1 / -1;
+}
+
+.blog-empty-state.active {
+  display: block;
+}
+
+.blog-empty-state .empty-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 1.25rem;
+  color: #94a3b8;
+}
+
+.blog-empty-state h3 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0c1524;
+  margin-bottom: 0.5rem;
+}
+
+.blog-empty-state p {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #64748b;
+  font-size: 0.9375rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-empty-state .btn-reset-empty {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.blog-empty-state .btn-reset-empty:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* =========================================================================
+   6. Blog Pagination
+   ========================================================================= */
+.blog-pagination-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 3.5rem 0 1rem;
+  border-top: 1px solid #f1f5f9;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .blog-pagination-wrap {
+    gap: 0.75rem;
+  }
+}
+
+.blog-pagination-wrap.hidden-pagination {
+  display: none !important;
+}
+
+.pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 42px;
+  height: 42px;
+  padding: 0 0.875rem;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pagination-btn:hover:not(:disabled):not(.active) {
+  color: #0c1524;
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.pagination-btn.active {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.35);
+  cursor: default;
+}
+
+.pagination-btn:disabled,
+.pagination-btn.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: #f1f5f9;
+  background-color: #f8fafc;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.pagination-btn.btn-prev,
+.pagination-btn.btn-next {
+  padding: 0 1.125rem;
+  font-weight: 600;
+}
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+@media (min-width: 768px) {
+  .pagination-pages {
+    gap: 0.5rem;
+  }
+}
+
