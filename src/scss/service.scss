@@ -37,311 +37,214 @@ $color-dark-deep: #070e1b;
 }
 
 /* =========================================================================
-   1. Modern Executive Hero Section
+   1. Service Hero Section (Executive Split Layout matching Careers & Blog)
    ========================================================================= */
 .service-hero-section {
-  padding: 7rem 0 3rem;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  padding: 4.5rem 0 3.5rem;
+  background-color: #ffffff;
   position: relative;
-  border-bottom: 1px solid #edf2f7;
-
-  @include md {
-    padding: 8.5rem 0 3.75rem;
-  }
+  border-bottom: 1px solid #f1f5f9;
 
   @include lg {
-    padding: 9.5rem 0 4.5rem;
+    padding: 6.5rem 0 4.5rem;
   }
 
-  /* Subtle Ambient Glow */
-  .hero-ambient-glow {
-    position: absolute;
-    top: 0;
-    right: 5%;
-    width: 650px;
-    height: 450px;
-    background: radial-gradient(circle at 60% 40%, rgba(26, 43, 75, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .hero-inner-grid {
-    position: relative;
-    z-index: 1;
+  .service-hero-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.25rem;
     align-items: center;
 
     @include lg {
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 1px 1fr;
       gap: 3.5rem;
     }
 
     @include xl {
-      grid-template-columns: 1.25fr 0.75fr;
+      grid-template-columns: 1.2fr 1px 1fr;
       gap: 4.5rem;
     }
   }
 
-  /* Eyebrow Badge with sleek line */
-  .service-hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.85rem;
-    margin-bottom: 1.25rem;
+  /* Left Column */
+  .service-hero-left {
+    .service-eyebrow-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
 
-    .eyebrow-pill {
-      font-family: $font-heading;
-      font-size: 0.8125rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: $color-brand;
+      .service-hero-eyebrow {
+        font-family: $font-heading;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: $color-brand;
+      }
     }
 
-    .eyebrow-line {
-      display: inline-block;
-      width: 44px;
-      height: 2px;
-      background: linear-gradient(90deg, $color-brand 0%, rgba(26, 43, 75, 0) 100%);
-      border-radius: 9999px;
+    .service-hero-title {
+      font-family: $font-heading;
+      font-size: clamp(2.35rem, 3.8vw, 3.6rem);
+      font-weight: 800;
+      color: #081120;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin: 0;
+
+      .highlight-accent {
+        color: $color-brand;
+        display: inline-block;
+      }
     }
   }
 
-  /* Hero Headline - Solid, commanding, authoritative typography in #1a2b4b */
-  .service-hero-title {
-    font-family: $font-heading;
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.12;
-    letter-spacing: -0.035em;
-    color: #0c1524;
-    margin: 0 0 1.35rem;
-
-    @include md {
-      font-size: 3.25rem;
-    }
+  /* Middle Vertical Divider Line */
+  .service-hero-divider {
+    display: none;
 
     @include lg {
-      font-size: 3.65rem;
-    }
-
-    .highlight-accent,
-    .gradient-text {
-      color: $color-brand;
-      background: none;
-      -webkit-background-clip: unset;
-      -webkit-text-fill-color: initial;
-      display: inline-block;
-      font-weight: 800;
+      display: block;
+      width: 1px;
+      height: 160px;
+      background: #e2e8f0;
     }
   }
 
-  /* Description matching user reference */
-  .service-hero-desc {
-    font-family: $font-body;
-    font-size: 1.0625rem;
-    line-height: 1.72;
-    color: #475569;
-    max-width: 640px;
-    margin: 0 0 2.25rem;
-
-    @include md {
-      font-size: 1.15rem;
+  /* Right Column */
+  .service-hero-right {
+    .service-hero-desc {
+      font-family: $font-body;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #64748b;
+      max-width: 540px;
+      margin: 0 0 1.75rem;
     }
-  }
 
-  /* CTA Buttons Group */
-  .hero-cta-group {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1rem;
-
-    /* Primary Button: Unified #1a2b4b */
-    .btn-primary-saas {
-      display: inline-flex;
+    /* CTA Buttons */
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 0.65rem;
-      padding: 0.875rem 1.85rem;
-      background-color: $color-brand;
-      color: #ffffff;
-      font-family: $font-heading;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      border-radius: 9999px;
-      text-decoration: none;
-      box-shadow: 0 4px 14px -2px rgba(26, 43, 75, 0.35);
-      transition: all 0.25s ease;
+      gap: 1rem;
 
-      svg {
+      .btn-hero-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        padding: 0.85rem 1.75rem;
+        background-color: $color-brand;
         color: #ffffff;
-        transition: transform 0.25s ease;
-      }
-
-      &:hover {
-        background-color: $color-brand-hover;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px -4px rgba(26, 43, 75, 0.45);
+        font-family: $font-heading;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        border-radius: 9999px;
+        text-decoration: none;
+        box-shadow: 0 4px 14px -2px rgba(26, 43, 75, 0.25);
+        transition: all 0.25s ease;
 
         svg {
-          transform: translateX(4px);
+          color: #ffffff;
+          transition: transform 0.25s ease;
+        }
+
+        &:hover {
+          background-color: $color-brand-hover;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px -3px rgba(26, 43, 75, 0.35);
+
+          svg {
+            transform: translateX(4px);
+          }
         }
       }
-    }
 
-    .btn-secondary-saas {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.875rem 1.85rem;
-      background-color: #ffffff;
-      color: $color-brand;
-      font-family: $font-heading;
-      font-size: 0.9375rem;
-      font-weight: 600;
-      border: 1px solid $color-brand-border;
-      border-radius: 9999px;
-      text-decoration: none;
-      transition: all 0.25s ease;
-
-      &:hover {
-        border-color: $color-brand;
-        color: $color-brand-hover;
-        background-color: $color-brand-light;
-        transform: translateY(-2px);
-      }
-    }
-  }
-
-  /* Right Side: Modern SaaS Platform Snapshot Card */
-  .hero-saas-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8);
-    position: relative;
-    overflow: hidden;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: $color-brand;
-    }
-
-    .saas-card-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #f1f5f9;
-      padding-bottom: 1.25rem;
-      margin-bottom: 1.5rem;
-
-      .status-indicator {
+      .btn-hero-secondary {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        font-family: $font-heading;
-        font-size: 0.8125rem;
-        font-weight: 600;
-        color: #0f172a;
-
-        .live-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background-color: $color-brand;
-          box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.2);
-          animation: pulseDotNavy 2s infinite;
-        }
-      }
-
-      .badge-sla {
-        font-family: $font-heading;
-        font-size: 0.72rem;
-        font-weight: 700;
-        padding: 0.25rem 0.65rem;
-        background-color: $color-brand-badge-bg;
-        color: $color-brand;
-        border: 1px solid $color-brand-border;
-        border-radius: 9999px;
-        letter-spacing: 0.04em;
-      }
-    }
-
-    .saas-stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-      margin-bottom: 1.75rem;
-
-      .saas-stat-box {
-        background-color: #f8fafc;
-        border: 1px solid #edf2f7;
-        border-radius: 12px;
-        padding: 1.15rem;
-
-        .stat-value {
-          font-family: $font-heading;
-          font-size: 1.75rem;
-          font-weight: 800;
-          color: #0c1524;
-          line-height: 1.1;
-          margin-bottom: 0.25rem;
-
-          span {
-            color: $color-brand;
-          }
-        }
-
-        .stat-name {
-          font-family: $font-body;
-          font-size: 0.78rem;
-          font-weight: 600;
-          color: #64748b;
-          text-transform: uppercase;
-          letter-spacing: 0.04em;
-        }
-      }
-    }
-
-    .saas-tech-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-
-      .tech-pill {
-        display: inline-block;
-        padding: 0.35rem 0.75rem;
+        padding: 0.85rem 1.75rem;
         background-color: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 8px;
-        font-family: $font-body;
-        font-size: 0.75rem;
+        color: $color-brand;
+        font-family: $font-heading;
+        font-size: 0.9375rem;
         font-weight: 600;
-        color: #475569;
-        transition: all 0.2s ease;
+        border: 1.5px solid $color-brand-border;
+        border-radius: 9999px;
+        text-decoration: none;
+        transition: all 0.25s ease;
 
         &:hover {
-          color: $color-brand;
-          border-color: $color-brand-border;
-          background-color: $color-brand-light;
+          border-color: $color-brand;
+          color: $color-brand-hover;
+          background-color: #f8fafc;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.08);
         }
       }
     }
   }
-}
 
-@keyframes pulseDotNavy {
-  0% { box-shadow: 0 0 0 0 rgba(26, 43, 75, 0.4); }
-  70% { box-shadow: 0 0 0 6px rgba(26, 43, 75, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(26, 43, 75, 0); }
+  /* Horizontal Key Metrics Strip */
+  .service-hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem 2rem;
+    margin-top: 3.5rem;
+    padding-top: 2.25rem;
+    border-top: 1px solid #edf2f7;
+
+    @include md {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      .stat-number {
+        font-family: $font-heading;
+        font-size: 1.85rem;
+        font-weight: 800;
+        color: #081120;
+        line-height: 1;
+        letter-spacing: -0.03em;
+
+        @include lg {
+          font-size: 2.15rem;
+        }
+
+        span {
+          color: $color-brand;
+          font-weight: 700;
+        }
+      }
+
+      .stat-label {
+        font-family: $font-body;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: #64748b;
+        letter-spacing: 0.02em;
+      }
+    }
+
+    .stat-divider {
+      display: none;
+
+      @include md {
+        display: block;
+        width: 1px;
+        height: 36px;
+        background: #e2e8f0;
+      }
+    }
+  }
 }
 
 /* =========================================================================

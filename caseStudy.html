@@ -117,68 +117,88 @@
   <main class="casestudy-page-main">
 
     <!-- =========================================================================
-         2. Case Studies Hero Section
-         (Clean left-aligned typography; right side building photo omitted per request)
+         2. Case Studies Hero Section (Split Editorial Layout)
          ========================================================================= -->
-    <section class="casestudy-hero-section">
-      <div class="hero-glow-bg" aria-hidden="true"></div>
+    <section class="casestudy-hero-section" id="hero">
       <div class="casestudy-container">
-        <div class="hero-inner-layout">
-          
-          <!-- Left Content Column -->
-          <div class="hero-text-col">
-            <div class="casestudy-eyebrow">
-              <span class="eyebrow-text">OUR SUCCESS STORIES</span>
-              <span class="eyebrow-line"></span>
+        <div class="casestudy-hero-grid">
+          <!-- Left Column -->
+          <div class="casestudy-hero-left">
+            <div class="casestudy-eyebrow-row">
+              <span class="casestudy-eyebrow">OUR SUCCESS STORIES</span>
             </div>
+            <h1 class="casestudy-hero-title">
+              Case Studies.<br>
+              <span class="highlight-accent">Real Impact.</span>
+            </h1>
+          </div>
 
-            <h1 class="casestudy-hero-title">Case Studies</h1>
+          <!-- Middle Vertical Divider Line -->
+          <div class="casestudy-hero-divider" aria-hidden="true"></div>
 
+          <!-- Right Column -->
+          <div class="casestudy-hero-right">
             <p class="casestudy-hero-desc">
-              Real results. Meaningful impact. Explore how we've helped businesses across industries turn ideas into scalable digital solutions.
+              Real results. Meaningful impact. Explore how we've helped businesses across industries turn ideas into scalable digital solutions — with a focus on speed, innovation, and measurable enterprise value.
             </p>
-
-            <a href="#cases-section" class="hero-scroll-btn" id="hero-scroll-btn">
-              <div class="scroll-icon-wrap">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 5v14M19 12l-7 7-7-7" />
-                </svg>
-              </div>
-              <span>Scroll to explore</span>
-            </a>
-          </div>
-
-          <!-- Right Content Column: Clean Metrics Strip (replaces omitted photo) -->
-          <div class="hero-metric-side">
-            <div class="hero-stat-card">
-              <div class="stat-number-wrap">
-                <span class="stat-num">50</span>
-                <span class="stat-plus">+</span>
-              </div>
-              <div class="stat-label">Successful Projects Delivered</div>
-              <div class="stat-subtext">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                </svg>
-                <span>Trusted by forward-thinking brands</span>
-              </div>
-            </div>
-
-            <div class="hero-stat-card">
-              <div class="stat-number-wrap">
-                <span class="stat-num">99.4</span>
-                <span class="stat-plus">%</span>
-              </div>
-              <div class="stat-label">On-Time Production Velocity</div>
-              <div class="stat-subtext">
-                <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                </svg>
-                <span>Full-cycle enterprise compliance</span>
-              </div>
+            <div class="hero-action-row">
+              <a href="#cases-section" class="hero-scroll-btn" id="hero-scroll-btn">
+                <div class="scroll-icon-wrap">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 5v14M19 12l-7 7-7-7" />
+                  </svg>
+                </div>
+                <span>Scroll to explore</span>
+              </a>
             </div>
           </div>
+        </div>
 
+        <!-- Horizontal Key Metrics Strip -->
+        <div class="casestudy-hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">50<span>+</span></div>
+            <div class="stat-label">Successful Projects Delivered</div>
+            <div class="stat-subtext">
+              <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Trusted by forward-thinking brands</span>
+            </div>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-number">99.4<span>%</span></div>
+            <div class="stat-label">On-Time Production Velocity</div>
+            <div class="stat-subtext">
+              <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Full-cycle enterprise compliance</span>
+            </div>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-number">15<span>+</span></div>
+            <div class="stat-label">Industry Sectors Transformed</div>
+            <div class="stat-subtext">
+              <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>FinTech, Health, Cloud &amp; Retail</span>
+            </div>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-number">100<span>%</span></div>
+            <div class="stat-label">Client IP &amp; Code Ownership</div>
+            <div class="stat-subtext">
+              <svg width="13" height="13" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              <span>Rigorous security &amp; NDA standards</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

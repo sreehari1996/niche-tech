@@ -117,83 +117,65 @@
   <main class="service-page-main">
 
     <!-- =========================================================================
-         2. Modern Executive Hero Section
+         2. Service Hero Section (Executive Split Layout matching Careers & Blog)
          ========================================================================= -->
-    <section class="service-hero-section">
-      <div class="hero-ambient-glow" aria-hidden="true"></div>
+    <section class="service-hero-section" id="hero">
       <div class="service-container">
-        <div class="hero-inner-grid">
-
-          <!-- Left Column: Typography & CTAs (Exact User Content) -->
-          <div class="hero-text-col">
-            <div class="service-hero-eyebrow">
-              <span class="eyebrow-pill">WHO WE ARE &amp; WHAT WE DELIVER</span>
-              <span class="eyebrow-line"></span>
+        <div class="service-hero-grid">
+          <!-- Left Column -->
+          <div class="service-hero-left">
+            <div class="service-eyebrow-row">
+              <span class="service-hero-eyebrow">WHO WE ARE &amp; WHAT WE DELIVER</span>
             </div>
-
             <h1 class="service-hero-title">
               Innovating Talent.<br>
               <span class="highlight-accent">Powering Technology.</span>
             </h1>
+          </div>
 
+          <!-- Middle Vertical Divider Line -->
+          <div class="service-hero-divider" aria-hidden="true"></div>
+
+          <!-- Right Column -->
+          <div class="service-hero-right">
             <p class="service-hero-desc">
               At Niche Techies, we create powerful digital solutions that blend strategy, technology, and specialized talent. From idea to launch, we build scalable products that drive real results — with a focus on speed, innovation, and seamless collaboration.
             </p>
-
             <div class="hero-cta-group">
-              <a href="#services-grid" class="btn-primary-saas" id="btn-explore-services">
+              <a href="#services-grid" class="btn-hero-primary" id="btn-explore-services">
                 <span>Explore All Services</span>
                 <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </a>
-              <a href="#contact" class="btn-secondary-saas">
+              <a href="contact.html" class="btn-hero-secondary">
                 <span>Book a Discovery Call</span>
               </a>
             </div>
           </div>
+        </div>
 
-          <!-- Right Column: Modern SaaS Platform Snapshot Card -->
-          <div class="hero-visual-col">
-            <div class="hero-saas-card">
-              <div class="saas-card-top">
-                <div class="status-indicator">
-                  <span class="live-dot"></span>
-                  <span>150+ Engineers Active</span>
-                </div>
-                <span class="badge-sla">ENTERPRISE READY</span>
-              </div>
-
-              <div class="saas-stats-grid">
-                <div class="saas-stat-box">
-                  <div class="stat-value">350<span>+</span></div>
-                  <div class="stat-name">Solutions Shipped</div>
-                </div>
-                <div class="saas-stat-box">
-                  <div class="stat-value">99.8<span>%</span></div>
-                  <div class="stat-name">SLA Uptime</div>
-                </div>
-                <div class="saas-stat-box">
-                  <div class="stat-value">15<span>+</span></div>
-                  <div class="stat-name">Years Experience</div>
-                </div>
-                <div class="saas-stat-box">
-                  <div class="stat-value">48<span>h</span></div>
-                  <div class="stat-name">Squad Spin-up</div>
-                </div>
-              </div>
-
-              <div class="saas-tech-tags">
-                <span class="tech-pill">AI Automation</span>
-                <span class="tech-pill">Cloud Architecture</span>
-                <span class="tech-pill">Microservices</span>
-                <span class="tech-pill">React &amp; Node</span>
-                <span class="tech-pill">Python &amp; PyTorch</span>
-                <span class="tech-pill">Kubernetes</span>
-              </div>
-            </div>
+        <!-- Horizontal Key Metrics Strip -->
+        <div class="service-hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">350<span>+</span></div>
+            <div class="stat-label">Solutions Shipped</div>
           </div>
-
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-number">99.8<span>%</span></div>
+            <div class="stat-label">SLA Uptime</div>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-number">15<span>+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <div class="stat-number">48<span>h</span></div>
+            <div class="stat-label">Squad Spin-up</div>
+          </div>
         </div>
       </div>
     </section>
@@ -1048,6 +1030,7 @@
           }
         });
       }
+
     });
   </script>
   <!-- Global Interactive Engine (Header, Mobile Drawer, Smooth Scroll, Back-to-Top) -->
