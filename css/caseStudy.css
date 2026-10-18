@@ -1,0 +1,830 @@
+/* =========================================================================
+   Case Studies Page Stylesheet
+   Niche Techies - Enterprise Work & Client Transformations
+   Compiled from src/scss/caseStudy.scss
+   ========================================================================= */
+
+.casestudy-page-main {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+/* Common Container - Matches .header-container and .contact-container exactly (1440px / 3.5rem padding) */
+.casestudy-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .casestudy-container {
+    padding: 0 3.5rem;
+  }
+}
+
+/* =========================================================================
+   1. Case Study Hero Section
+   (Left-aligned clean typography, right side image removed per user instruction)
+   ========================================================================= */
+.casestudy-hero-section {
+  padding: 7rem 0 2.5rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  position: relative;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+@media (min-width: 768px) {
+  .casestudy-hero-section {
+    padding: 8.25rem 0 3.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .casestudy-hero-section {
+    padding: 9.25rem 0 4rem;
+  }
+}
+
+/* Ambient decorative light glow */
+.casestudy-hero-section .hero-glow-bg {
+  position: absolute;
+  top: 0;
+  right: 5%;
+  width: 600px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(248, 250, 252, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.casestudy-hero-section .hero-inner-layout {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: flex-end;
+}
+
+@media (min-width: 1024px) {
+  .casestudy-hero-section .hero-inner-layout {
+    grid-template-columns: 1.35fr 0.85fr;
+    gap: 3.5rem;
+  }
+}
+
+/* Eyebrow Label with modern horizontal bar */
+.casestudy-hero-section .casestudy-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.15rem;
+}
+
+.casestudy-hero-section .casestudy-eyebrow .eyebrow-text {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2563eb;
+}
+
+.casestudy-hero-section .casestudy-eyebrow .eyebrow-line {
+  display: inline-block;
+  width: 42px;
+  height: 2px;
+  background: linear-gradient(90deg, #2563eb 0%, rgba(37, 99, 235, 0) 100%);
+  border-radius: 9999px;
+}
+
+/* Main Hero Title */
+.casestudy-hero-section .casestudy-hero-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: #0c1524;
+  margin: 0 0 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .casestudy-hero-section .casestudy-hero-title {
+    font-size: 3.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .casestudy-hero-section .casestudy-hero-title {
+    font-size: 3.75rem;
+  }
+}
+
+/* Hero Subtitle / Description */
+.casestudy-hero-section .casestudy-hero-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #52637a;
+  max-width: 640px;
+  margin: 0 0 2.25rem;
+}
+
+@media (min-width: 768px) {
+  .casestudy-hero-section .casestudy-hero-desc {
+    font-size: 1.15rem;
+  }
+}
+
+/* Scroll To Explore Button */
+.casestudy-hero-section .hero-scroll-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: #334155;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.90625rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.casestudy-hero-section .hero-scroll-btn .scroll-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  color: #0c1524;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s ease;
+}
+
+.casestudy-hero-section .hero-scroll-btn:hover {
+  color: #2563eb;
+}
+
+.casestudy-hero-section .hero-scroll-btn:hover .scroll-icon-wrap {
+  border-color: #2563eb;
+  color: #2563eb;
+  background-color: #eff6ff;
+  transform: translateY(3px);
+}
+
+/* Right Side Hero Metric Highlight */
+.casestudy-hero-section .hero-metric-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .casestudy-hero-section .hero-metric-side {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
+  .casestudy-hero-section .hero-metric-side {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+.casestudy-hero-section .hero-metric-side .hero-stat-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+  width: 100%;
+  max-width: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+.casestudy-hero-section .hero-metric-side .hero-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #2563eb;
+}
+
+.casestudy-hero-section .hero-metric-side .hero-stat-card .stat-number-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.casestudy-hero-section .hero-metric-side .hero-stat-card .stat-number-wrap .stat-num {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0c1524;
+  line-height: 1;
+}
+
+.casestudy-hero-section .hero-metric-side .hero-stat-card .stat-number-wrap .stat-plus {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.casestudy-hero-section .hero-metric-side .hero-stat-card .stat-label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.casestudy-hero-section .hero-metric-side .hero-stat-card .stat-subtext {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.casestudy-hero-section .hero-metric-side .hero-stat-card .stat-subtext svg {
+  color: #10b981;
+}
+
+/* =========================================================================
+   2. Filter Section & Category Pills
+   ========================================================================= */
+.casestudy-filter-section {
+  padding: 3rem 0 5rem;
+  background-color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .casestudy-filter-section {
+    padding: 3.5rem 0 6rem;
+  }
+}
+
+.casestudy-filter-section .filter-bar-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.75rem;
+}
+
+@media (min-width: 1024px) {
+  .casestudy-filter-section .filter-bar-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* Filter Tabs Pill List */
+.casestudy-filter-section .category-pills-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+@media (min-width: 768px) {
+  .casestudy-filter-section .category-pills-list {
+    gap: 0.75rem;
+  }
+}
+
+.casestudy-filter-section .category-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.35rem;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.casestudy-filter-section .category-pill-btn:hover:not(.active) {
+  color: #0c1524;
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.casestudy-filter-section .category-pill-btn.active {
+  background-color: #0c1524;
+  border-color: #0c1524;
+  color: #ffffff;
+  box-shadow: 0 4px 14px -2px rgba(12, 21, 36, 0.25);
+  cursor: default;
+}
+
+/* Result Count Feedback */
+.casestudy-filter-section .filter-feedback {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.casestudy-filter-section .filter-feedback strong {
+  color: #0c1524;
+  font-weight: 700;
+}
+
+/* =========================================================================
+   3. Case Studies Cards Grid (Exact 2-Column Horizontal Inner Layout)
+   ========================================================================= */
+.cases-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cases-grid {
+    gap: 2.5rem;
+  }
+}
+
+/* Individual Case Card */
+.case-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.04);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .case-card {
+    flex-direction: row;
+  }
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08), 0 10px 15px -5px rgba(15, 23, 42, 0.04);
+}
+
+.case-card:hover .case-card-visual img {
+  transform: scale(1.05);
+}
+
+.case-card:hover .case-card-title a {
+  color: #2563eb;
+}
+
+.case-card:hover .case-card-cta {
+  color: #2563eb;
+}
+
+.case-card:hover .case-card-cta svg {
+  transform: translateX(4px);
+}
+
+/* Left Side: Thumbnail Visual */
+.case-card .case-card-visual {
+  width: 100%;
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+  background-color: #f1f5f9;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .case-card .case-card-visual {
+    width: 44%;
+    height: auto;
+    min-height: 280px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .case-card .case-card-visual {
+    width: 42%;
+  }
+}
+
+.case-card .case-card-visual a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.case-card .case-card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Floating Category Tag Badge */
+.case-card .case-card-visual .card-category-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Right Side: Content Body */
+.case-card .case-card-body {
+  width: 100%;
+  padding: 1.75rem 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .case-card .case-card-body {
+    width: 56%;
+    padding: 2rem 2rem 1.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .case-card .case-card-body {
+    width: 58%;
+    padding: 2.25rem 2.25rem 2rem;
+  }
+}
+
+/* Card Header: Title + Big Gray Index Number */
+.case-card .case-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.case-card .case-card-header .case-card-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0c1524;
+  margin: 0;
+}
+
+@media (min-width: 1280px) {
+  .case-card .case-card-header .case-card-title {
+    font-size: 1.35rem;
+  }
+}
+
+.case-card .case-card-header .case-card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.case-card .case-card-header .case-card-number {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+
+/* Excerpt */
+.case-card .case-card-excerpt {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.90625rem;
+  line-height: 1.62;
+  color: #64748b;
+  margin: 0 0 1.25rem;
+  flex-grow: 1;
+}
+
+/* View Case Study CTA Link */
+.case-card .case-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0c1524;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.case-card .case-card-cta svg {
+  transition: transform 0.25s ease;
+}
+
+/* Bottom Metadata Row: Industry & Timeline */
+.case-card .case-card-meta {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.case-card .case-card-meta .meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.case-card .case-card-meta .meta-col .meta-label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.case-card .case-card-meta .meta-col .meta-val {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+/* Hidden Card Utility for Filter Animation */
+.case-card.hidden-card {
+  display: none !important;
+}
+
+/* =========================================================================
+   4. Empty State Container
+   ========================================================================= */
+.cases-empty-state {
+  text-align: center;
+  padding: 5rem 1.5rem;
+  display: none;
+  grid-column: 1 / -1;
+}
+
+.cases-empty-state.active {
+  display: block;
+}
+
+.cases-empty-state .empty-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.25rem;
+  color: #94a3b8;
+}
+
+.cases-empty-state h3 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0c1524;
+  margin-bottom: 0.5rem;
+}
+
+.cases-empty-state p {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #64748b;
+  font-size: 0.9375rem;
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cases-empty-state .btn-reset-cases {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.35rem;
+  background-color: #0c1524;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.cases-empty-state .btn-reset-cases:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* =========================================================================
+   5. Bottom CTA Strip (Leading to Contact Section)
+   ========================================================================= */
+.casestudy-cta-strip {
+  background-color: #f8fafc;
+  border-top: 1px solid #edf2f7;
+  padding: 4.5rem 0;
+  text-align: center;
+}
+
+.casestudy-cta-strip .cta-strip-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.casestudy-cta-strip .cta-strip-eyebrow {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.casestudy-cta-strip .cta-strip-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0c1524;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .casestudy-cta-strip .cta-strip-title {
+    font-size: 2.35rem;
+  }
+}
+
+.casestudy-cta-strip .cta-strip-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #64748b;
+  margin: 0 0 2rem;
+}
+
+.casestudy-cta-strip .btn-strip-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.875rem 2rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.35);
+}
+
+.casestudy-cta-strip .btn-strip-action:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(37, 99, 235, 0.45);
+}
+
+/* =========================================================================
+   6. Back To Top Floating Button
+   ========================================================================= */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #0d192d;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(13, 25, 45, 0.28), 0 2px 6px rgba(13, 25, 45, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.92);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease,
+              box-shadow 0.25s ease;
+  user-select: none;
+  padding: 0;
+  margin: 0;
+}
+
+.back-to-top.is-visible,
+.back-to-top.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+  pointer-events: auto !important;
+}
+
+.back-to-top:hover {
+  background: #2563eb;
+  transform: translateY(-4px) scale(1.04) !important;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.38), 0 4px 10px rgba(13, 25, 45, 0.16);
+}
+
+.back-to-top:active {
+  transform: translateY(-1px) scale(0.98) !important;
+}
+
+.back-to-top .progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 48px;
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.back-to-top .progress-ring-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 2.5;
+}
+
+.back-to-top .progress-ring-fill {
+  fill: none;
+  stroke: #2563eb;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.back-to-top .back-to-top-icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  transition: transform 0.25s ease;
+}
+
+.back-to-top .back-to-top-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.back-to-top:hover .back-to-top-icon {
+  transform: translateY(-2px);
+}
+
