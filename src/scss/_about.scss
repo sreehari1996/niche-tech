@@ -149,17 +149,9 @@
       gap: 0.65rem;
       margin-bottom: 1.5rem;
 
-      .eyebrow-num {
-        font-family: $font-heading;
-        font-size: 0.8rem;
-        font-weight: 700;
-        color: #2563eb;
-      }
-
+      .eyebrow-num,
       .eyebrow-dash {
-        width: 18px;
-        height: 1.5px;
-        background: #94a3b8;
+        display: none !important;
       }
 
       .eyebrow-text {

@@ -51,6 +51,25 @@
     align-items: center;
     gap: 0.65rem;
     z-index: 60;
+    text-decoration: none;
+
+    .brand-logo-img {
+      height: 46px;
+      width: auto;
+      max-height: 46px;
+      object-fit: contain;
+      display: block;
+      transition: transform $transition-smooth;
+
+      @include md {
+        height: 52px;
+        max-height: 52px;
+      }
+    }
+
+    &:hover .brand-logo-img {
+      transform: scale(1.03);
+    }
 
     .logo-symbol {
       width: 22px;

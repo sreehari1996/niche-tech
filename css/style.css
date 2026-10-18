@@ -94,6 +94,14 @@ button, input, textarea {
   color: #94a3b8;
 }
 
+.eyebrow-num,
+.eyebrow-line,
+.eyebrow-dash,
+.badge-num,
+.badge-sep {
+  display: none !important;
+}
+
 /* Interactive link */
 .interactive-link {
   display: inline-flex;
@@ -173,6 +181,27 @@ button, input, textarea {
   align-items: center;
   gap: 0.65rem;
   z-index: 60;
+  text-decoration: none;
+}
+
+.brand-logo .brand-logo-img {
+  height: 46px;
+  width: auto;
+  max-height: 46px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 768px) {
+  .brand-logo .brand-logo-img {
+    height: 52px;
+    max-height: 52px;
+  }
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: scale(1.03);
 }
 
 .brand-logo .logo-symbol {
@@ -1234,17 +1263,9 @@ button, input, textarea {
   margin-bottom: 1.5rem;
 }
 
-.about-eyebrow-line .eyebrow-num {
-  font-family: var(--font-heading);
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #2563eb;
-}
-
+.about-eyebrow-line .eyebrow-num,
 .about-eyebrow-line .eyebrow-dash {
-  width: 18px;
-  height: 1.5px;
-  background: #94a3b8;
+  display: none !important;
 }
 
 .about-eyebrow-line .eyebrow-text {
@@ -1614,15 +1635,9 @@ button, input, textarea {
   width: fit-content;
 }
 
-.work-badge-pill .badge-num {
-  font-weight: 700;
-  color: #94a3b8;
-}
-
+.work-badge-pill .badge-num,
 .work-badge-pill .badge-sep {
-  width: 14px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.25);
+  display: none !important;
 }
 
 .work-badge-pill .badge-label {
@@ -1950,16 +1965,9 @@ button, input, textarea {
   letter-spacing: 0.04em;
 }
 
-.product-eyebrow .eyebrow-num {
-  font-weight: 700;
-  color: #475569;
-}
-
+.product-eyebrow .eyebrow-num,
 .product-eyebrow .eyebrow-line {
-  display: inline-block;
-  width: 22px;
-  height: 1.5px;
-  background-color: #94a3b8;
+  display: none !important;
 }
 
 .product-eyebrow .eyebrow-text {
@@ -2226,16 +2234,9 @@ button, input, textarea {
   margin-bottom: 1.25rem;
 }
 
-.testimonials-eyebrow .eyebrow-num {
-  color: #38bdf8;
-}
-
+.testimonials-eyebrow .eyebrow-num,
 .testimonials-eyebrow .eyebrow-line {
-  display: inline-block;
-  width: 22px;
-  height: 1.5px;
-  background: #38bdf8;
-  opacity: 0.7;
+  display: none !important;
 }
 
 .testimonials-eyebrow .eyebrow-text {
@@ -2515,16 +2516,9 @@ button, input, textarea {
   letter-spacing: 0.04em;
 }
 
-.blog-eyebrow .eyebrow-num {
-  font-weight: 700;
-  color: #0284c7;
-}
-
+.blog-eyebrow .eyebrow-num,
 .blog-eyebrow .eyebrow-line {
-  display: inline-block;
-  width: 22px;
-  height: 1.5px;
-  background-color: #94a3b8;
+  display: none !important;
 }
 
 .blog-eyebrow .eyebrow-text {

@@ -64,15 +64,9 @@
       margin-bottom: 2rem;
       width: fit-content;
 
-      .badge-num {
-        font-weight: 700;
-        color: #94a3b8;
-      }
-
+      .badge-num,
       .badge-sep {
-        width: 14px;
-        height: 1px;
-        background: rgba(255, 255, 255, 0.25);
+        display: none !important;
       }
 
       .badge-label {
