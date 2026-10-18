@@ -53,7 +53,7 @@
     font-family: $font-heading;
     font-size: 0.95rem;
     font-weight: 600;
-    color: #38bdf8;
+    color: #c5d4ea;
     letter-spacing: 0.04em;
     margin-bottom: 1.25rem;
 
@@ -63,7 +63,7 @@
     }
 
     .eyebrow-text {
-      color: #7dd3fc;
+      color: #e2eaf5;
     }
   }
 
@@ -92,13 +92,13 @@
     font-family: $font-heading;
     font-size: 0.95rem;
     font-weight: 600;
-    color: #38bdf8;
+    color: #c5d4ea;
     text-decoration: none;
     transition: all 0.25s ease;
     width: fit-content;
 
     &:hover {
-      color: #bae6fd;
+      color: #ffffff;
       gap: 0.75rem;
 
       .link-arrow {
@@ -161,12 +161,12 @@
 
     &:hover {
       transform: translateY(-4px);
-      border-color: rgba(56, 189, 248, 0.28);
-      box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.7), 0 0 24px rgba(56, 189, 248, 0.08);
+      border-color: rgba(197, 212, 234, 0.28);
+      box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.7), 0 0 24px rgba(197, 212, 234, 0.08);
     }
 
     .quote-mark {
-      color: #38bdf8;
+      color: #c5d4ea;
       margin-bottom: 1.25rem;
       display: flex;
       align-items: center;
@@ -247,9 +247,9 @@
     padding: 0;
 
     &:hover:not(:disabled) {
-      border-color: #38bdf8;
-      color: #38bdf8;
-      background: rgba(56, 189, 248, 0.1);
+      border-color: #c5d4ea;
+      color: #c5d4ea;
+      background: rgba(197, 212, 234, 0.1);
       transform: scale(1.05);
     }
 

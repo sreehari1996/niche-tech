@@ -270,12 +270,12 @@
 }
 
 .blog-filter-tabs .tab-btn.active {
-  color: #2563eb;
+  color: #1a2b4b;
   font-weight: 600;
 }
 
 .blog-filter-tabs .tab-btn.active::after {
-  background-color: #2563eb;
+  background-color: #1a2b4b;
   transform: scaleX(1);
 }
 
@@ -323,8 +323,8 @@
 
 .blog-search-box .search-input:focus {
   background-color: #ffffff;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+  border-color: #1a2b4b;
+  box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.12);
 }
 
 .blog-search-box .search-clear-btn {
@@ -376,7 +376,7 @@
 .search-feedback-bar .btn-clear-filter {
   background: none;
   border: none;
-  color: #2563eb;
+  color: #1a2b4b;
   font-weight: 600;
   cursor: pointer;
   font-size: 0.8125rem;
@@ -386,7 +386,7 @@
 }
 
 .search-feedback-bar .btn-clear-filter:hover {
-  background-color: #eff6ff;
+  background-color: #f1f5fa;
   text-decoration: underline;
 }
 
@@ -440,7 +440,7 @@
 }
 
 .blog-card:hover .blog-card-title a {
-  color: #2563eb;
+  color: #1a2b4b;
 }
 
 .blog-card.hidden-card {
@@ -518,7 +518,7 @@
 }
 
 .blog-card-meta .meta-tag {
-  color: #2563eb;
+  color: #1a2b4b;
   font-weight: 700;
 }
 
@@ -578,7 +578,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.625rem 1.25rem;
-  background-color: #2563eb;
+  background-color: #1a2b4b;
   color: #ffffff;
   font-size: 0.875rem;
   font-weight: 600;
@@ -589,7 +589,7 @@
 }
 
 .blog-empty-state .btn-reset-empty:hover {
-  background-color: #1d4ed8;
+  background-color: #111d33;
   transform: translateY(-1px);
 }
 
@@ -644,10 +644,10 @@
 }
 
 .pagination-btn.active {
-  background-color: #2563eb;
-  border-color: #2563eb;
+  background-color: #1a2b4b;
+  border-color: #1a2b4b;
   color: #ffffff;
-  box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 12px -2px rgba(26, 43, 75, 0.35);
   cursor: default;
 }
 

@@ -72,7 +72,7 @@
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #3b82f6;
+  color: #1a2b4b;
 }
 
 .career-hero-left .career-hero-title {
@@ -183,8 +183,8 @@
 }
 
 .positions-top-bar .positions-filters .filter-select-wrapper select:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+  border-color: #1a2b4b;
+  box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.12);
 }
 
 .positions-top-bar .positions-filters .filter-select-wrapper .filter-select-arrow {
@@ -241,7 +241,7 @@
 }
 
 .positions-table tbody tr:hover .job-title {
-  color: #2563eb;
+  color: #1a2b4b;
 }
 
 .positions-table tbody tr:hover .btn-apply svg {
@@ -278,7 +278,7 @@
 }
 
 .positions-table tbody tr td.td-location .location-tag svg {
-  color: #3b82f6;
+  color: #1a2b4b;
   flex-shrink: 0;
 }
 
@@ -300,7 +300,7 @@
   font-family: var(--font-heading);
   font-size: 0.875rem;
   font-weight: 600;
-  color: #2563eb;
+  color: #1a2b4b;
   text-decoration: none;
   transition: all 0.2s ease;
   background: transparent;
@@ -314,7 +314,7 @@
 }
 
 .positions-table tbody tr td.td-apply .btn-apply:hover {
-  color: #1d4ed8;
+  color: #111d33;
 }
 
 /* No Results Row */
@@ -451,7 +451,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #3b82f6;
+  color: #1a2b4b;
   display: block;
   margin-bottom: 0.35rem;
 }
@@ -510,8 +510,8 @@
 
 .career-modal-card .modal-form .form-group input:focus,
 .career-modal-card .modal-form .form-group textarea:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+  border-color: #1a2b4b;
+  box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.12);
 }
 
 .career-modal-card .modal-form .modal-submit-btn {
@@ -533,7 +533,7 @@
 }
 
 .career-modal-card .modal-form .modal-submit-btn:hover {
-  background: #2563eb;
+  background: #1a2b4b;
   transform: translateY(-1px);
-  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(26, 43, 75, 0.3);
 }

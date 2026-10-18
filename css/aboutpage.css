@@ -23,11 +23,11 @@
 }
 
 .text-blue {
-  color: #2563eb !important;
+  color: #1a2b4b !important;
 }
 
 .text-sky {
-  color: #38bdf8 !important;
+  color: #1a2b4b !important;
 }
 
 .btn-pill-outline {
@@ -66,7 +66,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #38bdf8;
+  color: #1a2b4b;
   font-family: var(--font-heading);
   font-size: 0.9rem;
   font-weight: 600;
@@ -125,7 +125,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #2563eb;
+  color: #1a2b4b;
   margin-bottom: 1.25rem;
 }
 
@@ -233,9 +233,9 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #2563eb;
+  background: #1a2b4b;
   display: inline-block;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.2);
 }
 
 .about-hero-visual .about-floating-badge .badge-text {
@@ -281,7 +281,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #38bdf8;
+  color: #c5d4ea;
   margin-bottom: 1.25rem;
 }
 
@@ -334,7 +334,7 @@
 
 .value-card:hover {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(56, 189, 248, 0.3);
+  border-color: rgba(197, 212, 234, 0.3);
   transform: translateY(-4px);
   box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.5);
 }
@@ -342,7 +342,7 @@
 .value-card .value-icon {
   width: 40px;
   height: 40px;
-  color: #38bdf8;
+  color: #c5d4ea;
   margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
@@ -404,7 +404,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #2563eb;
+  color: #1a2b4b;
   margin-bottom: 1.25rem;
 }
 
@@ -566,11 +566,11 @@
 
 .tech-cell:hover .tech-icon {
   transform: translateY(-2px);
-  color: #2563eb;
+  color: #1a2b4b;
 }
 
 .tech-cell:hover .tech-label {
-  color: #2563eb;
+  color: #1a2b4b;
 }
 
 .tech-icon {
@@ -632,7 +632,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #38bdf8;
+  color: #c5d4ea;
   margin-bottom: 1.25rem;
 }
 
@@ -747,7 +747,7 @@
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #2563eb;
+  color: #1a2b4b;
   margin-bottom: 1.25rem;
 }
 
@@ -861,7 +861,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #38bdf8;
+  color: #c5d4ea;
   margin-bottom: 0.85rem;
 }
 
@@ -907,12 +907,12 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: rgba(197, 212, 234, 0.1);
+  border: 1px solid rgba(197, 212, 234, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #38bdf8;
+  color: #c5d4ea;
   flex-shrink: 0;
 }
 

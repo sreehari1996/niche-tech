@@ -1,0 +1,842 @@
+@import 'variables';
+@import 'mixins';
+
+/* =========================================================================
+   Service Page Stylesheet
+   Niche Techies - Innovating Talent. Powering Technology.
+   Signature Prussian Navy Theme: #1a2b4b
+   ========================================================================= */
+
+$color-brand: #1a2b4b;
+$color-brand-hover: #111d33;
+$color-brand-light: #f1f5fa;
+$color-brand-badge-bg: #eef3f9;
+$color-brand-border: #cdd7e5;
+$color-brand-glow: rgba(26, 43, 75, 0.06);
+
+$color-dark-surface: #0c1524;
+$color-dark-deep: #070e1b;
+
+.service-page-main {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+/* Common Container - Matches .header-container and .contact-container exactly (1440px / 3.5rem padding) */
+.service-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include md {
+    padding: 0 3.5rem;
+  }
+}
+
+/* =========================================================================
+   1. Modern Executive Hero Section
+   ========================================================================= */
+.service-hero-section {
+  padding: 7rem 0 3rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  position: relative;
+  border-bottom: 1px solid #edf2f7;
+
+  @include md {
+    padding: 8.5rem 0 3.75rem;
+  }
+
+  @include lg {
+    padding: 9.5rem 0 4.5rem;
+  }
+
+  /* Subtle Ambient Glow */
+  .hero-ambient-glow {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    width: 650px;
+    height: 450px;
+    background: radial-gradient(circle at 60% 40%, rgba(26, 43, 75, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-inner-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+
+    @include lg {
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+    }
+
+    @include xl {
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 4.5rem;
+    }
+  }
+
+  /* Eyebrow Badge with sleek line */
+  .service-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+
+    .eyebrow-pill {
+      font-family: $font-heading;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: $color-brand;
+    }
+
+    .eyebrow-line {
+      display: inline-block;
+      width: 44px;
+      height: 2px;
+      background: linear-gradient(90deg, $color-brand 0%, rgba(26, 43, 75, 0) 100%);
+      border-radius: 9999px;
+    }
+  }
+
+  /* Hero Headline - Solid, commanding, authoritative typography in #1a2b4b */
+  .service-hero-title {
+    font-family: $font-heading;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+    color: #0c1524;
+    margin: 0 0 1.35rem;
+
+    @include md {
+      font-size: 3.25rem;
+    }
+
+    @include lg {
+      font-size: 3.65rem;
+    }
+
+    .highlight-accent,
+    .gradient-text {
+      color: $color-brand;
+      background: none;
+      -webkit-background-clip: unset;
+      -webkit-text-fill-color: initial;
+      display: inline-block;
+      font-weight: 800;
+    }
+  }
+
+  /* Description matching user reference */
+  .service-hero-desc {
+    font-family: $font-body;
+    font-size: 1.0625rem;
+    line-height: 1.72;
+    color: #475569;
+    max-width: 640px;
+    margin: 0 0 2.25rem;
+
+    @include md {
+      font-size: 1.15rem;
+    }
+  }
+
+  /* CTA Buttons Group */
+  .hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+
+    /* Primary Button: Unified #1a2b4b */
+    .btn-primary-saas {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.875rem 1.85rem;
+      background-color: $color-brand;
+      color: #ffffff;
+      font-family: $font-heading;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px -2px rgba(26, 43, 75, 0.35);
+      transition: all 0.25s ease;
+
+      svg {
+        color: #ffffff;
+        transition: transform 0.25s ease;
+      }
+
+      &:hover {
+        background-color: $color-brand-hover;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px -4px rgba(26, 43, 75, 0.45);
+
+        svg {
+          transform: translateX(4px);
+        }
+      }
+    }
+
+    .btn-secondary-saas {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.875rem 1.85rem;
+      background-color: #ffffff;
+      color: $color-brand;
+      font-family: $font-heading;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      border: 1px solid $color-brand-border;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+
+      &:hover {
+        border-color: $color-brand;
+        color: $color-brand-hover;
+        background-color: $color-brand-light;
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  /* Right Side: Modern SaaS Platform Snapshot Card */
+  .hero-saas-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8);
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: $color-brand;
+    }
+
+    .saas-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #f1f5f9;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+
+      .status-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: $font-heading;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: #0f172a;
+
+        .live-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: $color-brand;
+          box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.2);
+          animation: pulseDotNavy 2s infinite;
+        }
+      }
+
+      .badge-sla {
+        font-family: $font-heading;
+        font-size: 0.72rem;
+        font-weight: 700;
+        padding: 0.25rem 0.65rem;
+        background-color: $color-brand-badge-bg;
+        color: $color-brand;
+        border: 1px solid $color-brand-border;
+        border-radius: 9999px;
+        letter-spacing: 0.04em;
+      }
+    }
+
+    .saas-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+
+      .saas-stat-box {
+        background-color: #f8fafc;
+        border: 1px solid #edf2f7;
+        border-radius: 12px;
+        padding: 1.15rem;
+
+        .stat-value {
+          font-family: $font-heading;
+          font-size: 1.75rem;
+          font-weight: 800;
+          color: #0c1524;
+          line-height: 1.1;
+          margin-bottom: 0.25rem;
+
+          span {
+            color: $color-brand;
+          }
+        }
+
+        .stat-name {
+          font-family: $font-body;
+          font-size: 0.78rem;
+          font-weight: 600;
+          color: #64748b;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+        }
+      }
+    }
+
+    .saas-tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .tech-pill {
+        display: inline-block;
+        padding: 0.35rem 0.75rem;
+        background-color: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        font-family: $font-body;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #475569;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: $color-brand;
+          border-color: $color-brand-border;
+          background-color: $color-brand-light;
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulseDotNavy {
+  0% { box-shadow: 0 0 0 0 rgba(26, 43, 75, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(26, 43, 75, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(26, 43, 75, 0); }
+}
+
+/* =========================================================================
+   2. Filter & Navigation Bar
+   ========================================================================= */
+.services-overview-section {
+  padding: 4rem 0 6rem;
+  background-color: #ffffff;
+
+  @include md {
+    padding: 5rem 0 7rem;
+  }
+
+  .section-headline-wrap {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 3rem;
+
+    .section-eyebrow {
+      font-family: $font-heading;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: $color-brand;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .section-title {
+      font-family: $font-heading;
+      font-size: 2.15rem;
+      font-weight: 800;
+      color: #0c1524;
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      margin: 0 0 1rem;
+
+      @include md {
+        font-size: 2.65rem;
+      }
+    }
+
+    .section-subtitle {
+      font-family: $font-body;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: #64748b;
+      margin: 0;
+    }
+  }
+
+  /* Category Filter Pills */
+  .service-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    margin-bottom: 3.5rem;
+
+    .filter-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.65rem 1.35rem;
+      font-family: $font-heading;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #475569;
+      background-color: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+      &:hover:not(.active) {
+        color: $color-brand;
+        border-color: $color-brand-border;
+        background-color: $color-brand-light;
+        transform: translateY(-1px);
+      }
+
+      &.active {
+        background-color: $color-brand;
+        border-color: $color-brand;
+        color: #ffffff;
+        box-shadow: 0 4px 14px -2px rgba(26, 43, 75, 0.35);
+        cursor: default;
+      }
+    }
+  }
+}
+
+/* =========================================================================
+   3. Modern SaaS Service Cards Grid (3 Columns Desktop)
+   ========================================================================= */
+.services-saas-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include xl {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.25rem;
+  }
+}
+
+/* Individual SaaS Service Card */
+.service-saas-card {
+  background-color: #ffffff;
+  border: 1px solid #eef2f6;
+  border-radius: 20px;
+  padding: 2.25rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 20px -4px rgba(15, 23, 42, 0.04);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: transparent;
+    transition: background 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: $color-brand-border;
+    box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08), 0 10px 15px -5px rgba(15, 23, 42, 0.04);
+
+    &::before {
+      background: $color-brand;
+    }
+
+    .service-icon-box {
+      background-color: $color-brand;
+      color: #ffffff;
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 8px 20px -3px rgba(26, 43, 75, 0.4);
+    }
+
+    .service-card-title a {
+      color: $color-brand;
+    }
+
+    .service-card-cta {
+      color: $color-brand;
+
+      svg {
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  /* Card Top Row: Elevated Icon + Serial Badge */
+  .card-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.75rem;
+
+    .service-icon-box {
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background-color: $color-brand-light;
+      color: $color-brand;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+      svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    .service-category-badge {
+      font-family: $font-heading;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 9999px;
+      color: #64748b;
+    }
+  }
+
+  /* Service Title */
+  .service-card-title {
+    font-family: $font-heading;
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #0c1524;
+    margin: 0 0 1rem;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+  }
+
+  /* Service Description from Image */
+  .service-card-desc {
+    font-family: $font-body;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: #52637a;
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+  }
+
+  /* Feature Checklist / Tech Capabilities */
+  .service-capabilities-list {
+    border-top: 1px solid #f1f5f9;
+    padding-top: 1.25rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+
+    .capability-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: $font-body;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: #334155;
+
+      svg {
+        color: $color-brand;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  /* CTA Button: READ MORE > */
+  .service-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: $font-heading;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #0c1524;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    margin-top: auto;
+
+    svg {
+      transition: transform 0.25s ease;
+    }
+  }
+}
+
+/* Hidden Card Utility for Filter Animation */
+.service-saas-card.hidden-card {
+  display: none !important;
+}
+
+/* =========================================================================
+   4. Delivery Framework / Engagement Models Strip
+   ========================================================================= */
+.service-framework-section {
+  background-color: $color-dark-deep;
+  color: #ffffff;
+  padding: 5.5rem 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 600px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(26, 43, 75, 0.3) 0%, rgba(7, 14, 27, 0) 70%);
+    pointer-events: none;
+  }
+
+  .framework-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 3.5rem;
+    position: relative;
+    z-index: 1;
+
+    .framework-eyebrow {
+      font-family: $font-heading;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #c5d4ea;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .framework-title {
+      font-family: $font-heading;
+      font-size: 2.15rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin: 0 0 1rem;
+
+      @include md {
+        font-size: 2.5rem;
+      }
+    }
+
+    .framework-subtitle {
+      font-family: $font-body;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: #94a3b8;
+      margin: 0;
+    }
+  }
+
+  .engagement-models-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+    position: relative;
+    z-index: 1;
+
+    @include md {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .model-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 2.25rem 2rem;
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.07);
+        border-color: rgba(197, 212, 234, 0.4);
+        transform: translateY(-4px);
+      }
+
+      .model-number {
+        font-family: $font-heading;
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: #c5d4ea;
+        margin-bottom: 1rem;
+        line-height: 1;
+      }
+
+      .model-name {
+        font-family: $font-heading;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 0.75rem;
+      }
+
+      .model-desc {
+        font-family: $font-body;
+        font-size: 0.90625rem;
+        line-height: 1.62;
+        color: #94a3b8;
+        margin-bottom: 1.25rem;
+      }
+
+      .model-highlight {
+        font-family: $font-heading;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #c5d4ea;
+      }
+    }
+  }
+}
+
+/* =========================================================================
+   5. Back To Top Floating Button
+   ========================================================================= */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: $color-brand;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(26, 43, 75, 0.28), 0 2px 6px rgba(26, 43, 75, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.92);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease,
+              box-shadow 0.25s ease;
+  user-select: none;
+  padding: 0;
+  margin: 0;
+
+  &.is-visible,
+  &.visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) scale(1) !important;
+    pointer-events: auto !important;
+  }
+
+  &:hover {
+    background: $color-brand-hover;
+    transform: translateY(-4px) scale(1.04) !important;
+    box-shadow: 0 12px 30px rgba(26, 43, 75, 0.4), 0 4px 10px rgba(26, 43, 75, 0.16);
+  }
+
+  &:active {
+    transform: translateY(-1px) scale(0.98) !important;
+  }
+
+  .progress-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+    height: 48px;
+    transform: rotate(-90deg);
+    pointer-events: none;
+  }
+
+  .progress-ring-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.12);
+    stroke-width: 2.5;
+  }
+
+  .progress-ring-fill {
+    fill: none;
+    stroke: #c5d4ea;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.1s linear;
+  }
+
+  .back-to-top-icon {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    transition: transform 0.25s ease;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &:hover .back-to-top-icon {
+    transform: translateY(-2px);
+  }
+}

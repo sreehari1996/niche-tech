@@ -32,13 +32,13 @@
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #3b82f6;
+  color: #1a2b4b;
   margin-bottom: 0.85rem;
 
   .eyebrow-dash {
     width: 28px;
     height: 2px;
-    background-color: #3b82f6;
+    background-color: #1a2b4b;
     border-radius: 1px;
     display: inline-block;
   }
@@ -122,7 +122,7 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: #2563eb;
+      color: #1a2b4b;
     }
 
     .contact-hero-title {
@@ -135,7 +135,7 @@
       margin-bottom: 0;
 
       .text-blue {
-        color: #2563eb;
+        color: #1a2b4b;
       }
     }
   }
@@ -314,8 +314,8 @@
           width: 7px;
           height: 7px;
           border-radius: 50%;
-          background: #3b82f6;
-          box-shadow: 0 0 8px #60a5fa;
+          background: #c5d4ea;
+          box-shadow: 0 0 8px rgba(197, 212, 234, 0.6);
           animation: pulse 2s infinite;
         }
       }
@@ -356,7 +356,7 @@
           border-radius: 10px;
           background: rgba(255, 255, 255, 0.08);
           border: 1px solid rgba(255, 255, 255, 0.14);
-          color: #60a5fa;
+          color: #c5d4ea;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -440,7 +440,7 @@
             }
 
             &:hover {
-              color: #60a5fa;
+              color: #c5d4ea;
             }
           }
 
@@ -450,14 +450,14 @@
         }
 
         .direct-link-email {
-          color: #60a5fa;
+          color: #c5d4ea;
           font-weight: 600;
           font-size: 0.875rem;
           text-decoration: none;
           transition: color 0.2s ease;
 
           &:hover {
-            color: #93c5fd;
+            color: #ffffff;
             text-decoration: underline;
           }
         }
@@ -535,25 +535,25 @@
         }
 
         &:hover {
-          background: #eff6ff;
-          border-color: #bfdbfe;
-          color: #1d4ed8;
+          background: #f1f5fa;
+          border-color: #cdd7e5;
+          color: #111d33;
           transform: translateY(-1px);
 
           .chip-icon {
-            color: #2563eb;
+            color: #1a2b4b;
           }
         }
 
         &.active {
-          background: #eff6ff;
-          border-color: #3b82f6;
-          color: #1d4ed8;
-          box-shadow: 0 2px 8px rgba(59, 130, 246, 0.16);
+          background: #f1f5fa;
+          border-color: #1a2b4b;
+          color: #111d33;
+          box-shadow: 0 2px 8px rgba(26, 43, 75, 0.16);
           font-weight: 700;
 
           .chip-icon {
-            color: #2563eb;
+            color: #1a2b4b;
           }
         }
       }
@@ -602,7 +602,7 @@
         }
 
         &:focus-within .input-icon {
-          color: #2563eb;
+          color: #1a2b4b;
         }
       }
 
@@ -627,8 +627,8 @@
         &:focus {
           outline: none;
           background-color: #ffffff;
-          border-color: #3b82f6;
-          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.14);
+          border-color: #1a2b4b;
+          box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.14);
         }
       }
 
@@ -644,8 +644,8 @@
 
         &:focus-within {
           background-color: #ffffff;
-          border-color: #3b82f6;
-          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.14);
+          border-color: #1a2b4b;
+          box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.14);
 
           input {
             background-color: #ffffff;
@@ -826,7 +826,7 @@
         font-family: $font-heading;
         font-size: 0.9375rem;
         font-weight: 700;
-        color: #2563eb;
+        color: #1a2b4b;
         text-decoration: none;
         transition: color 0.2s ease, transform 0.2s ease;
 
@@ -835,7 +835,7 @@
         }
 
         &:hover {
-          color: #1d4ed8;
+          color: #111d33;
 
           svg {
             transform: translateX(4px);
@@ -913,7 +913,7 @@
           font-weight: 500;
 
           svg {
-            color: #3b82f6;
+            color: #1a2b4b;
           }
         }
       }
@@ -937,7 +937,7 @@
         transition: color 0.2s ease;
 
         svg {
-          color: #3b82f6;
+          color: #1a2b4b;
           flex-shrink: 0;
         }
 
@@ -1031,7 +1031,7 @@
         font-family: $font-heading;
         font-size: 0.9375rem;
         font-weight: 700;
-        color: #2563eb;
+        color: #1a2b4b;
         text-decoration: none;
         transition: color 0.2s ease;
 
@@ -1040,7 +1040,7 @@
         }
 
         &:hover {
-          color: #1d4ed8;
+          color: #111d33;
 
           svg {
             transform: translateX(4px);
@@ -1077,7 +1077,7 @@
       border-color: #cbd5e1;
 
       .card-arrow {
-        color: #2563eb;
+        color: #1a2b4b;
         transform: translateX(4px);
       }
     }
@@ -1086,8 +1086,8 @@
       width: 48px;
       height: 48px;
       border-radius: 12px;
-      background: #eff6ff;
-      color: #2563eb;
+      background: #f1f5fa;
+      color: #1a2b4b;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1225,7 +1225,7 @@
       transition: color 0.2s ease;
 
       &:hover {
-        color: #2563eb;
+        color: #1a2b4b;
       }
 
       .faq-icon {
@@ -1255,11 +1255,11 @@
 
     &.is-open {
       .faq-trigger {
-        color: #2563eb;
+        color: #1a2b4b;
 
         .faq-icon {
           transform: rotate(45deg);
-          color: #2563eb;
+          color: #1a2b4b;
         }
       }
 

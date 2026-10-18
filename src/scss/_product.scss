@@ -49,16 +49,16 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #2563eb;
+  color: #1a2b4b;
   margin-bottom: 0.65rem;
 
   .eyebrow-dot {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #2563eb;
+    background: #1a2b4b;
     display: inline-block;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.2);
   }
 
   .eyebrow-text {
@@ -76,7 +76,7 @@
   margin: 0 0 0.75rem;
 
   .text-blue {
-    color: #2563eb;
+    color: #1a2b4b;
   }
 }
 
@@ -157,7 +157,7 @@
 
   /* Card Accent Borders */
   &.card-blue .card-inner {
-    border-top: 3px solid #0284c7;
+    border-top: 3px solid #1a2b4b;
   }
 
   &.card-emerald .card-inner {
@@ -208,9 +208,9 @@
   border-radius: 9999px;
 
   &.tag-blue {
-    background: rgba(2, 132, 199, 0.08);
-    color: #0284c7;
-    border: 1px solid rgba(2, 132, 199, 0.2);
+    background: #f1f5fa;
+    color: #1a2b4b;
+    border: 1px solid rgba(26, 43, 75, 0.2);
   }
 
   &.tag-emerald {
@@ -243,8 +243,8 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #0284c7;
-    box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.25);
+    background: #1a2b4b;
+    box-shadow: 0 0 0 2px rgba(26, 43, 75, 0.25);
 
     &.status-emerald {
       background: #10b981;
@@ -297,7 +297,7 @@
   }
 
   .title-accent-blue {
-    color: #0284c7;
+    color: #1a2b4b;
   }
 
   .title-accent-emerald {
@@ -392,13 +392,13 @@
     svg {
       width: 15px;
       height: 15px;
-      color: #2563eb;
+      color: #1a2b4b;
       flex-shrink: 0;
     }
   }
 }
 
-.card-blue .card-feature-list li svg { color: #0284c7; }
+.card-blue .card-feature-list li svg { color: #1a2b4b; }
 .card-emerald .card-feature-list li svg { color: #059669; }
 .card-indigo .card-feature-list li svg { color: #4f46e5; }
 
@@ -426,11 +426,11 @@
   box-shadow: 0 6px 16px -3px rgba(15, 23, 42, 0.18);
 
   &.btn-aladdin {
-    background: #0284c7;
+    background: #1a2b4b;
     &:hover {
-      background: #0369a1;
+      background: #111d33;
       transform: translateY(-2px);
-      box-shadow: 0 10px 22px -3px rgba(2, 132, 199, 0.4);
+      box-shadow: 0 10px 22px -3px rgba(26, 43, 75, 0.4);
     }
   }
 
@@ -565,8 +565,8 @@
   }
 
   &.hud-blue .hud-icon {
-    background: rgba(2, 132, 199, 0.12);
-    color: #0284c7;
+    background: #f1f5fa;
+    color: #1a2b4b;
   }
 
   &.hud-emerald .hud-icon {

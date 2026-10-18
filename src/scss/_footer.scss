@@ -248,9 +248,9 @@
   }
 
   &:hover {
-    background: #2563eb;
+    background: #111d33;
     transform: translateY(-4px) scale(1.04);
-    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.38), 0 4px 10px rgba(13, 25, 45, 0.16);
+    box-shadow: 0 12px 30px rgba(26, 43, 75, 0.4), 0 4px 10px rgba(13, 25, 45, 0.16);
 
     .progress-ring-bg {
       stroke: rgba(255, 255, 255, 0.25);
@@ -285,7 +285,7 @@
 
     &-fill {
       fill: none;
-      stroke: #3b82f6;
+      stroke: #c5d4ea;
       stroke-width: 2.5;
       stroke-linecap: round;
       transform: rotate(-90deg);

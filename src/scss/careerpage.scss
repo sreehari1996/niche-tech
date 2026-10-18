@@ -66,7 +66,7 @@
         font-weight: 700;
         letter-spacing: 0.15em;
         text-transform: uppercase;
-        color: #3b82f6;
+        color: #1a2b4b;
       }
     }
 
@@ -171,8 +171,8 @@
           }
 
           &:focus {
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+            border-color: #1a2b4b;
+            box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.12);
           }
         }
 
@@ -233,7 +233,7 @@
           background-color: #f8fafc;
 
           .job-title {
-            color: #2563eb;
+            color: #1a2b4b;
           }
 
           .btn-apply svg {
@@ -272,7 +272,7 @@
               color: #475569;
 
               svg {
-                color: #3b82f6;
+                color: #1a2b4b;
                 flex-shrink: 0;
               }
             }
@@ -295,7 +295,7 @@
               font-family: $font-heading;
               font-size: 0.875rem;
               font-weight: 600;
-              color: #2563eb;
+              color: #1a2b4b;
               text-decoration: none;
               transition: all 0.2s ease;
 
@@ -304,7 +304,7 @@
               }
 
               &:hover {
-                color: #1d4ed8;
+                color: #111d33;
               }
             }
           }
@@ -445,7 +445,7 @@
         font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: #3b82f6;
+        color: #1a2b4b;
         display: block;
         margin-bottom: 0.35rem;
       }
@@ -498,8 +498,8 @@
           transition: all 0.2s ease;
 
           &:focus {
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+            border-color: #1a2b4b;
+            box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.12);
           }
         }
       }
@@ -522,9 +522,9 @@
         transition: all 0.25s ease;
 
         &:hover {
-          background: #2563eb;
+          background: #1a2b4b;
           transform: translateY(-1px);
-          box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.3);
+          box-shadow: 0 10px 25px -5px rgba(26, 43, 75, 0.3);
         }
       }
     }

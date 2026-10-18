@@ -74,7 +74,7 @@
       margin-bottom: 1.25rem;
 
       .highlight-blue {
-        color: #2563eb;
+        color: #1a2b4b;
       }
     }
 
@@ -144,14 +144,14 @@
         }
 
         &:hover {
-          background: rgba(37, 99, 235, 0.05);
-          border-color: #2563eb;
-          color: #2563eb;
+          background: rgba(26, 43, 75, 0.05);
+          border-color: #1a2b4b;
+          color: #1a2b4b;
           transform: translateY(-2px);
-          box-shadow: 0 4px 14px rgba(37, 99, 235, 0.12);
+          box-shadow: 0 4px 14px rgba(26, 43, 75, 0.12);
 
           svg {
-            color: #2563eb;
+            color: #1a2b4b;
             transform: translateX(4px);
           }
         }
@@ -185,15 +185,15 @@
         }
 
         &:hover {
-          color: #2563eb;
+          color: #1a2b4b;
 
           .video-play-icon {
-            border-color: #2563eb;
-            background: rgba(37, 99, 235, 0.08);
+            border-color: #1a2b4b;
+            background: rgba(26, 43, 75, 0.08);
             transform: scale(1.06);
 
             svg {
-              color: #2563eb;
+              color: #1a2b4b;
             }
           }
         }
@@ -342,11 +342,11 @@
         width: 30px;
         height: 30px;
         border-radius: 8px;
-        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        background: #f1f5fa;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #2563eb;
+        color: #1a2b4b;
       }
 
       .hud-status {
@@ -389,8 +389,8 @@
         color: #475569;
 
         &.active {
-          background: #dbeafe;
-          color: #1d4ed8;
+          background: #f1f5fa;
+          color: #1a2b4b;
         }
       }
     }
@@ -418,7 +418,7 @@
       .speed-val {
         font-size: 0.95rem;
         font-weight: 800;
-        color: #2563eb;
+        color: #1a2b4b;
       }
 
       .speed-desc {
@@ -453,17 +453,17 @@
         width: 32px;
         height: 32px;
         border-radius: 50%;
-        background: rgba(37, 99, 235, 0.28);
+        background: rgba(197, 212, 234, 0.2);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #38bdf8;
+        color: #c5d4ea;
       }
 
       .match-val {
         font-size: 1.15rem;
         font-weight: 800;
-        color: #38bdf8;
+        color: #c5d4ea;
         line-height: 1;
       }
 

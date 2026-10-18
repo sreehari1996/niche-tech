@@ -160,8 +160,8 @@
 
       &:focus {
         background: rgba(255, 255, 255, 0.08);
-        border-color: #38bdf8;
-        box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18);
+        border-color: #c5d4ea;
+        box-shadow: 0 0 0 3px rgba(197, 212, 234, 0.18);
       }
     }
 
@@ -232,9 +232,9 @@
         transform: translateX(3px);
 
         .detail-icon-circle {
-          background: rgba(56, 189, 248, 0.15);
-          border-color: rgba(56, 189, 248, 0.4);
-          color: #38bdf8;
+          background: rgba(197, 212, 234, 0.15);
+          border-color: rgba(197, 212, 234, 0.4);
+          color: #c5d4ea;
         }
       }
     }

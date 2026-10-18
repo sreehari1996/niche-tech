@@ -142,7 +142,7 @@
   font-family: var(--font-heading);
   font-size: 0.875rem;
   font-weight: 600;
-  color: #0284c7;
+  color: #1a2b4b;
   text-decoration: none;
   transition: color 0.2s ease;
 
@@ -151,7 +151,7 @@
   }
 
   &:hover {
-    color: #0369a1;
+    color: #111d33;
 
     svg {
       transform: translateX(4px);
@@ -198,13 +198,13 @@
     }
 
     .blog-card-title a {
-      color: #0284c7;
+      color: #1a2b4b;
     }
 
     .blog-arrow-btn {
-      background: #0284c7;
+      background: #1a2b4b;
       color: #ffffff;
-      border-color: #0284c7;
+      border-color: #1a2b4b;
       transform: translateX(3px);
     }
   }
@@ -251,8 +251,8 @@
 
   &.badge-ai {
     background: rgba(11, 26, 48, 0.88);
-    color: #38bdf8;
-    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #c5d4ea;
+    border: 1px solid rgba(197, 212, 234, 0.3);
   }
 
   &.badge-cloud {
@@ -305,7 +305,7 @@
   }
 
   .blog-topic {
-    color: #0284c7;
+    color: #1a2b4b;
     font-weight: 600;
   }
 }
@@ -429,12 +429,12 @@
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: rgba(2, 132, 199, 0.15);
-  border: 1px solid rgba(2, 132, 199, 0.3);
+  background: rgba(197, 212, 234, 0.15);
+  border: 1px solid rgba(197, 212, 234, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #38bdf8;
+  color: #c5d4ea;
   flex-shrink: 0;
 }
 
@@ -480,10 +480,10 @@
   }
 
   &:hover {
-    background: #38bdf8;
+    background: #c5d4ea;
     color: #081225;
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.35);
+    box-shadow: 0 10px 20px rgba(197, 212, 234, 0.35);
 
     svg {
       transform: translateX(4px);
