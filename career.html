@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers — Niche Techies | Join our awesome team of professionals!</title>
+  <meta name="description"
+    content="Explore open positions at Niche Techies. Join our awesome team of engineers, designers, and innovators building digital solutions that make a real impact.">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#070e1b',
+              900: '#0a1120',
+              850: '#0b1426',
+              800: '#0f192d',
+              700: '#16243f',
+            },
+            techBlue: {
+              400: '#60a5fa',
+              500: '#4378f5',
+              600: '#2563eb',
+            }
+          },
+          fontFamily: {
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Compiled Global SCSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Dedicated Career Page Stylesheet -->
+  <link rel="stylesheet" href="css/careerpage.css">
+</head>
+
+<body class="bg-white text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- =========================================================================
+       1. Site Header & Navigation (Common Header)
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Niche Techies Home">
+        <img src="assets/images/logo.png" alt="Niche Techies" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html#home" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="index.html#services" class="nav-item">Services</a>
+        <a href="index.html#work" class="nav-item">Work</a>
+        <a href="index.html#product" class="nav-item">Product</a>
+        <a href="index.html#blog" class="nav-item">Blog</a>
+        <a href="career.html" class="nav-item active">Careers</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <a href="#contact" class="btn-talk" id="btn-header-talk">
+          <span>Get in Touch</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="nav-mobile-drawer">
+      <div class="mobile-links">
+        <a href="index.html#home">Home</a>
+        <a href="about.html">About</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#product">Product</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="career.html" class="active">Careers</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <a href="#contact" class="btn-talk w-full justify-center">
+          <span>Get in Touch</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Main Career Page Content
+       ========================================================================= -->
+  <main class="career-page-main">
+
+    <!-- ---------------------------------------------------------------------
+         1. Career Hero Section: Join our awesome team of professionals!
+         --------------------------------------------------------------------- -->
+    <section class="career-hero-section" id="hero">
+      <div class="careerpage-container">
+        <div class="career-hero-grid">
+          <!-- Left Column -->
+          <div class="career-hero-left">
+            <div class="career-eyebrow-row">
+              <span class="career-eyebrow">CAREERS</span>
+            </div>
+            <h1 class="career-hero-title">
+              Join our awesome<br>
+              team of<br>
+              professionals!
+            </h1>
+          </div>
+
+          <!-- Middle Vertical Divider Line -->
+          <div class="career-hero-divider" aria-hidden="true"></div>
+
+          <!-- Right Column -->
+          <div class="career-hero-right">
+            <p class="career-hero-desc">
+              We're a team of passionate individuals working together to build innovative solutions. At Niche Techies, you'll find a collaborative environment, growth opportunities and a culture that values your ideas, skills and unique perspective.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------------------------------------------------------------
+         2. Open Positions Listing Section
+         --------------------------------------------------------------------- -->
+    <section class="career-positions-section" id="positions">
+      <div class="careerpage-container">
+        <!-- Top Bar: Title & Filters -->
+        <div class="positions-top-bar">
+          <h2 class="positions-heading">
+            Open Positions <span class="positions-count" id="jobs-count">(8)</span>
+          </h2>
+
+          <!-- Department and Location Filters -->
+          <div class="positions-filters">
+            <!-- Department Dropdown -->
+            <div class="filter-select-wrapper">
+              <select id="filter-dept" aria-label="Filter by Department">
+                <option value="all">All Departments</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Design">Design</option>
+                <option value="Product">Product</option>
+                <option value="Sales & Marketing">Sales &amp; Marketing</option>
+                <option value="Operations">Operations</option>
+              </select>
+              <div class="filter-select-arrow" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Location Dropdown -->
+            <div class="filter-select-wrapper">
+              <select id="filter-location" aria-label="Filter by Location">
+                <option value="all">All Locations</option>
+                <option value="Kochi Infopark, India">Kochi Infopark, India</option>
+                <option value="Westerville, Ohio, USA">Westerville, Ohio, USA</option>
+              </select>
+              <div class="filter-select-arrow" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Table Listing of Jobs -->
+        <div class="positions-table-wrap">
+          <table class="positions-table" id="jobs-table">
+            <thead>
+              <tr>
+                <th scope="col" style="width: 40%;">ROLE</th>
+                <th scope="col" style="width: 25%;">LOCATION</th>
+                <th scope="col" style="width: 20%;">TYPE</th>
+                <th scope="col" class="th-apply" style="width: 15%;">APPLY</th>
+              </tr>
+            </thead>
+            <tbody id="jobs-tbody">
+              <!-- Job 1 -->
+              <tr class="job-row" data-dept="Engineering" data-location="Kochi Infopark, India" data-title="Full Stack Developer">
+                <td class="td-role">
+                  <div class="job-title">Full Stack Developer</div>
+                  <div class="job-dept">Engineering</div>
+                </td>
+                <td class="td-location">
+                  <span class="location-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Kochi Infopark, India</span>
+                  </span>
+                </td>
+                <td class="td-type">Full-time</td>
+                <td class="td-apply">
+                  <button type="button" class="btn-apply" onclick="openApplyModal('Full Stack Developer', 'Engineering')">
+                    <span>Apply</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Job 2 -->
+              <tr class="job-row" data-dept="Design" data-location="Kochi Infopark, India" data-title="UI/UX Designer">
+                <td class="td-role">
+                  <div class="job-title">UI/UX Designer</div>
+                  <div class="job-dept">Design</div>
+                </td>
+                <td class="td-location">
+                  <span class="location-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Kochi Infopark, India</span>
+                  </span>
+                </td>
+                <td class="td-type">Full-time</td>
+                <td class="td-apply">
+                  <button type="button" class="btn-apply" onclick="openApplyModal('UI/UX Designer', 'Design')">
+                    <span>Apply</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Job 3 -->
+              <tr class="job-row" data-dept="Product" data-location="Westerville, Ohio, USA" data-title="Business Analyst">
+                <td class="td-role">
+                  <div class="job-title">Business Analyst</div>
+                  <div class="job-dept">Product</div>
+                </td>
+                <td class="td-location">
+                  <span class="location-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Westerville, Ohio, USA</span>
+                  </span>
+                </td>
+                <td class="td-type">Full-time</td>
+                <td class="td-apply">
+                  <button type="button" class="btn-apply" onclick="openApplyModal('Business Analyst', 'Product')">
+                    <span>Apply</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Job 4 -->
+              <tr class="job-row" data-dept="Engineering" data-location="Kochi Infopark, India" data-title="Frontend Developer (React)">
+                <td class="td-role">
+                  <div class="job-title">Frontend Developer (React)</div>
+                  <div class="job-dept">Engineering</div>
+                </td>
+                <td class="td-location">
+                  <span class="location-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Kochi Infopark, India</span>
+                  </span>
+                </td>
+                <td class="td-type">Full-time</td>
+                <td class="td-apply">
+                  <button type="button" class="btn-apply" onclick="openApplyModal('Frontend Developer (React)', 'Engineering')">
+                    <span>Apply</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Job 5 -->
+              <tr class="job-row" data-dept="Engineering" data-location="Kochi Infopark, India" data-title="Backend Developer (Node.js)">
+                <td class="td-role">
+                  <div class="job-title">Backend Developer (Node.js)</div>
+                  <div class="job-dept">Engineering</div>
+                </td>
+                <td class="td-location">
+                  <span class="location-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Kochi Infopark, India</span>
+                  </span>
+                </td>
+                <td class="td-type">Full-time</td>
+                <td class="td-apply">
+                  <button type="button" class="btn-apply" onclick="openApplyModal('Backend Developer (Node.js)', 'Engineering')">
+                    <span>Apply</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Job 6 -->
+              <tr class="job-row" data-dept="Sales & Marketing" data-location="Westerville, Ohio, USA" data-title="Senior Business Development Executive">
+                <td class="td-role">
+                  <div class="job-title">Senior Business Development Executive</div>
+                  <div class="job-dept">Sales &amp; Marketing</div>
+                </td>
+                <td class="td-location">
+                  <span class="location-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Westerville, Ohio, USA</span>
+                  </span>
+                </td>
+                <td class="td-type">Full-time</td>
+                <td class="td-apply">
+                  <button type="button" class="btn-apply" onclick="openApplyModal('Senior Business Development Executive', 'Sales & Marketing')">
+                    <span>Apply</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Job 7 -->
+              <tr class="job-row" data-dept="Operations" data-location="Westerville, Ohio, USA" data-title="Business Operations Executive">
+                <td class="td-role">
+                  <div class="job-title">Business Operations Executive</div>
+                  <div class="job-dept">Operations</div>
+                </td>
+                <td class="td-location">
+                  <span class="location-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Westerville, Ohio, USA</span>
+                  </span>
+                </td>
+                <td class="td-type">Full-time</td>
+                <td class="td-apply">
+                  <button type="button" class="btn-apply" onclick="openApplyModal('Business Operations Executive', 'Operations')">
+                    <span>Apply</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+
+              <!-- Job 8 -->
+              <tr class="job-row" data-dept="Engineering" data-location="Kochi Infopark, India" data-title="Mobile App Developer">
+                <td class="td-role">
+                  <div class="job-title">Mobile App Developer</div>
+                  <div class="job-dept">Engineering</div>
+                </td>
+                <td class="td-location">
+                  <span class="location-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>Kochi Infopark, India</span>
+                  </span>
+                </td>
+                <td class="td-type">Full-time</td>
+                <td class="td-apply">
+                  <button type="button" class="btn-apply" onclick="openApplyModal('Mobile App Developer', 'Engineering')">
+                    <span>Apply</span>
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+                    </svg>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Empty State -->
+          <div class="no-jobs-found" id="no-jobs-found">
+            <p>No open positions found matching your filter criteria. Try adjusting the department or location.</p>
+          </div>
+        </div>
+
+        <!-- Pagination Controls -->
+        <nav class="positions-pagination" aria-label="Positions pagination">
+          <button type="button" class="page-btn page-arrow" aria-label="Previous page">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 12L6 8L10 4" />
+            </svg>
+          </button>
+          <button type="button" class="page-btn active" aria-current="page">1</button>
+          <button type="button" class="page-btn">2</button>
+          <button type="button" class="page-btn">3</button>
+          <button type="button" class="page-btn">4</button>
+          <button type="button" class="page-btn page-arrow" aria-label="Next page">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 12L10 8L6 4" />
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Common Contact Section (Exact mirror from index.html)
+         ========================================================================= -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-card-box">
+          <!-- Left Side: Professional Portrait (portrait-female.png) -->
+          <div class="contact-visual">
+            <img src="assets/images/portrait-female.png" alt="Niche Global Tech Consultant in modern office" loading="lazy">
+          </div>
+
+          <!-- Right Side: Contact Area -->
+          <div class="contact-main-wrapper">
+            <!-- Form & Headings Column -->
+            <div class="contact-form-col">
+              <span class="contact-eyebrow">GET IN TOUCH</span>
+              <h2 class="contact-title">Empowering growth<br>through tech talent</h2>
+              <p class="contact-subtitle">
+                Whether you're looking to hire, build a team or transform your products, we're here to help. Let's start the conversation.
+              </p>
+
+              <form class="contact-form" id="contact-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <input type="text" class="form-input" id="name" placeholder="Your Name" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-input" id="email" placeholder="Work Email" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-input" id="message" placeholder="How can we help you?" required>
+                </div>
+                <button type="submit" class="btn-submit" id="btn-submit-message">
+                  <span>Send Message</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </form>
+            </div>
+
+            <!-- Vertical Divider Line -->
+            <div class="contact-divider" aria-hidden="true"></div>
+
+            <!-- Contact Details Column -->
+            <div class="contact-details-col">
+              <!-- Phone -->
+              <a href="tel:+914442603457" class="contact-detail-item">
+                <div class="detail-icon-circle">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <span class="detail-text-primary">+91 44 4260 3457</span>
+              </a>
+
+              <!-- Email -->
+              <a href="mailto:hello@nicheglobal.com" class="contact-detail-item">
+                <div class="detail-icon-circle">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="3"></rect>
+                    <path d="M22 7l-10 7L2 7"></path>
+                  </svg>
+                </div>
+                <span class="detail-text-primary">hello@nicheglobal.com</span>
+              </a>
+
+              <!-- Location -->
+              <div class="contact-detail-item">
+                <div class="detail-icon-circle">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="detail-location-text">
+                  <span class="detail-text-primary">Chennai, India</span>
+                  <span class="detail-text-secondary">Global delivery capabilities</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       Site Footer (Common Footer identical to index.html)
+       ========================================================================= -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-container">
+      <!-- Top Tier: Navigation Columns -->
+      <div class="footer-top-grid">
+        <!-- Col 1: Software & Product Development -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Software &amp; Product Development</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#services">Custom Software Development</a></li>
+            <li><a href="index.html#services">AI-Assisted Development</a></li>
+            <li><a href="index.html#services">Product Development for Startups</a></li>
+            <li><a href="index.html#services">QA &amp; Software Testing</a></li>
+            <li><a href="index.html#services">DevOps &amp; Cloud Engineering</a></li>
+            <li><a href="index.html#services">Dedicated Engineering Teams</a></li>
+            <li><a href="index.html#services">Technology Consulting</a></li>
+            <li><a href="index.html#services">Industry Solutions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Staff Augmentation & Company -->
+        <div class="footer-col">
+          <div class="footer-subgroup">
+            <h4 class="footer-col-title">Staff Augmentation</h4>
+            <ul class="footer-links-list">
+              <li><a href="index.html#services">Hire a Developer</a></li>
+            </ul>
+          </div>
+          <div class="footer-subgroup footer-company-subgroup">
+            <h4 class="footer-col-title">Company</h4>
+            <ul class="footer-links-list">
+              <li><a href="about.html">About</a></li>
+              <li><a href="index.html#work">Case Studies</a></li>
+              <li><a href="career.html">Careers</a></li>
+              <li><a href="index.html#blog">Blogs</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Col 3: Socials -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Socials</h4>
+          <ul class="footer-social-list">
+            <li>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 0 0 1.45-1.45 1.45 1.45 0 0 0-1.45-1.45 1.45 1.45 0 0 0-1.45 1.45 1.45 1.45 0 0 0 1.45 1.45m1.37 9.74v-8.37H5.09v8.37h2.74z"/>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+                <span>Facebook</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Get in touch -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Get in touch</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <a href="tel:+16145355738">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z"/>
+                </svg>
+                <span>+1 (614) 535–5738 (USA)</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+919995333078">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z"/>
+                </svg>
+                <span>+91 99953 33078 (IND)</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@nichetechies.com">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@nichetechies.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:Careers@nichetechies.com">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Careers@nichetechies.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider Line -->
+      <div class="footer-divider-line"></div>
+
+      <!-- Middle Tier: Offices & Logo -->
+      <div class="footer-offices-grid">
+        <!-- Brand Logo Col -->
+        <div class="office-brand-col">
+          <img src="assets/images/niche-techies-logo.png" alt="Niche Techies" class="footer-brand-img">
+        </div>
+
+        <!-- USA Office Col -->
+        <div class="office-col border-left">
+          <div class="office-flag">
+            <svg width="24" height="16" viewBox="0 0 741 390" class="flag-icon flag-us">
+              <rect width="741" height="390" fill="#b22234"/>
+              <path d="M0,45H741M0,105H741M0,165H741M0,225H741M0,285H741M0,345H741" stroke="#fff" stroke-width="30"/>
+              <rect width="296.4" height="210" fill="#3c3b6e"/>
+              <g fill="#fff">
+                <circle cx="30" cy="25" r="7"/><circle cx="80" cy="25" r="7"/><circle cx="130" cy="25" r="7"/><circle cx="180" cy="25" r="7"/><circle cx="230" cy="25" r="7"/>
+                <circle cx="55" cy="55" r="7"/><circle cx="105" cy="55" r="7"/><circle cx="155" cy="55" r="7"/><circle cx="205" cy="55" r="7"/>
+                <circle cx="30" cy="85" r="7"/><circle cx="80" cy="85" r="7"/><circle cx="130" cy="85" r="7"/><circle cx="180" cy="85" r="7"/><circle cx="230" cy="85" r="7"/>
+                <circle cx="55" cy="115" r="7"/><circle cx="105" cy="115" r="7"/><circle cx="155" cy="115" r="7"/><circle cx="205" cy="115" r="7"/>
+                <circle cx="30" cy="145" r="7"/><circle cx="80" cy="145" r="7"/><circle cx="130" cy="145" r="7"/><circle cx="180" cy="145" r="7"/><circle cx="230" cy="145" r="7"/>
+                <circle cx="55" cy="175" r="7"/><circle cx="105" cy="175" r="7"/><circle cx="155" cy="175" r="7"/><circle cx="205" cy="175" r="7"/>
+              </g>
+            </svg>
+          </div>
+          <p class="office-address">
+            470 Olde Worthington Rd, Ste 200, PMB 5256,<br>
+            Westerville, OH 43082, United States of<br>
+            America
+          </p>
+        </div>
+
+        <!-- India Office Col -->
+        <div class="office-col border-left">
+          <div class="office-flag">
+            <svg width="22" height="22" viewBox="0 0 100 100" class="flag-icon flag-in">
+              <defs>
+                <clipPath id="circleClipIndiaCareer">
+                  <circle cx="50" cy="50" r="50"/>
+                </clipPath>
+              </defs>
+              <g clip-path="url(#circleClipIndiaCareer)">
+                <rect width="100" height="33.33" fill="#FF9933"/>
+                <rect y="33.33" width="100" height="33.33" fill="#FFFFFF"/>
+                <rect y="66.66" width="100" height="33.34" fill="#138808"/>
+                <circle cx="50" cy="50" r="11" fill="none" stroke="#000080" stroke-width="2.5"/>
+                <circle cx="50" cy="50" r="2.5" fill="#000080"/>
+                <g stroke="#000080" stroke-width="1.2">
+                  <line x1="50" y1="39" x2="50" y2="61"/>
+                  <line x1="39" y1="50" x2="61" y2="50"/>
+                  <line x1="42.22" y1="42.22" x2="57.78" y2="57.78"/>
+                  <line x1="42.22" y1="57.78" x2="57.78" y2="42.22"/>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <p class="office-address">
+            8th floor, Vismaya Building, Infopark Kochi<br>
+            Phase-1, Kakkanad - 682042, Ernakulam,<br>
+            Kerala, India
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Tier: Copyright & Legal -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copyright">&copy;2026 Nichetechies. All Rights Reserved</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="21" />
+      <circle class="progress-ring-fill" cx="24" cy="24" r="21" />
+    </svg>
+    <span class="back-to-top-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </svg>
+    </span>
+  </button>
+
+  <!-- =========================================================================
+       Job Application Interactive Modal
+       ========================================================================= -->
+  <div class="career-modal-backdrop" id="apply-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="career-modal-card">
+      <button type="button" class="modal-close-btn" id="modal-close" aria-label="Close modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="modal-eyebrow" id="modal-dept">ENGINEERING</span>
+        <h3 class="modal-job-title" id="modal-title">Full Stack Developer</h3>
+      </div>
+
+      <form class="modal-form" id="career-application-form">
+        <input type="hidden" id="apply-job-input" name="job_title" value="">
+        <input type="hidden" id="apply-dept-input" name="department" value="">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="applicant-name">Full Name *</label>
+            <input type="text" id="applicant-name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="applicant-email">Email Address *</label>
+            <input type="email" id="applicant-email" placeholder="john@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="applicant-phone">Phone Number *</label>
+            <input type="tel" id="applicant-phone" placeholder="+91 98765 43210" required>
+          </div>
+          <div class="form-group">
+            <label for="applicant-portfolio">Portfolio / LinkedIn URL</label>
+            <input type="url" id="applicant-portfolio" placeholder="https://linkedin.com/in/...">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="applicant-note">Brief Introduction / Cover Note</label>
+          <textarea id="applicant-note" rows="3" placeholder="Tell us about yourself and why you're a great fit..."></textarea>
+        </div>
+
+        <button type="submit" class="modal-submit-btn" id="btn-submit-application">
+          <span>Submit Application</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Inline Script for Filtering, Modal & Back to Top -->
+  <script>
+    // 1. Job Filtering by Department and Location
+    const filterDept = document.getElementById('filter-dept');
+    const filterLocation = document.getElementById('filter-location');
+    const jobRows = document.querySelectorAll('.job-row');
+    const jobsCount = document.getElementById('jobs-count');
+    const noJobsFound = document.getElementById('no-jobs-found');
+
+    function filterJobs() {
+      const selectedDept = filterDept.value;
+      const selectedLocation = filterLocation.value;
+      let visibleCount = 0;
+
+      jobRows.forEach(row => {
+        const rowDept = row.getAttribute('data-dept');
+        const rowLocation = row.getAttribute('data-location');
+
+        const matchDept = (selectedDept === 'all' || rowDept === selectedDept);
+        const matchLocation = (selectedLocation === 'all' || rowLocation === selectedLocation);
+
+        if (matchDept && matchLocation) {
+          row.style.display = '';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      jobsCount.textContent = `(${visibleCount})`;
+      if (visibleCount === 0) {
+        noJobsFound.classList.add('is-visible');
+      } else {
+        noJobsFound.classList.remove('is-visible');
+      }
+    }
+
+    if (filterDept && filterLocation) {
+      filterDept.addEventListener('change', filterJobs);
+      filterLocation.addEventListener('change', filterJobs);
+    }
+
+    // 2. Application Modal
+    const applyModal = document.getElementById('apply-modal');
+    const modalClose = document.getElementById('modal-close');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDept = document.getElementById('modal-dept');
+    const applyJobInput = document.getElementById('apply-job-input');
+    const applyDeptInput = document.getElementById('apply-dept-input');
+    const applicationForm = document.getElementById('career-application-form');
+
+    function openApplyModal(title, dept) {
+      modalTitle.textContent = title;
+      modalDept.textContent = dept.toUpperCase();
+      applyJobInput.value = title;
+      applyDeptInput.value = dept;
+      applyModal.classList.add('is-open');
+      applyModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeApplyModal() {
+      applyModal.classList.remove('is-open');
+      applyModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    if (modalClose) {
+      modalClose.addEventListener('click', closeApplyModal);
+    }
+
+    if (applyModal) {
+      applyModal.addEventListener('click', (e) => {
+        if (e.target === applyModal) {
+          closeApplyModal();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && applyModal && applyModal.classList.contains('is-open')) {
+        closeApplyModal();
+      }
+    });
+
+    if (applicationForm) {
+      applicationForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const applicantName = document.getElementById('applicant-name').value;
+        const job = applyJobInput.value;
+        alert(`Thank you, ${applicantName}! Your application for "${job}" has been received. Our talent team will get back to you shortly.`);
+        closeApplyModal();
+        applicationForm.reset();
+      });
+    }
+
+    // 3. Mobile Menu Toggle
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const mobileDrawer = document.querySelector('.nav-mobile-drawer');
+    if (mobileBtn && mobileDrawer) {
+      mobileBtn.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('is-open');
+        mobileBtn.classList.toggle('is-active');
+      });
+    }
+
+    // 4. Back to Top Scroll Behavior
+    const backToTopBtn = document.getElementById('back-to-top');
+    const progressCircle = document.getElementById('progress-circle');
+    const circumference = 2 * Math.PI * 21; // r = 21
+
+    window.addEventListener('scroll', () => {
+      const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPos = window.scrollY;
+
+      if (scrollPos > 300) {
+        backToTopBtn.classList.add('is-visible');
+      } else {
+        backToTopBtn.classList.remove('is-visible');
+      }
+
+      if (scrollTotal > 0 && progressCircle) {
+        const scrollFraction = scrollPos / scrollTotal;
+        const offset = circumference - (scrollFraction * circumference);
+        progressCircle.style.strokeDashoffset = offset;
+      }
+    });
+
+    if (backToTopBtn) {
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  </script>
+</body>
+
+</html>
