@@ -675,7 +675,7 @@ button, input, textarea {
 
 @media (min-width: 1024px) {
   .hero-visual-wrapper {
-    margin-top: -4.5rem; /* Overlaps with header in desktop view */
+    margin-top: -1.25rem;
     justify-content: flex-end;
   }
 }
@@ -711,6 +711,85 @@ button, input, textarea {
   z-index: 5;
   display: block;
   filter: drop-shadow(0 25px 45px rgba(13, 25, 45, 0.08));
+}
+
+/* Pure Minimal Hero Animation Stage (No Cards) */
+.hero-anim-stage {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1 / 0.88;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-anim-stage .hud-badge-talent {
+  position: absolute;
+  top: 25px;
+  right: 15px;
+  z-index: 30;
+  animation: floatHudTop 6s ease-in-out infinite alternate;
+}
+
+.hero-anim-stage .hud-badge-speed {
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+  z-index: 30;
+  animation: floatHudMid 5.5s ease-in-out infinite alternate 0.5s;
+}
+
+.hero-anim-stage .hud-badge-match {
+  position: absolute;
+  bottom: 25px;
+  left: 10px;
+  z-index: 30;
+  animation: floatHudBottom 7s ease-in-out infinite alternate 1s;
+}
+
+/* Minimal Vector Orbit Animation */
+.orbit-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.orbit-spin-slow {
+  animation: orbitSpin 55s linear infinite;
+  transform-origin: 300px 250px;
+}
+
+.orbit-spin-rev {
+  animation: orbitSpinRev 45s linear infinite;
+  transform-origin: 300px 250px;
+}
+
+.orbit-spin-mid {
+  animation: orbitSpin 35s linear infinite;
+  transform-origin: 300px 250px;
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbitSpinRev {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.brand-core-pulse {
+  animation: brandCoreBreath 5s ease-in-out infinite alternate;
+  transform-origin: 300px 250px;
+}
+
+@keyframes brandCoreBreath {
+  0% { transform: scale(0.96); }
+  100% { transform: scale(1.03); }
 }
 
 /* Floating Glass HUD Badges */

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Animation Options — Niche Techies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Option Switcher Toolbar */
+    .preview-toolbar {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 9999px;
+      padding: 6px 10px;
+      display: flex;
+      gap: 6px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+    .preview-tab-btn {
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #94a3b8;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .preview-tab-btn:hover {
+      color: #ffffff;
+    }
+    .preview-tab-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    }
+    .preview-panel {
+      display: none;
+    }
+    .preview-panel.active {
+      display: block;
+    }
+
+    /* =========================================================================
+       OPTION 1: MINIMAL ENTERPRISE TALENT & SQUAD DEPLOYMENT HUB (CARD CONSOLE)
+       ========================================================================= */
+    .talent-hub-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 24px;
+      padding: 24px 28px;
+      box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+      max-width: 520px;
+      margin: 0 auto;
+      z-index: 10;
+      animation: floatHubCard 6s ease-in-out infinite alternate;
+    }
+    @keyframes floatHubCard {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+
+    /* Option 1 Wrapper and Floating HUD Badges */
+    .talent-hub-wrapper {
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+      margin: 10px auto 0;
+      z-index: 10;
+    }
+
+    .talent-hub-wrapper .hud-badge-talent {
+      position: absolute !important;
+      top: -40px !important;
+      right: -20px !important;
+      z-index: 25;
+      animation: floatHudTop 6s ease-in-out infinite alternate;
+    }
+
+    .talent-hub-wrapper .hud-badge-speed {
+      position: absolute !important;
+      top: 50% !important;
+      left: -52px !important;
+      transform: translateY(-50%) !important;
+      z-index: 25;
+      animation: floatHudMid 5.5s ease-in-out infinite alternate 0.5s;
+    }
+
+    .talent-hub-wrapper .hud-badge-match {
+      position: absolute !important;
+      bottom: -25px !important;
+      left: 10px !important;
+      z-index: 25;
+      animation: floatHudBottom 7s ease-in-out infinite alternate 1s;
+    }
+    .hub-brand-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #0f172a;
+    }
+    .hub-live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+      animation: hubLivePing 2s infinite;
+    }
+    @keyframes hubLivePing {
+      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+      70% { box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+    .hub-vetted-tag {
+      font-size: 11px;
+      font-weight: 600;
+      color: #2563eb;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      padding: 3px 10px;
+      border-radius: 9999px;
+    }
+
+    .hub-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 14px;
+    }
+    .hub-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .hub-subtitle {
+      font-size: 11px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* Squad Rows */
+    .squad-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .squad-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid #f1f5f9;
+      transition: all 0.25s ease;
+    }
+    .squad-row:hover {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+      transform: translateY(-1px);
+    }
+    .squad-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .squad-icon-box {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .squad-icon-blue {
+      background: #eff6ff;
+      color: #2563eb;
+    }
+    .squad-icon-indigo {
+      background: #eef2ff;
+      color: #4f46e5;
+    }
+    .squad-icon-teal {
+      background: #f0fdfa;
+      color: #0d9488;
+    }
+    .squad-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.2;
+    }
+    .squad-skills {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+    .squad-metrics {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3px;
+    }
+    .match-pill {
+      font-size: 11px;
+      font-weight: 700;
+      color: #047857;
+      background: #ecfdf5;
+      border: 1px solid #d1fae5;
+      padding: 2px 7px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .squad-status-text {
+      font-size: 10px;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    /* Live Telemetry Footer */
+    .hub-telemetry-footer {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding-top: 14px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .telemetry-item {
+      text-align: center;
+      padding: 8px 6px;
+      border-radius: 10px;
+      background: #f8fafc;
+    }
+    .telemetry-val {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .telemetry-lbl {
+      font-size: 10px;
+      color: #64748b;
+      font-weight: 500;
+      margin-top: 1px;
+    }
+
+    /* =========================================================================
+       OPTION 2: MINIMAL ABSTRACT CONSTELLATION & 2D BRAND NEXUS (VECTOR ORBIT)
+       ========================================================================= */
+    .constellation-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 580px;
+      aspect-ratio: 1 / 0.9;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .constellation-svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 15px 35px rgba(37, 99, 235, 0.07));
+    }
+    .orbit-ring {
+      fill: none;
+      stroke: #cbd5e1;
+      stroke-width: 1;
+      stroke-dasharray: 4 6;
+      opacity: 0.6;
+    }
+    .orbit-ring-pulse {
+      animation: orbitRotate 50s linear infinite;
+      transform-origin: 290px 240px;
+    }
+    .orbit-ring-reverse {
+      animation: orbitRotateRev 40s linear infinite;
+      transform-origin: 290px 240px;
+    }
+    @keyframes orbitRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes orbitRotateRev {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    .core-brand-badge {
+      animation: coreGentlePulse 4s ease-in-out infinite alternate;
+      transform-origin: 290px 240px;
+    }
+    @keyframes coreGentlePulse {
+      0% { transform: scale(0.98); }
+      100% { transform: scale(1.02); }
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+  <!-- Interactive Option Switcher Toolbar for Client / User Review -->
+  <div class="preview-toolbar">
+    <button class="preview-tab-btn active" onclick="switchPreview('option1')">
+      <span>Option 1: Minimal Talent &amp; Squad Hub (Card Console)</span>
+      <span class="text-xs px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">Recommended</span>
+    </button>
+    <button class="preview-tab-btn" onclick="switchPreview('option2')">
+      <span>Option 2: Minimal Vector Constellation (Airy &amp; Clean)</span>
+    </button>
+    <button class="preview-tab-btn" onclick="switchPreview('optionCurrent')">
+      <span>Original (Chunky 3D Block)</span>
+    </button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home" style="padding-top: 100px;">
+    <div class="hero-container">
+      <!-- Left Content (Exact original content) -->
+      <div class="hero-content">
+        <span class="hero-eyebrow">BUILDING TOMORROW TOGETHER</span>
+        <h1 class="hero-title">
+          Your Strategic Partner<br>
+          For IT Staffing &amp; <span class="highlight-blue">Digital<br>
+            Transformation</span>
+        </h1>
+        <p class="hero-description">
+          We help businesses build high-performing teams and modern digital solutions that drive real impact.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#services" class="btn-primary" id="btn-explore-services">
+            <span>Explore Services</span>
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="#work" class="btn-secondary btn-our-works" id="btn-our-works">
+            <span>Our Works</span>
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Inline Stats Metrics Strip Under Text Content -->
+        <div class="hero-stats-strip" id="stats">
+          <div class="hero-stat-item stat-item">
+            <div class="hero-stat-number stat-number">350+</div>
+            <div class="hero-stat-label stat-label">Successful Projects</div>
+          </div>
+          <div class="hero-stat-item stat-item">
+            <div class="hero-stat-number stat-number">150+</div>
+            <div class="hero-stat-label stat-label">Skilled Professionals</div>
+          </div>
+          <div class="hero-stat-item stat-item">
+            <div class="hero-stat-number stat-number">15+</div>
+            <div class="hero-stat-label stat-label">Years of Experience</div>
+          </div>
+          <div class="hero-stat-item stat-item">
+            <div class="hero-stat-number stat-number">10+</div>
+            <div class="hero-stat-label stat-label">Global Clients</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Visual Column -->
+      <div class="hero-visual-wrapper">
+        <div class="hero-visual-composition">
+          <!-- Ambient Glow (Common to all) -->
+          <div class="hero-ambient-glow" aria-hidden="true"></div>
+
+          <!-- ===============================================================
+               OPTION 1: MINIMAL TALENT & SQUAD DEPLOYMENT HUB (RECOMMENDED)
+               =============================================================== -->
+          <div id="panel-option1" class="preview-panel active">
+            <div class="talent-hub-wrapper">
+              <div class="talent-hub-card">
+                <!-- Card Top Header -->
+                <div class="talent-hub-header">
+                  <div class="hub-brand-pill">
+                    <span class="hub-live-dot"></span>
+                    <span>Talent &amp; Squad Engine</span>
+                  </div>
+                  <span class="hub-vetted-tag">Top 1% Vetted</span>
+                </div>
+
+                <!-- Title & Context -->
+                <div class="hub-title-row" style="margin-bottom: 14px;">
+                  <div>
+                    <div class="hub-title">Pre-Benchmarked Squads</div>
+                    <div class="hub-subtitle" style="margin-top: 2px;">Real-Time Allocation &amp; Deployment</div>
+                  </div>
+                </div>
+
+                <!-- Active Engineering Squads Stream -->
+                <div class="squad-stream">
+                  <!-- Squad 1 -->
+                  <div class="squad-row">
+                    <div class="squad-info">
+                      <div class="squad-icon-box squad-icon-blue">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                          <path d="M12 2a10 10 0 0 1 10 10"></path>
+                          <circle cx="12" cy="12" r="4"></circle>
+                        </svg>
+                      </div>
+                      <div>
+                        <div class="squad-name">AI &amp; Machine Learning Squad</div>
+                        <div class="squad-skills">PyTorch • LLMs • RAG Architecture</div>
+                      </div>
+                    </div>
+                    <div class="squad-metrics">
+                      <span class="match-pill">99.4% Match</span>
+                      <span class="squad-status-text">Ready in 48h</span>
+                    </div>
+                  </div>
+
+                  <!-- Squad 2 -->
+                  <div class="squad-row">
+                    <div class="squad-info">
+                      <div class="squad-icon-box squad-icon-indigo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                        </svg>
+                      </div>
+                      <div>
+                        <div class="squad-name">Cloud &amp; DevOps Engineering</div>
+                        <div class="squad-skills">AWS • Kubernetes • Terraform</div>
+                      </div>
+                    </div>
+                    <div class="squad-metrics">
+                      <span class="match-pill">98.8% Match</span>
+                      <span class="squad-status-text">Active Squad</span>
+                    </div>
+                  </div>
+
+                  <!-- Squad 3 -->
+                  <div class="squad-row">
+                    <div class="squad-info">
+                      <div class="squad-icon-box squad-icon-teal">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <polyline points="16 18 22 12 16 6"></polyline>
+                          <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                      </div>
+                      <div>
+                        <div class="squad-name">Digital Transformation Squad</div>
+                        <div class="squad-skills">React • Node • Scalable Microservices</div>
+                      </div>
+                    </div>
+                    <div class="squad-metrics">
+                      <span class="match-pill">98.5% Match</span>
+                      <span class="squad-status-text">Pre-Benchmarked</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bottom Telemetry Strip -->
+                <div class="hub-telemetry-footer">
+                  <div class="telemetry-item">
+                    <div class="telemetry-val">48 Hours</div>
+                    <div class="telemetry-lbl">Squad Spin-up</div>
+                  </div>
+                  <div class="telemetry-item">
+                    <div class="telemetry-val">AI-Assessed</div>
+                    <div class="telemetry-lbl">Technical Rigor</div>
+                  </div>
+                  <div class="telemetry-item">
+                    <div class="telemetry-val">Zero Risk</div>
+                    <div class="telemetry-lbl">Trial Period</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Glass Badges -->
+              <div class="hud-badge-talent" aria-hidden="true">
+                <div class="hud-header">
+                  <div class="hud-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="hud-status">
+                      <span class="pulse-live"></span>
+                      <span>Talent Network</span>
+                    </div>
+                    <div class="hud-title">4,500+ Vetted Engineers</div>
+                  </div>
+                </div>
+                <div class="hud-pills">
+                  <span class="hud-pill active">Top 1% Talent</span>
+                  <span class="hud-pill">AI-Assessed</span>
+                </div>
+              </div>
+
+              <div class="hud-badge-speed" aria-hidden="true">
+                <div class="speed-val">3x</div>
+                <div class="speed-desc">Faster Hiring<br>&amp; Deployment</div>
+              </div>
+
+              <div class="hud-badge-match" aria-hidden="true">
+                <div class="match-icon-circle">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <div>
+                  <div class="match-val">98.4%</div>
+                  <div class="match-text">Staffing Match Accuracy</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===============================================================
+               OPTION 2: MINIMAL VECTOR CONSTELLATION & 2D BRAND NEXUS
+               =============================================================== -->
+          <div id="panel-option2" class="preview-panel">
+            <div class="constellation-wrapper">
+              <svg class="constellation-svg" viewBox="0 0 580 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="opt2BrandGrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#1a2b4b" />
+                    <stop offset="100%" stop-color="#2563eb" />
+                  </linearGradient>
+                  <linearGradient id="opt2LineGrad" x1="100" y1="50" x2="480" y2="430" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#2563eb" stop-opacity="0.35" />
+                    <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.25" />
+                    <stop offset="100%" stop-color="#94a3b8" stop-opacity="0.15" />
+                  </linearGradient>
+                  <filter id="opt2Glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="6" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+
+                <!-- Thin Delicate Orbital Rings -->
+                <circle cx="290" cy="240" r="210" class="orbit-ring orbit-ring-pulse" />
+                <circle cx="290" cy="240" r="145" class="orbit-ring orbit-ring-reverse" stroke="#93c5fd" />
+                <circle cx="290" cy="240" r="85" class="orbit-ring" stroke="#60a5fa" stroke-dasharray="2 4" opacity="0.4" />
+
+                <!-- Network Connection Rays -->
+                <g stroke="url(#opt2LineGrad)" stroke-width="1.2">
+                  <line x1="290" y1="240" x2="130" y2="105" />
+                  <line x1="290" y1="240" x2="455" y2="120" />
+                  <line x1="290" y1="240" x2="470" y2="350" />
+                  <line x1="290" y1="240" x2="115" y2="340" />
+                </g>
+
+                <!-- Moving Signal Pulses -->
+                <circle cx="290" cy="240" r="3" fill="#2563eb">
+                  <animate attributeName="cx" values="290; 130; 290" dur="5s" repeatCount="indefinite" />
+                  <animate attributeName="cy" values="240; 105; 240" dur="5s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.2; 1; 0.2" dur="5s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="290" cy="240" r="3" fill="#38bdf8">
+                  <animate attributeName="cx" values="290; 455; 290" dur="4.2s" repeatCount="indefinite" />
+                  <animate attributeName="cy" values="240; 120; 240" dur="4.2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.3; 1; 0.3" dur="4.2s" repeatCount="indefinite" />
+                </circle>
+
+                <!-- Central Brand Core Emblem (Flat Clean 2D Niche Monogram on Frosted Glass Disc) -->
+                <g class="core-brand-badge">
+                  <!-- Frosted Disc Backdrop -->
+                  <circle cx="290" cy="240" r="54" fill="white" filter="drop-shadow(0 12px 28px rgba(15, 23, 42, 0.08))" stroke="#e2e8f0" stroke-width="1.5" />
+                  <circle cx="290" cy="240" r="46" fill="#f8fafc" />
+
+                  <!-- Clean Geometric Niche 'N' Symbol (Pure 2D vector, NO chunky 3D blocks) -->
+                  <g transform="translate(266, 212) scale(2)">
+                    <path d="M2.5 9.5V23.5H7.5V14.5L2.5 9.5Z" fill="#1a2b4b" />
+                    <path d="M3.5 3.5L20.5 23.5H23.5L6.5 3.5H3.5Z" fill="url(#opt2BrandGrad)" />
+                    <path d="M16.5 2.5V11.5L21.5 16.5V2.5H16.5Z" fill="#2563eb" />
+                  </g>
+                </g>
+
+                <!-- Satellite Tech Nodes -->
+                <!-- Node 1: AI / ML -->
+                <g transform="translate(130, 105)">
+                  <circle cx="0" cy="0" r="6" fill="#2563eb" stroke="white" stroke-width="2" />
+                  <rect x="-50" y="-30" width="100" height="24" rx="12" fill="white" stroke="#e2e8f0" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.05))" />
+                  <text x="0" y="-14" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#0f172a">✦ AI / ML Systems</text>
+                </g>
+
+                <!-- Node 2: Cloud DevOps -->
+                <g transform="translate(455, 120)">
+                  <circle cx="0" cy="0" r="6" fill="#4f46e5" stroke="white" stroke-width="2" />
+                  <rect x="-55" y="-30" width="110" height="24" rx="12" fill="white" stroke="#e2e8f0" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.05))" />
+                  <text x="0" y="-14" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#0f172a">✦ Cloud &amp; DevOps</text>
+                </g>
+
+                <!-- Node 3: Full-Stack -->
+                <g transform="translate(115, 340)">
+                  <circle cx="0" cy="0" r="6" fill="#0d9488" stroke="white" stroke-width="2" />
+                  <rect x="-55" y="10" width="110" height="24" rx="12" fill="white" stroke="#e2e8f0" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.05))" />
+                  <text x="0" y="26" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#0f172a">✦ Full-Stack Squads</text>
+                </g>
+
+                <!-- Node 4: Digital Transformation -->
+                <g transform="translate(470, 350)">
+                  <circle cx="0" cy="0" r="6" fill="#2563eb" stroke="white" stroke-width="2" />
+                  <rect x="-60" y="10" width="120" height="24" rx="12" fill="white" stroke="#e2e8f0" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.05))" />
+                  <text x="0" y="26" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#0f172a">✦ Digital Transformation</text>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Floating Glass Badges -->
+            <div class="hud-badge-talent" aria-hidden="true">
+              <div class="hud-header">
+                <div class="hud-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="hud-status"><span class="pulse-live"></span><span>Talent Network</span></div>
+                  <div class="hud-title">4,500+ Vetted Engineers</div>
+                </div>
+              </div>
+              <div class="hud-pills">
+                <span class="hud-pill active">Top 1% Talent</span>
+                <span class="hud-pill">AI-Assessed</span>
+              </div>
+            </div>
+
+            <div class="hud-badge-speed" aria-hidden="true">
+              <div class="speed-val">3x</div>
+              <div class="speed-desc">Faster Hiring<br>&amp; Deployment</div>
+            </div>
+
+            <div class="hud-badge-match" aria-hidden="true">
+              <div class="match-icon-circle">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <div>
+                <div class="match-val">98.4%</div>
+                <div class="match-text">Staffing Match Accuracy</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ===============================================================
+               ORIGINAL: CHUNKY 3D BLOCK (FOR COMPARISON)
+               =============================================================== -->
+          <div id="panel-optionCurrent" class="preview-panel">
+            <svg class="hero-svg-art" viewBox="0 0 680 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="facetLeft" x1="120" y1="80" x2="260" y2="420" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#243b66" />
+                  <stop offset="0.55" stop-color="#1a2b4b" />
+                  <stop offset="1" stop-color="#0f192d" />
+                </linearGradient>
+                <linearGradient id="facetCenter" x1="200" y1="40" x2="480" y2="440" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#3a5688" />
+                  <stop offset="0.45" stop-color="#1a2b4b" />
+                  <stop offset="1" stop-color="#0a1120" />
+                </linearGradient>
+                <linearGradient id="facetRight" x1="380" y1="100" x2="520" y2="450" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#0f172a" />
+                  <stop offset="0.6" stop-color="#1e293b" />
+                  <stop offset="1" stop-color="#334155" />
+                </linearGradient>
+              </defs>
+              <g opacity="0.55">
+                <circle cx="340" cy="270" r="240" stroke="#1a2b4b" stroke-width="1" stroke-dasharray="4 8" opacity="0.4" />
+                <circle cx="340" cy="270" r="185" stroke="#88a1c4" stroke-width="1.2" stroke-dasharray="6 10" opacity="0.35">
+                  <animateTransform attributeName="transform" type="rotate" from="0 340 270" to="360 340 270" dur="40s" repeatCount="indefinite" />
+                </circle>
+              </g>
+              <g>
+                <animateTransform attributeName="transform" type="translate" values="0 0; 0 -12; 0 0" dur="6s" repeatCount="indefinite" ease="ease-in-out" />
+                <polygon points="175,170 235,210 235,400 175,360" fill="url(#facetLeft)" />
+                <polygon points="175,170 235,210 258,182 198,142" fill="#3a5688" />
+                <polygon points="235,210 258,182 258,372 235,400" fill="#0e1b32" opacity="0.9" />
+                <polygon points="198,90 470,350 518,350 248,90" fill="url(#facetCenter)" opacity="0.95" />
+                <polygon points="198,90 248,90 270,62 220,62" fill="#c5d4ea" />
+                <polygon points="470,350 518,350 495,378 448,378" fill="#1a2b4b" opacity="0.85" />
+                <polygon points="435,105 495,145 495,335 435,295" fill="url(#facetRight)" />
+                <polygon points="435,105 495,145 518,118 458,78" fill="#64748b" />
+                <polygon points="495,145 518,118 518,308 495,335" fill="#090d16" />
+              </g>
+            </svg>
+            <div class="hud-badge-talent"><div class="hud-title">4,500+ Vetted Engineers</div></div>
+            <div class="hud-badge-speed"><div class="speed-val">3x</div><div class="speed-desc">Faster Hiring</div></div>
+            <div class="hud-badge-match"><div class="match-val">98.4%</div><div class="match-text">Match Accuracy</div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function switchPreview(optionId) {
+      document.querySelectorAll('.preview-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.preview-tab-btn').forEach(b => b.classList.remove('active'));
+      
+      const panel = document.getElementById('panel-' + optionId);
+      if (panel) panel.classList.add('active');
+
+      const buttons = document.querySelectorAll('.preview-tab-btn');
+      if (optionId === 'option1') buttons[0].classList.add('active');
+      if (optionId === 'option2') buttons[1].classList.add('active');
+      if (optionId === 'optionCurrent') buttons[2].classList.add('active');
+    }
+  </script>
+</body>
+</html>
