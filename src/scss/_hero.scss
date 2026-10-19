@@ -7,11 +7,16 @@
   display: flex;
   align-items: center;
   background-color: #FAF9F5;
+  background-image: url('../assets/images/hero-bg.png');
+  background-size: cover;
+  background-position: 55% center;
+  background-repeat: no-repeat;
   overflow: hidden;
-  padding-top: 1.5rem;
+  padding-top: 5rem;
   padding-bottom: 2rem;
 
   @include lg {
+    background-position: right center;
     padding-top: 5rem;
     padding-bottom: 2rem;
     min-height: 640px;
@@ -19,16 +24,7 @@
   }
 
   &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 380px;
-    height: 280px;
-    background: linear-gradient(135deg, transparent 40%, rgba(220, 228, 238, 0.45) 100%);
-    clip-path: polygon(100% 0, 100% 100%, 0 100%);
-    pointer-events: none;
-    z-index: 1;
+    display: none;
   }
 
   .hero-container {
@@ -36,22 +32,17 @@
     max-width: 1440px;
     margin: 0 auto;
     padding: 2.5rem 2rem 2.5rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    gap: 2.5rem;
+    display: block;
     position: relative;
     z-index: 10;
 
     @include lg {
-      grid-template-columns: 48% 52%;
       padding: 2.5rem 3.5rem 2.5rem;
-      gap: 1.5rem;
     }
   }
 
   .hero-content {
-    max-width: 580px;
+    max-width: 730px;
     z-index: 20;
 
     .hero-eyebrow {
@@ -220,11 +211,13 @@
         flex-direction: column;
 
         @media (max-width: 639px) {
+
           &:nth-child(1),
           &:nth-child(3) {
             padding-right: 1.25rem;
             border-right: 1px solid rgba(226, 232, 240, 0.85);
           }
+
           &:nth-child(2),
           &:nth-child(4) {
             padding-left: 1.25rem;
@@ -539,12 +532,25 @@
 }
 
 @keyframes floatHubCard {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-8px); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes hubLivePing {
-  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
-  70% { box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 7px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
 }
