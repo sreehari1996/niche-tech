@@ -429,21 +429,96 @@ function initGsapAnimations() {
     gsap.registerPlugin(ScrollTrigger);
   }
 
-  // A. Hero Section Timeline
-  const heroTL = gsap.timeline({ defaults: { ease: 'power2.out', duration: 0.5 } });
+  // A. Hero Section GSAP Animations
+  const heroTL = gsap.timeline({ defaults: { ease: 'power2.out' } });
 
-  heroTL
-    .from('.hero-content > *', {
-      y: 16,
-      opacity: 0,
-      stagger: 0.08,
-      duration: 0.5
-    })
-    .from('.hero-visual-wrapper', {
-      opacity: 0,
-      scale: 0.98,
-      duration: 0.6
-    }, '<0.1');
+  // 1. Cinematic Background Image Reveal (Zoom-in settling + gentle slide-in from right)
+  const heroBgArt = document.querySelector('.hero-bg-art');
+  if (heroBgArt) {
+    heroTL.fromTo(heroBgArt,
+      {
+        scale: 1.08,
+        opacity: 0,
+        x: 35
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        x: 0,
+        duration: 1.4,
+        ease: 'power3.out'
+      },
+      0
+    );
+  }
+
+  // 2. Text & Actions Reveal
+  heroTL.from('.hero-content > *', {
+    y: 18,
+    opacity: 0,
+    stagger: 0.08,
+    duration: 0.55,
+    ease: 'power2.out'
+  }, 0.15);
+
+  // 3. Subtle Ambient Breathing Scale Pulse
+  if (heroBgArt) {
+    gsap.to(heroBgArt, {
+      scale: 1.025,
+      duration: 5,
+      ease: 'sine.inOut',
+      repeat: -1,
+      yoyo: true,
+      delay: 1.4
+    });
+  }
+
+  // 4. ScrollTrigger Depth Parallax on Hero Background
+  const heroBgParallax = document.querySelector('.hero-bg-parallax');
+  if (typeof ScrollTrigger !== 'undefined' && heroBgParallax) {
+    gsap.to(heroBgParallax, {
+      yPercent: 12,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.hero-section',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: 0.6
+      }
+    });
+  }
+
+  // 5. Desktop Interactive Mouse Tracking Parallax (Screens >= 1024px)
+  const heroSection = document.querySelector('.hero-section');
+  if (heroSection && heroBgArt && window.matchMedia('(min-width: 1024px)').matches) {
+    const setX = gsap.quickTo(heroBgArt, 'x', { duration: 0.8, ease: 'power2.out' });
+    const setY = gsap.quickTo(heroBgArt, 'y', { duration: 0.8, ease: 'power2.out' });
+
+    heroSection.addEventListener('mousemove', (e) => {
+      const rect = heroSection.getBoundingClientRect();
+      const normX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      const normY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+
+      // Inverted parallax shift: gives natural physical depth to the 3D card
+      setX(-normX * 18);
+      setY(-normY * 12);
+    });
+
+    heroSection.addEventListener('mouseleave', () => {
+      setX(0);
+      setY(0);
+    });
+  } else if (heroBgArt && !window.matchMedia('(min-width: 1024px)').matches) {
+    // Mobile subtle organic vertical float
+    gsap.to(heroBgArt, {
+      y: 6,
+      duration: 3.5,
+      ease: 'sine.inOut',
+      repeat: -1,
+      yoyo: true,
+      delay: 1.4
+    });
+  }
 
   // B. Counter Number Animation in Stats Strip
   if (typeof ScrollTrigger !== 'undefined') {
