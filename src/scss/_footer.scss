@@ -12,7 +12,11 @@
   .footer-container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 1.25rem;
+
+    @include sm {
+      padding: 0 2rem;
+    }
 
     @include md {
       padding: 0 3.5rem;

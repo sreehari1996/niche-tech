@@ -31,10 +31,14 @@
   .header-container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 1.25rem 2rem;
+    padding: 1rem 1.25rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include sm {
+      padding: 1.25rem 2rem;
+    }
 
     @include md {
       padding: 1.5rem 3.5rem;
@@ -49,12 +53,17 @@
     text-decoration: none;
 
     .brand-logo-img {
-      height: 46px;
+      height: 38px;
       width: auto;
-      max-height: 46px;
+      max-height: 38px;
       object-fit: contain;
       display: block;
       transition: transform $transition-smooth;
+
+      @include sm {
+        height: 46px;
+        max-height: 46px;
+      }
 
       @include md {
         height: 52px;
@@ -141,7 +150,7 @@
     gap: 1rem;
 
     .btn-talk {
-      display: inline-flex;
+      display: none;
       align-items: center;
       gap: 0.5rem;
       background: #0f1c30;
@@ -153,6 +162,10 @@
       font-weight: 600;
       transition: $transition-smooth;
       box-shadow: 0 4px 12px rgba(15, 28, 48, 0.15);
+
+      @include lg {
+        display: inline-flex;
+      }
 
       svg {
         transition: transform 0.25s ease;

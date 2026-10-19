@@ -174,13 +174,19 @@ textarea {
 .site-header .header-container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 1.25rem 2rem;
+  padding: 1rem 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
+  .site-header .header-container {
+    padding: 1.25rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .site-header .header-container {
     padding: 1.5rem 3.5rem;
   }
@@ -195,12 +201,19 @@ textarea {
 }
 
 .brand-logo .brand-logo-img {
-  height: 46px;
+  height: 38px;
   width: auto;
-  max-height: 46px;
+  max-height: 38px;
   object-fit: contain;
   display: block;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .brand-logo .brand-logo-img {
+    height: 46px;
+    max-height: 46px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -300,6 +313,16 @@ textarea {
   font-weight: 600;
   transition: var(--transition-smooth);
   box-shadow: 0 4px 12px rgba(15, 28, 48, 0.15);
+}
+
+.header-actions .btn-talk {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .header-actions .btn-talk {
+    display: inline-flex;
+  }
 }
 
 .btn-talk svg {
@@ -3553,14 +3576,23 @@ textarea {
 .contact-visual {
   position: relative;
   width: 100%;
-  min-height: 320px;
+  min-height: 260px;
+  height: 260px;
   background-color: #0c1e36;
   overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .contact-visual {
+    min-height: 320px;
+    height: 320px;
+  }
 }
 
 @media (min-width: 1024px) {
   .contact-visual {
     min-height: 100%;
+    height: 100%;
   }
 }
 
@@ -3576,10 +3608,16 @@ textarea {
 
 /* Right Main Area */
 .contact-main-wrapper {
-  padding: 2.25rem 2rem;
+  padding: 2.25rem 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+@media (min-width: 640px) {
+  .contact-main-wrapper {
+    padding: 2.25rem 2rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -3818,7 +3856,13 @@ textarea {
 .footer-container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .footer-container {
+    padding: 0 2rem;
+  }
 }
 
 @media (min-width: 768px) {
