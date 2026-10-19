@@ -896,13 +896,46 @@
       });
     }
 
+    // Sticky Header Scroll
+    const siteHeader = document.querySelector('.site-header');
+    if (siteHeader) {
+      const handleHeaderScroll = () => {
+        if (window.scrollY > 40) {
+          siteHeader.classList.add('is-sticky');
+        } else {
+          siteHeader.classList.remove('is-sticky');
+        }
+      };
+      window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+      handleHeaderScroll();
+    }
+
     // 3. Mobile Menu Toggle
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const mobileDrawer = document.querySelector('.nav-mobile-drawer');
+    const mobileLinks = document.querySelectorAll('.mobile-links a');
     if (mobileBtn && mobileDrawer) {
-      mobileBtn.addEventListener('click', () => {
-        mobileDrawer.classList.toggle('is-open');
-        mobileBtn.classList.toggle('is-active');
+      mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = mobileBtn.classList.toggle('open');
+        mobileDrawer.classList.toggle('open', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileBtn.classList.remove('open');
+          mobileDrawer.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (mobileDrawer.classList.contains('open') && !mobileDrawer.contains(e.target) && !mobileBtn.contains(e.target)) {
+          mobileBtn.classList.remove('open');
+          mobileDrawer.classList.remove('open');
+          document.body.style.overflow = '';
+        }
       });
     }
 
@@ -934,6 +967,8 @@
       });
     }
   </script>
+  <!-- Global Interactive Engine (Header, Mobile Drawer, Smooth Scroll, Back-to-Top) -->
+  <script src="js/main.js"></script>
 </body>
 
 </html>

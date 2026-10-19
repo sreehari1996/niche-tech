@@ -907,26 +907,7 @@
         handleScroll();
       }
 
-      // 2. Mobile Menu Drawer Toggle
-      const menuBtn = document.querySelector('.mobile-menu-btn');
-      const drawer = document.querySelector('.nav-mobile-drawer');
-      const mobileLinks = document.querySelectorAll('.mobile-links a');
 
-      if (menuBtn && drawer) {
-        menuBtn.addEventListener('click', () => {
-          const isOpen = menuBtn.classList.toggle('open');
-          drawer.classList.toggle('open', isOpen);
-          document.body.style.overflow = isOpen ? 'hidden' : '';
-        });
-
-        mobileLinks.forEach(link => {
-          link.addEventListener('click', () => {
-            menuBtn.classList.remove('open');
-            drawer.classList.remove('open');
-            document.body.style.overflow = '';
-          });
-        });
-      }
 
       // 3. Smooth Scroll to Section for Hero Explore Button
       const scrollBtn = document.getElementById('hero-scroll-btn');
@@ -992,6 +973,7 @@
           });
           btn.classList.add('active');
           btn.setAttribute('aria-selected', 'true');
+          btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 
           const category = btn.getAttribute('data-filter') || 'all';
           applyFilter(category);

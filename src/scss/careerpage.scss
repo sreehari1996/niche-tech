@@ -24,12 +24,13 @@
 }
 
 /* =========================================================================
-   1. Career Hero Section
+   1. Career Hero Section (Matches service.html - transparent header in hero, no shadow)
    ========================================================================= */
 .career-hero-section {
-  padding: 4.5rem 0 3.5rem;
+  padding: 5rem 0 3.5rem;
   background-color: #ffffff;
   position: relative;
+  border-bottom: 1px solid #f1f5f9;
 
   @include lg {
     padding: 6.5rem 0 4.5rem;

@@ -999,6 +999,7 @@
           });
           btn.classList.add('active');
           btn.setAttribute('aria-selected', 'true');
+          btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 
           const category = btn.getAttribute('data-filter') || 'all';
 

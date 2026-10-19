@@ -40,8 +40,11 @@ function initMobileMenu() {
   const mobileLinks = document.querySelectorAll('.mobile-links a');
 
   if (!menuBtn || !drawer) return;
+  if (menuBtn.dataset.menuBound === 'true') return;
+  menuBtn.dataset.menuBound = 'true';
 
-  menuBtn.addEventListener('click', () => {
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     const isOpen = menuBtn.classList.toggle('open');
     drawer.classList.toggle('open', isOpen);
     document.body.style.overflow = isOpen ? 'hidden' : '';
@@ -53,6 +56,14 @@ function initMobileMenu() {
       drawer.classList.remove('open');
       document.body.style.overflow = '';
     });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (drawer.classList.contains('open') && !drawer.contains(e.target) && !menuBtn.contains(e.target)) {
+      menuBtn.classList.remove('open');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    }
   });
 }
 
@@ -84,14 +95,36 @@ function initProjectCarousel() {
   const prevBtn = document.getElementById('work-prev');
   const nextBtn = document.getElementById('work-next');
   const counterEl = document.getElementById('work-counter');
-  const workItems = document.querySelectorAll('.work-item');
+  const workList = document.querySelector('.work-section .work-list');
+  const workItems = document.querySelectorAll('.work-section .work-item');
 
   if (!workItems.length) return;
 
   const totalItems = workItems.length;
   let currentIndex = 0;
+  let isProgrammaticScroll = false;
+  let scrollProgrammaticTimer = null;
 
-  function setActiveItem(index) {
+  function scrollItemIntoView(idx) {
+    if (!workList || window.innerWidth > 767) return;
+    const item = workItems[idx];
+    if (!item) return;
+
+    isProgrammaticScroll = true;
+    clearTimeout(scrollProgrammaticTimer);
+
+    item.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'start',
+      block: 'nearest'
+    });
+
+    scrollProgrammaticTimer = setTimeout(() => {
+      isProgrammaticScroll = false;
+    }, 450);
+  }
+
+  function setActiveItem(index, shouldScroll = true) {
     currentIndex = (index + totalItems) % totalItems;
     if (counterEl) {
       counterEl.textContent = `0${currentIndex + 1} / 0${totalItems}`;
@@ -101,36 +134,74 @@ function initProjectCarousel() {
       if (idx === currentIndex) {
         item.classList.add('work-item-active');
         item.style.background = 'rgba(255, 255, 255, 0.05)';
-        item.style.borderColor = 'rgba(56, 189, 248, 0.35)';
+        item.style.borderColor = 'rgba(56, 189, 248, 0.38)';
       } else {
         item.classList.remove('work-item-active');
         item.style.background = '';
         item.style.borderColor = '';
       }
     });
+
+    if (shouldScroll) {
+      scrollItemIntoView(currentIndex);
+    }
   }
 
-  // Initial state
-  setActiveItem(0);
+  // Initial state: reset scroll to 0 and activate card 1
+  if (workList && window.innerWidth <= 767) {
+    workList.scrollLeft = 0;
+  }
+  setActiveItem(0, false);
 
-  // Click row to select
+  // Click card to select & scroll into view
   workItems.forEach((item, idx) => {
     item.addEventListener('click', () => {
-      setActiveItem(idx);
+      setActiveItem(idx, true);
     });
   });
 
   // Prev / Next button controls
   if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      setActiveItem(currentIndex - 1);
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      setActiveItem(currentIndex - 1, true);
     });
   }
 
   if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      setActiveItem(currentIndex + 1);
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      setActiveItem(currentIndex + 1, true);
     });
+  }
+
+  // Mobile horizontal swipe / scroll synchronization
+  if (workList) {
+    let scrollDebounce = null;
+    workList.addEventListener('scroll', () => {
+      if (window.innerWidth > 767 || isProgrammaticScroll || !workItems[0]) return;
+
+      clearTimeout(scrollDebounce);
+      scrollDebounce = setTimeout(() => {
+        const listRect = workList.getBoundingClientRect();
+        const listPadding = parseFloat(window.getComputedStyle(workList).paddingLeft) || 0;
+        let closestIdx = 0;
+        let minDiff = Infinity;
+
+        workItems.forEach((item, idx) => {
+          const itemRect = item.getBoundingClientRect();
+          const diff = Math.abs((itemRect.left - listRect.left) - listPadding);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestIdx = idx;
+          }
+        });
+
+        if (closestIdx !== currentIndex) {
+          setActiveItem(closestIdx, false);
+        }
+      }, 50);
+    }, { passive: true });
   }
 }
 

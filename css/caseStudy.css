@@ -283,13 +283,44 @@
 /* Filter Tabs Pill List */
 .casestudy-filter-section .category-pills-list {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   gap: 0.65rem;
 }
 
+@media (max-width: 767px) {
+  .casestudy-filter-section .category-pills-list {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding: 0.25rem 1.25rem 0.75rem;
+  }
+
+  .casestudy-filter-section .category-pills-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .casestudy-filter-section .category-pills-list .category-pill-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .casestudy-filter-section .category-pills-list::after {
+    content: '';
+    flex: 0 0 0.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   .casestudy-filter-section .category-pills-list {
+    flex-wrap: wrap;
     gap: 0.75rem;
   }
 }
