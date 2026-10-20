@@ -79,7 +79,7 @@
    1. Contact Hero Section (Compact Text Layout with Optimal Placement)
    ========================================================================= */
 .contact-hero-section {
-  background-color: #faf9f6;
+  /* background-color: #faf9f6; */
   padding: 3.5rem 0 2.25rem;
   position: relative;
   overflow: hidden;

@@ -98,7 +98,7 @@
    1. Hero Section ("Innovative Solutions. Powered by People.")
    ========================================================================= */
 .about-hero-section {
-  background-color: #faf9f6;
+  /* background-color: #faf9f6; */
   padding: 6.25rem 0 3.5rem;
   position: relative;
   overflow: hidden;
