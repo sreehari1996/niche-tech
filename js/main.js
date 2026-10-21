@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initFormHandler();
   initGsapAnimations();
   initAboutPageGsapAnimations();
+  initServicePageGsapAnimations();
+  initCaseStudyPageGsapAnimations();
+  initBlogPageGsapAnimations();
   initBackToTop();
 });
 
@@ -1601,6 +1604,866 @@ function initAboutPageGsapAnimations() {
   }
 }
 
+// 8C. Service Page GSAP Animations & Interactions
+function initServicePageGsapAnimations() {
+  if (typeof gsap === 'undefined') return;
+
+  const serviceHero = document.querySelector('.service-hero-section');
+  if (!serviceHero) return;
+
+  if (typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  // =========================================================================
+  // 1. Hero Section Opening Timeline Orchestration
+  // =========================================================================
+  const serviceHeroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+  // A. Background shapes soft reveal and ambient floating
+  const bgShapeTL = document.querySelector('.bg-shape-top-left');
+  const bgShapeBL = document.querySelector('.bg-shape-bottom-left');
+  const bgShapeTR = document.querySelector('.bg-shape-top-right');
+  const contourWireframe = document.querySelector('.service-contour-wireframe-tr');
+  const dotMatrices = document.querySelectorAll('.service-dot-matrix');
+  const floatingChips = document.querySelectorAll('.service-floating-chip');
+
+  if (bgShapeTL) {
+    serviceHeroTL.from(bgShapeTL, { opacity: 0, scale: 0.9, duration: 1.4 }, 0);
+    gsap.to(bgShapeTL, {
+      x: 10,
+      y: -8,
+      duration: 7,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 1.2
+    });
+  }
+
+  if (bgShapeBL) {
+    serviceHeroTL.from(bgShapeBL, { opacity: 0, scale: 0.9, duration: 1.4 }, 0);
+    gsap.to(bgShapeBL, {
+      x: 8,
+      y: -12,
+      duration: 7.5,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 1.2
+    });
+  }
+
+  if (bgShapeTR) {
+    serviceHeroTL.from(bgShapeTR, { opacity: 0, scale: 0.92, duration: 1.4 }, 0);
+    gsap.to(bgShapeTR, {
+      x: -12,
+      y: 12,
+      duration: 8.5,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 1.4
+    });
+  }
+
+  if (contourWireframe) {
+    serviceHeroTL.from(contourWireframe, {
+      scale: 0.85,
+      opacity: 0,
+      rotation: -10,
+      duration: 1.2,
+      ease: 'power2.out'
+    }, 0.2);
+
+    gsap.to(contourWireframe, {
+      rotation: 3,
+      duration: 9,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 1.5
+    });
+  }
+
+  if (dotMatrices.length > 0) {
+    serviceHeroTL.from(dotMatrices, {
+      scale: 0.8,
+      opacity: 0,
+      y: 15,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power2.out'
+    }, 0.3);
+
+    dotMatrices.forEach((matrix, i) => {
+      gsap.to(matrix, {
+        y: i === 0 ? -7 : 7,
+        duration: 4.5 + i,
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1,
+        delay: 1.2 + i * 0.3
+      });
+    });
+  }
+
+  if (floatingChips.length > 0) {
+    serviceHeroTL.from(floatingChips, {
+      scale: 0,
+      opacity: 0,
+      duration: 0.65,
+      stagger: 0.08,
+      ease: 'back.out(2)'
+    }, 0.4);
+
+    floatingChips.forEach((chip, i) => {
+      gsap.to(chip, {
+        y: i % 2 === 0 ? -6 : 6,
+        rotation: i % 2 === 0 ? '+=8' : '-=8',
+        duration: 3.5 + i * 0.5,
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1,
+        delay: 1.2 + i * 0.2
+      });
+    });
+  }
+
+  // B. Eyebrow Row
+  const eyebrow = serviceHero.querySelector('.service-hero-eyebrow');
+  if (eyebrow) {
+    serviceHeroTL.from(eyebrow, {
+      y: 18,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power3.out'
+    }, 0.15);
+  }
+
+  // C. Headline Title Reveal
+  const heroTitle = serviceHero.querySelector('.service-hero-title');
+  if (heroTitle) {
+    serviceHeroTL.from(heroTitle, {
+      y: 35,
+      opacity: 0,
+      duration: 0.85,
+      ease: 'power3.out'
+    }, 0.35);
+  }
+
+  // D. Center Divider & Center Node
+  const heroDivider = serviceHero.querySelector('.service-hero-divider');
+  const dividerNode = serviceHero.querySelector('.divider-node');
+  if (heroDivider) {
+    serviceHeroTL.from(heroDivider, {
+      scaleY: 0,
+      transformOrigin: 'center center',
+      duration: 0.8,
+      ease: 'power2.inOut'
+    }, 0.35);
+  }
+  if (dividerNode) {
+    serviceHeroTL.from(dividerNode, {
+      scale: 0,
+      opacity: 0,
+      duration: 0.5,
+      ease: 'back.out(2.5)'
+    }, 0.7);
+
+    gsap.to(dividerNode, {
+      boxShadow: '0 0 0 7px rgba(125, 211, 252, 0.45)',
+      duration: 1.6,
+      yoyo: true,
+      repeat: -1,
+      ease: 'sine.inOut',
+      delay: 1.2
+    });
+  }
+
+  // E. Right Description
+  const heroDesc = serviceHero.querySelector('.service-hero-desc');
+  if (heroDesc) {
+    serviceHeroTL.from(heroDesc, {
+      y: 25,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, 0.5);
+  }
+
+  // F. Dual Buttons
+  const ctaBtns = serviceHero.querySelectorAll('.hero-cta-group a');
+  if (ctaBtns.length > 0) {
+    serviceHeroTL.fromTo(ctaBtns,
+      { y: 20, opacity: 0, scale: 0.95 },
+      { y: 0, opacity: 1, scale: 1, duration: 0.6, stagger: 0.12, ease: 'back.out(1.4)', clearProps: 'opacity,transform,scale' },
+      0.65
+    );
+  }
+
+  // G. Key Metrics Stats Strip & Dividers
+  const statsStrip = serviceHero.querySelector('.service-hero-stats');
+  const statDividers = serviceHero.querySelectorAll('.service-hero-stats .stat-divider');
+  if (statsStrip) {
+    serviceHeroTL.from(statsStrip, {
+      y: 25,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out'
+    }, 0.7);
+  }
+  if (statDividers.length > 0) {
+    serviceHeroTL.from(statDividers, {
+      scaleY: 0,
+      transformOrigin: 'center center',
+      duration: 0.6,
+      stagger: 0.08,
+      ease: 'power3.out'
+    }, 0.85);
+  }
+
+  // Live Counter Interpolation with Decimal Support
+  const statNumbers = serviceHero.querySelectorAll('.stat-number[data-target]');
+  statNumbers.forEach((counter) => {
+    const targetVal = parseFloat(counter.getAttribute('data-target')) || 0;
+    const suffix = counter.getAttribute('data-suffix') || '';
+    const decimals = parseInt(counter.getAttribute('data-decimals'), 10) || 0;
+    const counterObj = { val: 0 };
+
+    serviceHeroTL.to(counterObj, {
+      val: targetVal,
+      duration: 1.8,
+      ease: 'power2.out',
+      onUpdate: () => {
+        if (decimals > 0) {
+          counter.textContent = counterObj.val.toFixed(decimals) + suffix;
+        } else {
+          counter.textContent = Math.floor(counterObj.val) + suffix;
+        }
+      }
+    }, 0.8);
+  });
+
+  // =========================================================================
+  // 2. Interactive 3D Parallax Mouse Physics
+  // =========================================================================
+  if (window.matchMedia('(hover: hover) and (min-width: 1024px)').matches) {
+    const setChipX = gsap.quickTo(floatingChips, 'x', { duration: 0.7, ease: 'power2.out' });
+    const setChipY = gsap.quickTo(floatingChips, 'y', { duration: 0.7, ease: 'power2.out' });
+    const setMatrixX = gsap.quickTo(dotMatrices, 'x', { duration: 0.85, ease: 'power2.out' });
+    const setMatrixY = gsap.quickTo(dotMatrices, 'y', { duration: 0.85, ease: 'power2.out' });
+    const setWireframeX = contourWireframe ? gsap.quickTo(contourWireframe, 'x', { duration: 0.8, ease: 'power2.out' }) : null;
+    const setWireframeY = contourWireframe ? gsap.quickTo(contourWireframe, 'y', { duration: 0.8, ease: 'power2.out' }) : null;
+
+    serviceHero.addEventListener('mousemove', (e) => {
+      const rect = serviceHero.getBoundingClientRect();
+      const normX = (e.clientX - rect.left) / rect.width - 0.5;
+      const normY = (e.clientY - rect.top) / rect.height - 0.5;
+
+      setChipX(normX * 18);
+      setChipY(normY * 18);
+      setMatrixX(-normX * 14);
+      setMatrixY(-normY * 14);
+      if (setWireframeX) setWireframeX(normX * 22);
+      if (setWireframeY) setWireframeY(normY * 22);
+    });
+
+    serviceHero.addEventListener('mouseleave', () => {
+      setChipX(0);
+      setChipY(0);
+      setMatrixX(0);
+      setMatrixY(0);
+      if (setWireframeX) setWireframeX(0);
+      if (setWireframeY) setWireframeY(0);
+    });
+  }
+
+  // =========================================================================
+  // 3. Magnetic Hover Physics for CTA Buttons
+  // =========================================================================
+  if (window.matchMedia('(hover: hover)').matches) {
+    ctaBtns.forEach((btn) => {
+      const btnSvg = btn.querySelector('svg');
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) * 0.28;
+        const y = (e.clientY - rect.top - rect.height / 2) * 0.28;
+        gsap.to(btn, { x, y, duration: 0.3, ease: 'power2.out' });
+        if (btnSvg) {
+          gsap.to(btnSvg, { x: x * 0.5 + 3, duration: 0.3, ease: 'power2.out' });
+        }
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
+        if (btnSvg) {
+          gsap.to(btnSvg, { x: 0, duration: 0.4, ease: 'power2.out' });
+        }
+      });
+    });
+  }
+}
+
+// 8D. Case Study Page GSAP Animations & Interactions
+function initCaseStudyPageGsapAnimations() {
+  if (typeof gsap === 'undefined') return;
+
+  const caseHero = document.querySelector('.casestudy-hero-section');
+  if (!caseHero) return;
+
+  if (typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  // =========================================================================
+  // 1. Hero Section Opening Timeline Orchestration
+  // =========================================================================
+  const caseHeroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+  // A. Background shapes soft reveal and ambient floating
+  const bgShapeTL = caseHero.querySelector('.bg-shape-top-left');
+  const bgShapeBL = caseHero.querySelector('.bg-shape-bottom-left');
+  const bgShapeTR = caseHero.querySelector('.bg-shape-top-right');
+  const wireframeTL = caseHero.querySelector('.casestudy-contour-wireframe-tl');
+  const dotMatrices = caseHero.querySelectorAll('.casestudy-dot-matrix');
+  const floatingChips = caseHero.querySelectorAll('.casestudy-floating-chip');
+
+  if (bgShapeTL) {
+    caseHeroTL.from(bgShapeTL, { opacity: 0, scale: 0.9, duration: 1.4 }, 0);
+    gsap.to(bgShapeTL, {
+      x: 10,
+      y: -8,
+      duration: 7,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 1.2
+    });
+  }
+
+  if (bgShapeBL) {
+    caseHeroTL.from(bgShapeBL, { opacity: 0, scale: 0.9, duration: 1.4 }, 0);
+    gsap.to(bgShapeBL, {
+      x: 8,
+      y: -12,
+      duration: 7.5,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 1.2
+    });
+  }
+
+  if (bgShapeTR) {
+    caseHeroTL.from(bgShapeTR, { opacity: 0, scale: 0.92, duration: 1.4 }, 0);
+    gsap.to(bgShapeTR, {
+      x: -12,
+      y: 12,
+      duration: 8.5,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 1.4
+    });
+  }
+
+  if (wireframeTL) {
+    caseHeroTL.from(wireframeTL, {
+      scale: 0.85,
+      opacity: 0,
+      rotation: -10,
+      duration: 1.2,
+      ease: 'power2.out'
+    }, 0.2);
+
+    gsap.to(wireframeTL, {
+      rotation: 4,
+      duration: 9.5,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 1.5
+    });
+  }
+
+  if (dotMatrices.length > 0) {
+    caseHeroTL.from(dotMatrices, {
+      scale: 0.8,
+      opacity: 0,
+      y: 15,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power2.out'
+    }, 0.3);
+
+    dotMatrices.forEach((matrix, i) => {
+      gsap.to(matrix, {
+        y: i === 0 ? -7 : 7,
+        duration: 4.5 + i,
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1,
+        delay: 1.2 + i * 0.3
+      });
+    });
+  }
+
+  if (floatingChips.length > 0) {
+    caseHeroTL.from(floatingChips, {
+      scale: 0,
+      opacity: 0,
+      duration: 0.65,
+      stagger: 0.08,
+      ease: 'back.out(2)'
+    }, 0.4);
+
+    floatingChips.forEach((chip, i) => {
+      gsap.to(chip, {
+        y: i % 2 === 0 ? -6 : 6,
+        rotation: i % 2 === 0 ? '+=8' : '-=8',
+        duration: 3.5 + i * 0.5,
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1,
+        delay: 1.2 + i * 0.2
+      });
+    });
+  }
+
+  // B. Eyebrow Row: Text and Accent Line
+  const eyebrow = caseHero.querySelector('.casestudy-eyebrow');
+  const eyebrowLine = caseHero.querySelector('.casestudy-eyebrow-line');
+  if (eyebrow) {
+    caseHeroTL.from(eyebrow, {
+      y: 18,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power3.out'
+    }, 0.15);
+  }
+  if (eyebrowLine) {
+    caseHeroTL.from(eyebrowLine, {
+      scaleX: 0,
+      transformOrigin: 'left center',
+      duration: 0.6,
+      ease: 'power2.out'
+    }, 0.3);
+  }
+
+  // C. Headline Title Reveal
+  const heroTitle = caseHero.querySelector('.casestudy-hero-title');
+  if (heroTitle) {
+    caseHeroTL.from(heroTitle, {
+      y: 35,
+      opacity: 0,
+      duration: 0.85,
+      ease: 'power3.out'
+    }, 0.35);
+  }
+
+  // D. Center Divider
+  const heroDivider = caseHero.querySelector('.casestudy-hero-divider');
+  if (heroDivider) {
+    caseHeroTL.from(heroDivider, {
+      scaleY: 0,
+      transformOrigin: 'center center',
+      duration: 0.8,
+      ease: 'power2.inOut'
+    }, 0.35);
+  }
+
+  // E. Right Description
+  const heroDesc = caseHero.querySelector('.casestudy-hero-desc');
+  if (heroDesc) {
+    caseHeroTL.from(heroDesc, {
+      y: 25,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, 0.5);
+  }
+
+  // F. CTA Button
+  const scrollBtn = caseHero.querySelector('#hero-scroll-btn');
+  if (scrollBtn) {
+    caseHeroTL.fromTo(scrollBtn,
+      { y: 20, opacity: 0, scale: 0.95 },
+      { y: 0, opacity: 1, scale: 1, duration: 0.6, ease: 'back.out(1.4)', clearProps: 'opacity,transform,scale' },
+      0.65
+    );
+  }
+
+  // G. Key Metrics Stats Strip & Dividers
+  const statsStrip = caseHero.querySelector('.casestudy-hero-stats');
+  const statDividers = caseHero.querySelectorAll('.casestudy-hero-stats .stat-divider');
+  const statSubtexts = caseHero.querySelectorAll('.casestudy-hero-stats .stat-subtext');
+
+  if (statsStrip) {
+    caseHeroTL.from(statsStrip, {
+      y: 25,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out'
+    }, 0.7);
+  }
+  if (statDividers.length > 0) {
+    caseHeroTL.from(statDividers, {
+      scaleY: 0,
+      transformOrigin: 'center center',
+      duration: 0.6,
+      stagger: 0.08,
+      ease: 'power3.out'
+    }, 0.85);
+  }
+
+  // Live Counter Interpolation with Decimal Support
+  const statNumbers = caseHero.querySelectorAll('.stat-number[data-target]');
+  statNumbers.forEach((counter) => {
+    const targetVal = parseFloat(counter.getAttribute('data-target')) || 0;
+    const suffix = counter.getAttribute('data-suffix') || '';
+    const decimals = parseInt(counter.getAttribute('data-decimals'), 10) || 0;
+    const counterObj = { val: 0 };
+
+    caseHeroTL.to(counterObj, {
+      val: targetVal,
+      duration: 1.8,
+      ease: 'power2.out',
+      onUpdate: () => {
+        if (decimals > 0) {
+          counter.textContent = counterObj.val.toFixed(decimals) + suffix;
+        } else {
+          counter.textContent = Math.floor(counterObj.val) + suffix;
+        }
+      }
+    }, 0.8);
+  });
+
+  if (statSubtexts.length > 0) {
+    caseHeroTL.from(statSubtexts, {
+      opacity: 0,
+      y: 10,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: 'power2.out'
+    }, 1.1);
+  }
+
+  // =========================================================================
+  // 2. Interactive 3D Parallax Mouse Physics
+  // =========================================================================
+  if (window.matchMedia('(hover: hover) and (min-width: 1024px)').matches) {
+    const setChipX = gsap.quickTo(floatingChips, 'x', { duration: 0.7, ease: 'power2.out' });
+    const setChipY = gsap.quickTo(floatingChips, 'y', { duration: 0.7, ease: 'power2.out' });
+    const setMatrixX = gsap.quickTo(dotMatrices, 'x', { duration: 0.85, ease: 'power2.out' });
+    const setMatrixY = gsap.quickTo(dotMatrices, 'y', { duration: 0.85, ease: 'power2.out' });
+    const setWireTLX = wireframeTL ? gsap.quickTo(wireframeTL, 'x', { duration: 0.8, ease: 'power2.out' }) : null;
+    const setWireTLY = wireframeTL ? gsap.quickTo(wireframeTL, 'y', { duration: 0.8, ease: 'power2.out' }) : null;
+
+    caseHero.addEventListener('mousemove', (e) => {
+      const rect = caseHero.getBoundingClientRect();
+      const normX = (e.clientX - rect.left) / rect.width - 0.5;
+      const normY = (e.clientY - rect.top) / rect.height - 0.5;
+
+      setChipX(normX * 18);
+      setChipY(normY * 18);
+      setMatrixX(-normX * 14);
+      setMatrixY(-normY * 14);
+      if (setWireTLX) setWireTLX(-normX * 20);
+      if (setWireTLY) setWireTLY(-normY * 20);
+    });
+
+    caseHero.addEventListener('mouseleave', () => {
+      setChipX(0);
+      setChipY(0);
+      setMatrixX(0);
+      setMatrixY(0);
+      if (setWireTLX) setWireTLX(0);
+      if (setWireTLY) setWireTLY(0);
+    });
+  }
+
+  // =========================================================================
+  // 3. Magnetic Hover Physics for Scroll Button
+  // =========================================================================
+  if (scrollBtn && window.matchMedia('(hover: hover)').matches) {
+    const iconWrap = scrollBtn.querySelector('.scroll-icon-wrap');
+    scrollBtn.addEventListener('mousemove', (e) => {
+      const rect = scrollBtn.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) * 0.28;
+      const y = (e.clientY - rect.top - rect.height / 2) * 0.28;
+      gsap.to(scrollBtn, { x, y, duration: 0.3, ease: 'power2.out' });
+      if (iconWrap) {
+        gsap.to(iconWrap, { x: x * 0.4, y: y * 0.4 + 2, duration: 0.3, ease: 'power2.out' });
+      }
+    });
+
+    scrollBtn.addEventListener('mouseleave', () => {
+      gsap.to(scrollBtn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
+      if (iconWrap) {
+        gsap.to(iconWrap, { x: 0, y: 0, duration: 0.4, ease: 'power2.out' });
+      }
+    });
+  }
+
+  // =========================================================================
+  // 4. ScrollTrigger — Filter Section (Category Pills + Result Count)
+  // =========================================================================
+  if (typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const filterSection = document.querySelector('.casestudy-filter-section');
+    if (filterSection) {
+      const filterPills = filterSection.querySelectorAll('.category-pill-btn');
+      const filterFeedback = filterSection.querySelector('.filter-feedback');
+
+      if (filterPills.length > 0) {
+        gsap.from(filterPills, {
+          scrollTrigger: {
+            trigger: filterSection,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          },
+          y: 20,
+          opacity: 0,
+          scale: 0.92,
+          duration: 0.5,
+          stagger: 0.06,
+          ease: 'back.out(1.4)'
+        });
+      }
+
+      if (filterFeedback) {
+        gsap.from(filterFeedback, {
+          scrollTrigger: {
+            trigger: filterSection,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          },
+          opacity: 0,
+          x: 20,
+          duration: 0.6,
+          delay: 0.35,
+          ease: 'power2.out'
+        });
+      }
+    }
+
+    // =========================================================================
+    // 5. ScrollTrigger — Case Study Cards (Staggered Reveal)
+    // =========================================================================
+    const caseCards = document.querySelectorAll('.case-card');
+    if (caseCards.length > 0) {
+      caseCards.forEach((card, index) => {
+        const isEven = index % 2 === 0;
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 88%',
+            toggleActions: 'play none none none'
+          },
+          y: 50,
+          x: isEven ? -30 : 30,
+          opacity: 0,
+          scale: 0.96,
+          duration: 0.75,
+          ease: 'power3.out'
+        });
+
+        // Card image zoom-in reveal
+        const cardImg = card.querySelector('.case-card-visual img');
+        if (cardImg) {
+          gsap.from(cardImg, {
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 88%',
+              toggleActions: 'play none none none'
+            },
+            scale: 1.15,
+            duration: 1.2,
+            delay: 0.15,
+            ease: 'power2.out'
+          });
+        }
+
+        // Card category badge pop-in
+        const badge = card.querySelector('.card-category-badge');
+        if (badge) {
+          gsap.from(badge, {
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 88%',
+              toggleActions: 'play none none none'
+            },
+            scale: 0,
+            opacity: 0,
+            duration: 0.5,
+            delay: 0.3,
+            ease: 'back.out(2)'
+          });
+        }
+
+        // Card body content stagger
+        const cardTitle = card.querySelector('.case-card-title');
+        const cardExcerpt = card.querySelector('.case-card-excerpt');
+        const cardCta = card.querySelector('.case-card-cta');
+        const cardMeta = card.querySelector('.case-card-meta');
+        const bodyElements = [cardTitle, cardExcerpt, cardCta, cardMeta].filter(Boolean);
+
+        if (bodyElements.length > 0) {
+          gsap.from(bodyElements, {
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 88%',
+              toggleActions: 'play none none none'
+            },
+            y: 15,
+            opacity: 0,
+            duration: 0.55,
+            stagger: 0.08,
+            delay: 0.25,
+            ease: 'power2.out'
+          });
+        }
+      });
+    }
+
+    // =========================================================================
+    // 6. ScrollTrigger — Empty State (if visible)
+    // =========================================================================
+    const emptyState = document.querySelector('.cases-empty-state');
+    if (emptyState) {
+      gsap.from(emptyState, {
+        scrollTrigger: {
+          trigger: emptyState,
+          start: 'top 90%',
+          toggleActions: 'play none none none'
+        },
+        y: 30,
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.7,
+        ease: 'power3.out'
+      });
+    }
+
+    // =========================================================================
+    // 7. ScrollTrigger — CTA Strip (Cinematic Entrance)
+    // =========================================================================
+    const ctaStrip = document.querySelector('.casestudy-cta-strip');
+    if (ctaStrip) {
+      const ctaTL = gsap.timeline({
+        scrollTrigger: {
+          trigger: ctaStrip,
+          start: 'top 82%',
+          toggleActions: 'play none none none'
+        }
+      });
+
+      const ctaEyebrow = ctaStrip.querySelector('.cta-strip-eyebrow');
+      const ctaTitle = ctaStrip.querySelector('.cta-strip-title');
+      const ctaDesc = ctaStrip.querySelector('.cta-strip-desc');
+      const ctaBtn = ctaStrip.querySelector('.btn-strip-action');
+
+      if (ctaEyebrow) {
+        ctaTL.from(ctaEyebrow, {
+          y: 20,
+          opacity: 0,
+          duration: 0.5,
+          ease: 'power3.out'
+        }, 0);
+      }
+
+      if (ctaTitle) {
+        ctaTL.from(ctaTitle, {
+          y: 35,
+          opacity: 0,
+          duration: 0.7,
+          ease: 'power3.out'
+        }, 0.1);
+      }
+
+      if (ctaDesc) {
+        ctaTL.from(ctaDesc, {
+          y: 25,
+          opacity: 0,
+          duration: 0.65,
+          ease: 'power2.out'
+        }, 0.25);
+      }
+
+      if (ctaBtn) {
+        ctaTL.from(ctaBtn, {
+          y: 20,
+          opacity: 0,
+          scale: 0.9,
+          duration: 0.6,
+          ease: 'back.out(1.6)',
+          clearProps: 'transform,opacity,scale'
+        }, 0.4);
+      }
+    }
+
+    // =========================================================================
+    // 8. ScrollTrigger — Contact Section
+    // =========================================================================
+    const contactSection = document.querySelector('.contact-section');
+    if (contactSection) {
+      const contactCard = contactSection.querySelector('.contact-card-box');
+      if (contactCard) {
+        gsap.from(contactCard, {
+          scrollTrigger: {
+            trigger: contactSection,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          y: 60,
+          opacity: 0,
+          duration: 0.9,
+          ease: 'power3.out'
+        });
+      }
+
+      // Stagger the contact form elements
+      const contactFormElements = contactSection.querySelectorAll('.contact-eyebrow, .contact-title, .contact-subtitle, .form-group, .btn-submit');
+      if (contactFormElements.length > 0) {
+        gsap.from(contactFormElements, {
+          scrollTrigger: {
+            trigger: contactSection,
+            start: 'top 75%',
+            toggleActions: 'play none none none'
+          },
+          y: 20,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.07,
+          delay: 0.3,
+          ease: 'power2.out'
+        });
+      }
+
+      // Contact details slide in from right
+      const contactDetails = contactSection.querySelectorAll('.contact-detail-item');
+      if (contactDetails.length > 0) {
+        gsap.from(contactDetails, {
+          scrollTrigger: {
+            trigger: contactSection,
+            start: 'top 75%',
+            toggleActions: 'play none none none'
+          },
+          x: 30,
+          opacity: 0,
+          duration: 0.55,
+          stagger: 0.1,
+          delay: 0.5,
+          ease: 'power2.out'
+        });
+      }
+    }
+  }
+}
+
+
 // 9. Back To Top Floating Button with Circular Scroll Progress
 function initBackToTop() {
   const btn = document.getElementById('back-to-top');
@@ -1646,4 +2509,224 @@ function initBackToTop() {
   handleScroll();
 }
 
+
+// =========================================================================
+// 10. Blog Page Hero GSAP Animations
+// =========================================================================
+function initBlogPageGsapAnimations() {
+  if (typeof gsap === 'undefined') return;
+
+  const blogHero = document.querySelector('.blog-hero-section');
+  if (!blogHero) return;
+
+  // DOM References
+  const eyebrowRow = blogHero.querySelector('.blog-eyebrow-row');
+  const heroTitle = blogHero.querySelector('.blog-hero-title');
+  const heroDivider = blogHero.querySelector('.blog-hero-divider');
+  const heroDesc = blogHero.querySelector('.blog-hero-desc');
+  const heroActionRow = blogHero.querySelector('.hero-action-row');
+  const statsStrip = blogHero.querySelector('.blog-hero-stats');
+  const statDividers = blogHero.querySelectorAll('.stat-divider');
+  const statSubtexts = blogHero.querySelectorAll('.stat-subtext');
+  const floatingChips = blogHero.querySelectorAll('.blog-floating-chip');
+  const dotMatrices = blogHero.querySelectorAll('.blog-dot-matrix');
+  const pentagonWireframe = blogHero.querySelector('.blog-pentagon-wireframe-bl');
+  const scrollBtn = document.getElementById('blog-hero-scroll-btn');
+
+  // =========================================================================
+  // 1. Staggered Entry Timeline
+  // =========================================================================
+  const blogHeroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+  if (eyebrowRow) {
+    blogHeroTL.from(eyebrowRow, {
+      y: 20,
+      opacity: 0,
+      duration: 0.6,
+      clearProps: 'opacity,transform'
+    }, 0);
+  }
+
+  if (heroTitle) {
+    blogHeroTL.from(heroTitle, {
+      y: 30,
+      opacity: 0,
+      duration: 0.75,
+      clearProps: 'opacity,transform'
+    }, 0.12);
+  }
+
+  if (heroDivider) {
+    blogHeroTL.from(heroDivider, {
+      scaleY: 0,
+      transformOrigin: 'top center',
+      duration: 0.7,
+      clearProps: 'opacity,transform,scale'
+    }, 0.25);
+  }
+
+  if (heroDesc) {
+    blogHeroTL.from(heroDesc, {
+      y: 20,
+      opacity: 0,
+      duration: 0.65,
+      clearProps: 'opacity,transform'
+    }, 0.35);
+  }
+
+  if (heroActionRow) {
+    blogHeroTL.from(heroActionRow, {
+      y: 15,
+      opacity: 0,
+      duration: 0.55,
+      clearProps: 'opacity,transform'
+    }, 0.5);
+  }
+
+  // Ambient background shapes fade in
+  if (floatingChips.length > 0) {
+    blogHeroTL.from(floatingChips, {
+      scale: 0,
+      opacity: 0,
+      rotation: 90,
+      duration: 0.7,
+      stagger: 0.12,
+      ease: 'back.out(1.7)',
+      clearProps: 'opacity'
+    }, 0.3);
+  }
+
+  if (dotMatrices.length > 0) {
+    blogHeroTL.from(dotMatrices, {
+      opacity: 0,
+      scale: 0.7,
+      duration: 0.65,
+      stagger: 0.1,
+      ease: 'power2.out',
+      clearProps: 'opacity'
+    }, 0.4);
+  }
+
+  if (pentagonWireframe) {
+    blogHeroTL.from(pentagonWireframe, {
+      opacity: 0,
+      rotation: -30,
+      scale: 0.6,
+      duration: 0.8,
+      ease: 'power2.out',
+      clearProps: 'opacity'
+    }, 0.35);
+  }
+
+  // Stats strip entrance
+  if (statsStrip) {
+    blogHeroTL.from(statsStrip, {
+      y: 25,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      clearProps: 'opacity,transform'
+    }, 0.7);
+  }
+  if (statDividers.length > 0) {
+    blogHeroTL.from(statDividers, {
+      scaleY: 0,
+      transformOrigin: 'center center',
+      duration: 0.6,
+      stagger: 0.08,
+      ease: 'power3.out',
+      clearProps: 'opacity,transform,scale'
+    }, 0.85);
+  }
+
+  // Live Counter Interpolation with Decimal Support
+  const statNumbers = blogHero.querySelectorAll('.stat-number[data-target]');
+  statNumbers.forEach((counter) => {
+    const targetVal = parseFloat(counter.getAttribute('data-target')) || 0;
+    const suffix = counter.getAttribute('data-suffix') || '';
+    const decimals = parseInt(counter.getAttribute('data-decimals'), 10) || 0;
+    const counterObj = { val: 0 };
+
+    blogHeroTL.to(counterObj, {
+      val: targetVal,
+      duration: 1.8,
+      ease: 'power2.out',
+      onUpdate: () => {
+        if (decimals > 0) {
+          counter.textContent = counterObj.val.toFixed(decimals) + suffix;
+        } else {
+          counter.textContent = Math.floor(counterObj.val) + suffix;
+        }
+      }
+    }, 0.8);
+  });
+
+  if (statSubtexts.length > 0) {
+    blogHeroTL.from(statSubtexts, {
+      opacity: 0,
+      y: 10,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: 'power2.out',
+      clearProps: 'opacity,transform'
+    }, 1.1);
+  }
+
+  // =========================================================================
+  // 2. Interactive 3D Parallax Mouse Physics
+  // =========================================================================
+  if (window.matchMedia('(hover: hover) and (min-width: 1024px)').matches) {
+    const setChipX = gsap.quickTo(floatingChips, 'x', { duration: 0.7, ease: 'power2.out' });
+    const setChipY = gsap.quickTo(floatingChips, 'y', { duration: 0.7, ease: 'power2.out' });
+    const setMatrixX = gsap.quickTo(dotMatrices, 'x', { duration: 0.85, ease: 'power2.out' });
+    const setMatrixY = gsap.quickTo(dotMatrices, 'y', { duration: 0.85, ease: 'power2.out' });
+    const setPentX = pentagonWireframe ? gsap.quickTo(pentagonWireframe, 'x', { duration: 0.8, ease: 'power2.out' }) : null;
+    const setPentY = pentagonWireframe ? gsap.quickTo(pentagonWireframe, 'y', { duration: 0.8, ease: 'power2.out' }) : null;
+
+    blogHero.addEventListener('mousemove', (e) => {
+      const rect = blogHero.getBoundingClientRect();
+      const normX = (e.clientX - rect.left) / rect.width - 0.5;
+      const normY = (e.clientY - rect.top) / rect.height - 0.5;
+
+      setChipX(normX * 20);
+      setChipY(normY * 20);
+      setMatrixX(-normX * 14);
+      setMatrixY(-normY * 14);
+      if (setPentX) setPentX(-normX * 16);
+      if (setPentY) setPentY(-normY * 16);
+    });
+
+    blogHero.addEventListener('mouseleave', () => {
+      setChipX(0);
+      setChipY(0);
+      setMatrixX(0);
+      setMatrixY(0);
+      if (setPentX) setPentX(0);
+      if (setPentY) setPentY(0);
+    });
+  }
+
+  // =========================================================================
+  // 3. Magnetic Hover Physics for Scroll Button
+  // =========================================================================
+  if (scrollBtn && window.matchMedia('(hover: hover)').matches) {
+    const iconWrap = scrollBtn.querySelector('.scroll-icon-wrap');
+    scrollBtn.addEventListener('mousemove', (e) => {
+      const rect = scrollBtn.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) * 0.28;
+      const y = (e.clientY - rect.top - rect.height / 2) * 0.28;
+      gsap.to(scrollBtn, { x, y, duration: 0.3, ease: 'power2.out' });
+      if (iconWrap) {
+        gsap.to(iconWrap, { x: x * 0.4, y: y * 0.4 + 2, duration: 0.3, ease: 'power2.out' });
+      }
+    });
+
+    scrollBtn.addEventListener('mouseleave', () => {
+      gsap.to(scrollBtn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
+      if (iconWrap) {
+        gsap.to(iconWrap, { x: 0, y: 0, duration: 0.4, ease: 'power2.out' });
+      }
+    });
+  }
+}
 

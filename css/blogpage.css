@@ -15,7 +15,9 @@
   margin: 0 auto;
   padding: 0 2rem;
   width: 100%;
-  display: block;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -25,106 +27,329 @@
 }
 
 /* =========================================================================
-   1. Blog Hero Section (Top Split)
+   1. Blog Hero Section (Executive Split Layout with Ambient Shapes)
    ========================================================================= */
 .blog-hero-section {
-  padding: 6.5rem 0 1rem;
-  background-color: #ffffff;
   position: relative;
+  background-color: #ffffff;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.25rem 0 2rem;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-bottom: 1px solid #f1f5f9;
 }
 
 @media (min-width: 768px) {
   .blog-hero-section {
-    padding: 7.25rem 0 1rem;
+    min-height: calc(100vh - 80px);
+    padding: 2.5rem 0 2.25rem;
   }
 }
 
 @media (min-width: 1024px) {
   .blog-hero-section {
-    padding: 8rem 0 1rem;
+    min-height: calc(100vh - 80px);
+    padding: 3rem 0 2.5rem;
   }
 }
 
+/* Background Ambient Shapes Container */
+.blog-hero-bg-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Floating Diamond Chips */
+.blog-floating-chip {
+  position: absolute;
+  pointer-events: none;
+  background: #38bdf8;
+  border-radius: 6px;
+  opacity: 0.9;
+  transform: rotate(45deg);
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
+}
+
+.chip-diamond-tl {
+  top: 130px;
+  left: 2.5%;
+  width: 24px;
+  height: 24px;
+  background: #0ea5e9;
+  opacity: 0.85;
+}
+
+.chip-diamond-tr {
+  top: 110px;
+  right: 12%;
+  width: 28px;
+  height: 28px;
+  background: #38bdf8;
+  opacity: 0.9;
+}
+
+.chip-diamond-br {
+  bottom: 12%;
+  right: 6%;
+  width: 22px;
+  height: 22px;
+  background: #60a5fa;
+  opacity: 0.9;
+}
+
+/* Dot Matrices */
+.blog-dot-matrix {
+  position: absolute;
+  pointer-events: none;
+}
+
+.matrix-bl {
+  bottom: 22%;
+  left: 3%;
+}
+
+.matrix-br {
+  bottom: 24%;
+  right: 0;
+}
+
+
+
+/* Ambient Soft Blob Top-Left */
+.blog-bg-blob-tl {
+  position: absolute;
+  top: -40px;
+  left: -80px;
+  width: clamp(360px, 40vw, 540px);
+  height: auto;
+  pointer-events: none;
+}
+
+/* Flowing Wave Accent Bottom-Left */
+.blog-pentagon-wireframe-bl {
+  position: absolute;
+  bottom: -30px;
+  left: -40px;
+  width: clamp(280px, 30vw, 420px);
+  height: auto;
+  pointer-events: none;
+}
+
+/* Ambient Soft Blob Radial Top-Right */
+.blog-bg-glow-tr {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: clamp(420px, 46vw, 680px);
+  height: auto;
+  pointer-events: none;
+}
+
+/* Hero Grid (3 columns with vertical divider) */
 .blog-hero-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.75rem;
-  align-items: flex-start;
+  gap: 2.25rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 1024px) {
   .blog-hero-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.15fr 1px 1.05fr;
     gap: 3.5rem;
+    align-items: center;
   }
 }
 
 @media (min-width: 1280px) {
   .blog-hero-grid {
+    grid-template-columns: 1.2fr 1px 1.05fr;
     gap: 4.5rem;
   }
 }
 
-/* Left Column */
-.blog-hero-left .blog-eyebrow {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #64748b;
-  margin-bottom: 0.625rem;
+/* Left Column — Eyebrow + Title */
+.blog-hero-left .blog-eyebrow-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-hero-left .blog-eyebrow-row .blog-eyebrow {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1e3a8a;
 }
 
 .blog-hero-left .blog-hero-title {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 2.25rem;
+  font-size: clamp(2.35rem, 3.8vw, 3.75rem);
   font-weight: 800;
-  line-height: 1.1;
   color: #0c1524;
-  letter-spacing: -0.03em;
+  line-height: 1.14;
+  letter-spacing: -0.035em;
   margin: 0;
 }
 
-@media (min-width: 768px) {
-  .blog-hero-left .blog-hero-title {
-    font-size: 2.75rem;
-  }
+/* Middle Vertical Divider Line */
+.blog-hero-divider {
+  display: none;
 }
 
 @media (min-width: 1024px) {
-  .blog-hero-left .blog-hero-title {
-    font-size: 3.25rem;
+  .blog-hero-divider {
+    display: block;
+    width: 1px;
+    height: 210px;
+    background: #e2e8f0;
+    position: relative;
+    margin: 0 auto;
   }
 }
 
 /* Right Column */
-.blog-hero-right {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding-top: 0;
+.blog-hero-right .blog-hero-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #475569;
+  max-width: 530px;
+  margin: 0 0 1.85rem;
 }
 
-@media (min-width: 1024px) {
-  .blog-hero-right {
-    padding-top: 0;
+.blog-hero-right .hero-action-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Scroll To Explore Button */
+.blog-hero-section .blog-hero-scroll-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: #0c1524;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 0.45rem 1.45rem 0.45rem 0.45rem;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  border: 1.5px solid #d1d9e6;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: all 0.25s ease;
+}
+
+.blog-hero-section .blog-hero-scroll-btn .scroll-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #0c1524;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.blog-hero-section .blog-hero-scroll-btn:hover {
+  background-color: #f8fafc;
+  border-color: #0c1524;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.09);
+}
+
+.blog-hero-section .blog-hero-scroll-btn:hover .scroll-icon-wrap {
+  transform: translateY(2px);
+  background-color: #1a2b4b;
+}
+
+/* Horizontal Key Metrics Strip (4 Columns) */
+.blog-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 1.5rem;
+  margin-top: 4.5rem;
+  padding-top: 0;
+  border-top: none;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .blog-hero-stats {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 }
 
-.blog-hero-right p {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 0.96875rem;
-  line-height: 1.72;
-  color: #475569;
-  margin: 0;
+.blog-hero-stats .stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
-.blog-hero-right p.highlight-text {
-  color: #1e293b;
-  font-weight: 500;
+.blog-hero-stats .stat-item .stat-number {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(2rem, 2.75vw, 2.7rem);
+  font-weight: 800;
+  color: #0c1524;
+  line-height: 1;
+  letter-spacing: -0.035em;
 }
+
+.blog-hero-stats .stat-item .stat-label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #475569;
+  letter-spacing: 0.01em;
+}
+
+.blog-hero-stats .stat-item .stat-subtext {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.8125rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 0.2rem;
+}
+
+.blog-hero-stats .stat-item .stat-subtext svg {
+  color: #0d9488;
+  flex-shrink: 0;
+}
+
+.blog-hero-stats .stat-divider {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .blog-hero-stats .stat-divider {
+    display: block;
+    width: 1px;
+    height: 48px;
+    background: #e2e8f0;
+    margin-top: 0.35rem;
+  }
+}
+
 
 /* =========================================================================
    2. Sub-Row / Insights Intro
