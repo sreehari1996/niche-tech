@@ -132,9 +132,9 @@ $color-dark-deep: #070e1b;
 
   .service-contour-wireframe-tr {
     position: absolute;
-    top: -40px;
-    right: -50px;
-    width: clamp(340px, 38vw, 520px);
+    top: -20px;
+    right: -25px;
+    width: clamp(190px, 20vw, 275px);
     height: auto;
     pointer-events: none;
   }

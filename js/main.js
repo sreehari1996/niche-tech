@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initServicePageGsapAnimations();
   initCaseStudyPageGsapAnimations();
   initBlogPageGsapAnimations();
+  initCareerPageGsapAnimations();
   initBackToTop();
 });
 
@@ -2511,7 +2512,7 @@ function initBackToTop() {
 
 
 // =========================================================================
-// 10. Blog Page Hero GSAP Animations
+// 10. Blog Page Hero & Content GSAP Animations (Premium Smoothness)
 // =========================================================================
 function initBlogPageGsapAnimations() {
   if (typeof gsap === 'undefined') return;
@@ -2519,27 +2520,314 @@ function initBlogPageGsapAnimations() {
   const blogHero = document.querySelector('.blog-hero-section');
   if (!blogHero) return;
 
+  if (typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
   // DOM References
   const eyebrowRow = blogHero.querySelector('.blog-eyebrow-row');
   const heroTitle = blogHero.querySelector('.blog-hero-title');
   const heroDivider = blogHero.querySelector('.blog-hero-divider');
   const heroDesc = blogHero.querySelector('.blog-hero-desc');
   const heroActionRow = blogHero.querySelector('.hero-action-row');
-  const statsStrip = blogHero.querySelector('.blog-hero-stats');
-  const statDividers = blogHero.querySelectorAll('.stat-divider');
-  const statSubtexts = blogHero.querySelectorAll('.stat-subtext');
+  const pillarCards = blogHero.querySelectorAll('.pillar-card');
   const floatingChips = blogHero.querySelectorAll('.blog-floating-chip');
-  const dotMatrices = blogHero.querySelectorAll('.blog-dot-matrix');
-  const pentagonWireframe = blogHero.querySelector('.blog-pentagon-wireframe-bl');
+  const bgBlobTL = blogHero.querySelector('.blog-bg-blob-tl');
+  const bgWaveBL = blogHero.querySelector('.blog-pentagon-wireframe-bl');
+  const bgGlowTR = blogHero.querySelector('.blog-bg-glow-tr');
   const scrollBtn = document.getElementById('blog-hero-scroll-btn');
+
+  // =========================================================================
+  // 1. Staggered Entry Timeline Orchestration
+  // =========================================================================
+  const blogHeroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+  // A. Soft ambient background shapes reveal
+  const ambientBlobs = [bgBlobTL, bgWaveBL, bgGlowTR].filter(Boolean);
+  if (ambientBlobs.length > 0) {
+    blogHeroTL.from(ambientBlobs, {
+      opacity: 0,
+      scale: 0.92,
+      duration: 1.4,
+      stagger: 0.12,
+      ease: 'power2.out',
+      clearProps: 'opacity,scale'
+    }, 0);
+  }
+
+  // B. Continuous organic floating for background shapes (Matching Service & Case Studies)
+  if (bgBlobTL) {
+    gsap.to(bgBlobTL, {
+      x: 10,
+      y: -8,
+      duration: 7,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 1.2
+    });
+  }
+
+  if (bgWaveBL) {
+    gsap.to(bgWaveBL, {
+      x: 8,
+      y: -12,
+      duration: 7.5,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 1.2
+    });
+  }
+
+  if (bgGlowTR) {
+    gsap.to(bgGlowTR, {
+      x: -12,
+      y: 12,
+      duration: 8.5,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 1.4
+    });
+  }
+
+
+
+  // D. Floating Diamond Chips entrance & gentle rocking float
+  if (floatingChips.length > 0) {
+    blogHeroTL.from(floatingChips, {
+      scale: 0,
+      opacity: 0,
+      duration: 0.75,
+      stagger: 0.1,
+      ease: 'back.out(1.6)',
+      clearProps: 'opacity,scale'
+    }, 0.35);
+
+    floatingChips.forEach((chip, i) => {
+      gsap.to(chip, {
+        y: i % 2 === 0 ? -8 : 8,
+        rotation: i % 2 === 0 ? '+=7' : '-=7',
+        duration: 3.6 + i * 0.5,
+        ease: 'sine.inOut',
+        yoyo: true,
+        repeat: -1,
+        delay: 1.2 + i * 0.2
+      });
+    });
+  }
+
+  // E. Editorial Typography Entrance
+  if (eyebrowRow) {
+    blogHeroTL.from(eyebrowRow, {
+      y: 18,
+      opacity: 0,
+      duration: 0.65,
+      ease: 'power3.out',
+      clearProps: 'opacity,transform'
+    }, 0.15);
+  }
+
+  if (heroTitle) {
+    blogHeroTL.from(heroTitle, {
+      y: 32,
+      opacity: 0,
+      duration: 0.85,
+      ease: 'power3.out',
+      clearProps: 'opacity,transform'
+    }, 0.22);
+  }
+
+  if (heroDivider) {
+    blogHeroTL.from(heroDivider, {
+      scaleY: 0,
+      transformOrigin: 'top center',
+      duration: 0.8,
+      ease: 'power2.inOut',
+      clearProps: 'opacity,transform,scale'
+    }, 0.35);
+  }
+
+  if (heroDesc) {
+    blogHeroTL.from(heroDesc, {
+      y: 25,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out',
+      clearProps: 'opacity,transform'
+    }, 0.45);
+  }
+
+  if (heroActionRow) {
+    blogHeroTL.from(heroActionRow, {
+      y: 20,
+      opacity: 0,
+      duration: 0.65,
+      ease: 'back.out(1.4)',
+      clearProps: 'opacity,transform'
+    }, 0.6);
+  }
+
+  // F. Editorial Topic Pillars Staggered Entrance
+  if (pillarCards.length > 0) {
+    blogHeroTL.from(pillarCards, {
+      y: 28,
+      opacity: 0,
+      scale: 0.96,
+      duration: 0.75,
+      stagger: 0.1,
+      ease: 'power2.out',
+      clearProps: 'opacity,transform,scale'
+    }, 0.65);
+
+    // Interactive Click: Auto-filter and smooth scroll to blog grid
+    pillarCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        const cat = card.getAttribute('data-category');
+        if (cat) {
+          const targetTab = document.querySelector(`.blog-filter-tabs .tab-btn[data-filter="${cat}"]`);
+          if (targetTab) {
+            targetTab.click();
+          }
+        }
+        const filterSection = document.querySelector('.blog-filter-section') || document.getElementById('blog-grid');
+        if (filterSection) {
+          filterSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  }
+
+  // =========================================================================
+  // 2. Smooth Navigation & Magnetic Hover for Scroll Button
+  // =========================================================================
+  if (scrollBtn) {
+    scrollBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById('blog-filter-section') || 
+                     document.getElementById('blog-grid-section') || 
+                     document.querySelector('.blog-filter-section') || 
+                     document.querySelector('.blog-grid-section');
+      if (target) {
+        const headerOffset = 96;
+        const targetPos = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: targetPos,
+          behavior: 'smooth'
+        });
+      }
+    });
+
+    if (window.matchMedia('(hover: hover)').matches) {
+      const iconWrap = scrollBtn.querySelector('.scroll-icon-wrap');
+      scrollBtn.addEventListener('mousemove', (e) => {
+        const rect = scrollBtn.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) * 0.22;
+        const y = (e.clientY - rect.top - rect.height / 2) * 0.22;
+        gsap.to(scrollBtn, { x, y, duration: 0.35, ease: 'power2.out', overwrite: 'auto' });
+        if (iconWrap) {
+          gsap.to(iconWrap, { x: x * 0.35, y: y * 0.35 + 2, duration: 0.35, ease: 'power2.out', overwrite: 'auto' });
+        }
+      });
+
+      scrollBtn.addEventListener('mouseleave', () => {
+        gsap.to(scrollBtn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)', overwrite: 'auto' });
+        if (iconWrap) {
+          gsap.to(iconWrap, { x: 0, y: 0, duration: 0.4, ease: 'power2.out', overwrite: 'auto' });
+        }
+      });
+    }
+  }
+
+  // =========================================================================
+  // 3. ScrollTrigger Reveals for Blog Content Sections
+  // =========================================================================
+  if (typeof ScrollTrigger !== 'undefined') {
+    // Subhero Section Reveal
+    const subhero = document.querySelector('.blog-subhero-section');
+    if (subhero) {
+      gsap.from(subhero.querySelectorAll('.blog-subhero-heading, .blog-subhero-desc'), {
+        scrollTrigger: {
+          trigger: subhero,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power2.out',
+        clearProps: 'opacity,transform'
+      });
+    }
+
+    // Filter Controls Bar Reveal
+    const filterSection = document.querySelector('.blog-filter-section');
+    if (filterSection) {
+      gsap.from(filterSection.querySelector('.blog-controls-bar'), {
+        scrollTrigger: {
+          trigger: filterSection,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        },
+        y: 25,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power2.out',
+        clearProps: 'opacity,transform'
+      });
+    }
+
+    // Blog Cards Staggered Reveal
+    const blogCards = document.querySelectorAll('.blog-card');
+    if (blogCards.length > 0) {
+      gsap.from(blogCards, {
+        scrollTrigger: {
+          trigger: '.blog-grid-section',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power2.out',
+        clearProps: 'opacity,transform'
+      });
+    }
+  }
+}
+
+// =============================================================================
+// Career Page Hero & Ambient Shapes GSAP Animations
+// =============================================================================
+function initCareerPageGsapAnimations() {
+  if (typeof gsap === 'undefined') return;
+
+  const careerHero = document.querySelector('.career-hero-section');
+  if (!careerHero) return;
+
+  // DOM References
+  const eyebrowRow = careerHero.querySelector('.career-eyebrow-row');
+  const heroTitle = careerHero.querySelector('.career-hero-title');
+  const heroDivider = careerHero.querySelector('.career-hero-divider');
+  const heroDesc = careerHero.querySelector('.career-hero-desc');
+  const floatingChips = careerHero.querySelectorAll('.career-floating-chip');
+  const dotMatrices = careerHero.querySelectorAll('.career-dot-matrix');
+  const blobTL = careerHero.querySelector('.career-bg-blob-tl');
+  const blobBL = careerHero.querySelector('.career-bg-blob-bl');
+  const glowTR = careerHero.querySelector('.career-bg-glow-tr');
 
   // =========================================================================
   // 1. Staggered Entry Timeline
   // =========================================================================
-  const blogHeroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
+  const careerHeroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
+  // Eyebrow badge
   if (eyebrowRow) {
-    blogHeroTL.from(eyebrowRow, {
+    careerHeroTL.from(eyebrowRow, {
       y: 20,
       opacity: 0,
       duration: 0.6,
@@ -2547,8 +2835,9 @@ function initBlogPageGsapAnimations() {
     }, 0);
   }
 
+  // Hero Title
   if (heroTitle) {
-    blogHeroTL.from(heroTitle, {
+    careerHeroTL.from(heroTitle, {
       y: 30,
       opacity: 0,
       duration: 0.75,
@@ -2556,8 +2845,9 @@ function initBlogPageGsapAnimations() {
     }, 0.12);
   }
 
+  // Vertical Divider
   if (heroDivider) {
-    blogHeroTL.from(heroDivider, {
+    careerHeroTL.from(heroDivider, {
       scaleY: 0,
       transformOrigin: 'top center',
       duration: 0.7,
@@ -2565,8 +2855,9 @@ function initBlogPageGsapAnimations() {
     }, 0.25);
   }
 
+  // Hero Description
   if (heroDesc) {
-    blogHeroTL.from(heroDesc, {
+    careerHeroTL.from(heroDesc, {
       y: 20,
       opacity: 0,
       duration: 0.65,
@@ -2574,21 +2865,25 @@ function initBlogPageGsapAnimations() {
     }, 0.35);
   }
 
-  if (heroActionRow) {
-    blogHeroTL.from(heroActionRow, {
-      y: 15,
+  // Soft ambient blobs
+  const ambientBlobs = [blobTL, blobBL, glowTR].filter(Boolean);
+  if (ambientBlobs.length > 0) {
+    careerHeroTL.from(ambientBlobs, {
       opacity: 0,
-      duration: 0.55,
-      clearProps: 'opacity,transform'
-    }, 0.5);
+      scale: 0.88,
+      duration: 1,
+      stagger: 0.15,
+      ease: 'power2.out',
+      clearProps: 'opacity'
+    }, 0.1);
   }
 
-  // Ambient background shapes fade in
+  // Floating Pill Chips
   if (floatingChips.length > 0) {
-    blogHeroTL.from(floatingChips, {
+    careerHeroTL.from(floatingChips, {
       scale: 0,
       opacity: 0,
-      rotation: 90,
+      rotation: 45,
       duration: 0.7,
       stagger: 0.12,
       ease: 'back.out(1.7)',
@@ -2596,8 +2891,9 @@ function initBlogPageGsapAnimations() {
     }, 0.3);
   }
 
+  // Dot Matrices
   if (dotMatrices.length > 0) {
-    blogHeroTL.from(dotMatrices, {
+    careerHeroTL.from(dotMatrices, {
       opacity: 0,
       scale: 0.7,
       duration: 0.65,
@@ -2607,126 +2903,33 @@ function initBlogPageGsapAnimations() {
     }, 0.4);
   }
 
-  if (pentagonWireframe) {
-    blogHeroTL.from(pentagonWireframe, {
-      opacity: 0,
-      rotation: -30,
-      scale: 0.6,
-      duration: 0.8,
-      ease: 'power2.out',
-      clearProps: 'opacity'
-    }, 0.35);
-  }
-
-  // Stats strip entrance
-  if (statsStrip) {
-    blogHeroTL.from(statsStrip, {
-      y: 25,
-      opacity: 0,
-      duration: 0.7,
-      ease: 'power3.out',
-      clearProps: 'opacity,transform'
-    }, 0.7);
-  }
-  if (statDividers.length > 0) {
-    blogHeroTL.from(statDividers, {
-      scaleY: 0,
-      transformOrigin: 'center center',
-      duration: 0.6,
-      stagger: 0.08,
-      ease: 'power3.out',
-      clearProps: 'opacity,transform,scale'
-    }, 0.85);
-  }
-
-  // Live Counter Interpolation with Decimal Support
-  const statNumbers = blogHero.querySelectorAll('.stat-number[data-target]');
-  statNumbers.forEach((counter) => {
-    const targetVal = parseFloat(counter.getAttribute('data-target')) || 0;
-    const suffix = counter.getAttribute('data-suffix') || '';
-    const decimals = parseInt(counter.getAttribute('data-decimals'), 10) || 0;
-    const counterObj = { val: 0 };
-
-    blogHeroTL.to(counterObj, {
-      val: targetVal,
-      duration: 1.8,
-      ease: 'power2.out',
-      onUpdate: () => {
-        if (decimals > 0) {
-          counter.textContent = counterObj.val.toFixed(decimals) + suffix;
-        } else {
-          counter.textContent = Math.floor(counterObj.val) + suffix;
-        }
-      }
-    }, 0.8);
-  });
-
-  if (statSubtexts.length > 0) {
-    blogHeroTL.from(statSubtexts, {
-      opacity: 0,
-      y: 10,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: 'power2.out',
-      clearProps: 'opacity,transform'
-    }, 1.1);
-  }
-
   // =========================================================================
-  // 2. Interactive 3D Parallax Mouse Physics
+  // 2. Interactive Parallax Mouse Physics
   // =========================================================================
   if (window.matchMedia('(hover: hover) and (min-width: 1024px)').matches) {
     const setChipX = gsap.quickTo(floatingChips, 'x', { duration: 0.7, ease: 'power2.out' });
     const setChipY = gsap.quickTo(floatingChips, 'y', { duration: 0.7, ease: 'power2.out' });
     const setMatrixX = gsap.quickTo(dotMatrices, 'x', { duration: 0.85, ease: 'power2.out' });
     const setMatrixY = gsap.quickTo(dotMatrices, 'y', { duration: 0.85, ease: 'power2.out' });
-    const setPentX = pentagonWireframe ? gsap.quickTo(pentagonWireframe, 'x', { duration: 0.8, ease: 'power2.out' }) : null;
-    const setPentY = pentagonWireframe ? gsap.quickTo(pentagonWireframe, 'y', { duration: 0.8, ease: 'power2.out' }) : null;
 
-    blogHero.addEventListener('mousemove', (e) => {
-      const rect = blogHero.getBoundingClientRect();
+    careerHero.addEventListener('mousemove', (e) => {
+      const rect = careerHero.getBoundingClientRect();
       const normX = (e.clientX - rect.left) / rect.width - 0.5;
       const normY = (e.clientY - rect.top) / rect.height - 0.5;
 
-      setChipX(normX * 20);
-      setChipY(normY * 20);
-      setMatrixX(-normX * 14);
-      setMatrixY(-normY * 14);
-      if (setPentX) setPentX(-normX * 16);
-      if (setPentY) setPentY(-normY * 16);
+      setChipX(normX * 22);
+      setChipY(normY * 22);
+      setMatrixX(-normX * 15);
+      setMatrixY(-normY * 15);
     });
 
-    blogHero.addEventListener('mouseleave', () => {
+    careerHero.addEventListener('mouseleave', () => {
       setChipX(0);
       setChipY(0);
       setMatrixX(0);
       setMatrixY(0);
-      if (setPentX) setPentX(0);
-      if (setPentY) setPentY(0);
-    });
-  }
-
-  // =========================================================================
-  // 3. Magnetic Hover Physics for Scroll Button
-  // =========================================================================
-  if (scrollBtn && window.matchMedia('(hover: hover)').matches) {
-    const iconWrap = scrollBtn.querySelector('.scroll-icon-wrap');
-    scrollBtn.addEventListener('mousemove', (e) => {
-      const rect = scrollBtn.getBoundingClientRect();
-      const x = (e.clientX - rect.left - rect.width / 2) * 0.28;
-      const y = (e.clientY - rect.top - rect.height / 2) * 0.28;
-      gsap.to(scrollBtn, { x, y, duration: 0.3, ease: 'power2.out' });
-      if (iconWrap) {
-        gsap.to(iconWrap, { x: x * 0.4, y: y * 0.4 + 2, duration: 0.3, ease: 'power2.out' });
-      }
-    });
-
-    scrollBtn.addEventListener('mouseleave', () => {
-      gsap.to(scrollBtn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
-      if (iconWrap) {
-        gsap.to(iconWrap, { x: 0, y: 0, duration: 0.4, ease: 'power2.out' });
-      }
     });
   }
 }
+
 
