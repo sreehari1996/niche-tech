@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full Stack Developer (React / Node.js &amp; Cloud) — Careers at Niche Techies</title>
+  <meta name="description"
+    content="Join Niche Techies as a Full Stack Developer in Kochi Infopark. Build scalable digital products, high-throughput cloud microservices, and AI-assisted workflows for global enterprises.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#070e1b',
+              900: '#0a1120',
+              850: '#0b1426',
+              800: '#0f192d',
+              700: '#16243f',
+            },
+            techBlue: {
+              400: '#3a5075',
+              500: '#253b61',
+              600: '#1a2b4b',
+            }
+          },
+          fontFamily: {
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Compiled Global SCSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Dedicated Career Page Stylesheet -->
+  <link rel="stylesheet" href="css/careerpage.css">
+  <!-- Dedicated Job Details Stylesheet -->
+  <link rel="stylesheet" href="css/jobdetails.css">
+</head>
+
+<body class="bg-white text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- =========================================================================
+       1. Site Header & Navigation (Common Header from career.html & index.html)
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Niche Techies Home">
+        <img src="assets/images/logo.png" alt="Niche Techies" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="service.html" class="nav-item">Services</a>
+        <a href="caseStudy.html" class="nav-item">Case Studies</a>
+        <a href="blog.html" class="nav-item">Blog</a>
+        <a href="career.html" class="nav-item active">Careers</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <a href="contact.html" class="btn-talk" id="btn-header-talk">
+          <span>Get in Touch</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="nav-mobile-drawer">
+      <div class="mobile-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="caseStudy.html">Case Studies</a>
+        <a href="blog.html">Blog</a>
+        <a href="career.html" class="active">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <a href="contact.html" class="btn-talk w-full justify-center">
+          <span>Get in Touch</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. Main Job Details Container
+       ========================================================================= -->
+  <main class="job-detail-main" id="main-content">
+
+    <!-- Job Hero Section -->
+    <section class="job-hero-section">
+      <div class="jobdetail-container">
+        <!-- Breadcrumb Navigation -->
+        <nav class="job-breadcrumbs" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="career.html">Careers</a>
+          <span class="breadcrumb-sep">/</span>
+          <a href="career.html#jobs-table">Open Positions</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current" aria-current="page">Full Stack Developer</span>
+        </nav>
+
+        <!-- Status & Category Badges -->
+        <div class="job-badge-row">
+          <span class="badge-status">Actively Hiring</span>
+          <span class="badge-dept">Engineering</span>
+          <span class="badge-worktype">Full-Time</span>
+          <span class="badge-worktype">Flexible Hybrid</span>
+        </div>
+
+        <!-- Job Title -->
+        <h1 class="job-main-title">
+          Full Stack Developer (React / Node.js &amp; Cloud)
+        </h1>
+
+        <!-- Job Lead Summary -->
+        <p class="job-lead-summary">
+          Join our high-velocity product engineering squad building scalable digital platforms, modern cloud microservices, and AI-assisted workflows for global enterprise clients.
+        </p>
+
+        <!-- Key Specs Grid -->
+        <div class="job-specs-grid">
+          <div class="spec-item">
+            <span class="spec-label">Location</span>
+            <div class="spec-value">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Kochi Infopark, India</span>
+            </div>
+          </div>
+
+          <div class="spec-item">
+            <span class="spec-label">Experience</span>
+            <div class="spec-value">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+              <span>3 &ndash; 6 Years</span>
+            </div>
+          </div>
+
+          <div class="spec-item">
+            <span class="spec-label">Work Arrangement</span>
+            <div class="spec-value">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span>Hybrid (2-3 Days Remote)</span>
+            </div>
+          </div>
+
+          <div class="spec-item">
+            <span class="spec-label">Compensation</span>
+            <div class="spec-value">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              <span>Competitive + Incentives</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Actions -->
+        <div class="job-hero-actions">
+          <a href="#apply-section" class="btn-apply-primary" id="btn-hero-apply">
+            <span>Apply for this Position</span>
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+          <button type="button" class="btn-share-job" id="btn-share-job" title="Share this opening">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            <span>Share Job Opening</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Two-Column Body Section -->
+    <section class="job-body-section" id="job-details-body">
+      <div class="jobdetail-container">
+        <div class="job-layout-grid">
+          <!-- Left Column: Detailed Description -->
+          <div class="job-content-col">
+            <!-- Tech Stack Highlights Card -->
+            <div class="job-highlights-card">
+              <h3>Core Technology Stack</h3>
+              <div class="tech-pills">
+                <span class="tech-pill">React 19</span>
+                <span class="tech-pill">TypeScript</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Next.js</span>
+                <span class="tech-pill">PostgreSQL</span>
+                <span class="tech-pill">GraphQL / REST</span>
+                <span class="tech-pill">Docker &amp; Kubernetes</span>
+                <span class="tech-pill">AWS Cloud</span>
+                <span class="tech-pill">Redis</span>
+                <span class="tech-pill">CI/CD Pipelines</span>
+              </div>
+            </div>
+
+            <!-- About the Role -->
+            <h2>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+              <span>About the Role</span>
+            </h2>
+            <p>
+              At Niche Techies, we partner with industry-leading enterprises and high-growth venture-backed startups across North America, Europe, and Asia to engineer resilient, high-throughput digital products.
+            </p>
+            <p>
+              As a <strong>Full Stack Developer</strong> on our core engineering team, you will design, build, and maintain mission-critical web applications from the ground up. You will own features across the complete development lifecycle — from participating in architectural design reviews and authoring clean TypeScript APIs to building fluid React user interfaces and optimizing cloud deployment pipelines.
+            </p>
+
+            <!-- Key Responsibilities -->
+            <h2>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span>What You'll Do</span>
+            </h2>
+            <ul>
+              <li><strong>Full-Stack Architecture:</strong> Architect and implement scalable web applications using React, TypeScript, Node.js, and modern relational/NoSQL data stores.</li>
+              <li><strong>API &amp; Microservices:</strong> Design secure, performant RESTful endpoints and GraphQL schemas, adhering to clean architecture and domain-driven design principles.</li>
+              <li><strong>Performance Optimization:</strong> Optimize Core Web Vitals, frontend asset bundling, query latency, and database indexing to deliver sub-second response times.</li>
+              <li><strong>Automated Testing &amp; Quality:</strong> Author robust unit, integration, and end-to-end tests (Jest, Playwright, React Testing Library) to maintain 90%+ test coverage.</li>
+              <li><strong>Cloud &amp; DevOps:</strong> Collaborate with our platform engineers to deploy containerized microservices to AWS/GCP using Docker and automated CI/CD pipelines.</li>
+              <li><strong>AI-Assisted Innovation:</strong> Experiment with and integrate generative AI developer tools and autonomous LLM agentic patterns into internal workflows and client applications.</li>
+            </ul>
+
+            <!-- Required Qualifications -->
+            <h2>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+              <span>What We're Looking For</span>
+            </h2>
+            <ul>
+              <li><strong>3 to 6 years</strong> of professional software development experience building production-grade web applications.</li>
+              <li>Deep expertise in <strong>React, Next.js, TypeScript, and modern state management</strong> (Redux Toolkit, Zustand, or TanStack Query).</li>
+              <li>Strong backend fundamentals in <strong>Node.js (Express, Nest.js, or Fastify)</strong>, asynchronous event loops, and microservices patterns.</li>
+              <li>Proven track record with <strong>relational databases (PostgreSQL, MySQL)</strong> and familiarity with ORMs (Prisma, TypeORM, Drizzle).</li>
+              <li>Working knowledge of <strong>Docker containerization</strong>, git flow, and automated CI/CD pipelines (GitHub Actions, GitLab CI).</li>
+              <li>Excellent communication skills with the ability to explain complex technical trade-offs to product stakeholders and cross-functional teams.</li>
+            </ul>
+
+            <!-- Bonus Qualifications -->
+            <h2>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <span>Nice to Have</span>
+            </h2>
+            <ul>
+              <li>Hands-on experience deploying services on <strong>AWS (ECS, Lambda, S3, RDS, CloudFront)</strong> or GCP.</li>
+              <li>Familiarity with event-driven architectures using <strong>Kafka, RabbitMQ, or AWS SQS</strong>.</li>
+              <li>Experience with Python, LangChain, or LLM-powered development workflows.</li>
+              <li>Active contributions to open-source software, personal tech projects, or technical blogs.</li>
+            </ul>
+
+            <!-- Perks & Benefits -->
+            <h2>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+              <span>Perks &amp; Why You'll Love Working Here</span>
+            </h2>
+            <div class="job-perks-grid">
+              <div class="perk-box">
+                <div class="perk-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <h4 class="perk-title">Flexible Hybrid</h4>
+                <p class="perk-sub">2-3 days work from home</p>
+              </div>
+
+              <div class="perk-box">
+                <div class="perk-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                  </svg>
+                </div>
+                <h4 class="perk-title">Health Insurance</h4>
+                <p class="perk-sub">Comprehensive coverage</p>
+              </div>
+
+              <div class="perk-box">
+                <div class="perk-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+                <h4 class="perk-title">Annual Bonus</h4>
+                <p class="perk-sub">Performance-linked rewards</p>
+              </div>
+
+              <div class="perk-box">
+                <div class="perk-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                </div>
+                <h4 class="perk-title">Learning Budget</h4>
+                <p class="perk-sub">Annual certs &amp; courses</p>
+              </div>
+
+              <div class="perk-box">
+                <div class="perk-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <h4 class="perk-title">Paid Time Off</h4>
+                <p class="perk-sub">Generous leave &amp; holidays</p>
+              </div>
+
+              <div class="perk-box">
+                <div class="perk-icon-wrap">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+                <h4 class="perk-title">Top Equipment</h4>
+                <p class="perk-sub">Latest MacBook Pro setups</p>
+              </div>
+            </div>
+
+            <!-- Our Interview Process -->
+            <h2>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 14 14"></polyline>
+              </svg>
+              <span>Our Interview Process</span>
+            </h2>
+            <p>We respect your time. Our hiring cycle is streamlined, transparent, and completes within 7 to 10 business days.</p>
+            <div class="interview-process-steps">
+              <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h4 class="step-title">Introductory Call</h4>
+                  <p class="step-desc">30-min conversation with our talent acquisition lead to align on your background and aspirations.</p>
+                </div>
+              </div>
+
+              <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h4 class="step-title">Technical Deep Dive</h4>
+                  <p class="step-desc">60-min discussion with a senior engineer covering architecture, React, Node.js, and past projects.</p>
+                </div>
+              </div>
+
+              <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h4 class="step-title">Practical Coding Review</h4>
+                  <p class="step-desc">45-min collaborative pairing session focusing on practical problem solving and clean code.</p>
+                </div>
+              </div>
+
+              <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h4 class="step-title">Leadership &amp; Offer</h4>
+                  <p class="step-desc">Final conversation with our Engineering VP, followed by compensation discussion and offer rollout.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Sticky Application Form Sidebar -->
+          <aside class="job-sidebar-col" id="apply-section" aria-label="Job Application Form">
+            <!-- Apply Card -->
+            <div class="job-apply-card">
+              <div class="apply-card-header">
+                <h3 class="apply-card-title">Apply for this Role</h3>
+                <p class="apply-card-desc">Submit your details below. Our engineering leads review applications within 48 hours.</p>
+              </div>
+
+              <form class="apply-form" id="job-apply-form">
+                <div class="form-group">
+                  <label for="apply-name">Full Name <span class="required">*</span></label>
+                  <input type="text" id="apply-name" name="name" placeholder="e.g. Alex Morgan" required autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                  <label for="apply-email">Email Address <span class="required">*</span></label>
+                  <input type="email" id="apply-email" name="email" placeholder="alex@example.com" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                  <label for="apply-phone">Phone Number <span class="required">*</span></label>
+                  <input type="tel" id="apply-phone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel">
+                </div>
+
+                <div class="form-group">
+                  <label for="apply-portfolio">LinkedIn / GitHub / Portfolio</label>
+                  <input type="url" id="apply-portfolio" name="portfolio" placeholder="https://linkedin.com/in/username">
+                </div>
+
+                <div class="form-group">
+                  <label>Resume / CV (PDF or DOCX) <span class="required">*</span></label>
+                  <div class="file-upload-box" id="file-dropzone">
+                    <input type="file" id="apply-resume" name="resume" accept=".pdf,.doc,.docx" required>
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="17 8 12 3 7 8"></polyline>
+                      <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <span class="upload-label">Choose a file or drag here</span>
+                    <span class="upload-hint">PDF or DOCX up to 10MB</span>
+                    <span class="file-name-display" id="file-name-display"></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="apply-notes">Cover Note / Why Niche Techies?</label>
+                  <textarea id="apply-notes" name="notes" placeholder="Briefly tell us what excites you about this role..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit-apply" id="btn-submit-apply">
+                  <span>Submit Application</span>
+                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </form>
+
+              <!-- Success Notification Box -->
+              <div class="apply-success-box" id="apply-success-box">
+                <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <h4>Application Received!</h4>
+                <p>Thank you for applying for the <strong>Full Stack Developer</strong> position. Our talent acquisition team will review your profile and reach out within 48 hours.</p>
+              </div>
+            </div>
+
+            <!-- Have Questions Card -->
+            <div class="job-help-card">
+              <h4>Questions About This Role?</h4>
+              <p>Reach out directly to our hiring team for queries on benefits, visa sponsorship, or relocation support.</p>
+              <a href="mailto:Careers@nichetechies.com" class="help-link">
+                <span>Careers@nichetechies.com</span>
+                <svg width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. Related Open Positions Section
+         ========================================================================= -->
+    <section class="other-jobs-section">
+      <div class="jobdetail-container">
+        <div class="section-header-row">
+          <div>
+            <div class="section-eyebrow">EXPLORE MORE ROLES</div>
+            <h2 class="section-title">Other Open Opportunities</h2>
+          </div>
+          <a href="career.html#jobs-table" class="btn-view-all-jobs">
+            <span>View all 8 open positions</span>
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="other-jobs-grid">
+          <!-- Job Card 1 -->
+          <a href="jobdetails.html" class="other-job-card">
+            <span class="card-dept">Engineering</span>
+            <h3 class="card-title">Frontend Developer (React / Next.js)</h3>
+            <div class="card-meta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Kochi Infopark &bull; Full-time</span>
+            </div>
+          </a>
+
+          <!-- Job Card 2 -->
+          <a href="jobdetails.html" class="other-job-card">
+            <span class="card-dept">Engineering</span>
+            <h3 class="card-title">Backend Developer (Node.js &amp; Microservices)</h3>
+            <div class="card-meta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Kochi Infopark &bull; Full-time</span>
+            </div>
+          </a>
+
+          <!-- Job Card 3 -->
+          <a href="jobdetails.html" class="other-job-card">
+            <span class="card-dept">Design</span>
+            <h3 class="card-title">UI/UX Product Designer</h3>
+            <div class="card-meta">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Kochi Infopark &bull; Full-time</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       4. Common Site Footer (Exact mirror from index.html, blog.html, career.html)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Top Tier: 4 Columns -->
+      <div class="footer-top-grid">
+        <!-- Col 1: Services -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="service.html">Custom Software Development</a></li>
+            <li><a href="service.html">AI-Assisted Development</a></li>
+            <li><a href="service.html">Product Development for Startups</a></li>
+            <li><a href="service.html">QA &amp; Software Testing</a></li>
+            <li><a href="service.html">DevOps &amp; Cloud Engineering</a></li>
+            <li><a href="service.html">Dedicated Engineering Teams</a></li>
+            <li><a href="service.html">Technology Consulting</a></li>
+            <li><a href="service.html">Industry Solutions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Staff Augmentation & Company -->
+        <div class="footer-col">
+          <div class="footer-subgroup">
+            <h4 class="footer-col-title">Staff Augmentation</h4>
+            <ul class="footer-links-list">
+              <li><a href="service.html">Hire a Developer</a></li>
+            </ul>
+          </div>
+          <div class="footer-subgroup footer-company-subgroup">
+            <h4 class="footer-col-title">Company</h4>
+            <ul class="footer-links-list">
+              <li><a href="about.html">About</a></li>
+              <li><a href="caseStudy.html">Case Studies</a></li>
+              <li><a href="career.html">Careers</a></li>
+              <li><a href="blog.html">Blogs</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Col 3: Socials -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Socials</h4>
+          <ul class="footer-social-list">
+            <li>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 0 0 1.45-1.45 1.45 1.45 0 0 0-1.45-1.45 1.45 1.45 0 0 0 1.45 1.45m1.37 9.74v-8.37H5.09v8.37h2.74z" />
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+                <span>Facebook</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Get in touch -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Get in touch</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <a href="tel:+16145355738">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z" />
+                </svg>
+                <span>+1 (614) 535–5738 (USA)</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+919995333078">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z" />
+                </svg>
+                <span>+91 99953 33078 (IND)</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@nichetechies.com">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@nichetechies.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:Careers@nichetechies.com">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Careers@nichetechies.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider Line -->
+      <div class="footer-divider-line"></div>
+
+      <!-- Middle Tier: Offices & Logo -->
+      <div class="footer-offices-grid">
+        <!-- Brand Logo Col -->
+        <div class="office-brand-col">
+          <img src="assets/images/niche-techies-logo.png" alt="Niche Techies" class="footer-brand-img">
+        </div>
+
+        <!-- USA Office Col -->
+        <div class="office-col border-left">
+          <div class="office-flag">
+            <svg width="24" height="16" viewBox="0 0 741 390" class="flag-icon flag-us">
+              <rect width="741" height="390" fill="#b22234" />
+              <path d="M0,45H741M0,105H741M0,165H741M0,225H741M0,285H741M0,345H741" stroke="#fff" stroke-width="30" />
+              <rect width="296.4" height="210" fill="#3c3b6e" />
+              <g fill="#fff">
+                <circle cx="30" cy="25" r="7" />
+                <circle cx="80" cy="25" r="7" />
+                <circle cx="130" cy="25" r="7" />
+                <circle cx="180" cy="25" r="7" />
+                <circle cx="230" cy="25" r="7" />
+                <circle cx="55" cy="55" r="7" />
+                <circle cx="105" cy="55" r="7" />
+                <circle cx="155" cy="55" r="7" />
+                <circle cx="205" cy="55" r="7" />
+                <circle cx="30" cy="85" r="7" />
+                <circle cx="80" cy="85" r="7" />
+                <circle cx="130" cy="85" r="7" />
+                <circle cx="180" cy="85" r="7" />
+                <circle cx="230" cy="85" r="7" />
+                <circle cx="55" cy="115" r="7" />
+                <circle cx="105" cy="115" r="7" />
+                <circle cx="155" cy="115" r="7" />
+                <circle cx="205" cy="115" r="7" />
+                <circle cx="30" cy="145" r="7" />
+                <circle cx="80" cy="145" r="7" />
+                <circle cx="130" cy="145" r="7" />
+                <circle cx="180" cy="145" r="7" />
+                <circle cx="230" cy="145" r="7" />
+                <circle cx="55" cy="175" r="7" />
+                <circle cx="105" cy="175" r="7" />
+                <circle cx="155" cy="175" r="7" />
+                <circle cx="205" cy="175" r="7" />
+              </g>
+            </svg>
+          </div>
+          <p class="office-address">
+            470 Olde Worthington Rd, Ste 200, PMB 5256,<br>
+            Westerville, OH 43082, United States of<br>
+            America
+          </p>
+        </div>
+
+        <!-- India Office Col -->
+        <div class="office-col border-left">
+          <div class="office-flag">
+            <svg width="22" height="22" viewBox="0 0 100 100" class="flag-icon flag-in">
+              <defs>
+                <clipPath id="circleClipIndia">
+                  <circle cx="50" cy="50" r="50" />
+                </clipPath>
+              </defs>
+              <g clip-path="url(#circleClipIndia)">
+                <rect width="100" height="33.33" fill="#FF9933" />
+                <rect y="33.33" width="100" height="33.33" fill="#FFFFFF" />
+                <rect y="66.66" width="100" height="33.34" fill="#138808" />
+                <circle cx="50" cy="50" r="11" fill="none" stroke="#000080" stroke-width="2.5" />
+                <circle cx="50" cy="50" r="2.5" fill="#000080" />
+                <g stroke="#000080" stroke-width="1.2">
+                  <line x1="50" y1="39" x2="50" y2="61" />
+                  <line x1="39" y1="50" x2="61" y2="50" />
+                  <line x1="42.22" y1="42.22" x2="57.78" y2="57.78" />
+                  <line x1="42.22" y1="57.78" x2="57.78" y2="42.22" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <p class="office-address">
+            8th floor, Vismaya Building, Infopark Kochi<br>
+            Phase-1, Kakkanad - 682042, Ernakulam,<br>
+            Kerala, India
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Tier: Copyright & Legal -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copyright">&copy;2026 Nichetechies. All Rights Reserved</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button with Scroll Progress Indicator -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="21" />
+      <circle class="progress-ring-fill" cx="24" cy="24" r="21" />
+    </svg>
+    <span class="back-to-top-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </span>
+  </button>
+
+  <!-- Interactive JavaScript Engine -->
+  <script src="js/main.js"></script>
+
+  <!-- Dedicated Job Details Interactive Engine -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Smooth Apply Button Scroll
+      const heroApplyBtn = document.getElementById('btn-hero-apply');
+      if (heroApplyBtn) {
+        heroApplyBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.getElementById('apply-section');
+          if (target) {
+            const offset = 90;
+            const targetPos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: targetPos, behavior: 'smooth' });
+            // Highlight name input
+            const nameInput = document.getElementById('apply-name');
+            if (nameInput) setTimeout(() => nameInput.focus(), 600);
+          }
+        });
+      }
+
+      // 2. Share Job Button (Clipboard Copy)
+      const shareBtn = document.getElementById('btn-share-job');
+      if (shareBtn) {
+        shareBtn.addEventListener('click', () => {
+          navigator.clipboard.writeText(window.location.href).then(() => {
+            const span = shareBtn.querySelector('span');
+            const original = span ? span.textContent : '';
+            if (span) span.textContent = 'Link Copied!';
+            setTimeout(() => {
+              if (span) span.textContent = original;
+            }, 2000);
+          });
+        });
+      }
+
+      // 3. File Upload Drag & Drop Feedback
+      const resumeInput = document.getElementById('apply-resume');
+      const fileNameDisplay = document.getElementById('file-name-display');
+      const dropzone = document.getElementById('file-dropzone');
+
+      if (resumeInput && fileNameDisplay) {
+        resumeInput.addEventListener('change', () => {
+          if (resumeInput.files && resumeInput.files[0]) {
+            fileNameDisplay.textContent = 'Selected: ' + resumeInput.files[0].name;
+            fileNameDisplay.style.display = 'block';
+          }
+        });
+      }
+
+      // 4. Job Application Form Submission Simulation
+      const applyForm = document.getElementById('job-apply-form');
+      const successBox = document.getElementById('apply-success-box');
+      const submitBtn = document.getElementById('btn-submit-apply');
+
+      if (applyForm && successBox) {
+        applyForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Submitting Application...</span>';
+          }
+
+          setTimeout(() => {
+            applyForm.style.display = 'none';
+            successBox.style.display = 'block';
+          }, 800);
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>

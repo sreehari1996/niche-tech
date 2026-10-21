@@ -43,7 +43,6 @@
 .product-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
   font-family: var(--font-heading);
   font-size: 0.775rem;
   font-weight: 700;
@@ -51,15 +50,6 @@
   text-transform: uppercase;
   color: #1a2b4b;
   margin-bottom: 0.65rem;
-
-  .eyebrow-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #1a2b4b;
-    display: inline-block;
-    box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.2);
-  }
 
   .eyebrow-text {
     letter-spacing: 0.12em;

@@ -547,24 +547,7 @@ textarea {
 .hero-eyebrow-tech {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
   margin-bottom: 1.25rem;
-}
-
-.hero-eyebrow-tech .eyebrow-pulse-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #2563eb;
-  box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
-  display: inline-block;
-  animation: eyebrowPulse 2.2s infinite;
-}
-
-@keyframes eyebrowPulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 7px rgba(37, 99, 235, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
 }
 
 .hero-eyebrow-tech .eyebrow-text {
@@ -2271,14 +2254,6 @@ textarea {
   margin-bottom: 0.65rem;
 }
 
-.product-eyebrow .eyebrow-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #1a2b4b;
-  display: inline-block;
-  box-shadow: 0 0 0 3px rgba(26, 43, 75, 0.2);
-}
 
 .product-eyebrow .eyebrow-text {
   letter-spacing: 0.12em;

@@ -191,15 +191,7 @@
   font-weight: 600;
 }
 
-.contact-hero-right .contact-hero-direct .direct-pulse-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #10b981;
-  display: inline-block;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
-  flex-shrink: 0;
-}
+
 
 /* =========================================================================
    2. Send Us a Message Section (Executive Hub Card Layout)
@@ -325,14 +317,6 @@
   margin-bottom: 1.25rem;
 }
 
-.hub-info-panel .panel-header .pulse-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #c5d4ea;
-  box-shadow: 0 0 8px rgba(197, 212, 234, 0.6);
-  animation: pulse 2s infinite;
-}
 
 .hub-info-panel .panel-header .panel-title {
   font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);

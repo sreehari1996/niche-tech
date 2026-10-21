@@ -184,16 +184,6 @@
           font-weight: 600;
         }
       }
-
-      .direct-pulse-dot {
-        width: 7px;
-        height: 7px;
-        border-radius: 50%;
-        background: #10b981;
-        display: inline-block;
-        box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
-        flex-shrink: 0;
-      }
     }
   }
 }
@@ -309,15 +299,6 @@
         padding: 0.35rem 0.85rem;
         border-radius: 9999px;
         margin-bottom: 1.25rem;
-
-        .pulse-dot {
-          width: 7px;
-          height: 7px;
-          border-radius: 50%;
-          background: #c5d4ea;
-          box-shadow: 0 0 8px rgba(197, 212, 234, 0.6);
-          animation: pulse 2s infinite;
-        }
       }
 
       .panel-title {

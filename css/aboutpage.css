@@ -405,10 +405,9 @@
   right: 1.35rem;
   background: #ffffff;
   border-radius: 9999px;
-  padding: 0.65rem 1.35rem 0.65rem 1rem;
+  padding: 0.65rem 1.35rem;
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
   box-shadow: 0 10px 25px -4px rgba(15, 23, 42, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.05);
   border: 1px solid rgba(226, 232, 240, 0.85);
   z-index: 6;
@@ -418,24 +417,6 @@
 .about-floating-badge:hover {
   transform: translateY(-2px);
   box-shadow: 0 14px 30px -4px rgba(15, 23, 42, 0.16);
-}
-
-.about-floating-badge .badge-dot-ring {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #e0f2fe;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.about-floating-badge .badge-dot-inner {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #0c1524;
 }
 
 .about-floating-badge .badge-text {

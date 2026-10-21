@@ -1,0 +1,893 @@
+/* =========================================================================
+   Job Details Page Stylesheet
+   Niche Techies - Careers & Engineering Opportunities
+   ========================================================================= */
+
+.job-detail-main {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  position: relative;
+}
+
+/* Common Container */
+.jobdetail-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .jobdetail-container {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .jobdetail-container {
+    padding: 0 3.5rem;
+  }
+}
+
+/* =========================================================================
+   1. Job Hero Section
+   ========================================================================= */
+.job-hero-section {
+  padding-top: 7.25rem;
+  padding-bottom: 3rem;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .job-hero-section {
+    padding-top: 8rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .job-hero-section {
+    padding-top: 8.5rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* Breadcrumb Navigation */
+.job-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.8125rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+.job-breadcrumbs a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.job-breadcrumbs a:hover {
+  color: #0284c7;
+}
+
+.job-breadcrumbs .breadcrumb-sep {
+  color: #cbd5e1;
+  font-size: 0.75rem;
+}
+
+.job-breadcrumbs .breadcrumb-current {
+  color: #0c1524;
+  font-weight: 500;
+}
+
+/* Badges Row */
+.job-badge-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #16a34a;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+
+.badge-dept {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  color: #0284c7;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.badge-worktype {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Job Hero Title */
+.job-main-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(2.1rem, 3.8vw, 3.35rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  color: #0c1524;
+  margin: 0 0 1.15rem;
+  max-width: 1040px;
+}
+
+/* Job Lead Summary */
+.job-lead-summary {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  line-height: 1.65;
+  color: #475569;
+  margin: 0 0 2rem;
+  max-width: 900px;
+}
+
+/* Job Key Specs Grid Bar */
+.job-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .job-specs-grid {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1.5rem 2rem;
+  }
+}
+
+.job-specs-grid .spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.job-specs-grid .spec-item .spec-label {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.job-specs-grid .spec-item .spec-value {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #0c1524;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.job-specs-grid .spec-item .spec-value svg {
+  width: 16px;
+  height: 16px;
+  color: #0284c7;
+  flex-shrink: 0;
+}
+
+/* Hero Action CTA Row */
+.job-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.job-hero-actions .btn-apply-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #0b192c;
+  color: #ffffff;
+  padding: 0.85rem 1.85rem;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 24px -4px rgba(11, 25, 44, 0.35);
+  transition: all 0.25s ease;
+}
+
+.job-hero-actions .btn-apply-primary svg {
+  transition: transform 0.25s ease;
+}
+
+.job-hero-actions .btn-apply-primary:hover {
+  background: #0284c7;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -4px rgba(2, 132, 199, 0.4);
+}
+
+.job-hero-actions .btn-apply-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.job-hero-actions .btn-share-job {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  color: #334155;
+  border: 1.5px solid #d1d9e6;
+  padding: 0.82rem 1.45rem;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.job-hero-actions .btn-share-job:hover {
+  border-color: #0284c7;
+  color: #0284c7;
+  background: #f0f9ff;
+}
+
+/* =========================================================================
+   2. Main Two-Column Layout (Job Content + Sticky Form Sidebar)
+   ========================================================================= */
+.job-body-section {
+  padding: 4rem 0 6rem;
+  background: #ffffff;
+}
+
+.job-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .job-layout-grid {
+    grid-template-columns: 1fr 390px;
+    gap: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .job-layout-grid {
+    grid-template-columns: 1fr 430px;
+    gap: 5rem;
+  }
+}
+
+/* =========================================================================
+   3. Main Job Content Description
+   ========================================================================= */
+.job-content-col {
+  color: #334155;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.job-content-col h2 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 800;
+  color: #0c1524;
+  letter-spacing: -0.025em;
+  margin: 2.75rem 0 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.job-content-col h2:first-of-type {
+  margin-top: 0;
+}
+
+.job-content-col h2 svg {
+  width: 22px;
+  height: 22px;
+  color: #0284c7;
+}
+
+.job-content-col p {
+  margin: 0 0 1.5rem;
+  color: #475569;
+}
+
+.job-content-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+
+.job-content-col ul li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.85rem;
+  color: #334155;
+  line-height: 1.65;
+}
+
+.job-content-col ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0284c7;
+}
+
+.job-content-col strong {
+  color: #0c1524;
+  font-weight: 700;
+}
+
+/* Highlights Box */
+.job-highlights-card {
+  background: #f8fafc;
+  border-left: 4px solid #0284c7;
+  border-radius: 0 14px 14px 0;
+  padding: 1.75rem 2rem;
+  margin: 2rem 0 2.75rem;
+}
+
+.job-highlights-card h3 {
+  margin: 0 0 1rem;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0c1524;
+}
+
+.job-highlights-card .tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.job-highlights-card .tech-pills .tech-pill {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+/* Interview Process Roadmap */
+.interview-process-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 1.75rem 0 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .interview-process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.interview-process-steps .step-card {
+  padding: 1.25rem 1.5rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.interview-process-steps .step-card .step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #0b192c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.interview-process-steps .step-card .step-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.interview-process-steps .step-card .step-content .step-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #0c1524;
+  margin: 0 0 0.25rem;
+}
+
+.interview-process-steps .step-card .step-content .step-desc {
+  font-size: 0.8125rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Perks Grid */
+.job-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin: 1.75rem 0 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .job-perks-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.job-perks-grid .perk-box {
+  padding: 1.25rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.job-perks-grid .perk-box .perk-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #e0f2fe;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.job-perks-grid .perk-box .perk-icon-wrap svg {
+  width: 20px;
+  height: 20px;
+}
+
+.job-perks-grid .perk-box .perk-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #0c1524;
+  margin: 0;
+}
+
+.job-perks-grid .perk-box .perk-sub {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* =========================================================================
+   4. Sticky Application Sidebar & Form
+   ========================================================================= */
+.job-sidebar-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .job-sidebar-col {
+    position: sticky;
+    top: 96px;
+  }
+}
+
+.job-apply-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px -8px rgba(15, 23, 42, 0.08);
+}
+
+.job-apply-card .apply-card-header {
+  margin-bottom: 1.5rem;
+}
+
+.job-apply-card .apply-card-header .apply-card-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0c1524;
+  margin: 0 0 0.35rem;
+}
+
+.job-apply-card .apply-card-header .apply-card-desc {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.job-apply-card .apply-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.job-apply-card .apply-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.job-apply-card .apply-form .form-group label {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #0c1524;
+}
+
+.job-apply-card .apply-form .form-group label .required {
+  color: #ef4444;
+}
+
+.job-apply-card .apply-form .form-group input[type="text"],
+.job-apply-card .apply-form .form-group input[type="email"],
+.job-apply-card .apply-form .form-group input[type="tel"],
+.job-apply-card .apply-form .form-group input[type="url"],
+.job-apply-card .apply-form .form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid #d1d9e6;
+  border-radius: 10px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.9375rem;
+  color: #0c1524;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.job-apply-card .apply-form .form-group input:focus,
+.job-apply-card .apply-form .form-group textarea:focus {
+  outline: none;
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+.job-apply-card .apply-form .form-group input::placeholder,
+.job-apply-card .apply-form .form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.job-apply-card .apply-form .form-group textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* File Upload Box */
+.job-apply-card .file-upload-box {
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.job-apply-card .file-upload-box:hover {
+  border-color: #0284c7;
+  background: #f0f9ff;
+}
+
+.job-apply-card .file-upload-box input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.job-apply-card .file-upload-box .upload-icon {
+  width: 28px;
+  height: 28px;
+  color: #0284c7;
+  margin: 0 auto 0.5rem;
+}
+
+.job-apply-card .file-upload-box .upload-label {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0c1524;
+  display: block;
+}
+
+.job-apply-card .file-upload-box .upload-hint {
+  font-size: 0.75rem;
+  color: #64748b;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.job-apply-card .file-upload-box .file-name-display {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #16a34a;
+  display: none;
+}
+
+.job-apply-card .apply-form .btn-submit-apply {
+  width: 100%;
+  background: #0284c7;
+  color: #ffffff;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+}
+
+.job-apply-card .apply-form .btn-submit-apply:hover {
+  background: #0369a1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(2, 132, 199, 0.45);
+}
+
+.job-apply-card .apply-form .btn-submit-apply:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Success Notice */
+.job-apply-card .apply-success-box {
+  display: none;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.job-apply-card .apply-success-box .success-icon {
+  width: 48px;
+  height: 48px;
+  color: #16a34a;
+  margin: 0 auto 1rem;
+}
+
+.job-apply-card .apply-success-box h4 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0c1524;
+  margin: 0 0 0.5rem;
+}
+
+.job-apply-card .apply-success-box p {
+  font-size: 0.875rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Need Help Card */
+.job-help-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.job-help-card h4 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0c1524;
+  margin: 0 0 0.35rem;
+}
+
+.job-help-card p {
+  font-size: 0.8125rem;
+  color: #64748b;
+  margin: 0 0 0.85rem;
+}
+
+.job-help-card .help-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #0284c7;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.job-help-card .help-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================================
+   5. Related Open Positions Section
+   ========================================================================= */
+.other-jobs-section {
+  padding: 4.5rem 0 6rem;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.other-jobs-section .section-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.other-jobs-section .section-eyebrow {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 0.35rem;
+}
+
+.other-jobs-section .section-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(1.75rem, 2.5vw, 2.35rem);
+  font-weight: 800;
+  color: #0c1524;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.other-jobs-section .btn-view-all-jobs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0284c7;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.other-jobs-section .btn-view-all-jobs:hover {
+  color: #0369a1;
+  transform: translateX(4px);
+}
+
+.other-jobs-section .other-jobs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .other-jobs-section .other-jobs-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.other-jobs-section .other-job-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.other-jobs-section .other-job-card:hover {
+  border-color: #0284c7;
+  box-shadow: 0 10px 25px rgba(2, 132, 199, 0.08);
+  transform: translateY(-3px);
+}
+
+.other-jobs-section .other-job-card .card-dept {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #0284c7;
+  margin-bottom: 0.5rem;
+}
+
+.other-jobs-section .other-job-card .card-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0c1524;
+  line-height: 1.35;
+  margin: 0 0 0.85rem;
+}
+
+.other-jobs-section .other-job-card .card-meta {
+  font-size: 0.8125rem;
+  color: #64748b;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.other-jobs-section .other-job-card .card-meta svg {
+  width: 14px;
+  height: 14px;
+  color: #94a3b8;
+}
