@@ -545,8 +545,26 @@ textarea {
 }
 
 .hero-eyebrow-tech {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   margin-bottom: 1.25rem;
+}
+
+.hero-eyebrow-tech .eyebrow-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2563eb;
+  box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+  display: inline-block;
+  animation: eyebrowPulse 2.2s infinite;
+}
+
+@keyframes eyebrowPulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 7px rgba(37, 99, 235, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
 }
 
 .hero-eyebrow-tech .eyebrow-text {
@@ -566,6 +584,11 @@ textarea {
   letter-spacing: -0.035em;
   color: #0c1524;
   margin-bottom: 1.25rem;
+}
+
+.hero-title .hero-title-line {
+  display: block;
+  will-change: transform, opacity;
 }
 
 .hero-title-blue {
@@ -602,7 +625,8 @@ textarea {
   font-weight: 600;
   text-decoration: none;
   box-shadow: 0 8px 24px -4px rgba(11, 25, 44, 0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  transition: box-shadow 0.25s ease, background-color 0.25s ease;
+  will-change: transform;
 }
 
 .btn-hero-dark svg {
@@ -611,7 +635,6 @@ textarea {
 
 .btn-hero-dark:hover {
   background: #182c4a;
-  transform: translateY(-2px);
   box-shadow: 0 12px 28px -4px rgba(11, 25, 44, 0.45);
 }
 
@@ -632,8 +655,9 @@ textarea {
   font-size: 0.88rem;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.25s ease;
+  transition: border-color 0.25s ease, color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  will-change: transform;
 }
 
 .btn-hero-outline svg {
@@ -644,8 +668,11 @@ textarea {
   border-color: #1a2b4b;
   color: #1a2b4b;
   background: #f1f5fa;
-  transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(26, 43, 75, 0.12);
+}
+
+.btn-hero-outline:hover svg {
+  transform: translateX(4px);
 }
 
 .btn-hero-outline:hover svg {
@@ -736,9 +763,17 @@ textarea {
   align-items: center;
   justify-content: flex-end;
   flex: 0 0 auto;
-  margin-right: 4.5rem;
-  margin-top: -1.75rem;
+  margin-right: 1.5rem;
+  margin-top: 1.25rem;
   z-index: 25;
+  perspective: 1000px;
+}
+
+@media (min-width: 1200px) {
+  .hero-floating-wrapper {
+    margin-right: 2rem;
+    margin-top: 1.5rem;
+  }
 }
 
 @media (max-width: 1023px) {
@@ -749,91 +784,145 @@ textarea {
 
 .hero-impact-note {
   position: absolute;
-  top: 14px;
-  left: -118px;
+  top: 18px;
+  left: -116px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   transform: rotate(-6deg);
   pointer-events: none;
   z-index: 30;
+  will-change: transform;
+  transform-origin: center right;
 }
 
 .hero-impact-note .note-script {
   font-family: 'Caveat', cursive;
-  font-size: 2.15rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 0.95;
-  color: #1e293b;
+  color: #0f172a;
   display: flex;
   flex-direction: column;
   text-align: center;
   letter-spacing: -0.02em;
+  will-change: transform, opacity;
 }
 
 .hero-impact-note .note-indent {
   font-style: italic;
-  font-size: 1.85rem;
+  font-size: 1.7rem;
   margin-left: -4px;
 }
 
 .hero-impact-note .note-arrow-svg {
-  margin-top: -4px;
-  margin-right: -24px;
+  margin-top: -2px;
+  margin-right: -20px;
+  overflow: visible;
+}
+
+.hero-impact-note .note-arrow-svg .arrow-curve,
+.hero-impact-note .note-arrow-svg .arrow-head {
+  will-change: stroke-dashoffset;
 }
 
 .hero-services-card {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 20px;
-  box-shadow: 0 24px 50px -10px rgba(15, 23, 42, 0.12), 0 4px 16px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.12), 0 2px 10px rgba(0, 0, 0, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.95);
-  padding: 1.75rem 2.15rem;
-  width: 285px;
+  padding: 1.15rem 1.35rem;
+  width: 290px;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 0.65rem;
+  transition: box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .hero-services-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 30px 60px -10px rgba(15, 23, 42, 0.16), 0 6px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 28px 55px -10px rgba(15, 23, 42, 0.16), 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .hero-service-row {
   display: flex;
   align-items: center;
-  gap: 0.95rem;
-  cursor: default;
+  gap: 0.85rem;
+  cursor: pointer;
+  padding: 0.45rem 0.6rem;
+  border-radius: 12px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  will-change: transform;
 }
 
 .service-icon-box {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
   border-radius: 10px;
-  background: #f1f5fa;
-  border: 1px solid #cdd7e5;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.25s ease, background-color 0.25s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-icon-box svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.service-icon-box.icon-blue {
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  color: #2563eb;
+}
+
+.service-icon-box.icon-indigo {
+  background: #eef2ff;
+  border: 1.5px solid #c7d2fe;
+  color: #4f46e5;
+}
+
+.service-icon-box.icon-teal {
+  background: #f0fdfa;
+  border: 1.5px solid #99f6e4;
+  color: #0d9488;
+}
+
+.service-icon-box.icon-amber {
+  background: #fff7ed;
+  border: 1.5px solid #fed7aa;
+  color: #ea580c;
+}
+
+.hero-service-row:hover {
+  background-color: #f8fafc;
+  transform: translateX(3px);
 }
 
 .hero-service-row:hover .service-icon-box {
   transform: scale(1.08);
-  background: #e2eaf4;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.hero-service-row:hover .service-name {
+  color: #0f172a;
 }
 
 .service-name {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: #1e293b;
   letter-spacing: -0.01em;
   white-space: nowrap;
+  transition: color 0.2s ease;
 }
 
 /* Bottom Brands Bar */

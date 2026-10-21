@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductStackedDeck();
   initFormHandler();
   initGsapAnimations();
+  initAboutPageGsapAnimations();
   initBackToTop();
 });
 
@@ -501,99 +502,388 @@ function initGsapAnimations() {
   }
 
   // A. Hero Section GSAP Animations
-  const heroTL = gsap.timeline({ defaults: { ease: 'power2.out' } });
-
-  // 1. Cinematic Background Image Reveal (Zoom-in settling + gentle slide-in from right)
-  const heroBgArt = document.querySelector('.hero-bg-art');
-  if (heroBgArt) {
-    heroTL.fromTo(heroBgArt,
-      {
-        scale: 1.08,
-        opacity: 0,
-        x: 35
-      },
-      {
-        scale: 1,
-        opacity: 1,
-        x: 0,
-        duration: 1.4,
-        ease: 'power3.out'
-      },
-      0
-    );
-  }
-
-  // 2. Text & Actions Reveal
-  heroTL.from('.hero-content > *', {
-    y: 18,
-    opacity: 0,
-    stagger: 0.08,
-    duration: 0.55,
-    ease: 'power2.out'
-  }, 0.15);
-
-  // 3. Subtle Ambient Breathing Scale Pulse
-  if (heroBgArt) {
-    gsap.to(heroBgArt, {
-      scale: 1.025,
-      duration: 5,
-      ease: 'sine.inOut',
-      repeat: -1,
-      yoyo: true,
-      delay: 1.4
-    });
-  }
-
-  // 4. ScrollTrigger Depth Parallax on Hero Background
-  const heroBgParallax = document.querySelector('.hero-bg-parallax');
-  if (typeof ScrollTrigger !== 'undefined' && heroBgParallax) {
-    gsap.to(heroBgParallax, {
-      yPercent: 12,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.hero-section',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 0.6
-      }
-    });
-  }
-
-  // 5. Desktop Interactive Mouse Tracking Parallax (Screens >= 1024px)
   const heroSection = document.querySelector('.hero-section');
-  if (heroSection && heroBgArt && window.matchMedia('(min-width: 1024px)').matches) {
-    const setX = gsap.quickTo(heroBgArt, 'x', { duration: 0.8, ease: 'power2.out' });
-    const setY = gsap.quickTo(heroBgArt, 'y', { duration: 0.8, ease: 'power2.out' });
+  if (heroSection) {
+    const heroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-    heroSection.addEventListener('mousemove', (e) => {
-      const rect = heroSection.getBoundingClientRect();
-      const normX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-      const normY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+    // 1. Cinematic Background Image Reveal
+    const heroBgArt = document.querySelector('.hero-bg-art');
+    if (heroBgArt) {
+      heroTL.fromTo(heroBgArt,
+        { scale: 1.08, opacity: 0, x: 25 },
+        { scale: 1, opacity: 1, x: 0, duration: 1.4, ease: 'power3.out' },
+        0
+      );
 
-      // Inverted parallax shift: gives natural physical depth to the 3D card
-      setX(-normX * 18);
-      setY(-normY * 12);
+      // Continuous subtle ambient breathing pulse
+      gsap.to(heroBgArt, {
+        scale: 1.025,
+        duration: 7,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true,
+        delay: 1.4
+      });
+    }
+
+    // 2. Eyebrow Badge Reveal
+    const eyebrow = document.querySelector('.hero-eyebrow-tech');
+    if (eyebrow) {
+      heroTL.from(eyebrow, {
+        y: 18,
+        opacity: 0,
+        scale: 0.95,
+        duration: 0.6,
+        ease: 'power3.out'
+      }, 0.2);
+    }
+
+    // 3. Staged Headline Reveal
+    const titleLines = document.querySelectorAll('.hero-title .hero-title-line');
+    if (titleLines.length > 0) {
+      heroTL.from(titleLines, {
+        y: 28,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: 'power3.out'
+      }, 0.3);
+    } else {
+      heroTL.from('.hero-title', {
+        y: 28,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out'
+      }, 0.3);
+    }
+
+    // 4. Description Paragraph
+    const description = document.querySelector('.hero-description');
+    if (description) {
+      heroTL.from(description, {
+        y: 20,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power3.out'
+      }, 0.5);
+    }
+
+    // 5. CTA Buttons
+    const ctaButtons = document.querySelectorAll('.hero-cta-group a');
+    if (ctaButtons.length > 0) {
+      heroTL.from(ctaButtons, {
+        y: 20,
+        opacity: 0,
+        scale: 0.96,
+        stagger: 0.1,
+        duration: 0.6,
+        ease: 'back.out(1.4)'
+      }, 0.65);
+    }
+
+    // 6. Stats Strip Items & Counter Numbers
+    const statItems = document.querySelectorAll('.hero-stats-strip .hero-stat-item');
+    if (statItems.length > 0) {
+      heroTL.from(statItems, {
+        y: 18,
+        opacity: 0,
+        stagger: 0.08,
+        duration: 0.55,
+        ease: 'power2.out'
+      }, 0.8);
+
+      // Animate counters smoothly right into hero entrance
+      const heroStatCounters = document.querySelectorAll('.hero-stats-strip .stat-number');
+      heroStatCounters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'), 10) || 0;
+        const suffix = counter.getAttribute('data-suffix') || '+';
+        counter.dataset.animated = 'true';
+        const counterObj = { val: 0 };
+        gsap.to(counterObj, {
+          val: target,
+          duration: 1.4,
+          ease: 'power2.out',
+          delay: 0.6,
+          onUpdate: () => {
+            counter.textContent = Math.floor(counterObj.val) + suffix;
+          }
+        });
+      });
+    }
+
+    // 7. Right Floating Glass Services Card Reveal (3D Perspective Entrance)
+    const servicesCard = document.querySelector('.hero-services-card');
+    if (servicesCard) {
+      heroTL.fromTo(servicesCard,
+        {
+          opacity: 0,
+          y: 45,
+          scale: 0.92,
+          rotationY: -10,
+          rotationX: 8,
+          transformPerspective: 1000
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          rotationY: 0,
+          rotationX: 0,
+          duration: 1.1,
+          ease: 'power3.out'
+        },
+        0.4
+      );
+
+      // Staggered Entrance of Service Rows inside the card
+      const serviceRows = document.querySelectorAll('.hero-service-row');
+      if (serviceRows.length > 0) {
+        heroTL.from(serviceRows, {
+          x: 20,
+          opacity: 0,
+          stagger: 0.08,
+          duration: 0.5,
+          ease: 'power2.out',
+          clearProps: 'transform,opacity'
+        }, 0.65);
+      }
+
+      // Continuous Organic Levitation Loop
+      gsap.to(servicesCard, {
+        y: -9,
+        duration: 3.8,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true,
+        delay: 1.5
+      });
+    }
+
+    // 8. Handwritten Annotation & Sketching Arrow
+    const impactNote = document.querySelector('.hero-impact-note');
+    if (impactNote) {
+      const noteScript = impactNote.querySelector('.note-script');
+      if (noteScript) {
+        heroTL.fromTo(noteScript,
+          { scale: 0.6, opacity: 0, rotation: -16 },
+          { scale: 1, opacity: 1, rotation: -6, duration: 0.55, ease: 'back.out(1.8)' },
+          0.65
+        );
+      }
+
+      // Live SVG Arrow Drawing
+      const arrowCurve = impactNote.querySelector('.arrow-curve') || impactNote.querySelectorAll('path')[0];
+      const arrowHead = impactNote.querySelector('.arrow-head') || impactNote.querySelectorAll('path')[1];
+
+      if (arrowCurve && arrowHead) {
+        const curveLength = arrowCurve.getTotalLength ? arrowCurve.getTotalLength() : 60;
+        const headLength = arrowHead.getTotalLength ? arrowHead.getTotalLength() : 35;
+
+        gsap.set(arrowCurve, { strokeDasharray: curveLength, strokeDashoffset: curveLength });
+        gsap.set(arrowHead, { strokeDasharray: headLength, strokeDashoffset: headLength });
+
+        heroTL.to(arrowCurve, {
+          strokeDashoffset: 0,
+          duration: 0.35,
+          ease: 'power2.inOut'
+        }, 0.85)
+        .to(arrowHead, {
+          strokeDashoffset: 0,
+          duration: 0.25,
+          ease: 'power2.out'
+        }, 1.05);
+      }
+
+      // Organic Floating Sway
+      gsap.to(impactNote, {
+        y: -6,
+        rotation: -4,
+        duration: 4.4,
+        ease: 'sine.inOut',
+        repeat: -1,
+        yoyo: true,
+        delay: 1.8
+      });
+    }
+
+    // 9. Bottom Brands Bar Entrance
+    const brandsBar = document.querySelector('.hero-brands-bar');
+    if (brandsBar) {
+      heroTL.from(brandsBar, {
+        y: 20,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power2.out'
+      }, 0.95);
+
+      const brandDivider = brandsBar.querySelector('.brands-bar-divider');
+      if (brandDivider) {
+        heroTL.from(brandDivider, {
+          scaleX: 0,
+          transformOrigin: 'left center',
+          duration: 0.8,
+          ease: 'power2.out'
+        }, 1.1);
+      }
+
+      const brandLogos = brandsBar.querySelectorAll('.brand-logo-item');
+      if (brandLogos.length > 0) {
+        heroTL.from(brandLogos, {
+          y: 10,
+          opacity: 0,
+          stagger: 0.06,
+          duration: 0.45,
+          ease: 'power2.out'
+        }, 1.15);
+      }
+    }
+
+    // 10. Interactive 3D Multi-Layer Mouse Parallax (Screens >= 1024px)
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+      const heroContent = document.querySelector('.hero-content');
+
+      const setBgX = heroBgArt ? gsap.quickTo(heroBgArt, 'x', { duration: 0.8, ease: 'power2.out' }) : null;
+      const setBgY = heroBgArt ? gsap.quickTo(heroBgArt, 'y', { duration: 0.8, ease: 'power2.out' }) : null;
+
+      const setContentX = heroContent ? gsap.quickTo(heroContent, 'x', { duration: 0.7, ease: 'power2.out' }) : null;
+      const setContentY = heroContent ? gsap.quickTo(heroContent, 'y', { duration: 0.7, ease: 'power2.out' }) : null;
+
+      const setCardTiltX = servicesCard ? gsap.quickTo(servicesCard, 'rotationX', { duration: 0.6, ease: 'power2.out' }) : null;
+      const setCardTiltY = servicesCard ? gsap.quickTo(servicesCard, 'rotationY', { duration: 0.6, ease: 'power2.out' }) : null;
+      const setCardX = servicesCard ? gsap.quickTo(servicesCard, 'x', { duration: 0.6, ease: 'power2.out' }) : null;
+      const setCardY = servicesCard ? gsap.quickTo(servicesCard, 'y', { duration: 0.6, ease: 'power2.out' }) : null;
+
+      const setNoteX = impactNote ? gsap.quickTo(impactNote, 'x', { duration: 0.65, ease: 'power2.out' }) : null;
+      const setNoteY = impactNote ? gsap.quickTo(impactNote, 'y', { duration: 0.65, ease: 'power2.out' }) : null;
+
+      heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        const normX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+        const normY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+
+        if (setBgX) setBgX(-normX * 16);
+        if (setBgY) setBgY(-normY * 12);
+
+        if (setContentX) setContentX(normX * 8);
+        if (setContentY) setContentY(normY * 6);
+
+        if (setCardTiltX) setCardTiltX(-normY * 10);
+        if (setCardTiltY) setCardTiltY(normX * 12);
+        if (setCardX) setCardX(normX * 16);
+        if (setCardY) setCardY(normY * 12);
+
+        if (setNoteX) setNoteX(normX * 24);
+        if (setNoteY) setNoteY(normY * 18);
+      });
+
+      heroSection.addEventListener('mouseleave', () => {
+        if (setBgX) setBgX(0);
+        if (setBgY) setBgY(0);
+        if (setContentX) setContentX(0);
+        if (setContentY) setContentY(0);
+        if (setCardTiltX) setCardTiltX(0);
+        if (setCardTiltY) setCardTiltY(0);
+        if (setCardX) setCardX(0);
+        if (setCardY) setCardY(0);
+        if (setNoteX) setNoteX(0);
+        if (setNoteY) setNoteY(0);
+      });
+    }
+
+    // 11. Interactive Magnetic CTA Buttons
+    const heroButtons = document.querySelectorAll('.hero-cta-group a');
+    heroButtons.forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        gsap.to(btn, {
+          x: x * 0.2,
+          y: y * 0.2,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+        const svg = btn.querySelector('svg');
+        if (svg) {
+          gsap.to(svg, {
+            x: x * 0.12,
+            y: y * 0.12,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        }
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        gsap.to(btn, {
+          x: 0,
+          y: 0,
+          duration: 0.5,
+          ease: 'elastic.out(1, 0.4)'
+        });
+        const svg = btn.querySelector('svg');
+        if (svg) {
+          gsap.to(svg, {
+            x: 0,
+            y: 0,
+            duration: 0.5,
+            ease: 'elastic.out(1, 0.4)'
+          });
+        }
+      });
     });
 
-    heroSection.addEventListener('mouseleave', () => {
-      setX(0);
-      setY(0);
-    });
-  } else if (heroBgArt && !window.matchMedia('(min-width: 1024px)').matches) {
-    // Mobile subtle organic vertical float
-    gsap.to(heroBgArt, {
-      y: 6,
-      duration: 3.5,
-      ease: 'sine.inOut',
-      repeat: -1,
-      yoyo: true,
-      delay: 1.4
-    });
+    // 12. ScrollTrigger Exit Parallax
+    if (typeof ScrollTrigger !== 'undefined') {
+      const heroParallaxBg = document.querySelector('.hero-bg-parallax');
+      if (heroParallaxBg) {
+        gsap.to(heroParallaxBg, {
+          yPercent: 12,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.hero-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.6
+          }
+        });
+      }
+
+      const floatingWrapper = document.querySelector('.hero-floating-wrapper');
+      if (floatingWrapper) {
+        gsap.to(floatingWrapper, {
+          y: -50,
+          opacity: 0.2,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.hero-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.6
+          }
+        });
+      }
+
+      const heroContentEl = document.querySelector('.hero-content');
+      if (heroContentEl) {
+        gsap.to(heroContentEl, {
+          y: -35,
+          opacity: 0.4,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.hero-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: 0.6
+          }
+        });
+      }
+    }
   }
 
-  // B. Counter Number Animation in Stats Strip
+  // B. Counter Number Animation for other pages / non-hero stat counters
   if (typeof ScrollTrigger !== 'undefined') {
-    const statCounters = document.querySelectorAll('.stat-number');
+    const statCounters = document.querySelectorAll('.stat-number:not([data-animated="true"])');
     
     statCounters.forEach(counter => {
       const target = parseInt(counter.getAttribute('data-target'), 10) || 0;
@@ -782,6 +1072,531 @@ function initGsapAnimations() {
     // Refresh ScrollTrigger when all assets/images are loaded
     window.addEventListener('load', () => {
       ScrollTrigger.refresh();
+    });
+  }
+}
+
+// 8B. About Page GSAP Animations & Interactions
+function initAboutPageGsapAnimations() {
+  if (typeof gsap === 'undefined') return;
+
+  const aboutHero = document.querySelector('.about-hero-section');
+  if (!aboutHero) return;
+
+  if (typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  // =========================================================================
+  // 1. Hero Section Opening Timeline Orchestration
+  // =========================================================================
+  const aboutHeroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+  // A. Background Fluid Shapes (Gentle Ambient Floating)
+  const bgShapeBL = document.querySelector('.bg-shape-bottom-left');
+  const bgShapeTR = document.querySelector('.bg-shape-top-right');
+  if (bgShapeBL) {
+    aboutHeroTL.from(bgShapeBL, { opacity: 0, scale: 0.9, duration: 1.4 }, 0);
+    gsap.to(bgShapeBL, {
+      y: -14,
+      x: 8,
+      duration: 7,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 1.4
+    });
+  }
+  if (bgShapeTR) {
+    aboutHeroTL.from(bgShapeTR, { opacity: 0, scale: 0.92, duration: 1.4 }, 0);
+    gsap.to(bgShapeTR, {
+      y: 16,
+      x: -10,
+      duration: 8.5,
+      ease: 'sine.inOut',
+      yoyo: true,
+      repeat: -1,
+      delay: 1.4
+    });
+  }
+
+  // B. Left Content Column: Eyebrow
+  const eyebrow = document.querySelector('.about-hero-eyebrow');
+  if (eyebrow) {
+    aboutHeroTL.from(eyebrow, {
+      y: 18,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power3.out'
+    }, 0.15);
+  }
+
+  // C. Main Title Reveal
+  const aboutTitle = document.querySelector('.about-hero-title');
+  if (aboutTitle) {
+    aboutHeroTL.from(aboutTitle, {
+      y: 35,
+      opacity: 0,
+      duration: 0.9,
+      ease: 'power3.out'
+    }, 0.35);
+  }
+
+  // D. Description
+  const aboutDesc = document.querySelector('.about-hero-desc');
+  if (aboutDesc) {
+    aboutHeroTL.from(aboutDesc, {
+      y: 24,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    }, 0.5);
+  }
+
+  // E. 3-Stat Metric Strip & Vertical Dividers
+  const statsStrip = document.querySelector('.about-stats-strip');
+  const statSeparators = document.querySelectorAll('.about-stat-separator');
+  if (statsStrip) {
+    aboutHeroTL.from(statsStrip, {
+      y: 22,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out'
+    }, 0.65);
+  }
+  if (statSeparators.length > 0) {
+    aboutHeroTL.from(statSeparators, {
+      scaleY: 0,
+      transformOrigin: 'top center',
+      duration: 0.6,
+      stagger: 0.1,
+      ease: 'power3.out'
+    }, 0.8);
+  }
+
+  // Live Count-Up Animation for Stat Numbers
+  const heroStatNumbers = aboutHero.querySelectorAll('.stat-number[data-target]');
+  heroStatNumbers.forEach((counter) => {
+    const targetVal = parseInt(counter.getAttribute('data-target'), 10) || 0;
+    const suffix = counter.getAttribute('data-suffix') || '+';
+    const counterObj = { val: 0 };
+
+    aboutHeroTL.to(counterObj, {
+      val: targetVal,
+      duration: 1.8,
+      ease: 'power2.out',
+      onUpdate: () => {
+        counter.textContent = Math.floor(counterObj.val) + suffix;
+      }
+    }, 0.7);
+  });
+
+  // F. CTA Outline Button ("Our Story")
+  const btnAboutStory = document.getElementById('btn-about-story');
+  if (btnAboutStory) {
+    aboutHeroTL.fromTo(btnAboutStory,
+      { y: 16, opacity: 0, scale: 0.96 },
+      { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: 'back.out(1.4)', clearProps: 'opacity,transform,scale' },
+      0.65
+    );
+  }
+
+  // =========================================================================
+  // Right Visual Composition Orchestration
+  // =========================================================================
+  const tiltedBackplate = document.querySelector('.about-tilted-backplate');
+  const dotMatrix = document.querySelector('.about-dot-matrix');
+  const visualFrame = document.querySelector('.about-visual-frame');
+  const contourPath = document.querySelector('.about-contour-curve path');
+  const accentPills = document.querySelectorAll('.accent-pill');
+  const floatingBadge = document.querySelector('.about-floating-badge');
+
+  // 1. Tilted Backplate Entrance
+  if (tiltedBackplate) {
+    aboutHeroTL.fromTo(tiltedBackplate,
+      { scale: 0.86, opacity: 0, rotation: -16 },
+      { scale: 1, opacity: 1, rotation: -10.5, duration: 1.2, ease: 'back.out(1.2)' },
+      0.3
+    );
+  }
+
+  // 2. Dot Matrix Grid Staged Pop & Floating
+  if (dotMatrix) {
+    aboutHeroTL.from(dotMatrix, {
+      scale: 0.8,
+      opacity: 0,
+      y: -15,
+      duration: 0.8,
+      ease: 'power2.out'
+    }, 0.45);
+
+    gsap.to(dotMatrix, {
+      y: -8,
+      duration: 5,
+      yoyo: true,
+      repeat: -1,
+      ease: 'sine.inOut',
+      delay: 1.2
+    });
+  }
+
+  // 3. Team Photo Frame Entrance
+  if (visualFrame) {
+    aboutHeroTL.from(visualFrame, {
+      scale: 0.92,
+      opacity: 0,
+      y: 28,
+      duration: 1.1,
+      ease: 'power3.out'
+    }, 0.4);
+  }
+
+  // 4. Contour Curve Real-Time Stroke Drawing Animation
+  if (contourPath) {
+    try {
+      const pathLength = contourPath.getTotalLength();
+      if (pathLength > 0) {
+        gsap.set(contourPath, {
+          strokeDasharray: pathLength,
+          strokeDashoffset: pathLength
+        });
+
+        aboutHeroTL.to(contourPath, {
+          strokeDashoffset: 0,
+          duration: 1.8,
+          ease: 'power2.inOut'
+        }, 0.55);
+      }
+    } catch (e) {
+      // Graceful fallback if getTotalLength is unavailable
+    }
+  }
+
+  // 5. Floating Accent Pills (Pop-in & Organic Hover Micro-Animations)
+  if (accentPills.length > 0) {
+    aboutHeroTL.from(accentPills, {
+      scale: 0,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.12,
+      ease: 'back.out(2)'
+    }, 0.85);
+
+    // Continuous floating oscillations for each pill
+    const pillNavyBottom = document.querySelector('.pill-navy-bottom');
+    const pillAmberBottom = document.querySelector('.pill-amber-bottom');
+    const pillNavyTop = document.querySelector('.pill-navy-top');
+
+    if (pillNavyBottom) {
+      gsap.to(pillNavyBottom, {
+        y: -6,
+        rotation: -8,
+        duration: 3.5,
+        yoyo: true,
+        repeat: -1,
+        ease: 'sine.inOut',
+        delay: 1.4
+      });
+    }
+    if (pillAmberBottom) {
+      gsap.to(pillAmberBottom, {
+        y: -7,
+        rotation: 12,
+        duration: 4.2,
+        yoyo: true,
+        repeat: -1,
+        ease: 'sine.inOut',
+        delay: 1.6
+      });
+    }
+    if (pillNavyTop) {
+      gsap.to(pillNavyTop, {
+        y: -5,
+        rotation: 18,
+        duration: 3.8,
+        yoyo: true,
+        repeat: -1,
+        ease: 'sine.inOut',
+        delay: 1.5
+      });
+    }
+  }
+
+  // 6. Floating Badge Entrance & Continuous Micro-Float
+  if (floatingBadge) {
+    aboutHeroTL.from(floatingBadge, {
+      y: 24,
+      scale: 0.88,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'back.out(1.5)'
+    }, 0.95);
+
+    gsap.to(floatingBadge, {
+      y: -5,
+      duration: 3.2,
+      yoyo: true,
+      repeat: -1,
+      ease: 'sine.inOut',
+      delay: 1.6
+    });
+
+    // Subtle pulse on badge dot inner
+    const badgeDotInner = floatingBadge.querySelector('.badge-dot-inner');
+    if (badgeDotInner) {
+      gsap.to(badgeDotInner, {
+        scale: 1.35,
+        duration: 1.4,
+        yoyo: true,
+        repeat: -1,
+        ease: 'sine.inOut'
+      });
+    }
+  }
+
+  // =========================================================================
+  // 2. Interactive 3D Parallax & Magnetic Cursor Effect
+  // =========================================================================
+  const visualComp = document.querySelector('.about-visual-composition');
+  if (visualComp && window.matchMedia('(hover: hover) and (min-width: 1024px)').matches) {
+    const setFrameTiltX = visualFrame ? gsap.quickTo(visualFrame, 'rotationX', { duration: 0.7, ease: 'power2.out' }) : null;
+    const setFrameTiltY = visualFrame ? gsap.quickTo(visualFrame, 'rotationY', { duration: 0.7, ease: 'power2.out' }) : null;
+    const setFrameX = visualFrame ? gsap.quickTo(visualFrame, 'x', { duration: 0.7, ease: 'power2.out' }) : null;
+    const setFrameY = visualFrame ? gsap.quickTo(visualFrame, 'y', { duration: 0.7, ease: 'power2.out' }) : null;
+
+    const setBackplateX = tiltedBackplate ? gsap.quickTo(tiltedBackplate, 'x', { duration: 0.8, ease: 'power2.out' }) : null;
+    const setBackplateY = tiltedBackplate ? gsap.quickTo(tiltedBackplate, 'y', { duration: 0.8, ease: 'power2.out' }) : null;
+
+    const setBadgeX = floatingBadge ? gsap.quickTo(floatingBadge, 'x', { duration: 0.6, ease: 'power2.out' }) : null;
+    const setBadgeY = floatingBadge ? gsap.quickTo(floatingBadge, 'y', { duration: 0.6, ease: 'power2.out' }) : null;
+
+    gsap.set(visualFrame, { transformPerspective: 1000, transformStyle: 'preserve-3d' });
+
+    aboutHero.addEventListener('mousemove', (e) => {
+      const rect = aboutHero.getBoundingClientRect();
+      const normX = (e.clientX - rect.left) / rect.width - 0.5;
+      const normY = (e.clientY - rect.top) / rect.height - 0.5;
+
+      if (setFrameTiltY) setFrameTiltY(normX * 8);
+      if (setFrameTiltX) setFrameTiltX(-normY * 8);
+      if (setFrameX) setFrameX(normX * 12);
+      if (setFrameY) setFrameY(normY * 12);
+
+      if (setBackplateX) setBackplateX(-normX * 16);
+      if (setBackplateY) setBackplateY(-normY * 16);
+
+      if (setBadgeX) setBadgeX(normX * 22);
+      if (setBadgeY) setBadgeY(normY * 22);
+    });
+
+    aboutHero.addEventListener('mouseleave', () => {
+      if (setFrameTiltY) setFrameTiltY(0);
+      if (setFrameTiltX) setFrameTiltX(0);
+      if (setFrameX) setFrameX(0);
+      if (setFrameY) setFrameY(0);
+      if (setBackplateX) setBackplateX(0);
+      if (setBackplateY) setBackplateY(0);
+      if (setBadgeX) setBadgeX(0);
+      if (setBadgeY) setBadgeY(0);
+    });
+  }
+
+  // Magnetic button effect on "Our Story"
+  if (btnAboutStory && window.matchMedia('(hover: hover)').matches) {
+    const btnSvg = btnAboutStory.querySelector('svg');
+    btnAboutStory.addEventListener('mousemove', (e) => {
+      const rect = btnAboutStory.getBoundingClientRect();
+      const x = (e.clientX - rect.left - rect.width / 2) * 0.28;
+      const y = (e.clientY - rect.top - rect.height / 2) * 0.28;
+      gsap.to(btnAboutStory, { x, y, duration: 0.3, ease: 'power2.out' });
+      if (btnSvg) {
+        gsap.to(btnSvg, { x: x * 0.5 + 3, duration: 0.3, ease: 'power2.out' });
+      }
+    });
+
+    btnAboutStory.addEventListener('mouseleave', () => {
+      gsap.to(btnAboutStory, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)' });
+      if (btnSvg) {
+        gsap.to(btnSvg, { x: 0, duration: 0.4, ease: 'power2.out' });
+      }
+    });
+  }
+
+  // =========================================================================
+  // 3. ScrollTrigger Suite for Subsequent About Page Sections
+  // =========================================================================
+  if (typeof ScrollTrigger === 'undefined') return;
+
+  // A. Values Section: Intro & Value Cards Stagger
+  const valuesSection = document.querySelector('.about-values-section');
+  if (valuesSection) {
+    gsap.from('.about-values-intro', {
+      scrollTrigger: {
+        trigger: valuesSection,
+        start: 'top 82%',
+        once: true
+      },
+      x: -35,
+      opacity: 0,
+      duration: 0.85,
+      ease: 'power2.out',
+      clearProps: 'all'
+    });
+
+    gsap.from('.value-card', {
+      scrollTrigger: {
+        trigger: '.about-values-grid',
+        start: 'top 85%',
+        once: true
+      },
+      y: 35,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.75,
+      ease: 'power2.out',
+      clearProps: 'all'
+    });
+  }
+
+  // B. Principles Section: Intro & Quad Principle Items + Photo
+  const principlesSection = document.querySelector('.about-principles-section');
+  if (principlesSection) {
+    gsap.from('.about-principles-info', {
+      scrollTrigger: {
+        trigger: principlesSection,
+        start: 'top 80%',
+        once: true
+      },
+      x: -30,
+      opacity: 0,
+      duration: 0.85,
+      ease: 'power2.out',
+      clearProps: 'all'
+    });
+
+    gsap.from('.principle-item', {
+      scrollTrigger: {
+        trigger: '.principles-quad',
+        start: 'top 85%',
+        once: true
+      },
+      y: 30,
+      opacity: 0,
+      stagger: 0.12,
+      duration: 0.7,
+      ease: 'power2.out',
+      clearProps: 'all'
+    });
+
+    gsap.from('.principles-frame', {
+      scrollTrigger: {
+        trigger: '.about-principles-visual',
+        start: 'top 80%',
+        once: true
+      },
+      scale: 0.92,
+      opacity: 0,
+      duration: 0.9,
+      ease: 'power2.out',
+      clearProps: 'all'
+    });
+  }
+
+  // C. Technologies Section: Staggered Ripple Reveal of Tech Cells
+  const techSection = document.querySelector('.about-technologies-section');
+  if (techSection) {
+    gsap.from('.tech-header', {
+      scrollTrigger: {
+        trigger: techSection,
+        start: 'top 82%',
+        once: true
+      },
+      y: 25,
+      opacity: 0,
+      duration: 0.75,
+      ease: 'power2.out',
+      clearProps: 'all'
+    });
+
+    gsap.from('.tech-cell', {
+      scrollTrigger: {
+        trigger: '.tech-grid-wrapper',
+        start: 'top 85%',
+        once: true
+      },
+      scale: 0.88,
+      opacity: 0,
+      y: 18,
+      duration: 0.55,
+      stagger: {
+        amount: 0.5,
+        grid: [2, 8],
+        from: 'center'
+      },
+      ease: 'back.out(1.3)',
+      clearProps: 'all'
+    });
+  }
+
+  // D. Culture Section: 2x2 Photo Gallery Reveal
+  const cultureSection = document.querySelector('.about-culture-section');
+  if (cultureSection) {
+    gsap.from('.about-culture-intro', {
+      scrollTrigger: {
+        trigger: cultureSection,
+        start: 'top 80%',
+        once: true
+      },
+      x: -30,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power2.out',
+      clearProps: 'all'
+    });
+
+    gsap.from('.culture-photo-frame', {
+      scrollTrigger: {
+        trigger: '.about-culture-gallery',
+        start: 'top 80%',
+        once: true
+      },
+      scale: 0.92,
+      y: 25,
+      opacity: 0,
+      stagger: 0.14,
+      duration: 0.75,
+      ease: 'power2.out',
+      clearProps: 'all'
+    });
+  }
+
+  // E. Join Our Team Section
+  const joinSection = document.querySelector('.about-join-section');
+  if (joinSection) {
+    gsap.from('.join-frame', {
+      scrollTrigger: {
+        trigger: joinSection,
+        start: 'top 80%',
+        once: true
+      },
+      x: -35,
+      opacity: 0,
+      duration: 0.85,
+      ease: 'power2.out',
+      clearProps: 'all'
+    });
+
+    gsap.from('.about-join-content', {
+      scrollTrigger: {
+        trigger: joinSection,
+        start: 'top 80%',
+        once: true
+      },
+      x: 35,
+      opacity: 0,
+      duration: 0.85,
+      ease: 'power2.out',
+      clearProps: 'all'
     });
   }
 }
