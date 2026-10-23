@@ -1092,329 +1092,67 @@ function initAboutPageGsapAnimations() {
   }
 
   // =========================================================================
-  // 1. Hero Section Opening Timeline Orchestration
+  // 1. Hero Section Opening Timeline Orchestration (Banner Background)
   // =========================================================================
   const aboutHeroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-  // A. Background Fluid Shapes (Gentle Ambient Floating)
-  const bgShapeBL = document.querySelector('.bg-shape-bottom-left');
-  const bgShapeTR = document.querySelector('.bg-shape-top-right');
-  if (bgShapeBL) {
-    aboutHeroTL.from(bgShapeBL, { opacity: 0, scale: 0.9, duration: 1.4 }, 0);
-    gsap.to(bgShapeBL, {
-      y: -14,
-      x: 8,
-      duration: 7,
-      ease: 'sine.inOut',
-      yoyo: true,
-      repeat: -1,
-      delay: 1.4
-    });
-  }
-  if (bgShapeTR) {
-    aboutHeroTL.from(bgShapeTR, { opacity: 0, scale: 0.92, duration: 1.4 }, 0);
-    gsap.to(bgShapeTR, {
-      y: 16,
-      x: -10,
-      duration: 8.5,
-      ease: 'sine.inOut',
-      yoyo: true,
-      repeat: -1,
-      delay: 1.4
-    });
+  // A. Badge Entrance
+  const heroBadge = document.querySelector('.about-hero-badge') || document.querySelector('.about-hero-eyebrow');
+  if (heroBadge) {
+    aboutHeroTL.fromTo(heroBadge,
+      { y: 16, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.15
+    );
   }
 
-  // B. Left Content Column: Eyebrow
-  const eyebrow = document.querySelector('.about-hero-eyebrow');
-  if (eyebrow) {
-    aboutHeroTL.from(eyebrow, {
-      y: 18,
-      opacity: 0,
-      duration: 0.6,
-      ease: 'power3.out'
-    }, 0.15);
-  }
-
-  // C. Main Title Reveal
+  // B. Main Title Reveal
   const aboutTitle = document.querySelector('.about-hero-title');
   if (aboutTitle) {
-    aboutHeroTL.from(aboutTitle, {
-      y: 35,
-      opacity: 0,
-      duration: 0.9,
-      ease: 'power3.out'
-    }, 0.35);
+    aboutHeroTL.fromTo(aboutTitle,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.85, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.28
+    );
   }
 
-  // D. Description
+  // C. Description Reveal
   const aboutDesc = document.querySelector('.about-hero-desc');
   if (aboutDesc) {
-    aboutHeroTL.from(aboutDesc, {
-      y: 24,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    }, 0.5);
+    aboutHeroTL.fromTo(aboutDesc,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.75, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.42
+    );
   }
 
-  // E. 3-Stat Metric Strip & Vertical Dividers
-  const statsStrip = document.querySelector('.about-stats-strip');
-  const statSeparators = document.querySelectorAll('.about-stat-separator');
-  if (statsStrip) {
-    aboutHeroTL.from(statsStrip, {
-      y: 22,
-      opacity: 0,
-      duration: 0.7,
-      ease: 'power3.out'
-    }, 0.65);
-  }
-  if (statSeparators.length > 0) {
-    aboutHeroTL.from(statSeparators, {
-      scaleY: 0,
-      transformOrigin: 'top center',
-      duration: 0.6,
-      stagger: 0.1,
-      ease: 'power3.out'
-    }, 0.8);
-  }
-
-  // Live Count-Up Animation for Stat Numbers
-  const heroStatNumbers = aboutHero.querySelectorAll('.stat-number[data-target]');
-  heroStatNumbers.forEach((counter) => {
-    const targetVal = parseInt(counter.getAttribute('data-target'), 10) || 0;
-    const suffix = counter.getAttribute('data-suffix') || '+';
-    const counterObj = { val: 0 };
-
-    aboutHeroTL.to(counterObj, {
-      val: targetVal,
-      duration: 1.8,
-      ease: 'power2.out',
-      onUpdate: () => {
-        counter.textContent = Math.floor(counterObj.val) + suffix;
-      }
-    }, 0.7);
-  });
-
-  // F. CTA Outline Button ("Our Story")
+  // D. Action Buttons Entrance
+  const heroActions = document.querySelector('.about-hero-actions');
   const btnAboutStory = document.getElementById('btn-about-story');
-  if (btnAboutStory) {
+  if (heroActions) {
+    aboutHeroTL.fromTo(heroActions,
+      { y: 16, opacity: 0, scale: 0.96 },
+      { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: 'back.out(1.4)', clearProps: 'opacity,transform,scale' },
+      0.55
+    );
+  } else if (btnAboutStory) {
     aboutHeroTL.fromTo(btnAboutStory,
       { y: 16, opacity: 0, scale: 0.96 },
       { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: 'back.out(1.4)', clearProps: 'opacity,transform,scale' },
-      0.65
+      0.7
     );
   }
 
-  // =========================================================================
-  // Right Visual Composition Orchestration
-  // =========================================================================
-  const tiltedBackplate = document.querySelector('.about-tilted-backplate');
-  const dotMatrix = document.querySelector('.about-dot-matrix');
-  const visualFrame = document.querySelector('.about-visual-frame');
-  const contourPath = document.querySelector('.about-contour-curve path');
-  const accentPills = document.querySelectorAll('.accent-pill');
-  const floatingBadge = document.querySelector('.about-floating-badge');
-
-  // 1. Tilted Backplate Entrance
-  if (tiltedBackplate) {
-    aboutHeroTL.fromTo(tiltedBackplate,
-      { scale: 0.86, opacity: 0, rotation: -16 },
-      { scale: 1, opacity: 1, rotation: -10.5, duration: 1.2, ease: 'back.out(1.2)' },
-      0.3
-    );
-  }
-
-  // 2. Dot Matrix Grid Staged Pop & Floating
-  if (dotMatrix) {
-    aboutHeroTL.from(dotMatrix, {
-      scale: 0.8,
-      opacity: 0,
-      y: -15,
-      duration: 0.8,
-      ease: 'power2.out'
-    }, 0.45);
-
-    gsap.to(dotMatrix, {
-      y: -8,
-      duration: 5,
-      yoyo: true,
-      repeat: -1,
-      ease: 'sine.inOut',
-      delay: 1.2
-    });
-  }
-
-  // 3. Team Photo Frame Entrance
-  if (visualFrame) {
-    aboutHeroTL.from(visualFrame, {
-      scale: 0.92,
-      opacity: 0,
-      y: 28,
-      duration: 1.1,
-      ease: 'power3.out'
-    }, 0.4);
-  }
-
-  // 4. Contour Curve Real-Time Stroke Drawing Animation
-  if (contourPath) {
-    try {
-      const pathLength = contourPath.getTotalLength();
-      if (pathLength > 0) {
-        gsap.set(contourPath, {
-          strokeDasharray: pathLength,
-          strokeDashoffset: pathLength
-        });
-
-        aboutHeroTL.to(contourPath, {
-          strokeDashoffset: 0,
-          duration: 1.8,
-          ease: 'power2.inOut'
-        }, 0.55);
-      }
-    } catch (e) {
-      // Graceful fallback if getTotalLength is unavailable
-    }
-  }
-
-  // 5. Floating Accent Pills (Pop-in & Organic Hover Micro-Animations)
-  if (accentPills.length > 0) {
-    aboutHeroTL.from(accentPills, {
-      scale: 0,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.12,
-      ease: 'back.out(2)'
-    }, 0.85);
-
-    // Continuous floating oscillations for each pill
-    const pillNavyBottom = document.querySelector('.pill-navy-bottom');
-    const pillAmberBottom = document.querySelector('.pill-amber-bottom');
-    const pillNavyTop = document.querySelector('.pill-navy-top');
-
-    if (pillNavyBottom) {
-      gsap.to(pillNavyBottom, {
-        y: -6,
-        rotation: -8,
-        duration: 3.5,
-        yoyo: true,
-        repeat: -1,
-        ease: 'sine.inOut',
-        delay: 1.4
-      });
-    }
-    if (pillAmberBottom) {
-      gsap.to(pillAmberBottom, {
-        y: -7,
-        rotation: 12,
-        duration: 4.2,
-        yoyo: true,
-        repeat: -1,
-        ease: 'sine.inOut',
-        delay: 1.6
-      });
-    }
-    if (pillNavyTop) {
-      gsap.to(pillNavyTop, {
-        y: -5,
-        rotation: 18,
-        duration: 3.8,
-        yoyo: true,
-        repeat: -1,
-        ease: 'sine.inOut',
-        delay: 1.5
-      });
-    }
-  }
-
-  // 6. Floating Badge Entrance & Continuous Micro-Float
-  if (floatingBadge) {
-    aboutHeroTL.from(floatingBadge, {
-      y: 24,
-      scale: 0.88,
-      opacity: 0,
-      duration: 0.7,
-      ease: 'back.out(1.5)'
-    }, 0.95);
-
-    gsap.to(floatingBadge, {
-      y: -5,
-      duration: 3.2,
-      yoyo: true,
-      repeat: -1,
-      ease: 'sine.inOut',
-      delay: 1.6
-    });
-
-    // Subtle pulse on badge dot inner
-    const badgeDotInner = floatingBadge.querySelector('.badge-dot-inner');
-    if (badgeDotInner) {
-      gsap.to(badgeDotInner, {
-        scale: 1.35,
-        duration: 1.4,
-        yoyo: true,
-        repeat: -1,
-        ease: 'sine.inOut'
-      });
-    }
-  }
-
-  // =========================================================================
-  // 2. Interactive 3D Parallax & Magnetic Cursor Effect
-  // =========================================================================
-  const visualComp = document.querySelector('.about-visual-composition');
-  if (visualComp && window.matchMedia('(hover: hover) and (min-width: 1024px)').matches) {
-    const setFrameTiltX = visualFrame ? gsap.quickTo(visualFrame, 'rotationX', { duration: 0.7, ease: 'power2.out' }) : null;
-    const setFrameTiltY = visualFrame ? gsap.quickTo(visualFrame, 'rotationY', { duration: 0.7, ease: 'power2.out' }) : null;
-    const setFrameX = visualFrame ? gsap.quickTo(visualFrame, 'x', { duration: 0.7, ease: 'power2.out' }) : null;
-    const setFrameY = visualFrame ? gsap.quickTo(visualFrame, 'y', { duration: 0.7, ease: 'power2.out' }) : null;
-
-    const setBackplateX = tiltedBackplate ? gsap.quickTo(tiltedBackplate, 'x', { duration: 0.8, ease: 'power2.out' }) : null;
-    const setBackplateY = tiltedBackplate ? gsap.quickTo(tiltedBackplate, 'y', { duration: 0.8, ease: 'power2.out' }) : null;
-
-    const setBadgeX = floatingBadge ? gsap.quickTo(floatingBadge, 'x', { duration: 0.6, ease: 'power2.out' }) : null;
-    const setBadgeY = floatingBadge ? gsap.quickTo(floatingBadge, 'y', { duration: 0.6, ease: 'power2.out' }) : null;
-
-    gsap.set(visualFrame, { transformPerspective: 1000, transformStyle: 'preserve-3d' });
-
-    aboutHero.addEventListener('mousemove', (e) => {
-      const rect = aboutHero.getBoundingClientRect();
-      const normX = (e.clientX - rect.left) / rect.width - 0.5;
-      const normY = (e.clientY - rect.top) / rect.height - 0.5;
-
-      if (setFrameTiltY) setFrameTiltY(normX * 8);
-      if (setFrameTiltX) setFrameTiltX(-normY * 8);
-      if (setFrameX) setFrameX(normX * 12);
-      if (setFrameY) setFrameY(normY * 12);
-
-      if (setBackplateX) setBackplateX(-normX * 16);
-      if (setBackplateY) setBackplateY(-normY * 16);
-
-      if (setBadgeX) setBadgeX(normX * 22);
-      if (setBadgeY) setBadgeY(normY * 22);
-    });
-
-    aboutHero.addEventListener('mouseleave', () => {
-      if (setFrameTiltY) setFrameTiltY(0);
-      if (setFrameTiltX) setFrameTiltX(0);
-      if (setFrameX) setFrameX(0);
-      if (setFrameY) setFrameY(0);
-      if (setBackplateX) setBackplateX(0);
-      if (setBackplateY) setBackplateY(0);
-      if (setBadgeX) setBadgeX(0);
-      if (setBadgeY) setBadgeY(0);
-    });
-  }
-
-  // Magnetic button effect on "Our Story"
+  // Magnetic button hover effect on CTA buttons
   if (btnAboutStory && window.matchMedia('(hover: hover)').matches) {
     const btnSvg = btnAboutStory.querySelector('svg');
     btnAboutStory.addEventListener('mousemove', (e) => {
       const rect = btnAboutStory.getBoundingClientRect();
-      const x = (e.clientX - rect.left - rect.width / 2) * 0.28;
-      const y = (e.clientY - rect.top - rect.height / 2) * 0.28;
+      const x = (e.clientX - rect.left - rect.width / 2) * 0.25;
+      const y = (e.clientY - rect.top - rect.height / 2) * 0.25;
       gsap.to(btnAboutStory, { x, y, duration: 0.3, ease: 'power2.out' });
       if (btnSvg) {
-        gsap.to(btnSvg, { x: x * 0.5 + 3, duration: 0.3, ease: 'power2.out' });
+        gsap.to(btnSvg, { x: x * 0.4 + 3, duration: 0.3, ease: 'power2.out' });
       }
     });
 
@@ -1617,282 +1355,64 @@ function initServicePageGsapAnimations() {
   }
 
   // =========================================================================
-  // 1. Hero Section Opening Timeline Orchestration
+  // 1. Hero Section Opening Timeline Orchestration (Executive Banner Theme)
   // =========================================================================
   const serviceHeroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-  // A. Background shapes soft reveal and ambient floating
-  const bgShapeTL = document.querySelector('.bg-shape-top-left');
-  const bgShapeBL = document.querySelector('.bg-shape-bottom-left');
-  const bgShapeTR = document.querySelector('.bg-shape-top-right');
-  const contourWireframe = document.querySelector('.service-contour-wireframe-tr');
-  const dotMatrices = document.querySelectorAll('.service-dot-matrix');
-  const floatingChips = document.querySelectorAll('.service-floating-chip');
-
-  if (bgShapeTL) {
-    serviceHeroTL.from(bgShapeTL, { opacity: 0, scale: 0.9, duration: 1.4 }, 0);
-    gsap.to(bgShapeTL, {
-      x: 10,
-      y: -8,
-      duration: 7,
-      ease: 'sine.inOut',
-      yoyo: true,
-      repeat: -1,
-      delay: 1.2
-    });
-  }
-
-  if (bgShapeBL) {
-    serviceHeroTL.from(bgShapeBL, { opacity: 0, scale: 0.9, duration: 1.4 }, 0);
-    gsap.to(bgShapeBL, {
-      x: 8,
-      y: -12,
-      duration: 7.5,
-      ease: 'sine.inOut',
-      yoyo: true,
-      repeat: -1,
-      delay: 1.2
-    });
-  }
-
-  if (bgShapeTR) {
-    serviceHeroTL.from(bgShapeTR, { opacity: 0, scale: 0.92, duration: 1.4 }, 0);
-    gsap.to(bgShapeTR, {
-      x: -12,
-      y: 12,
-      duration: 8.5,
-      ease: 'sine.inOut',
-      yoyo: true,
-      repeat: -1,
-      delay: 1.4
-    });
-  }
-
-  if (contourWireframe) {
-    serviceHeroTL.from(contourWireframe, {
-      scale: 0.85,
-      opacity: 0,
-      rotation: -10,
-      duration: 1.2,
-      ease: 'power2.out'
-    }, 0.2);
-
-    gsap.to(contourWireframe, {
-      rotation: 3,
-      duration: 9,
-      ease: 'sine.inOut',
-      yoyo: true,
-      repeat: -1,
-      delay: 1.5
-    });
-  }
-
-  if (dotMatrices.length > 0) {
-    serviceHeroTL.from(dotMatrices, {
-      scale: 0.8,
-      opacity: 0,
-      y: 15,
-      duration: 0.8,
-      stagger: 0.15,
-      ease: 'power2.out'
-    }, 0.3);
-
-    dotMatrices.forEach((matrix, i) => {
-      gsap.to(matrix, {
-        y: i === 0 ? -7 : 7,
-        duration: 4.5 + i,
-        ease: 'sine.inOut',
-        yoyo: true,
-        repeat: -1,
-        delay: 1.2 + i * 0.3
-      });
-    });
-  }
-
-  if (floatingChips.length > 0) {
-    serviceHeroTL.from(floatingChips, {
-      scale: 0,
-      opacity: 0,
-      duration: 0.65,
-      stagger: 0.08,
-      ease: 'back.out(2)'
-    }, 0.4);
-
-    floatingChips.forEach((chip, i) => {
-      gsap.to(chip, {
-        y: i % 2 === 0 ? -6 : 6,
-        rotation: i % 2 === 0 ? '+=8' : '-=8',
-        duration: 3.5 + i * 0.5,
-        ease: 'sine.inOut',
-        yoyo: true,
-        repeat: -1,
-        delay: 1.2 + i * 0.2
-      });
-    });
-  }
-
-  // B. Eyebrow Row
+  // A. Eyebrow Badge Entrance
   const eyebrow = serviceHero.querySelector('.service-hero-eyebrow');
   if (eyebrow) {
-    serviceHeroTL.from(eyebrow, {
-      y: 18,
-      opacity: 0,
-      duration: 0.6,
-      ease: 'power3.out'
-    }, 0.15);
-  }
-
-  // C. Headline Title Reveal
-  const heroTitle = serviceHero.querySelector('.service-hero-title');
-  if (heroTitle) {
-    serviceHeroTL.from(heroTitle, {
-      y: 35,
-      opacity: 0,
-      duration: 0.85,
-      ease: 'power3.out'
-    }, 0.35);
-  }
-
-  // D. Center Divider & Center Node
-  const heroDivider = serviceHero.querySelector('.service-hero-divider');
-  const dividerNode = serviceHero.querySelector('.divider-node');
-  if (heroDivider) {
-    serviceHeroTL.from(heroDivider, {
-      scaleY: 0,
-      transformOrigin: 'center center',
-      duration: 0.8,
-      ease: 'power2.inOut'
-    }, 0.35);
-  }
-  if (dividerNode) {
-    serviceHeroTL.from(dividerNode, {
-      scale: 0,
-      opacity: 0,
-      duration: 0.5,
-      ease: 'back.out(2.5)'
-    }, 0.7);
-
-    gsap.to(dividerNode, {
-      boxShadow: '0 0 0 7px rgba(125, 211, 252, 0.45)',
-      duration: 1.6,
-      yoyo: true,
-      repeat: -1,
-      ease: 'sine.inOut',
-      delay: 1.2
-    });
-  }
-
-  // E. Right Description
-  const heroDesc = serviceHero.querySelector('.service-hero-desc');
-  if (heroDesc) {
-    serviceHeroTL.from(heroDesc, {
-      y: 25,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    }, 0.5);
-  }
-
-  // F. Dual Buttons
-  const ctaBtns = serviceHero.querySelectorAll('.hero-cta-group a');
-  if (ctaBtns.length > 0) {
-    serviceHeroTL.fromTo(ctaBtns,
-      { y: 20, opacity: 0, scale: 0.95 },
-      { y: 0, opacity: 1, scale: 1, duration: 0.6, stagger: 0.12, ease: 'back.out(1.4)', clearProps: 'opacity,transform,scale' },
-      0.65
+    serviceHeroTL.fromTo(eyebrow,
+      { y: 16, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.15
     );
   }
 
-  // G. Key Metrics Stats Strip & Dividers
-  const statsStrip = serviceHero.querySelector('.service-hero-stats');
-  const statDividers = serviceHero.querySelectorAll('.service-hero-stats .stat-divider');
-  if (statsStrip) {
-    serviceHeroTL.from(statsStrip, {
-      y: 25,
-      opacity: 0,
-      duration: 0.7,
-      ease: 'power3.out'
-    }, 0.7);
-  }
-  if (statDividers.length > 0) {
-    serviceHeroTL.from(statDividers, {
-      scaleY: 0,
-      transformOrigin: 'center center',
-      duration: 0.6,
-      stagger: 0.08,
-      ease: 'power3.out'
-    }, 0.85);
+  // B. Main Title Reveal
+  const heroTitle = serviceHero.querySelector('.service-hero-title');
+  if (heroTitle) {
+    serviceHeroTL.fromTo(heroTitle,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.85, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.28
+    );
   }
 
-  // Live Counter Interpolation with Decimal Support
-  const statNumbers = serviceHero.querySelectorAll('.stat-number[data-target]');
-  statNumbers.forEach((counter) => {
-    const targetVal = parseFloat(counter.getAttribute('data-target')) || 0;
-    const suffix = counter.getAttribute('data-suffix') || '';
-    const decimals = parseInt(counter.getAttribute('data-decimals'), 10) || 0;
-    const counterObj = { val: 0 };
+  // C. Narrative Description Reveal
+  const heroDesc = serviceHero.querySelector('.service-hero-desc');
+  if (heroDesc) {
+    serviceHeroTL.fromTo(heroDesc,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.75, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.42
+    );
+  }
 
-    serviceHeroTL.to(counterObj, {
-      val: targetVal,
-      duration: 1.8,
-      ease: 'power2.out',
-      onUpdate: () => {
-        if (decimals > 0) {
-          counter.textContent = counterObj.val.toFixed(decimals) + suffix;
-        } else {
-          counter.textContent = Math.floor(counterObj.val) + suffix;
-        }
-      }
-    }, 0.8);
-  });
-
-  // =========================================================================
-  // 2. Interactive 3D Parallax Mouse Physics
-  // =========================================================================
-  if (window.matchMedia('(hover: hover) and (min-width: 1024px)').matches) {
-    const setChipX = gsap.quickTo(floatingChips, 'x', { duration: 0.7, ease: 'power2.out' });
-    const setChipY = gsap.quickTo(floatingChips, 'y', { duration: 0.7, ease: 'power2.out' });
-    const setMatrixX = gsap.quickTo(dotMatrices, 'x', { duration: 0.85, ease: 'power2.out' });
-    const setMatrixY = gsap.quickTo(dotMatrices, 'y', { duration: 0.85, ease: 'power2.out' });
-    const setWireframeX = contourWireframe ? gsap.quickTo(contourWireframe, 'x', { duration: 0.8, ease: 'power2.out' }) : null;
-    const setWireframeY = contourWireframe ? gsap.quickTo(contourWireframe, 'y', { duration: 0.8, ease: 'power2.out' }) : null;
-
-    serviceHero.addEventListener('mousemove', (e) => {
-      const rect = serviceHero.getBoundingClientRect();
-      const normX = (e.clientX - rect.left) / rect.width - 0.5;
-      const normY = (e.clientY - rect.top) / rect.height - 0.5;
-
-      setChipX(normX * 18);
-      setChipY(normY * 18);
-      setMatrixX(-normX * 14);
-      setMatrixY(-normY * 14);
-      if (setWireframeX) setWireframeX(normX * 22);
-      if (setWireframeY) setWireframeY(normY * 22);
-    });
-
-    serviceHero.addEventListener('mouseleave', () => {
-      setChipX(0);
-      setChipY(0);
-      setMatrixX(0);
-      setMatrixY(0);
-      if (setWireframeX) setWireframeX(0);
-      if (setWireframeY) setWireframeY(0);
-    });
+  // D. Action Buttons Entrance
+  const heroActions = serviceHero.querySelector('.service-hero-actions');
+  const ctaBtns = serviceHero.querySelectorAll('.service-hero-actions a');
+  if (heroActions) {
+    serviceHeroTL.fromTo(heroActions,
+      { y: 16, opacity: 0, scale: 0.96 },
+      { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: 'back.out(1.4)', clearProps: 'opacity,transform,scale' },
+      0.55
+    );
   }
 
   // =========================================================================
-  // 3. Magnetic Hover Physics for CTA Buttons
+  // 2. Magnetic Hover Physics for Action Buttons
   // =========================================================================
-  if (window.matchMedia('(hover: hover)').matches) {
+  if (window.matchMedia('(hover: hover)').matches && ctaBtns.length > 0) {
     ctaBtns.forEach((btn) => {
       const btnSvg = btn.querySelector('svg');
       btn.addEventListener('mousemove', (e) => {
         const rect = btn.getBoundingClientRect();
-        const x = (e.clientX - rect.left - rect.width / 2) * 0.28;
-        const y = (e.clientY - rect.top - rect.height / 2) * 0.28;
+        const x = (e.clientX - rect.left - rect.width / 2) * 0.25;
+        const y = (e.clientY - rect.top - rect.height / 2) * 0.25;
         gsap.to(btn, { x, y, duration: 0.3, ease: 'power2.out' });
         if (btnSvg) {
-          gsap.to(btnSvg, { x: x * 0.5 + 3, duration: 0.3, ease: 'power2.out' });
+          gsap.to(btnSvg, { x: x * 0.4 + 3, duration: 0.3, ease: 'power2.out' });
         }
       });
 
@@ -1905,6 +1425,7 @@ function initServicePageGsapAnimations() {
     });
   }
 }
+
 
 // 8D. Case Study Page GSAP Animations & Interactions
 function initCaseStudyPageGsapAnimations() {
