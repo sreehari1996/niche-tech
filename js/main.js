@@ -1280,35 +1280,282 @@ function initAboutPageGsapAnimations() {
     });
   }
 
-  // D. Culture Section: 2x2 Photo Gallery Reveal
+  // D. Culture Section: GSAP Cinema Reel Carousel & Modal
   const cultureSection = document.querySelector('.about-culture-section');
   if (cultureSection) {
-    gsap.from('.about-culture-intro', {
-      scrollTrigger: {
-        trigger: cultureSection,
-        start: 'top 80%',
-        once: true
-      },
-      x: -30,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power2.out',
-      clearProps: 'all'
+    // 1. Entrance ScrollTrigger
+    const cultureHeader = cultureSection.querySelector('.about-culture-header');
+    if (cultureHeader) {
+      gsap.from(cultureHeader.children, {
+        scrollTrigger: {
+          trigger: cultureSection,
+          start: 'top 80%',
+          once: true
+        },
+        y: 30,
+        opacity: 0,
+        stagger: 0.12,
+        duration: 0.8,
+        ease: 'power3.out',
+        clearProps: 'all'
+      });
+    }
+
+    const reelCards = cultureSection.querySelectorAll('.culture-reel-card');
+    if (reelCards.length) {
+      gsap.from(reelCards, {
+        scrollTrigger: {
+          trigger: '.about-culture-reel-wrap',
+          start: 'top 85%',
+          once: true
+        },
+        y: 45,
+        opacity: 0,
+        stagger: 0.07,
+        duration: 0.75,
+        ease: 'power3.out',
+        clearProps: 'all'
+      });
+    }
+
+    // 2. Cinema Reel Carousel Engine
+    const viewport = document.getElementById('culture-viewport');
+    const track = document.getElementById('culture-track');
+    const prevBtn = document.getElementById('culture-prev-btn');
+    const nextBtn = document.getElementById('culture-next-btn');
+    const currentIdxEl = document.getElementById('culture-current-idx');
+    const totalIdxEl = document.getElementById('culture-total-idx');
+    const progressBar = document.getElementById('culture-progress-bar');
+    const filterPills = cultureSection.querySelectorAll('.culture-pill-btn');
+
+    if (viewport && track) {
+      let currentOffset = 0;
+      let isDragging = false;
+      let startX = 0;
+      let dragStartOffset = 0;
+      let hasDragged = false;
+
+      function getVisibleCards() {
+        return Array.from(track.querySelectorAll('.culture-reel-card:not(.is-hidden)'));
+      }
+
+      function getStepSize() {
+        const visible = getVisibleCards();
+        if (!visible.length) return 360;
+        const card = visible[0];
+        const style = window.getComputedStyle(track);
+        const gap = parseFloat(style.gap) || 20;
+        return card.offsetWidth + gap;
+      }
+
+      function getMaxOffset() {
+        const totalTrackWidth = track.scrollWidth;
+        const viewWidth = viewport.clientWidth;
+        return Math.max(0, totalTrackWidth - viewWidth);
+      }
+
+      function updateCounterAndProgress(offset) {
+        const maxOffset = getMaxOffset();
+        const visible = getVisibleCards();
+        const total = visible.length;
+
+        if (totalIdxEl) {
+          totalIdxEl.textContent = total < 10 ? '0' + total : '' + total;
+        }
+
+        const step = getStepSize();
+        let activeIdx = Math.round(offset / step) + 1;
+        if (activeIdx < 1) activeIdx = 1;
+        if (activeIdx > total) activeIdx = total;
+
+        if (currentIdxEl) {
+          currentIdxEl.textContent = activeIdx < 10 ? '0' + activeIdx : '' + activeIdx;
+        }
+
+        if (progressBar) {
+          if (maxOffset <= 0) {
+            progressBar.style.width = '100%';
+          } else {
+            const pct = Math.min(100, Math.max(14, ((offset + viewport.clientWidth) / track.scrollWidth) * 100));
+            progressBar.style.width = pct + '%';
+          }
+        }
+
+        if (prevBtn) prevBtn.disabled = offset <= 2;
+        if (nextBtn) nextBtn.disabled = offset >= maxOffset - 2;
+      }
+
+      function slideTo(targetOffset, animate = true) {
+        const maxOffset = getMaxOffset();
+        currentOffset = Math.max(0, Math.min(targetOffset, maxOffset));
+
+        if (animate && typeof gsap !== 'undefined') {
+          gsap.to(track, {
+            x: -currentOffset,
+            duration: 0.45,
+            ease: 'power2.out',
+            overwrite: 'auto',
+            onUpdate: () => updateCounterAndProgress(currentOffset)
+          });
+        } else {
+          track.style.transform = `translate3d(${-currentOffset}px, 0, 0)`;
+          updateCounterAndProgress(currentOffset);
+        }
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          const step = getStepSize();
+          slideTo(currentOffset + step);
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          const step = getStepSize();
+          slideTo(currentOffset - step);
+        });
+      }
+
+      // Pointer / Drag gesture support
+      viewport.addEventListener('pointerdown', (e) => {
+        // Ignore if clicking on a button inside
+        if (e.target.closest('button')) return;
+        isDragging = true;
+        hasDragged = false;
+        startX = e.clientX;
+        dragStartOffset = currentOffset;
+        viewport.classList.add('is-dragging');
+        track.style.transition = 'none';
+      });
+
+      window.addEventListener('pointermove', (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        if (Math.abs(dx) > 5) hasDragged = true;
+        const maxOffset = getMaxOffset();
+        const rawOffset = dragStartOffset - dx;
+        // Dampen when overscrolling
+        if (rawOffset < 0) {
+          currentOffset = rawOffset * 0.35;
+        } else if (rawOffset > maxOffset) {
+          currentOffset = maxOffset + (rawOffset - maxOffset) * 0.35;
+        } else {
+          currentOffset = rawOffset;
+        }
+        track.style.transform = `translate3d(${-currentOffset}px, 0, 0)`;
+        updateCounterAndProgress(currentOffset);
+      });
+
+      function handleDragEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        viewport.classList.remove('is-dragging');
+        const step = getStepSize();
+        const snappedOffset = Math.round(currentOffset / step) * step;
+        slideTo(snappedOffset, true);
+      }
+
+      window.addEventListener('pointerup', handleDragEnd);
+      window.addEventListener('pointercancel', handleDragEnd);
+
+      // Category Filter Tabs
+      filterPills.forEach((pill) => {
+        pill.addEventListener('click', () => {
+          const filter = pill.getAttribute('data-filter') || 'all';
+          filterPills.forEach((p) => p.classList.remove('active'));
+          pill.classList.add('active');
+
+          const allCards = track.querySelectorAll('.culture-reel-card');
+          const visible = [];
+
+          allCards.forEach((card) => {
+            const cat = card.getAttribute('data-category');
+            if (filter === 'all' || cat === filter) {
+              card.classList.remove('is-hidden');
+              visible.push(card);
+            } else {
+              card.classList.add('is-hidden');
+            }
+          });
+
+          // Animate freshly displayed cards
+          if (typeof gsap !== 'undefined' && visible.length) {
+            gsap.fromTo(visible,
+              { opacity: 0, scale: 0.94 },
+              { opacity: 1, scale: 1, duration: 0.35, stagger: 0.04, ease: 'power2.out' }
+            );
+          }
+
+          slideTo(0, false);
+          if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+        });
+      });
+
+      // Resize observer to update constraints
+      window.addEventListener('resize', () => {
+        slideTo(currentOffset, false);
+      });
+
+      // Initial state
+      slideTo(0, false);
+    }
+
+    // 3. Lightbox Modal Engine
+    const lightbox = document.getElementById('culture-lightbox');
+    const lightboxImg = document.getElementById('culture-lightbox-img');
+    const lightboxTitle = document.getElementById('culture-lightbox-title');
+    const lightboxDesc = document.getElementById('culture-lightbox-desc');
+    const lightboxClose = document.getElementById('culture-lightbox-close');
+    const lightboxBackdrop = document.getElementById('culture-lightbox-backdrop');
+
+    function openLightbox(src, title, desc) {
+      if (!lightbox || !lightboxImg) return;
+      lightboxImg.src = src;
+      lightboxImg.alt = title;
+      if (lightboxTitle) lightboxTitle.textContent = title;
+      if (lightboxDesc) lightboxDesc.textContent = desc;
+
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    cultureSection.addEventListener('click', (e) => {
+      const zoomBtn = e.target.closest('.culture-zoom-btn');
+      const card = e.target.closest('.culture-reel-card');
+
+      if (zoomBtn) {
+        e.stopPropagation();
+        const src = zoomBtn.getAttribute('data-src') || '';
+        const title = zoomBtn.getAttribute('data-title') || '';
+        const desc = zoomBtn.getAttribute('data-desc') || '';
+        openLightbox(src, title, desc);
+      } else if (card) {
+        const btn = card.querySelector('.culture-zoom-btn');
+        if (btn) {
+          const src = btn.getAttribute('data-src') || '';
+          const title = btn.getAttribute('data-title') || '';
+          const desc = btn.getAttribute('data-desc') || '';
+          openLightbox(src, title, desc);
+        }
+      }
     });
 
-    gsap.from('.culture-photo-frame', {
-      scrollTrigger: {
-        trigger: '.about-culture-gallery',
-        start: 'top 80%',
-        once: true
-      },
-      scale: 0.92,
-      y: 25,
-      opacity: 0,
-      stagger: 0.14,
-      duration: 0.75,
-      ease: 'power2.out',
-      clearProps: 'all'
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
     });
   }
 

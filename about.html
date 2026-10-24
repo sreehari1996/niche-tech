@@ -581,42 +581,314 @@
     </section>
 
     <!-- ---------------------------------------------------------------------
-         4. Culture Section: Life at Niche Techies
+         4. Culture Section: Life at Niche Techies (GSAP Cinema Reel)
          --------------------------------------------------------------------- -->
     <section class="about-culture-section" id="culture">
+      <div class="culture-ambient-glow"></div>
       <div class="aboutpage-container">
-        <div class="about-culture-layout">
-          <!-- Left Intro Column -->
-          <div class="about-culture-intro">
-            <span class="culture-eyebrow">OUR CULTURE</span>
+        <!-- Culture Header & Controls -->
+        <div class="about-culture-header">
+          <div class="culture-header-text">
+            <span class="culture-eyebrow">
+              <span class="culture-eyebrow-dot"></span>
+              OUR CULTURE & LIFE
+            </span>
             <h2 class="culture-title">Life at Niche Techies</h2>
             <p class="culture-desc">
-              Great work happens when great people feel at home. From team outings to learning sessions, we celebrate
-              progress, encourage creativity and build lasting bonds.
+              Great work thrives when passionate people feel inspired, valued, and connected. Explore our retreats, hackathons, breakroom games, and celebrations.
             </p>
-            <a href="#join" class="link-arrow-blue">
-              <span>See Our Culture</span>
-              <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8"
-                  stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </a>
           </div>
 
-          <!-- Right 2x2 Photo Gallery -->
-          <div class="about-culture-gallery">
-            <div class="culture-photo-frame">
-              <img src="assets/images/gallery-5.jpeg" alt="Niche Techies Team Holding Banner" loading="lazy">
+          <!-- Reel Controls & Filters Dock -->
+          <div class="culture-header-dock">
+            <!-- Filter Pills -->
+            <div class="culture-filter-pills" role="tablist" aria-label="Culture category filters">
+              <button type="button" class="culture-pill-btn active" data-filter="all">All Photos (9)</button>
+              <button type="button" class="culture-pill-btn" data-filter="retreat">Retreats</button>
+              <button type="button" class="culture-pill-btn" data-filter="talks">Tech & Sprints</button>
+              <button type="button" class="culture-pill-btn" data-filter="games">Games & Chill</button>
+              <button type="button" class="culture-pill-btn" data-filter="celebrations">Celebrations</button>
             </div>
-            <div class="culture-photo-frame">
-              <img src="assets/images/gallery-1.jpg" alt="Team Playing Foosball in Breakroom" loading="lazy">
+
+            <!-- Carousel Nav Buttons & Counter -->
+            <div class="culture-nav-controls">
+              <div class="culture-counter">
+                <strong id="culture-current-idx">01</strong>
+                <span class="culture-counter-slash">/</span>
+                <span id="culture-total-idx">09</span>
+              </div>
+              <div class="culture-arrow-group">
+                <button type="button" class="culture-arrow-btn" id="culture-prev-btn" aria-label="Previous photo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                  </svg>
+                </button>
+                <button type="button" class="culture-arrow-btn" id="culture-next-btn" aria-label="Next photo">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
             </div>
-            <div class="culture-photo-frame">
-              <img src="assets/images/gallery-2.jpg" alt="Team Weekend Retreat by the Lake" loading="lazy">
+          </div>
+        </div>
+
+        <!-- Cinema Reel Viewport & Track -->
+        <div class="about-culture-reel-wrap">
+          <div class="about-culture-reel-viewport" id="culture-viewport">
+            <div class="about-culture-track" id="culture-track">
+              <!-- Card 1: Banner -->
+              <article class="culture-reel-card" data-category="retreat" data-index="1">
+                <div class="culture-card-media">
+                  <img src="assets/images/about-culture-banner.jpg" alt="Global Team Assembly at Infopark Campus" loading="lazy">
+                  <div class="culture-card-scrim"></div>
+                  <span class="culture-card-badge">
+                    <span class="culture-badge-dot"></span>
+                    ALL-HANDS
+                  </span>
+                  <button type="button" class="culture-zoom-btn" aria-label="Zoom photo" data-src="assets/images/about-culture-banner.jpg" data-title="Global Team Assembly" data-desc="Our complete engineering and consulting collective gathered at Infopark Campus.">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <polyline points="9 21 3 21 3 15"></polyline>
+                      <line x1="21" y1="3" x2="14" y2="10"></line>
+                      <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                  </button>
+                </div>
+                <div class="culture-card-info">
+                  <span class="culture-card-location">Infopark Campus • Kochi HQ</span>
+                  <h3 class="culture-card-title">Global Team Assembly</h3>
+                </div>
+              </article>
+
+              <!-- Card 2: Outing -->
+              <article class="culture-reel-card" data-category="retreat" data-index="2">
+                <div class="culture-card-media">
+                  <img src="assets/images/about-culture-outing.jpg" alt="Lakeside Adventure & Kayaking Wayanad Retreat" loading="lazy">
+                  <div class="culture-card-scrim"></div>
+                  <span class="culture-card-badge">
+                    <span class="culture-badge-dot"></span>
+                    OUTING & RETREAT
+                  </span>
+                  <button type="button" class="culture-zoom-btn" aria-label="Zoom photo" data-src="assets/images/about-culture-outing.jpg" data-title="Lakeside Adventure & Kayaking" data-desc="Unwinding by the lake with kayaking, team trails, and mountain breezes at Wayanad.">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <polyline points="9 21 3 21 3 15"></polyline>
+                      <line x1="21" y1="3" x2="14" y2="10"></line>
+                      <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                  </button>
+                </div>
+                <div class="culture-card-info">
+                  <span class="culture-card-location">Wayanad Retreat • Adventure Weekend</span>
+                  <h3 class="culture-card-title">Lakeside Adventure & Kayaking</h3>
+                </div>
+              </article>
+
+              <!-- Card 3: Foosball -->
+              <article class="culture-reel-card" data-category="games" data-index="3">
+                <div class="culture-card-media">
+                  <img src="assets/images/about-culture-foosball.jpg" alt="Breakroom Foosball Championship" loading="lazy">
+                  <div class="culture-card-scrim"></div>
+                  <span class="culture-card-badge">
+                    <span class="culture-badge-dot"></span>
+                    GAMES & CHILL
+                  </span>
+                  <button type="button" class="culture-zoom-btn" aria-label="Zoom photo" data-src="assets/images/about-culture-foosball.jpg" data-title="Breakroom Foosball Championship" data-desc="High-stakes foosball tournaments during afternoon coffee breaks to reset the mind.">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <polyline points="9 21 3 21 3 15"></polyline>
+                      <line x1="21" y1="3" x2="14" y2="10"></line>
+                      <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                  </button>
+                </div>
+                <div class="culture-card-info">
+                  <span class="culture-card-location">Breakroom Arena • Daily Social</span>
+                  <h3 class="culture-card-title">Breakroom Foosball Battles</h3>
+                </div>
+              </article>
+
+              <!-- Card 4: Tech Talk -->
+              <article class="culture-reel-card" data-category="talks" data-index="4">
+                <div class="culture-card-media">
+                  <img src="assets/images/about-culture-talk.jpg" alt="Architecture & Tech Keynote Session" loading="lazy">
+                  <div class="culture-card-scrim"></div>
+                  <span class="culture-card-badge">
+                    <span class="culture-badge-dot"></span>
+                    TECH TALKS
+                  </span>
+                  <button type="button" class="culture-zoom-btn" aria-label="Zoom photo" data-src="assets/images/about-culture-talk.jpg" data-title="Architecture & Cloud Keynote" data-desc="Knowledge-sharing masterclasses on microservices, AI pipelines, and clean architecture.">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <polyline points="9 21 3 21 3 15"></polyline>
+                      <line x1="21" y1="3" x2="14" y2="10"></line>
+                      <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                  </button>
+                </div>
+                <div class="culture-card-info">
+                  <span class="culture-card-location">Auditorium • Tech Forum</span>
+                  <h3 class="culture-card-title">Architecture & Cloud Keynotes</h3>
+                </div>
+              </article>
+
+              <!-- Card 5: Gallery 1 Holiday -->
+              <article class="culture-reel-card" data-category="celebrations" data-index="5">
+                <div class="culture-card-media">
+                  <img src="assets/images/gallery-1.jpg" alt="Secret Santa and Holiday Celebrations" loading="lazy">
+                  <div class="culture-card-scrim"></div>
+                  <span class="culture-card-badge">
+                    <span class="culture-badge-dot"></span>
+                    CELEBRATIONS
+                  </span>
+                  <button type="button" class="culture-zoom-btn" aria-label="Zoom photo" data-src="assets/images/gallery-1.jpg" data-title="Secret Santa & Festive Cheer" data-desc="Sharing laughs, gifts, and holiday music as the year wraps up together.">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <polyline points="9 21 3 21 3 15"></polyline>
+                      <line x1="21" y1="3" x2="14" y2="10"></line>
+                      <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                  </button>
+                </div>
+                <div class="culture-card-info">
+                  <span class="culture-card-location">Main Floor • Annual Holiday Party</span>
+                  <h3 class="culture-card-title">Secret Santa & Festive Cheer</h3>
+                </div>
+              </article>
+
+              <!-- Card 6: Gallery 2 Diwali -->
+              <article class="culture-reel-card" data-category="celebrations" data-index="6">
+                <div class="culture-card-media">
+                  <img src="assets/images/gallery-2.jpg" alt="Diwali Lights & Cultural Celebrations" loading="lazy">
+                  <div class="culture-card-scrim"></div>
+                  <span class="culture-card-badge">
+                    <span class="culture-badge-dot"></span>
+                    FESTIVITIES
+                  </span>
+                  <button type="button" class="culture-zoom-btn" aria-label="Zoom photo" data-src="assets/images/gallery-2.jpg" data-title="Diwali Lights & Traditional Day" data-desc="Ethnic wear, traditional sweets, festive rangolis, and team smiles lighting up our workspace.">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <polyline points="9 21 3 21 3 15"></polyline>
+                      <line x1="21" y1="3" x2="14" y2="10"></line>
+                      <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                  </button>
+                </div>
+                <div class="culture-card-info">
+                  <span class="culture-card-location">Culture Floor • Festive Lights</span>
+                  <h3 class="culture-card-title">Diwali Lights & Traditional Day</h3>
+                </div>
+              </article>
+
+              <!-- Card 7: Gallery 3 Dinners -->
+              <article class="culture-reel-card" data-category="games" data-index="7">
+                <div class="culture-card-media">
+                  <img src="assets/images/gallery-3.jpg" alt="Team Social Dinner and Networking" loading="lazy">
+                  <div class="culture-card-scrim"></div>
+                  <span class="culture-card-badge">
+                    <span class="culture-badge-dot"></span>
+                    SOCIAL & DINING
+                  </span>
+                  <button type="button" class="culture-zoom-btn" aria-label="Zoom photo" data-src="assets/images/gallery-3.jpg" data-title="Team Social Dinners" data-desc="Good food, warm conversations, and strong camaraderie outside the office.">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <polyline points="9 21 3 21 3 15"></polyline>
+                      <line x1="21" y1="3" x2="14" y2="10"></line>
+                      <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                  </button>
+                </div>
+                <div class="culture-card-info">
+                  <span class="culture-card-location">Downtown Kochi • Social Evening</span>
+                  <h3 class="culture-card-title">Team Social Dinners</h3>
+                </div>
+              </article>
+
+              <!-- Card 8: Gallery 5 Banner Milestone -->
+              <article class="culture-reel-card" data-category="celebrations" data-index="8">
+                <div class="culture-card-media">
+                  <img src="assets/images/gallery-5.jpeg" alt="Milestone Celebration & Banner Ceremony" loading="lazy">
+                  <div class="culture-card-scrim"></div>
+                  <span class="culture-card-badge">
+                    <span class="culture-badge-dot"></span>
+                    MILESTONES
+                  </span>
+                  <button type="button" class="culture-zoom-btn" aria-label="Zoom photo" data-src="assets/images/gallery-5.jpeg" data-title="Milestone Celebration" data-desc="Honoring project launches and company milestones with the whole crew.">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <polyline points="9 21 3 21 3 15"></polyline>
+                      <line x1="21" y1="3" x2="14" y2="10"></line>
+                      <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                  </button>
+                </div>
+                <div class="culture-card-info">
+                  <span class="culture-card-location">Tech Center • Company Milestone</span>
+                  <h3 class="culture-card-title">Milestone Victory & Launch</h3>
+                </div>
+              </article>
+
+              <!-- Card 9: Gallery 8 Sprints -->
+              <article class="culture-reel-card" data-category="talks" data-index="9">
+                <div class="culture-card-media">
+                  <img src="assets/images/gallery-8.jpeg" alt="Design Sprint and Collaborative Whiteboard" loading="lazy">
+                  <div class="culture-card-scrim"></div>
+                  <span class="culture-card-badge">
+                    <span class="culture-badge-dot"></span>
+                    SPRINTS
+                  </span>
+                  <button type="button" class="culture-zoom-btn" aria-label="Zoom photo" data-src="assets/images/gallery-8.jpeg" data-title="Design Sprint & Architecture" data-desc="Cross-functional brainstorms turning complex client challenges into elegant digital realities.">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <polyline points="9 21 3 21 3 15"></polyline>
+                      <line x1="21" y1="3" x2="14" y2="10"></line>
+                      <line x1="3" y1="21" x2="10" y2="14"></line>
+                    </svg>
+                  </button>
+                </div>
+                <div class="culture-card-info">
+                  <span class="culture-card-location">Studio Deck • Sprint Huddle</span>
+                  <h3 class="culture-card-title">Design Sprint & Whiteboards</h3>
+                </div>
+              </article>
             </div>
-            <div class="culture-photo-frame">
-              <img src="assets/images/gallery-3.jpg" alt="Townhall Presentation in Auditorium" loading="lazy">
+          </div>
+
+          <!-- Bottom Micro Bar: Progress Track + Drag Cue -->
+          <div class="culture-reel-footer">
+            <div class="culture-progress-track">
+              <div class="culture-progress-fill" id="culture-progress-bar"></div>
             </div>
+            <div class="culture-reel-hint">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="13 17 18 12 13 7"></polyline>
+                <polyline points="6 17 11 12 6 7"></polyline>
+              </svg>
+              <span>Drag or use arrows to explore</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Culture Lightbox Modal -->
+      <div class="culture-lightbox" id="culture-lightbox" aria-hidden="true" role="dialog">
+        <div class="culture-lightbox-backdrop" id="culture-lightbox-backdrop"></div>
+        <div class="culture-lightbox-dialog">
+          <button type="button" class="culture-lightbox-close" id="culture-lightbox-close" aria-label="Close dialog">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <div class="culture-lightbox-image-wrap">
+            <img src="" alt="" id="culture-lightbox-img">
+          </div>
+          <div class="culture-lightbox-caption">
+            <h4 id="culture-lightbox-title"></h4>
+            <p id="culture-lightbox-desc"></p>
           </div>
         </div>
       </div>

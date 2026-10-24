@@ -768,120 +768,499 @@
   background-color: #060e1d;
   padding: 4.25rem 0;
 
+  position: relative;
+  overflow: hidden;
+  padding: 4.5rem 0 5rem;
+
   @include md {
-    padding: 6.5rem 0;
+    padding: 6.5rem 0 6.5rem;
   }
 
-  @include lg {
-    padding: 7.5rem 0;
+  .culture-ambient-glow {
+    position: absolute;
+    top: 15%;
+    right: -5%;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(37, 99, 235, 0.04) 45%, transparent 70%);
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
   }
 
-  .about-culture-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.25rem;
+  .about-culture-header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 2.25rem;
+  }
 
-    @include sm {
-      gap: 3rem;
-    }
+  .culture-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: $font-heading;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #38bdf8;
+    margin-bottom: 0.85rem;
+  }
 
-    @include lg {
-      grid-template-columns: 36% 64%;
-      gap: 4.5rem;
+  .culture-eyebrow-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #38bdf8;
+    box-shadow: 0 0 10px #38bdf8;
+  }
+
+  .culture-title {
+    font-family: $font-heading;
+    font-size: clamp(2rem, 5vw, 2.85rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.85rem;
+  }
+
+  .culture-desc {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #94a3b8;
+    max-width: 620px;
+    margin-bottom: 0;
+  }
+
+  .culture-header-dock {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+
+    @include md {
+      flex-direction: row;
       align-items: center;
+      justify-content: space-between;
     }
   }
 
-  .about-culture-intro {
-    .culture-eyebrow {
-      display: inline-block;
-      font-family: $font-heading;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #c5d4ea;
-      margin-bottom: 1rem;
+  .culture-filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 
-      @include sm {
-        font-size: 0.8125rem;
-        margin-bottom: 1.25rem;
-      }
+  .culture-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 1rem;
+    border-radius: 9999px;
+    font-family: $font-body;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:hover {
+      background: rgba(56, 189, 248, 0.12);
+      color: #f1f5f9;
+      border-color: rgba(56, 189, 248, 0.3);
     }
 
-    .culture-title {
-      font-family: $font-heading;
-      font-size: clamp(2rem, 6vw, 3rem);
+    &.active {
+      background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    }
+  }
+
+  .culture-nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .culture-counter {
+    display: flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    font-family: $font-heading;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #64748b;
+    min-width: 54px;
+
+    strong {
+      font-size: 1.25rem;
       font-weight: 800;
       color: #ffffff;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.25rem;
-
-      @include sm {
-        margin-bottom: 1.5rem;
-      }
     }
 
-    .culture-desc {
-      font-size: 0.95rem;
-      line-height: 1.65;
-      color: #94a3b8;
-      margin-bottom: 1.75rem;
-      max-width: 440px;
-
-      @include sm {
-        font-size: 0.975rem;
-        line-height: 1.75;
-        margin-bottom: 2rem;
-      }
+    .culture-counter-slash {
+      color: #0284c7;
     }
   }
 
-  .about-culture-gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
+  .culture-arrow-group {
+    display: flex;
+    gap: 0.5rem;
+  }
 
-    @include sm {
-      gap: 1.15rem;
+  .culture-arrow-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:hover {
+      background: #0284c7;
+      border-color: #38bdf8;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45);
     }
 
-    .culture-photo-frame {
-      border-radius: 14px;
-      overflow: hidden;
-      height: 145px;
-      position: relative;
-      background: #0b172a;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    &:active {
+      transform: translateY(0);
+    }
 
-      @media (min-width: 480px) {
-        height: 180px;
+    &:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  .about-culture-reel-wrap {
+    position: relative;
+    z-index: 1;
+  }
+
+  .about-culture-reel-viewport {
+    overflow: hidden;
+    width: 100%;
+    cursor: grab;
+    user-select: none;
+    padding: 0.5rem 0 1rem;
+
+    &.is-dragging {
+      cursor: grabbing;
+    }
+  }
+
+  .about-culture-track {
+    display: flex;
+    gap: 1.25rem;
+    will-change: transform;
+    transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .culture-reel-card {
+    flex: 0 0 300px;
+    width: 300px;
+    height: 380px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #0b172a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease, opacity 0.3s ease;
+
+    @include sm {
+      flex: 0 0 350px;
+      width: 350px;
+      height: 410px;
+    }
+
+    &:hover {
+      transform: translateY(-6px);
+      border-color: rgba(56, 189, 248, 0.35);
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7), 0 0 24px rgba(56, 189, 248, 0.15);
+
+      .culture-card-media img {
+        transform: scale(1.08);
       }
 
-      @include sm {
-        height: 220px;
-        border-radius: 16px;
+      .culture-zoom-btn {
+        opacity: 1;
+        background: #0284c7;
+        color: #ffffff;
+        border-color: #38bdf8;
+        transform: scale(1.08);
       }
+    }
 
-      @include md {
-        height: 230px;
-      }
+    &.is-hidden {
+      display: none !important;
+    }
+  }
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      }
+  .culture-card-media {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
 
-      &:hover img {
-        transform: scale(1.06);
-      }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+  }
+
+  .culture-card-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(6, 14, 29, 0.25) 0%,
+      rgba(6, 14, 29, 0.02) 40%,
+      rgba(6, 14, 29, 0.75) 75%,
+      rgba(6, 14, 29, 0.96) 100%
+    );
+    pointer-events: none;
+  }
+
+  .culture-card-badge {
+    position: absolute;
+    top: 1.15rem;
+    left: 1.15rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 9999px;
+    background: rgba(6, 14, 29, 0.78);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-family: $font-heading;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #e2e8f0;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .culture-badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #38bdf8;
+    box-shadow: 0 0 8px #38bdf8;
+  }
+
+  .culture-zoom-btn {
+    position: absolute;
+    top: 1.15rem;
+    right: 1.15rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(6, 14, 29, 0.72);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #cbd5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0.85;
+  }
+
+  .culture-card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.25rem 1.35rem 1.45rem;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .culture-card-location {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #38bdf8;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+  }
+
+  .culture-card-title {
+    font-family: $font-heading;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .culture-reel-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .culture-progress-track {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 9999px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .culture-progress-fill {
+    height: 100%;
+    width: 15%;
+    background: linear-gradient(90deg, #0284c7, #38bdf8);
+    border-radius: 9999px;
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease;
+  }
+
+  .culture-reel-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.8125rem;
+    color: #64748b;
+    white-space: nowrap;
+
+    svg {
+      color: #38bdf8;
+      animation: cultureHintShift 1.8s ease-in-out infinite;
     }
   }
 }
+
+.culture-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &.active {
+    opacity: 1;
+    pointer-events: auto;
+
+    .culture-lightbox-dialog {
+      transform: scale(1);
+    }
+  }
+
+  .culture-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(3, 7, 18, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .culture-lightbox-dialog {
+    position: relative;
+    z-index: 2;
+    max-width: 880px;
+    width: 100%;
+    background: #0b172a;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85);
+    transform: scale(0.94);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .culture-lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(6, 14, 29, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: #0284c7;
+      border-color: #38bdf8;
+      transform: rotate(90deg);
+    }
+  }
+
+  .culture-lightbox-image-wrap {
+    width: 100%;
+    max-height: 58vh;
+    background: #060e1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      max-height: 58vh;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  .culture-lightbox-caption {
+    padding: 1.25rem 1.5rem 1.5rem;
+    background: #081122;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    h4 {
+      font-family: $font-heading;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.35rem;
+    }
+
+    p {
+      font-size: 0.9375rem;
+      color: #94a3b8;
+      line-height: 1.55;
+      margin: 0;
+    }
+  }
 
 // =========================================================================
 // 5. Join Our Team Section ("Build What's Next. Become Who You're Meant To Be.")
