@@ -1200,47 +1200,30 @@ function initAboutPageGsapAnimations() {
     });
   }
 
-  // B. Principles Section: Intro & Quad Principle Items + Photo
-  const principlesSection = document.querySelector('.about-principles-section');
-  if (principlesSection) {
-    gsap.from('.about-principles-info', {
-      scrollTrigger: {
-        trigger: principlesSection,
-        start: 'top 80%',
-        once: true
-      },
-      x: -30,
-      opacity: 0,
-      duration: 0.85,
-      ease: 'power2.out',
-      clearProps: 'all'
-    });
+  // B. Foundation & Purpose Section: Modern Tab Navigation (Matching User's Attached Structure)
+  const foundationTabs = document.querySelectorAll('.foundation-tab-btn');
+  const foundationPanels = document.querySelectorAll('.foundation-panel');
 
-    gsap.from('.principle-item', {
-      scrollTrigger: {
-        trigger: '.principles-quad',
-        start: 'top 85%',
-        once: true
-      },
-      y: 30,
-      opacity: 0,
-      stagger: 0.12,
-      duration: 0.7,
-      ease: 'power2.out',
-      clearProps: 'all'
-    });
+  if (foundationTabs.length > 0 && foundationPanels.length > 0) {
+    foundationTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const targetTab = tab.getAttribute('data-tab');
 
-    gsap.from('.principles-frame', {
-      scrollTrigger: {
-        trigger: '.about-principles-visual',
-        start: 'top 80%',
-        once: true
-      },
-      scale: 0.92,
-      opacity: 0,
-      duration: 0.9,
-      ease: 'power2.out',
-      clearProps: 'all'
+        foundationTabs.forEach((t) => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        foundationPanels.forEach((panel) => {
+          if (panel.id === `panel-${targetTab}`) {
+            panel.classList.add('active');
+          } else {
+            panel.classList.remove('active');
+          }
+        });
+      });
     });
   }
 

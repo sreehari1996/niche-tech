@@ -162,61 +162,179 @@
 
 
     <!-- ---------------------------------------------------------------------
-         3. Principles Section: Shaping the Future, Our Way.
+         3. Foundation & Purpose Section (GSAP Pinned Storytelling Layout)
+            Covers: Our Mission, Our Vision, and Our Principles (with Agile photo)
          --------------------------------------------------------------------- -->
-    <section class="about-principles-section" id="principles">
+    <!-- ---------------------------------------------------------------------
+         3. Foundation & Purpose Section (Clean Modern Tabbed Story Structure)
+            Covers: Our Mission, Our Vision, and Our Principles
+         --------------------------------------------------------------------- -->
+    <section class="about-foundation-section" id="principles">
       <div class="aboutpage-container">
-        <div class="about-principles-grid">
-          <!-- Left Content & 4 Principles -->
-          <div class="about-principles-info">
-            <span class="principles-eyebrow">OUR PRINCIPLES</span>
-            <h2 class="principles-title">
-              Shaping the Future,<br>
-              <span class="text-blue">Our Way.</span>
-            </h2>
-            <p class="principles-desc">
-              We believe in building technology that's not just functional, but meaningful. Our principles shape how we
-              work, think and grow — today and tomorrow.
-            </p>
-
-            <div class="principles-quad">
-              <!-- Principle 01 -->
-              <div class="principle-item">
-                <span class="principle-num">01</span>
-                <h3 class="principle-name">Customer Obsession</h3>
-                <p class="principle-text">We listen, understand and deliver.</p>
-              </div>
-
-              <!-- Principle 02 -->
-              <div class="principle-item">
-                <span class="principle-num">02</span>
-                <h3 class="principle-name">Collaborative Culture</h3>
-                <p class="principle-text">Better ideas, together.</p>
-              </div>
-
-              <!-- Principle 03 -->
-              <div class="principle-item">
-                <span class="principle-num">03</span>
-                <h3 class="principle-name">Continuous Learning</h3>
-                <p class="principle-text">Always curious, always evolving.</p>
-              </div>
-
-              <!-- Principle 04 -->
-              <div class="principle-item">
-                <span class="principle-num">04</span>
-                <h3 class="principle-name">Long-Term Thinking</h3>
-                <p class="principle-text">We build for what's next.</p>
-              </div>
-            </div>
+        
+        <!-- Section Header Bar: Heading on Left, Tabs on Right -->
+        <div class="foundation-header">
+          <div class="foundation-header-text">
+            <span class="foundation-eyebrow">OUR FOUNDATION</span>
+            <h2 class="foundation-main-title">Driven by Mission. Guided by Principles.</h2>
           </div>
-
-          <!-- Right Image Frame -->
-          <div class="about-principles-visual">
-            <div class="principles-frame">
-              <img src="assets/images/gallery-8.jpeg" alt="Niche Techies Team Discussion with Tablet" loading="lazy">
-            </div>
+          <div class="foundation-tabs" role="tablist" aria-label="Foundation Chapters">
+            <button type="button" class="foundation-tab-btn active" role="tab" aria-selected="true" data-tab="mission" id="tab-mission">
+              <span>THE MISSION</span>
+            </button>
+            <button type="button" class="foundation-tab-btn" role="tab" aria-selected="false" data-tab="vision" id="tab-vision">
+              <span>THE VISION</span>
+            </button>
+            <button type="button" class="foundation-tab-btn" role="tab" aria-selected="false" data-tab="principles" id="tab-principles">
+              <span>OUR PRINCIPLES</span>
+            </button>
           </div>
         </div>
+
+        <!-- Tab Panels Wrapper -->
+        <div class="foundation-panels-wrapper">
+          
+          <!-- Panel 1: The Mission -->
+          <article class="foundation-panel active" id="panel-mission" role="tabpanel" aria-labelledby="tab-mission">
+            <div class="foundation-panel-grid">
+              <!-- Left: Content -->
+              <div class="foundation-panel-content">
+                <span class="foundation-panel-eyebrow">STRATEGIC PURPOSE</span>
+                <h2 class="foundation-panel-title">
+                  Empowering Businesses Through Meaningful Technology.
+                </h2>
+                <p class="foundation-panel-desc">
+                  We don't build software just to check boxes. We engineer resilient digital engines, intuitive web and mobile platforms, and automated cloud workflows that solve genuine business problems and create lasting value. Partnerships average seven years and counting.
+                </p>
+
+                <div class="foundation-stats-row">
+                  <div class="foundation-stat-box">
+                    <strong class="f-stat-num">100+</strong>
+                    <span class="f-stat-lbl">Solutions Delivered</span>
+                  </div>
+                  <div class="foundation-stat-box">
+                    <strong class="f-stat-num">99.8%</strong>
+                    <span class="f-stat-lbl">On-Time Architecture</span>
+                  </div>
+                  <div class="foundation-stat-box">
+                    <strong class="f-stat-num">14+</strong>
+                    <span class="f-stat-lbl">Global Industries</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Visual Card -->
+              <div class="foundation-panel-visual">
+                <img src="assets/images/hero-team-collaborate.jpg" alt="Team Collaborating on Software Architecture" loading="lazy">
+                <div class="foundation-visual-badge">
+                  <span class="fv-tag">Craftsmanship in Action</span>
+                  <strong class="fv-title">Cross-Functional Agile Squads</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Panel 2: The Vision -->
+          <article class="foundation-panel" id="panel-vision" role="tabpanel" aria-labelledby="tab-vision">
+            <div class="foundation-panel-grid">
+              <!-- Left: Content -->
+              <div class="foundation-panel-content">
+                <span class="foundation-panel-eyebrow">GLOBAL HORIZONS</span>
+                <h2 class="foundation-panel-title">
+                  Pioneering the Next Era of Technical Excellence.
+                </h2>
+                <p class="foundation-panel-desc">
+                  To become the global benchmark for technical excellence, ethical AI adoption, and collaborative engineering. We build future-ready platforms that multiply enterprise capabilities across healthcare, retail, logistics and finance.
+                </p>
+
+                <div class="foundation-pillars-row">
+                  <div class="foundation-pillar-box">
+                    <span class="f-pillar-num">01</span>
+                    <h3 class="f-pillar-title">AI-Native Systems</h3>
+                    <p class="f-pillar-desc">Intelligent enterprise workflows.</p>
+                  </div>
+                  <div class="foundation-pillar-box">
+                    <span class="f-pillar-num">02</span>
+                    <h3 class="f-pillar-title">Global Culture</h3>
+                    <p class="f-pillar-desc">Elite architectural squads.</p>
+                  </div>
+                  <div class="foundation-pillar-box">
+                    <span class="f-pillar-num">03</span>
+                    <h3 class="f-pillar-title">Enduring Partnership</h3>
+                    <p class="f-pillar-desc">Shared victories &amp; trust.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Visual Card -->
+              <div class="foundation-panel-visual">
+                <img src="assets/images/about-boardroom-hq.jpg" alt="Strategic Global Vision Boardroom" loading="lazy">
+                <div class="foundation-visual-badge">
+                  <span class="fv-tag">Enterprise Vision</span>
+                  <strong class="fv-title">Building for Tomorrow's Standards</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Panel 3: Our Principles -->
+          <article class="foundation-panel" id="panel-principles" role="tabpanel" aria-labelledby="tab-principles">
+            <div class="foundation-panel-grid">
+              <!-- Left: Content -->
+              <div class="foundation-panel-content">
+                <span class="foundation-panel-eyebrow">HOW WE OPERATE</span>
+                <h2 class="foundation-panel-title">
+                  Production Software, Delivered with Discipline.
+                </h2>
+                <p class="foundation-panel-desc">
+                  We believe in building technology that's not just functional, but meaningful. Our agile engineering principles shape how we work, think, and scale together with our clients every single day.
+                </p>
+
+                <div class="foundation-principles-grid">
+                  <div class="foundation-principle-card">
+                    <span class="fp-num">01</span>
+                    <div class="fp-body">
+                      <h3 class="fp-title">Customer Obsession</h3>
+                      <p class="fp-desc">We listen, understand &amp; deliver.</p>
+                    </div>
+                  </div>
+                  <div class="foundation-principle-card">
+                    <span class="fp-num">02</span>
+                    <div class="fp-body">
+                      <h3 class="fp-title">Collaborative Culture</h3>
+                      <p class="fp-desc">Better ideas, built together.</p>
+                    </div>
+                  </div>
+                  <div class="foundation-principle-card">
+                    <span class="fp-num">03</span>
+                    <div class="fp-body">
+                      <h3 class="fp-title">Continuous Learning</h3>
+                      <p class="fp-desc">Always curious, always evolving.</p>
+                    </div>
+                  </div>
+                  <div class="foundation-principle-card">
+                    <span class="fp-num">04</span>
+                    <div class="fp-body">
+                      <h3 class="fp-title">Long-Term Thinking</h3>
+                      <p class="fp-desc">We engineer for what's next.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right: Visual Card -->
+              <div class="foundation-panel-visual">
+                <img src="assets/images/gallery-8.jpeg" alt="Niche Techies Agile Methodology Standards We Follow" loading="lazy">
+                <div class="foundation-visual-badge">
+                  <span class="fv-tag">Methodology</span>
+                  <strong class="fv-title">Agile Standards We Follow</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
       </div>
     </section>
 
@@ -854,20 +972,6 @@
                   <h3 class="culture-card-title">Design Sprint & Whiteboards</h3>
                 </div>
               </article>
-            </div>
-          </div>
-
-          <!-- Bottom Micro Bar: Progress Track + Drag Cue -->
-          <div class="culture-reel-footer">
-            <div class="culture-progress-track">
-              <div class="culture-progress-fill" id="culture-progress-bar"></div>
-            </div>
-            <div class="culture-reel-hint">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="13 17 18 12 13 7"></polyline>
-                <polyline points="6 17 11 12 6 7"></polyline>
-              </svg>
-              <span>Drag or use arrows to explore</span>
             </div>
           </div>
         </div>
