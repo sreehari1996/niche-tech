@@ -26,8 +26,11 @@ function initStickyHeader() {
   const header = document.querySelector('.site-header');
   if (!header) return;
 
+  const heroSection = document.querySelector('.hero-section, .about-hero-section, .contact-hero-section');
+
   const handleScroll = () => {
-    if (window.scrollY > 40) {
+    const threshold = heroSection ? (heroSection.offsetHeight - 90) : 40;
+    if (window.scrollY > threshold) {
       header.classList.add('is-sticky');
     } else {
       header.classList.remove('is-sticky');

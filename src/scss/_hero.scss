@@ -477,10 +477,11 @@
     .brands-bar-inner {
       max-width: 1440px;
       margin: 0 auto;
+      width: 100%;
       padding: 0 2rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       gap: 2rem;
       box-sizing: border-box;
 
@@ -517,6 +518,7 @@
     .brands-bar-logos {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 2.75rem;
       flex-wrap: wrap;
 
