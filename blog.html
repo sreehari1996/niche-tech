@@ -119,98 +119,44 @@
        ========================================================================= -->
   <main class="blog-page-main" id="main-content">
 
-    <!-- Hero Section (Executive Split Layout with Ambient Shapes) -->
+    <!-- =========================================================================
+         1. Hero Section: Technology Perspectives. Engineering Insights. (Banner Background)
+         ========================================================================= -->
     <section class="blog-hero-section" id="hero">
-      <!-- Background Ambient Shapes — unique to Blog (editorial bezier, pentagon wireframe, diamond chips, cross-hatch) -->
-      <div class="blog-hero-bg-shapes" aria-hidden="true">
-
-
-        <!-- Top-Left Floating Accent Diamond -->
-        <div class="blog-floating-chip chip-diamond-tl"></div>
-
-        <!-- Top-Left Rich Ambient Soft Gradient Blob -->
-        <svg class="blog-bg-blob-tl" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M-80 0 C-80 200 60 260 200 210 C340 160 380 50 400 0 H-80 Z" fill="url(#blogBlobGradTL)"
-            opacity="0.65" />
-          <defs>
-            <linearGradient id="blogBlobGradTL" x1="0" y1="0" x2="400" y2="260" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#bae6fd" stop-opacity="0.75" />
-              <stop offset="0.65" stop-color="#e0f2fe" stop-opacity="0.45" />
-              <stop offset="1" stop-color="#f0f9ff" stop-opacity="0.1" />
-            </linearGradient>
-          </defs>
-        </svg>
-
-        <!-- Bottom-Left Flowing Wave Accent -->
-        <svg class="blog-pentagon-wireframe-bl" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M-40 320 C-40 180 80 120 180 160 C280 200 320 280 340 320 H-40 Z" fill="url(#blogWaveGradBL)"
-            opacity="0.55" />
-          <defs>
-            <linearGradient id="blogWaveGradBL" x1="0" y1="120" x2="340" y2="320" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#93c5fd" stop-opacity="0.6" />
-              <stop offset="1" stop-color="#e0f2fe" stop-opacity="0.15" />
-            </linearGradient>
-          </defs>
-        </svg>
-
-        <!-- Top-Right Floating Accent Diamond -->
-        <div class="blog-floating-chip chip-diamond-tr"></div>
-
-        <!-- Top-Right Ambient Soft Blob Radial -->
-        <svg class="blog-bg-glow-tr" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="450" cy="150" r="280" fill="url(#blogGlowGradTR)" opacity="0.6" />
-          <defs>
-            <radialGradient id="blogGlowGradTR" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
-              gradientTransform="translate(450 150) rotate(90) scale(280)">
-              <stop stop-color="#bae6fd" stop-opacity="0.8" />
-              <stop offset="0.6" stop-color="#e0f2fe" stop-opacity="0.45" />
-              <stop offset="1" stop-color="#f0f9ff" stop-opacity="0.08" />
-            </radialGradient>
-          </defs>
-        </svg>
-
-        <!-- Bottom-Right Floating Accent Diamond -->
-        <div class="blog-floating-chip chip-diamond-br"></div>
-      </div>
-
       <div class="blogpage-container">
-        <div class="blog-hero-grid">
-          <!-- Left Column -->
-          <div class="blog-hero-left">
-            <div class="blog-eyebrow-row">
-              <span class="blog-eyebrow">INSIGHTS & PERSPECTIVES</span>
-            </div>
+        <div class="blog-hero-inner">
+          <div class="blog-hero-content">
+            <span class="blog-hero-eyebrow">BLOG &amp; INSIGHTS</span>
+
             <h1 class="blog-hero-title">
-              Blog &<br>
-              Insights.
+              Technology Perspectives.<br>
+              Engineering Insights.
             </h1>
-          </div>
 
-          <!-- Middle Vertical Divider Line -->
-          <div class="blog-hero-divider" aria-hidden="true"></div>
-
-          <!-- Right Column -->
-          <div class="blog-hero-right">
             <p class="blog-hero-desc">
               Explore our latest perspectives on how modern software, AI, and cloud are shaping the future of global
-              industries. From product engineering insights to actionable enterprise strategy — curated for CTOs,
-              founders, and engineering leaders.
+              industries. Practical guidance and actionable roadmaps for engineering leaders.
             </p>
-            <div class="hero-action-row">
-              <a href="#blog-filter-section" class="blog-hero-scroll-btn" id="blog-hero-scroll-btn">
-                <span class="scroll-icon-wrap" aria-hidden="true">
-                  <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8 3V13M8 13L3.5 8.5M8 13L12.5 8.5" stroke="currentColor" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                </span>
-                <span>Scroll to explore</span>
+
+            <!-- Action Buttons -->
+            <div class="blog-hero-actions">
+              <a href="#blog-filter-section" class="btn-blog-primary" id="btn-explore-articles">
+                <span>Explore Articles</span>
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="#blog-grid-section" class="btn-blog-secondary" id="btn-featured-story">
+                <span>Latest Perspectives</span>
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 3V13M13 8.5L8 13.5L3 8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
               </a>
             </div>
           </div>
         </div>
-
-
       </div>
     </section>
 
@@ -961,9 +907,6 @@
       </svg>
     </span>
   </button>
-
-  <!-- Interactive JavaScript Engine -->
-  <script src="js/main.js"></script>
 
   <!-- Dedicated Blog Page Interactive Script -->
   <script>

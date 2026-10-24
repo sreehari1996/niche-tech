@@ -23,204 +23,202 @@
 }
 
 /* =========================================================================
-   1. Career Hero Section (Matches caseStudy.html/blog.html light theme ambient shapes)
+   1. Career Hero Section ("Join Our Awesome Team of Professionals.")
    ========================================================================= */
 .career-hero-section {
-  padding: 5rem 0 3.5rem;
-  background-color: #ffffff;
   position: relative;
+  background-color: #060e1d;
+  background-image: 
+    linear-gradient(90deg, 
+      rgba(255, 255, 255, 1) 0%, 
+      rgba(255, 255, 255, 0.98) 28%, 
+      rgba(255, 255, 255, 0.75) 40%, 
+      rgba(255, 255, 255, 0.2) 50%, 
+      transparent 56%
+    ),
+    linear-gradient(90deg, 
+      transparent 35%, 
+      rgba(15, 28, 58, 0.18) 55%, 
+      rgba(10, 21, 46, 0.45) 75%, 
+      rgba(6, 14, 32, 0.68) 100%
+    ),
+    url('../assets/images/career-banner.jpeg');
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  padding: 8.5rem 0 5rem;
   overflow: hidden;
-  border-bottom: 1px solid #f1f5f9;
+  box-sizing: border-box;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1400px) {
   .career-hero-section {
-    padding: 6.5rem 0 4.5rem;
+    padding: 9rem 0 5.5rem;
   }
 }
 
-.career-hero-section .careerpage-container {
+@media (max-width: 1024px) {
+  .career-hero-section {
+    background-image: 
+      linear-gradient(90deg, 
+        rgba(255, 255, 255, 1) 0%, 
+        rgba(255, 255, 255, 0.98) 36%, 
+        rgba(255, 255, 255, 0.7) 50%, 
+        transparent 65%
+      ),
+      linear-gradient(90deg, 
+        transparent 30%, 
+        rgba(15, 28, 58, 0.25) 55%, 
+        rgba(6, 14, 32, 0.65) 100%
+      ),
+      url('../assets/images/career-banner.jpeg');
+    background-position: 75% center;
+    padding: 7.5rem 0 4.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .career-hero-section {
+    background-image: 
+      linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(255, 255, 255, 0.95) 55%, rgba(240, 245, 252, 0.9) 85%, #f4f7fb 100%),
+      url('../assets/images/career-banner.jpeg');
+    background-position: center center;
+    padding: 6.75rem 0 3.5rem;
+  }
+}
+
+.career-hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  width: 100%;
 }
 
-/* Background Ambient Shapes & Elements */
-.career-hero-bg-shapes {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
+/* Left Content Column */
+.career-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
 }
 
-/* Floating Rounded Pill Chips */
-.career-floating-chip {
-  position: absolute;
-  pointer-events: none;
-  border-radius: 9999px;
-  will-change: transform;
-}
-
-.chip-pill-tl {
-  top: 140px;
-  left: 1.2%;
-  width: 44px;
-  height: 14px;
-  transform: rotate(-22deg);
-  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
-  opacity: 0.85;
-  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
-}
-
-.chip-pill-tr {
-  top: 100px;
-  right: 8.5%;
-  width: 50px;
-  height: 16px;
-  transform: rotate(20deg);
-  background: linear-gradient(135deg, #0284c7, #38bdf8);
-  opacity: 0.8;
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.22);
-}
-
-.chip-pill-br {
-  bottom: 10%;
-  right: 4%;
-  width: 42px;
-  height: 13px;
-  transform: rotate(-18deg);
-  background: linear-gradient(135deg, #60a5fa, #38bdf8);
-  opacity: 0.85;
-  box-shadow: 0 3px 10px rgba(96, 165, 250, 0.22);
-}
-
-/* Dot Matrices */
-.career-dot-matrix {
-  position: absolute;
-  pointer-events: none;
-}
-
-.career-dot-matrix.matrix-bl {
-  bottom: 0px;
-  left: 1.2%;
-}
-
-.career-dot-matrix.matrix-br {
-  bottom: 8%;
-  right: 1.2%;
-}
-
-/* Ambient Fluid Blob Top-Left */
-.career-bg-blob-tl {
-  position: absolute;
-  top: -40px;
-  left: -80px;
-  width: clamp(340px, 38vw, 520px);
-  height: auto;
-  pointer-events: none;
-}
-
-/* Ambient Fluid Wave Blob Bottom-Left */
-.career-bg-blob-bl {
-  position: absolute;
-  bottom: -30px;
-  left: -50px;
-  width: clamp(280px, 30vw, 440px);
-  height: auto;
-  pointer-events: none;
-}
-
-/* Ambient Soft Radial Glow Top-Right */
-.career-bg-glow-tr {
-  position: absolute;
-  top: -70px;
-  right: -70px;
-  width: clamp(400px, 45vw, 620px);
-  height: auto;
-  pointer-events: none;
-}
-
-.career-hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  align-items: center;
-}
-
-@media (min-width: 1024px) {
-  .career-hero-grid {
-    grid-template-columns: 1.15fr 1px 1fr;
-    gap: 3.5rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .career-hero-grid {
-    grid-template-columns: 1.2fr 1px 1fr;
-    gap: 4.5rem;
-  }
-}
-
-/* Left Column */
-.career-hero-left .career-eyebrow-row {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
-}
-
-.career-hero-left .career-eyebrow-row .career-eyebrow {
-  font-family: var(--font-heading);
+/* Eyebrow */
+.career-hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.8125rem;
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #1a2b4b;
-}
-
-.career-hero-left .career-hero-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.35rem, 3.8vw, 3.6rem);
-  font-weight: 800;
-  color: #081120;
-  line-height: 1.12;
-  letter-spacing: -0.035em;
-}
-
-/* Middle Vertical Divider */
-.career-hero-divider {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .career-hero-divider {
-    display: block;
-    width: 1px;
-    height: 140px;
-    background: #e2e8f0;
-  }
-}
-
-/* Right Column */
-.career-hero-right .career-hero-desc {
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  line-height: 1.75;
   color: #64748b;
-  max-width: 520px;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.career-hero-title {
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #0c1524;
+  margin-bottom: 0.85rem;
+}
+
+.career-hero-desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: clamp(0.92rem, 1.1vw, 1.02rem);
+  line-height: 1.68;
+  color: #475569;
+  margin-bottom: 1.85rem;
+  max-width: 540px;
+}
+
+/* Action Buttons */
+.career-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.btn-career-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.68rem 1.5rem;
+  border-radius: 9999px;
+  background: #0f172a;
+  color: #ffffff !important;
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 14px -2px rgba(15, 23, 42, 0.2);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-career-primary:hover {
+  background: #1e293b;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -3px rgba(15, 23, 42, 0.3);
+}
+
+.btn-career-primary svg {
+  transition: transform 0.25s ease;
+}
+
+.btn-career-primary:hover svg {
+  transform: translateX(3px);
+}
+
+.btn-career-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.68rem 1.5rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid #cbd5e1;
+  color: #0f172a !important;
+  font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-career-secondary:hover {
+  border-color: #0f172a;
+  background: #ffffff;
+  color: #0f172a !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px -4px rgba(15, 23, 42, 0.1);
+}
+
+.btn-career-secondary svg {
+  transition: transform 0.25s ease;
+}
+
+.btn-career-secondary:hover svg {
+  transform: translateY(2px);
 }
 
 /* =========================================================================
    2. Open Positions Section
    ========================================================================= */
 .career-positions-section {
-  padding: 1.5rem 0 6rem;
+  padding: 4rem 0 6rem;
   background-color: #ffffff;
 }
 
 @media (min-width: 1024px) {
   .career-positions-section {
-    padding: 2rem 0 7rem;
+    padding: 5rem 0 7rem;
   }
 }
 

@@ -2046,193 +2046,63 @@ function initBlogPageGsapAnimations() {
   }
 
   // DOM References
-  const eyebrowRow = blogHero.querySelector('.blog-eyebrow-row');
+  const heroEyebrow = blogHero.querySelector('.blog-hero-eyebrow') || blogHero.querySelector('.blog-eyebrow-row');
   const heroTitle = blogHero.querySelector('.blog-hero-title');
-  const heroDivider = blogHero.querySelector('.blog-hero-divider');
   const heroDesc = blogHero.querySelector('.blog-hero-desc');
-  const heroActionRow = blogHero.querySelector('.hero-action-row');
-  const pillarCards = blogHero.querySelectorAll('.pillar-card');
-  const floatingChips = blogHero.querySelectorAll('.blog-floating-chip');
-  const bgBlobTL = blogHero.querySelector('.blog-bg-blob-tl');
-  const bgWaveBL = blogHero.querySelector('.blog-pentagon-wireframe-bl');
-  const bgGlowTR = blogHero.querySelector('.blog-bg-glow-tr');
-  const scrollBtn = document.getElementById('blog-hero-scroll-btn');
+  const heroActions = blogHero.querySelector('.blog-hero-actions') || blogHero.querySelector('.hero-action-row');
+  const btnExplore = document.getElementById('btn-explore-articles') || document.getElementById('blog-hero-scroll-btn');
+  const btnFeatured = document.getElementById('btn-featured-story');
 
   // =========================================================================
-  // 1. Staggered Entry Timeline Orchestration
+  // 1. Hero Section Opening Timeline Orchestration (Matching About Page Theme)
   // =========================================================================
   const blogHeroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-  // A. Soft ambient background shapes reveal
-  const ambientBlobs = [bgBlobTL, bgWaveBL, bgGlowTR].filter(Boolean);
-  if (ambientBlobs.length > 0) {
-    blogHeroTL.from(ambientBlobs, {
-      opacity: 0,
-      scale: 0.92,
-      duration: 1.4,
-      stagger: 0.12,
-      ease: 'power2.out',
-      clearProps: 'opacity,scale'
-    }, 0);
+  // A. Eyebrow Entrance
+  if (heroEyebrow) {
+    blogHeroTL.fromTo(heroEyebrow,
+      { y: 16, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.15
+    );
   }
 
-  // B. Continuous organic floating for background shapes (Matching Service & Case Studies)
-  if (bgBlobTL) {
-    gsap.to(bgBlobTL, {
-      x: 10,
-      y: -8,
-      duration: 7,
-      ease: 'sine.inOut',
-      yoyo: true,
-      repeat: -1,
-      delay: 1.2
-    });
-  }
-
-  if (bgWaveBL) {
-    gsap.to(bgWaveBL, {
-      x: 8,
-      y: -12,
-      duration: 7.5,
-      ease: 'sine.inOut',
-      yoyo: true,
-      repeat: -1,
-      delay: 1.2
-    });
-  }
-
-  if (bgGlowTR) {
-    gsap.to(bgGlowTR, {
-      x: -12,
-      y: 12,
-      duration: 8.5,
-      ease: 'sine.inOut',
-      yoyo: true,
-      repeat: -1,
-      delay: 1.4
-    });
-  }
-
-
-
-  // D. Floating Diamond Chips entrance & gentle rocking float
-  if (floatingChips.length > 0) {
-    blogHeroTL.from(floatingChips, {
-      scale: 0,
-      opacity: 0,
-      duration: 0.75,
-      stagger: 0.1,
-      ease: 'back.out(1.6)',
-      clearProps: 'opacity,scale'
-    }, 0.35);
-
-    floatingChips.forEach((chip, i) => {
-      gsap.to(chip, {
-        y: i % 2 === 0 ? -8 : 8,
-        rotation: i % 2 === 0 ? '+=7' : '-=7',
-        duration: 3.6 + i * 0.5,
-        ease: 'sine.inOut',
-        yoyo: true,
-        repeat: -1,
-        delay: 1.2 + i * 0.2
-      });
-    });
-  }
-
-  // E. Editorial Typography Entrance
-  if (eyebrowRow) {
-    blogHeroTL.from(eyebrowRow, {
-      y: 18,
-      opacity: 0,
-      duration: 0.65,
-      ease: 'power3.out',
-      clearProps: 'opacity,transform'
-    }, 0.15);
-  }
-
+  // B. Main Title Reveal
   if (heroTitle) {
-    blogHeroTL.from(heroTitle, {
-      y: 32,
-      opacity: 0,
-      duration: 0.85,
-      ease: 'power3.out',
-      clearProps: 'opacity,transform'
-    }, 0.22);
+    blogHeroTL.fromTo(heroTitle,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.85, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.28
+    );
   }
 
-  if (heroDivider) {
-    blogHeroTL.from(heroDivider, {
-      scaleY: 0,
-      transformOrigin: 'top center',
-      duration: 0.8,
-      ease: 'power2.inOut',
-      clearProps: 'opacity,transform,scale'
-    }, 0.35);
-  }
-
+  // C. Description Reveal
   if (heroDesc) {
-    blogHeroTL.from(heroDesc, {
-      y: 25,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out',
-      clearProps: 'opacity,transform'
-    }, 0.45);
+    blogHeroTL.fromTo(heroDesc,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.75, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.42
+    );
   }
 
-  if (heroActionRow) {
-    blogHeroTL.from(heroActionRow, {
-      y: 20,
-      opacity: 0,
-      duration: 0.65,
-      ease: 'back.out(1.4)',
-      clearProps: 'opacity,transform'
-    }, 0.6);
-  }
-
-  // F. Editorial Topic Pillars Staggered Entrance
-  if (pillarCards.length > 0) {
-    blogHeroTL.from(pillarCards, {
-      y: 28,
-      opacity: 0,
-      scale: 0.96,
-      duration: 0.75,
-      stagger: 0.1,
-      ease: 'power2.out',
-      clearProps: 'opacity,transform,scale'
-    }, 0.65);
-
-    // Interactive Click: Auto-filter and smooth scroll to blog grid
-    pillarCards.forEach(card => {
-      card.addEventListener('click', (e) => {
-        e.preventDefault();
-        const cat = card.getAttribute('data-category');
-        if (cat) {
-          const targetTab = document.querySelector(`.blog-filter-tabs .tab-btn[data-filter="${cat}"]`);
-          if (targetTab) {
-            targetTab.click();
-          }
-        }
-        const filterSection = document.querySelector('.blog-filter-section') || document.getElementById('blog-grid');
-        if (filterSection) {
-          filterSection.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
-    });
+  // D. Action Buttons Entrance
+  if (heroActions) {
+    blogHeroTL.fromTo(heroActions,
+      { y: 16, opacity: 0, scale: 0.96 },
+      { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: 'back.out(1.4)', clearProps: 'opacity,transform,scale' },
+      0.55
+    );
   }
 
   // =========================================================================
-  // 2. Smooth Navigation & Magnetic Hover for Scroll Button
+  // 2. Smooth Scrolling for Hero Action Buttons
   // =========================================================================
-  if (scrollBtn) {
-    scrollBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = document.getElementById('blog-filter-section') || 
-                     document.getElementById('blog-grid-section') || 
-                     document.querySelector('.blog-filter-section') || 
-                     document.querySelector('.blog-grid-section');
+  if (btnExplore) {
+    btnExplore.addEventListener('click', (e) => {
+      const target = document.getElementById('blog-filter-section');
       if (target) {
-        const headerOffset = 96;
+        e.preventDefault();
+        const headerOffset = 90;
         const targetPos = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
         window.scrollTo({
           top: targetPos,
@@ -2240,26 +2110,21 @@ function initBlogPageGsapAnimations() {
         });
       }
     });
+  }
 
-    if (window.matchMedia('(hover: hover)').matches) {
-      const iconWrap = scrollBtn.querySelector('.scroll-icon-wrap');
-      scrollBtn.addEventListener('mousemove', (e) => {
-        const rect = scrollBtn.getBoundingClientRect();
-        const x = (e.clientX - rect.left - rect.width / 2) * 0.22;
-        const y = (e.clientY - rect.top - rect.height / 2) * 0.22;
-        gsap.to(scrollBtn, { x, y, duration: 0.35, ease: 'power2.out', overwrite: 'auto' });
-        if (iconWrap) {
-          gsap.to(iconWrap, { x: x * 0.35, y: y * 0.35 + 2, duration: 0.35, ease: 'power2.out', overwrite: 'auto' });
-        }
-      });
-
-      scrollBtn.addEventListener('mouseleave', () => {
-        gsap.to(scrollBtn, { x: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.4)', overwrite: 'auto' });
-        if (iconWrap) {
-          gsap.to(iconWrap, { x: 0, y: 0, duration: 0.4, ease: 'power2.out', overwrite: 'auto' });
-        }
-      });
-    }
+  if (btnFeatured) {
+    btnFeatured.addEventListener('click', (e) => {
+      const target = document.getElementById('blog-grid-section');
+      if (target) {
+        e.preventDefault();
+        const headerOffset = 90;
+        const targetPos = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: targetPos,
+          behavior: 'smooth'
+        });
+      }
+    });
   }
 
   // =========================================================================
@@ -2322,7 +2187,7 @@ function initBlogPageGsapAnimations() {
 }
 
 // =============================================================================
-// Career Page Hero & Ambient Shapes GSAP Animations
+// Career Page Hero GSAP Animations (Matching About Page Theme)
 // =============================================================================
 function initCareerPageGsapAnimations() {
   if (typeof gsap === 'undefined') return;
@@ -2331,124 +2196,191 @@ function initCareerPageGsapAnimations() {
   if (!careerHero) return;
 
   // DOM References
-  const eyebrowRow = careerHero.querySelector('.career-eyebrow-row');
+  const heroEyebrow = careerHero.querySelector('.career-hero-eyebrow') || careerHero.querySelector('.career-eyebrow-row');
   const heroTitle = careerHero.querySelector('.career-hero-title');
-  const heroDivider = careerHero.querySelector('.career-hero-divider');
   const heroDesc = careerHero.querySelector('.career-hero-desc');
-  const floatingChips = careerHero.querySelectorAll('.career-floating-chip');
-  const dotMatrices = careerHero.querySelectorAll('.career-dot-matrix');
-  const blobTL = careerHero.querySelector('.career-bg-blob-tl');
-  const blobBL = careerHero.querySelector('.career-bg-blob-bl');
-  const glowTR = careerHero.querySelector('.career-bg-glow-tr');
+  const heroActions = careerHero.querySelector('.career-hero-actions');
+  const btnExplore = document.getElementById('btn-explore-positions');
+  const btnContact = document.getElementById('btn-career-contact');
 
   // =========================================================================
-  // 1. Staggered Entry Timeline
+  // 1. Hero Section Opening Timeline Orchestration
   // =========================================================================
   const careerHeroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-  // Eyebrow badge
-  if (eyebrowRow) {
-    careerHeroTL.from(eyebrowRow, {
-      y: 20,
-      opacity: 0,
-      duration: 0.6,
-      clearProps: 'opacity,transform'
-    }, 0);
+  // A. Eyebrow Entrance
+  if (heroEyebrow) {
+    careerHeroTL.fromTo(heroEyebrow,
+      { y: 16, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.15
+    );
   }
 
-  // Hero Title
+  // B. Main Title Reveal
   if (heroTitle) {
-    careerHeroTL.from(heroTitle, {
-      y: 30,
-      opacity: 0,
-      duration: 0.75,
-      clearProps: 'opacity,transform'
-    }, 0.12);
+    careerHeroTL.fromTo(heroTitle,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.85, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.28
+    );
   }
 
-  // Vertical Divider
-  if (heroDivider) {
-    careerHeroTL.from(heroDivider, {
-      scaleY: 0,
-      transformOrigin: 'top center',
-      duration: 0.7,
-      clearProps: 'opacity,transform,scale'
-    }, 0.25);
-  }
-
-  // Hero Description
+  // C. Description Reveal
   if (heroDesc) {
-    careerHeroTL.from(heroDesc, {
-      y: 20,
-      opacity: 0,
-      duration: 0.65,
-      clearProps: 'opacity,transform'
-    }, 0.35);
+    careerHeroTL.fromTo(heroDesc,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.75, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.42
+    );
   }
 
-  // Soft ambient blobs
-  const ambientBlobs = [blobTL, blobBL, glowTR].filter(Boolean);
-  if (ambientBlobs.length > 0) {
-    careerHeroTL.from(ambientBlobs, {
-      opacity: 0,
-      scale: 0.88,
-      duration: 1,
-      stagger: 0.15,
-      ease: 'power2.out',
-      clearProps: 'opacity'
-    }, 0.1);
-  }
-
-  // Floating Pill Chips
-  if (floatingChips.length > 0) {
-    careerHeroTL.from(floatingChips, {
-      scale: 0,
-      opacity: 0,
-      rotation: 45,
-      duration: 0.7,
-      stagger: 0.12,
-      ease: 'back.out(1.7)',
-      clearProps: 'opacity'
-    }, 0.3);
-  }
-
-  // Dot Matrices
-  if (dotMatrices.length > 0) {
-    careerHeroTL.from(dotMatrices, {
-      opacity: 0,
-      scale: 0.7,
-      duration: 0.65,
-      stagger: 0.1,
-      ease: 'power2.out',
-      clearProps: 'opacity'
-    }, 0.4);
+  // D. Action Buttons Entrance
+  if (heroActions) {
+    careerHeroTL.fromTo(heroActions,
+      { y: 16, opacity: 0, scale: 0.96 },
+      { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: 'back.out(1.4)', clearProps: 'opacity,transform,scale' },
+      0.55
+    );
   }
 
   // =========================================================================
-  // 2. Interactive Parallax Mouse Physics
+  // 2. Smooth Scrolling for Career Action Buttons
   // =========================================================================
-  if (window.matchMedia('(hover: hover) and (min-width: 1024px)').matches) {
-    const setChipX = gsap.quickTo(floatingChips, 'x', { duration: 0.7, ease: 'power2.out' });
-    const setChipY = gsap.quickTo(floatingChips, 'y', { duration: 0.7, ease: 'power2.out' });
-    const setMatrixX = gsap.quickTo(dotMatrices, 'x', { duration: 0.85, ease: 'power2.out' });
-    const setMatrixY = gsap.quickTo(dotMatrices, 'y', { duration: 0.85, ease: 'power2.out' });
-
-    careerHero.addEventListener('mousemove', (e) => {
-      const rect = careerHero.getBoundingClientRect();
-      const normX = (e.clientX - rect.left) / rect.width - 0.5;
-      const normY = (e.clientY - rect.top) / rect.height - 0.5;
-
-      setChipX(normX * 22);
-      setChipY(normY * 22);
-      setMatrixX(-normX * 15);
-      setMatrixY(-normY * 15);
+  if (btnExplore) {
+    btnExplore.addEventListener('click', (e) => {
+      const target = document.getElementById('positions');
+      if (target) {
+        e.preventDefault();
+        const headerOffset = 90;
+        const targetPos = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: targetPos,
+          behavior: 'smooth'
+        });
+      }
     });
+  }
 
-    careerHero.addEventListener('mouseleave', () => {
-      setChipX(0);
-      setChipY(0);
-      setMatrixX(0);
-      setMatrixY(0);
+  if (btnContact) {
+    btnContact.addEventListener('click', (e) => {
+      const target = document.getElementById('contact');
+      if (target) {
+        e.preventDefault();
+        const headerOffset = 90;
+        const targetPos = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: targetPos,
+          behavior: 'smooth'
+        });
+      }
+    });
+  }
+}
+
+// =============================================================================
+// Case Study Page Hero GSAP Animations (Matching About Page Theme)
+// =============================================================================
+function initCaseStudyPageGsapAnimations() {
+  if (typeof gsap === 'undefined') return;
+
+  const caseHero = document.querySelector('.casestudy-hero-section');
+  if (!caseHero) return;
+
+  // DOM References
+  const heroEyebrow = caseHero.querySelector('.casestudy-hero-eyebrow') || caseHero.querySelector('.casestudy-eyebrow-row');
+  const heroTitle = caseHero.querySelector('.casestudy-hero-title');
+  const heroDesc = caseHero.querySelector('.casestudy-hero-desc');
+  const heroActions = caseHero.querySelector('.casestudy-hero-actions');
+  const btnExplore = document.getElementById('btn-explore-cases') || document.getElementById('hero-scroll-btn');
+
+  // =========================================================================
+  // 1. Hero Section Opening Timeline Orchestration
+  // =========================================================================
+  const caseHeroTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+  // A. Eyebrow Entrance
+  if (heroEyebrow) {
+    caseHeroTL.fromTo(heroEyebrow,
+      { y: 16, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.15
+    );
+  }
+
+  // B. Main Title Reveal
+  if (heroTitle) {
+    caseHeroTL.fromTo(heroTitle,
+      { y: 30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.85, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.28
+    );
+  }
+
+  // C. Description Reveal
+  if (heroDesc) {
+    caseHeroTL.fromTo(heroDesc,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.75, ease: 'power3.out', clearProps: 'opacity,transform' },
+      0.42
+    );
+  }
+
+  // D. Action Buttons Entrance
+  if (heroActions) {
+    caseHeroTL.fromTo(heroActions,
+      { y: 16, opacity: 0, scale: 0.96 },
+      { y: 0, opacity: 1, scale: 1, duration: 0.55, ease: 'back.out(1.4)', clearProps: 'opacity,transform,scale' },
+      0.55
+    );
+  }
+
+  // =========================================================================
+  // 2. Smooth Scrolling for Case Study Action Buttons
+  // =========================================================================
+  if (btnExplore) {
+    btnExplore.addEventListener('click', (e) => {
+      const target = document.getElementById('cases-section');
+      if (target) {
+        e.preventDefault();
+        const headerOffset = 90;
+        const targetPos = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: targetPos,
+          behavior: 'smooth'
+        });
+      }
+    });
+  }
+
+  // =========================================================================
+  // 3. Stats Numbers Counter Animation
+  // =========================================================================
+  const statNumbers = document.querySelectorAll('.casestudy-hero-stats .stat-number');
+  if (statNumbers.length > 0 && typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.create({
+      trigger: '.casestudy-stats-section',
+      start: 'top 85%',
+      once: true,
+      onEnter: () => {
+        statNumbers.forEach(stat => {
+          const targetStr = stat.getAttribute('data-target');
+          if (!targetStr) return;
+          const targetVal = parseFloat(targetStr);
+          const suffix = stat.getAttribute('data-suffix') || '';
+          const decimals = parseInt(stat.getAttribute('data-decimals') || '0', 10);
+          const obj = { val: 0 };
+
+          gsap.to(obj, {
+            val: targetVal,
+            duration: 1.6,
+            ease: 'power2.out',
+            onUpdate: () => {
+              stat.textContent = (decimals > 0 ? obj.val.toFixed(decimals) : Math.round(obj.val)) + suffix;
+            }
+          });
+        });
+      }
     });
   }
 }
