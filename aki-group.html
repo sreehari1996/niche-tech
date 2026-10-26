@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AKI Group — Digital Product & Analytics Dashboard | Niche Techies</title>
+  <meta name="description"
+    content="Project documentation and architecture overview for AKI Group, featuring an analytics-style admin dashboard, scalable cross-platform interface, and modular data management workflows.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              950: '#070e1b',
+              900: '#0a1120',
+              850: '#0b1426',
+              800: '#0f192d',
+              700: '#16243f',
+            },
+            techBlue: {
+              400: '#3a5075',
+              500: '#253b61',
+              600: '#1a2b4b',
+            }
+          },
+          fontFamily: {
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Compiled Global SCSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Dedicated Project Details Stylesheet -->
+  <link rel="stylesheet" href="css/project-details.css">
+</head>
+
+<body class="project-details-page antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- =========================================================================
+       1. Common Site Header & Navigation
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Niche Techies Home">
+        <img src="assets/images/logo.png" alt="Niche Techies" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="service.html" class="nav-item">Services</a>
+        <a href="caseStudy.html" class="nav-item active">Case Studies</a>
+        <a href="blog.html" class="nav-item">Blog</a>
+        <a href="career.html" class="nav-item">Careers</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <a href="contact.html" class="btn-talk" id="btn-header-talk">
+          <span>Get in Touch</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu (Exact mirror from caseStudy.html) -->
+    <div class="nav-mobile-drawer">
+      <div class="mobile-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="caseStudy.html" class="active">Case Studies</a>
+        <a href="blog.html">Blog</a>
+        <a href="career.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <a href="contact.html" class="btn-talk w-full justify-center">
+          <span>Get in Touch</span>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. Hero / Project Showcase Section (Clean Light Theme)
+       ========================================================================= -->
+  <section class="project-hero-section">
+    <div class="hero-ambient-glow" aria-hidden="true"></div>
+    <div class="hero-pattern-grid" aria-hidden="true"></div>
+
+    <div class="project-hero-container">
+      <!-- Breadcrumbs -->
+      <nav class="project-breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="crumb-sep">/</span>
+        <a href="caseStudy.html">Case Studies</a>
+        <span class="crumb-sep">/</span>
+        <span class="crumb-current">AKI Group</span>
+      </nav>
+
+      <!-- Category Pill Tags -->
+      <div class="hero-tags-row">
+        <span class="hero-pill-badge badge-emerald">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M7 15l3.5-4 3 2.5 4.5-5.5"></path></svg>
+          eCommerce Admin &amp; Analytics
+        </span>
+        <span class="hero-pill-badge badge-primary">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Web &amp; Mobile Platform
+        </span>
+        <span class="hero-pill-badge badge-indigo">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          Custom Architecture
+        </span>
+      </div>
+
+      <!-- Main Project Title -->
+      <h1 class="project-hero-title">
+        AKI Group — <span class="title-gradient">Digital Product &amp; Analytics</span> Dashboard
+      </h1>
+
+      <!-- Subtitle Description -->
+      <p class="project-hero-description">
+        A custom admin and analytics platform engineered to streamline business operations, deliver real-time data insights, and centralize workflow control through scalable, cross-platform architecture.
+      </p>
+
+      <!-- Key Metadata Info Strip -->
+      <div class="project-meta-strip">
+        <div class="meta-box">
+          <span class="meta-lbl">Project Name</span>
+          <span class="meta-val">AKI Group</span>
+        </div>
+        <div class="meta-box">
+          <span class="meta-lbl">Platform Type</span>
+          <span class="meta-val">Digital Product Platform</span>
+        </div>
+        <div class="meta-box">
+          <span class="meta-lbl">Interface</span>
+          <span class="meta-val">Desktop Analytics Dashboard</span>
+        </div>
+        <div class="meta-box">
+          <span class="meta-lbl">Primary Focus</span>
+          <span class="meta-val">Operations &amp; Collaboration</span>
+        </div>
+      </div>
+
+      <!-- Visual Showcase Banner Mockup -->
+      <div class="project-showcase-wrapper">
+        <img src="assets/images/case-2.jpg" alt="AKI Group - eCommerce Admin Dashboard &amp; Analytics Platform Mockup" class="showcase-banner-img">
+
+        <!-- Top Right Live Status Pill -->
+        <div class="hero-stat-badge">
+          <span class="stat-indicator"></span>
+          <span class="stat-info">Real-Time Data Insights</span>
+        </div>
+
+        <!-- Floating Glass HUD Badge -->
+        <div class="hero-floating-hud">
+          <div class="hud-badge-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          </div>
+          <div class="hud-badge-text">
+            <span class="hud-top-title">eCommerce Admin Dashboard</span>
+            <span class="hud-sub-label">Centralized Workflow &amp; Custom Decision Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. Main Project Documentation Content
+       ========================================================================= -->
+  <main class="project-content-section" id="project-documentation">
+    <div class="project-layout-container">
+
+      <!-- Left / Main Column: Structured Content Sections -->
+      <div class="project-main-col">
+
+        <!-- -------------------------------------------------------------------
+             1. Project Overview
+             ------------------------------------------------------------------- -->
+        <article class="doc-section-card" id="overview">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">01</span>
+            <span>Project Overview</span>
+          </div>
+          <h2 class="section-heading">Executive Overview</h2>
+
+          <div class="section-lead-text">
+            <p>
+              <strong>AKI</strong> is presented in the supplied reference as a digital product project with a desktop analytics dashboard visual. The page emphasizes collaboration, scalable cross-platform development, platform modules, adoption, business-profile management, search and discovery, communication, and ongoing support.
+            </p>
+            <p>
+              Based on the screenshot alone, the exact business domain and the meaning of the AKI name cannot be confirmed.
+            </p>
+          </div>
+
+          <!-- Structured Fact Grid -->
+          <div class="overview-facts-grid">
+            <div class="overview-fact-item">
+              <div class="fact-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>
+              </div>
+              <div class="fact-info">
+                <span class="fact-label">Project</span>
+                <h4 class="fact-title">AKI Group</h4>
+              </div>
+            </div>
+
+            <div class="overview-fact-item">
+              <div class="fact-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </div>
+              <div class="fact-info">
+                <span class="fact-label">Visual Deliverable</span>
+                <h4 class="fact-title">Desktop Analytics Dashboard</h4>
+              </div>
+            </div>
+
+            <div class="overview-fact-item">
+              <div class="fact-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div class="fact-info">
+                <span class="fact-label">Core Emphasis</span>
+                <h4 class="fact-title">Collaboration &amp; Modules</h4>
+              </div>
+            </div>
+
+            <div class="overview-fact-item">
+              <div class="fact-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              </div>
+              <div class="fact-info">
+                <span class="fact-label">Architecture</span>
+                <h4 class="fact-title">Cross-Platform Scalability</h4>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- -------------------------------------------------------------------
+             2. Project Goals
+             ------------------------------------------------------------------- -->
+        <article class="doc-section-card" id="goals">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">02</span>
+            <span>Strategic Direction</span>
+          </div>
+          <h2 class="section-heading">Project Goals</h2>
+          <div class="section-lead-text">
+            <p>The solution is designed around clear objectives for usability, architecture, and feature access:</p>
+          </div>
+
+          <div class="objectives-grid">
+            <div class="objective-item">
+              <span class="obj-check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span class="obj-text">Deliver a clear, professional digital experience for the intended users.</span>
+            </div>
+
+            <div class="objective-item">
+              <span class="obj-check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span class="obj-text">Present key information and platform functionality in a structured, easy-to-navigate interface.</span>
+            </div>
+
+            <div class="objective-item">
+              <span class="obj-check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span class="obj-text">Support a consistent experience across desktop and mobile devices.</span>
+            </div>
+
+            <div class="objective-item">
+              <span class="obj-check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span class="obj-text">Create a scalable foundation that can accommodate additional modules and future enhancements.</span>
+            </div>
+
+            <div class="objective-item" style="grid-column: 1 / -1;">
+              <span class="obj-check-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              <span class="obj-text">Support collaboration, information discovery, and efficient access to platform features.</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- -------------------------------------------------------------------
+             3. Main Areas Shown in the Reference
+             ------------------------------------------------------------------- -->
+        <article class="doc-section-card" id="main-areas">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">03</span>
+            <span>Functional Scope</span>
+          </div>
+          <h2 class="section-heading">Main Areas Shown in the Reference</h2>
+          <div class="section-lead-text">
+            <p>The layout and case-study narrative highlight 12 functional dimensions and collaboration pillars:</p>
+          </div>
+
+          <div class="modules-cards-grid">
+            <!-- 3.1 -->
+            <div class="module-card">
+              <div class="module-top-row">
+                <div class="module-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                </div>
+                <span class="module-badge">Area 01</span>
+              </div>
+              <h3 class="module-card-title">Project Introduction</h3>
+              <p class="module-card-desc">
+                Introduces AKI and provides a high-level explanation of the project and its purpose.
+              </p>
+            </div>
+
+            <!-- 3.2 -->
+            <div class="module-card">
+              <div class="module-top-row">
+                <div class="module-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <span class="module-badge">Area 02</span>
+              </div>
+              <h3 class="module-card-title">Goal of the Collaboration</h3>
+              <p class="module-card-desc">
+                Summarizes the shared project vision, collaboration goals, and intended outcomes.
+              </p>
+            </div>
+
+            <!-- 3.3 -->
+            <div class="module-card">
+              <div class="module-top-row">
+                <div class="module-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                </div>
+                <span class="module-badge">Area 03</span>
+              </div>
+              <h3 class="module-card-title">Client Needs</h3>
+              <p class="module-card-desc">
+                Describes the requirements and operational pain points that the solution is intended to address.
+              </p>
+            </div>
+
+            <!-- 3.4 -->
+            <div class="module-card">
+              <div class="module-top-row">
+                <div class="module-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                </div>
+                <span class="module-badge">Area 04</span>
+              </div>
+              <h3 class="module-card-title">Scalable Cross-Platform Dev</h3>
+              <p class="module-card-desc">
+                Highlights the need for a maintainable, high-performance experience across supported platforms and screen sizes.
+              </p>
+            </div>
+
+            <!-- 3.5 -->
+            <div class="module-card">
+              <div class="module-top-row">
+                <div class="module-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                </div>
+                <span class="module-badge">Area 05</span>
+              </div>
+              <h3 class="module-card-title">Platform Modules</h3>
+              <p class="module-card-desc">
+                Presents the core functional areas of the product as a structured, modular set of services.
+              </p>
+            </div>
+
+            <!-- 3.6 -->
+            <div class="module-card">
+              <div class="module-top-row">
+                <div class="module-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
+                </div>
+                <span class="module-badge">Area 06</span>
+              </div>
+              <h3 class="module-card-title">Platform Adoption</h3>
+              <p class="module-card-desc">
+                Addresses usability, streamlined onboarding, and adoption considerations for the intended audience.
+              </p>
+            </div>
+
+            <!-- 3.7 -->
+            <div class="module-card">
+              <div class="module-top-row">
+                <div class="module-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </div>
+                <span class="module-badge">Area 07</span>
+              </div>
+              <h3 class="module-card-title">Business Profiles &amp; Management</h3>
+              <p class="module-card-desc">
+                Represents profile and information-management capabilities referenced in the platform layout.
+              </p>
+            </div>
+
+            <!-- 3.8 -->
+            <div class="module-card">
+              <div class="module-top-row">
+                <div class="module-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+                <span class="module-badge">Area 08</span>
+              </div>
+              <h3 class="module-card-title">Search &amp; Discovery System</h3>
+              <p class="module-card-desc">
+                Represents functionality for locating relevant information, users, services, or internal content.
+              </p>
+            </div>
+
+            <!-- 3.9 -->
+            <div class="module-card">
+              <div class="module-top-row">
+                <div class="module-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                </div>
+                <span class="module-badge">Area 09</span>
+              </div>
+              <h3 class="module-card-title">Communication System</h3>
+              <p class="module-card-desc">
+                Represents interaction and messaging capabilities between platform participants and internal teams.
+              </p>
+            </div>
+
+            <!-- 3.10 -->
+            <div class="module-card">
+              <div class="module-top-row">
+                <div class="module-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <span class="module-badge">Area 10</span>
+              </div>
+              <h3 class="module-card-title">Scalability Architecture</h3>
+              <p class="module-card-desc">
+                Emphasizes the ability to expand functionality and handle higher concurrency as requirements evolve.
+              </p>
+            </div>
+
+            <!-- 3.11 -->
+            <div class="module-card">
+              <div class="module-top-row">
+                <div class="module-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                </div>
+                <span class="module-badge">Area 11</span>
+              </div>
+              <h3 class="module-card-title">Full Support</h3>
+              <p class="module-card-desc">
+                Describes continued development, maintenance, security patching, and SLA support considerations.
+              </p>
+            </div>
+
+            <!-- 3.12 -->
+            <div class="module-card">
+              <div class="module-top-row">
+                <div class="module-icon-wrap">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                </div>
+                <span class="module-badge">Area 12</span>
+              </div>
+              <h3 class="module-card-title">Comprehensive Collaboration</h3>
+              <p class="module-card-desc">
+                Summarizes the overall collaboration approach, agile partnership, and end-to-end project value.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- -------------------------------------------------------------------
+             4. Dashboard and Interface
+             ------------------------------------------------------------------- -->
+        <article class="doc-section-card" id="dashboard-interface">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">04</span>
+            <span>Visual System</span>
+          </div>
+          <h2 class="section-heading">Dashboard and Interface</h2>
+          <div class="section-lead-text">
+            <p>
+              The reference includes a laptop mockup showing an analytics-style dashboard with charts and summary visualizations. This suggests that data presentation and dashboard UI are part of the visual story.
+            </p>
+            <p>
+              The screenshot does not provide enough detail to confirm the dashboard's actual metrics, user roles, data sources, or business workflows. The core interface principles identified include:
+            </p>
+          </div>
+
+          <div class="pillars-list">
+            <div class="pillar-item">
+              <span class="pillar-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+              </span>
+              <span class="pillar-label">Dashboard layout with clear information hierarchy</span>
+            </div>
+
+            <div class="pillar-item">
+              <span class="pillar-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M7 15l3.5-4 3 2.5 4.5-5.5"></path></svg>
+              </span>
+              <span class="pillar-label">Charts and summary visualizations for quick data interpretation</span>
+            </div>
+
+            <div class="pillar-item">
+              <span class="pillar-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </span>
+              <span class="pillar-label">Responsive layouts for different device sizes</span>
+            </div>
+
+            <div class="pillar-item">
+              <span class="pillar-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"></polyline><line x1="9" y1="20" x2="15" y2="20"></line><line x1="12" y1="4" x2="12" y2="20"></line></svg>
+              </span>
+              <span class="pillar-label">Consistent typography, spacing, and visual styling</span>
+            </div>
+
+            <div class="pillar-item" style="grid-column: 1 / -1;">
+              <span class="pillar-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              </span>
+              <span class="pillar-label">Reusable interface components to support maintainability</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- -------------------------------------------------------------------
+             5. Suggested Frontend Considerations
+             ------------------------------------------------------------------- -->
+        <article class="doc-section-card" id="frontend-considerations">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">05</span>
+            <span>Engineering Guidelines</span>
+          </div>
+          <h2 class="section-heading">Suggested Frontend Considerations</h2>
+          <div class="section-lead-text">
+            <p>Key technical and architectural recommendations for building maintainable, high-velocity dashboards:</p>
+          </div>
+
+          <div class="pillars-list">
+            <div class="pillar-item">
+              <span class="pillar-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+              </span>
+              <span class="pillar-label">Build page sections and dashboard widgets as reusable components</span>
+            </div>
+
+            <div class="pillar-item">
+              <span class="pillar-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </span>
+              <span class="pillar-label">Use responsive layout patterns for desktop, tablet, and mobile</span>
+            </div>
+
+            <div class="pillar-item">
+              <span class="pillar-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              </span>
+              <span class="pillar-label">Keep charts readable and accessible, with clear labels and empty states</span>
+            </div>
+
+            <div class="pillar-item">
+              <span class="pillar-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+              </span>
+              <span class="pillar-label">Implement predictable loading, error, and no-data states</span>
+            </div>
+
+            <div class="pillar-item">
+              <span class="pillar-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+              </span>
+              <span class="pillar-label">Validate forms and provide clear feedback for user actions</span>
+            </div>
+
+            <div class="pillar-item">
+              <span class="pillar-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+              </span>
+              <span class="pillar-label">Test keyboard navigation, contrast, and cross-browser behavior</span>
+            </div>
+
+            <div class="pillar-item" style="grid-column: 1 / -1;">
+              <span class="pillar-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </span>
+              <span class="pillar-label">Integrate APIs only according to the project's verified backend contract</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- -------------------------------------------------------------------
+             6. Potential Project Challenges
+             ------------------------------------------------------------------- -->
+        <article class="doc-section-card" id="challenges">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">06</span>
+            <span>Hurdles &amp; Risks</span>
+          </div>
+          <h2 class="section-heading">Potential Project Challenges</h2>
+          <div class="section-lead-text">
+            <p>Key risk areas and complexity considerations to monitor across the product lifecycle:</p>
+          </div>
+
+          <div class="challenges-list">
+            <!-- Challenge 1 -->
+            <div class="challenge-card">
+              <h3 class="challenge-card-title">
+                <svg class="challenge-alert-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                Usability
+              </h3>
+              <p class="challenge-card-desc">
+                Keeping the interface simple while presenting multiple modules and potentially data-rich screens.
+              </p>
+            </div>
+
+            <!-- Challenge 2 -->
+            <div class="challenge-card">
+              <h3 class="challenge-card-title">
+                <svg class="challenge-alert-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                Cross-Platform Consistency
+              </h3>
+              <p class="challenge-card-desc">
+                Maintaining a predictable experience across device sizes, browser viewports, and touch or pointer input methods.
+              </p>
+            </div>
+
+            <!-- Challenge 3 -->
+            <div class="challenge-card">
+              <h3 class="challenge-card-title">
+                <svg class="challenge-alert-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                Information Discovery
+              </h3>
+              <p class="challenge-card-desc">
+                Organizing information so users can find relevant content, datasets, profiles, and services efficiently.
+              </p>
+            </div>
+
+            <!-- Challenge 4 -->
+            <div class="challenge-card">
+              <h3 class="challenge-card-title">
+                <svg class="challenge-alert-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                Scalability and Maintenance
+              </h3>
+              <p class="challenge-card-desc">
+                Keeping components modular as new screens, analytics widgets, and operational functionality are introduced.
+              </p>
+            </div>
+
+            <!-- Challenge 5 -->
+            <div class="challenge-card">
+              <h3 class="challenge-card-title">
+                <svg class="challenge-alert-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                Dashboard Clarity
+              </h3>
+              <p class="challenge-card-desc">
+                Presenting complex business information in a way that users can understand quickly without cognitive overload.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- -------------------------------------------------------------------
+             7. Expected Outcomes
+             ------------------------------------------------------------------- -->
+        <article class="doc-section-card" id="outcomes">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">07</span>
+            <span>Measurable Impact</span>
+          </div>
+          <h2 class="section-heading">Expected Outcomes</h2>
+          <div class="section-lead-text">
+            <p>Anticipated positive outcomes from the implemented digital product and dashboard:</p>
+          </div>
+
+          <div class="outcomes-grid">
+            <div class="outcome-card">
+              <span class="outcome-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </span>
+              <div class="outcome-content">
+                <h4 class="outcome-title">Professional Experience</h4>
+                <p class="text-xs text-slate-500 font-body">A structured, cohesive, and professional digital product experience.</p>
+              </div>
+            </div>
+
+            <div class="outcome-card">
+              <span class="outcome-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </span>
+              <div class="outcome-content">
+                <h4 class="outcome-title">Navigation Clarity</h4>
+                <p class="text-xs text-slate-500 font-body">Improved clarity and reduced cognitive friction when navigating platform sections.</p>
+              </div>
+            </div>
+
+            <div class="outcome-card">
+              <span class="outcome-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+              </span>
+              <div class="outcome-content">
+                <h4 class="outcome-title">Responsive Interface</h4>
+                <p class="text-xs text-slate-500 font-body">A seamless, fully responsive interface across all supported desktop and mobile devices.</p>
+              </div>
+            </div>
+
+            <div class="outcome-card">
+              <span class="outcome-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M7 15l3.5-4 3 2.5 4.5-5.5"></path></svg>
+              </span>
+              <div class="outcome-content">
+                <h4 class="outcome-title">Accessible Dashboard</h4>
+                <p class="text-xs text-slate-500 font-body">More intuitive, accessible presentation of complex dashboard data and charts.</p>
+              </div>
+            </div>
+
+            <div class="outcome-card" style="grid-column: 1 / -1;">
+              <span class="outcome-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </span>
+              <div class="outcome-content">
+                <h4 class="outcome-title">Maintainable Foundation</h4>
+                <p class="text-xs text-slate-500 font-body">A scalable, future-ready architecture for agile iteration and upcoming product enhancements.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- -------------------------------------------------------------------
+             8. Project Summary & Information to Confirm
+             ------------------------------------------------------------------- -->
+        <article class="doc-section-card" id="summary">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">08</span>
+            <span>Synthesis</span>
+          </div>
+          <h2 class="section-heading">Project Summary</h2>
+
+          <div class="summary-highlight-box">
+            <h3 class="summary-lead">AKI — Digital Product Platform &amp; Analytics Dashboard</h3>
+            <p class="summary-body">
+              AKI is represented in the supplied page as a digital product project featuring an analytics-style dashboard and a structured case-study narrative around client needs, platform modules, adoption, search and discovery, communication, scalability, and support. This document describes only what can reasonably be inferred from the reference image.
+            </p>
+          </div>
+
+          <!-- Important Pre-Publish Verification Callout -->
+          <div class="mt-6 p-5 rounded-xl bg-amber-50 border border-amber-200/90 flex items-start gap-3.5">
+            <svg class="text-amber-600 mt-0.5 shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            <div>
+              <h4 class="text-sm font-bold text-amber-900 font-heading mb-1">Information to Confirm Before Publishing</h4>
+              <p class="text-xs sm:text-sm text-amber-800 leading-relaxed font-body">
+                The screenshot contains some generic or potentially reused case-study wording, including references to textile networking. Before using this documentation as official project material, confirm AKI's full name, business domain, intended users, actual modules, technology stack, integrations, and your specific responsibilities. Do not present inferred features as implemented functionality unless they are verified.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom Case Study Pagination Strip -->
+          <div class="project-pagination-strip">
+            <a href="aladdin365-details.html" class="nav-step-link">
+              <span class="step-direction">&larr; Previous Case Study</span>
+              <span class="step-target-name">Aladdin365 — Textile Network</span>
+            </a>
+            <a href="prakria-direct.html" class="nav-step-link text-right">
+              <span class="step-direction">Next Case Study &rarr;</span>
+              <span class="step-target-name">Prakria Direct — Community Platform</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Right Column: Sticky Table of Contents & Snapshot Sidebar -->
+      <aside class="project-sidebar-col">
+
+        <!-- Table of Contents Widget -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Table of Contents</h3>
+          <ul class="toc-nav-list" id="project-toc-list">
+            <li><a href="#overview" class="active"><span class="toc-num">01.</span> Overview</a></li>
+            <li><a href="#goals"><span class="toc-num">02.</span> Project Goals</a></li>
+            <li><a href="#main-areas"><span class="toc-num">03.</span> Main Reference Areas</a></li>
+            <li><a href="#dashboard-interface"><span class="toc-num">04.</span> Dashboard &amp; UI</a></li>
+            <li><a href="#frontend-considerations"><span class="toc-num">05.</span> Frontend Notes</a></li>
+            <li><a href="#challenges"><span class="toc-num">06.</span> Challenges</a></li>
+            <li><a href="#outcomes"><span class="toc-num">07.</span> Outcomes</a></li>
+            <li><a href="#summary"><span class="toc-num">08.</span> Summary</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Snapshot Widget -->
+        <div class="sidebar-widget">
+          <h3 class="widget-title">Project Snapshot</h3>
+          <ul class="snapshot-meta-list">
+            <li>
+              <span class="snap-lbl">Client</span>
+              <span class="snap-val">AKI Group</span>
+            </li>
+            <li>
+              <span class="snap-lbl">Interface Type</span>
+              <span class="snap-val">Analytics &amp; Admin Dashboard</span>
+            </li>
+            <li>
+              <span class="snap-lbl">Device Target</span>
+              <span class="snap-val">Desktop, Tablet &amp; Mobile</span>
+            </li>
+            <li>
+              <span class="snap-lbl">Primary Focus</span>
+              <span class="snap-val">Operations &amp; Workflows</span>
+            </li>
+            <li>
+              <span class="snap-lbl">Architecture</span>
+              <span class="snap-val text-emerald-600 font-bold">Reusable Component Design</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact CTA Widget -->
+        <div class="sidebar-cta-widget">
+          <h3 class="cta-widget-title">Need a Custom Dashboard?</h3>
+          <p class="cta-widget-desc">
+            We build high-performance data dashboards, admin platforms, and scalable B2B applications with modern frontend engineering.
+          </p>
+          <a href="contact.html" class="btn-widget-talk">
+            <span>Discuss Your Project</span>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       4. Common Site Footer (Exact mirror from caseStudy.html & index.html)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Top Tier: 4 Columns -->
+      <div class="footer-top-grid">
+        <!-- Col 1: Services -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html#services">Custom Software Development</a></li>
+            <li><a href="index.html#services">AI-Assisted Development</a></li>
+            <li><a href="index.html#services">Product Development for Startups</a></li>
+            <li><a href="index.html#services">QA &amp; Software Testing</a></li>
+            <li><a href="index.html#services">DevOps &amp; Cloud Engineering</a></li>
+            <li><a href="index.html#services">Dedicated Engineering Teams</a></li>
+            <li><a href="index.html#services">Technology Consulting</a></li>
+            <li><a href="index.html#services">Industry Solutions</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Staff Augmentation & Company -->
+        <div class="footer-col">
+          <div class="footer-subgroup">
+            <h4 class="footer-col-title">Staff Augmentation</h4>
+            <ul class="footer-links-list">
+              <li><a href="index.html#services">Hire a Developer</a></li>
+            </ul>
+          </div>
+          <div class="footer-subgroup footer-company-subgroup">
+            <h4 class="footer-col-title">Company</h4>
+            <ul class="footer-links-list">
+              <li><a href="about.html">About</a></li>
+              <li><a href="caseStudy.html">Case Studies</a></li>
+              <li><a href="career.html">Careers</a></li>
+              <li><a href="blog.html">Blogs</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Col 3: Socials -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Socials</h4>
+          <ul class="footer-social-list">
+            <li>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.45 1.45 0 0 0 1.45-1.45 1.45 1.45 0 0 0-1.45-1.45 1.45 1.45 0 0 0 1.45 1.45m1.37 9.74v-8.37H5.09v8.37h2.74z" />
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <svg class="social-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+                <span>Facebook</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Get in touch -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">Get in touch</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <a href="tel:+16145355738">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z" />
+                </svg>
+                <span>+1 (614) 535–5738 (USA)</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+919995333078">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.74 21 3 13.26 3 3.99a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.21z" />
+                </svg>
+                <span>+91 99953 33078 (IND)</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:info@nichetechies.com">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>info@nichetechies.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:Careers@nichetechies.com">
+                <svg class="contact-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Careers@nichetechies.com</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Divider Line -->
+      <div class="footer-divider-line"></div>
+
+      <!-- Middle Tier: Offices & Logo -->
+      <div class="footer-offices-grid">
+        <!-- Brand Logo Col -->
+        <div class="office-brand-col">
+          <img src="assets/images/niche-techies-logo.png" alt="Niche Techies" class="footer-brand-img">
+        </div>
+
+        <!-- USA Office Col -->
+        <div class="office-col border-left">
+          <div class="office-flag">
+            <svg width="24" height="16" viewBox="0 0 741 390" class="flag-icon flag-us">
+              <rect width="741" height="390" fill="#b22234" />
+              <path d="M0,45H741M0,105H741M0,165H741M0,225H741M0,285H741M0,345H741" stroke="#fff" stroke-width="30" />
+              <rect width="296.4" height="210" fill="#3c3b6e" />
+              <g fill="#fff">
+                <circle cx="30" cy="25" r="7" />
+                <circle cx="80" cy="25" r="7" />
+                <circle cx="130" cy="25" r="7" />
+                <circle cx="180" cy="25" r="7" />
+                <circle cx="230" cy="25" r="7" />
+                <circle cx="55" cy="55" r="7" />
+                <circle cx="105" cy="55" r="7" />
+                <circle cx="155" cy="55" r="7" />
+                <circle cx="205" cy="55" r="7" />
+                <circle cx="30" cy="85" r="7" />
+                <circle cx="80" cy="85" r="7" />
+                <circle cx="130" cy="85" r="7" />
+                <circle cx="180" cy="85" r="7" />
+                <circle cx="230" cy="85" r="7" />
+                <circle cx="55" cy="115" r="7" />
+                <circle cx="105" cy="115" r="7" />
+                <circle cx="155" cy="115" r="7" />
+                <circle cx="205" cy="115" r="7" />
+                <circle cx="30" cy="145" r="7" />
+                <circle cx="80" cy="145" r="7" />
+                <circle cx="130" cy="145" r="7" />
+                <circle cx="180" cy="145" r="7" />
+                <circle cx="230" cy="145" r="7" />
+                <circle cx="55" cy="175" r="7" />
+                <circle cx="105" cy="175" r="7" />
+                <circle cx="155" cy="175" r="7" />
+                <circle cx="205" cy="175" r="7" />
+              </g>
+            </svg>
+          </div>
+          <p class="office-address">
+            470 Olde Worthington Rd, Ste 200, PMB 5256,<br>
+            Westerville, OH 43082, United States of<br>
+            America
+          </p>
+        </div>
+
+        <!-- India Office Col -->
+        <div class="office-col border-left">
+          <div class="office-flag">
+            <svg width="22" height="22" viewBox="0 0 100 100" class="flag-icon flag-in">
+              <defs>
+                <clipPath id="circleClipIndia">
+                  <circle cx="50" cy="50" r="50" />
+                </clipPath>
+              </defs>
+              <g clip-path="url(#circleClipIndia)">
+                <rect width="100" height="33.33" fill="#FF9933" />
+                <rect y="33.33" width="100" height="33.33" fill="#FFFFFF" />
+                <rect y="66.66" width="100" height="33.34" fill="#138808" />
+                <circle cx="50" cy="50" r="11" fill="none" stroke="#000080" stroke-width="2.5" />
+                <circle cx="50" cy="50" r="2.5" fill="#000080" />
+                <g stroke="#000080" stroke-width="1.2">
+                  <line x1="50" y1="39" x2="50" y2="61" />
+                  <line x1="39" y1="50" x2="61" y2="50" />
+                  <line x1="42.22" y1="42.22" x2="57.78" y2="57.78" />
+                  <line x1="42.22" y1="57.78" x2="57.78" y2="42.22" />
+                </g>
+              </g>
+            </svg>
+          </div>
+          <p class="office-address">
+            8th floor, Vismaya Building, Infopark Kochi<br>
+            Phase-1, Kakkanad - 682042, Ernakulam,<br>
+            Kerala, India
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Tier: Copyright & Legal -->
+      <div class="footer-bottom-bar">
+        <p class="footer-copyright">&copy;2026 Nichetechies. All Rights Reserved</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Disclaimer</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button with Scroll Progress Indicator -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg class="progress-ring" width="48" height="48" viewBox="0 0 48 48">
+      <circle class="progress-ring-bg" cx="24" cy="24" r="21" />
+      <circle class="progress-ring-fill" cx="24" cy="24" r="21" />
+    </svg>
+    <span class="back-to-top-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+        stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </span>
+  </button>
+
+  <!-- =========================================================================
+       5. Interactive Client Scripts
+       ========================================================================= -->
+  <!-- Common Global Interactive Scripts -->
+  <script src="js/main.js"></script>
+
+  <!-- Page Specific Interactive Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Back to Top Ring & Scroll Progress
+      const backToTopBtn = document.getElementById('back-to-top');
+      const progressRingFill = document.querySelector('.progress-ring-fill');
+      const circumference = 2 * Math.PI * 21; // r=21 -> ~131.95
+
+      if (progressRingFill) {
+        progressRingFill.style.strokeDasharray = `${circumference} ${circumference}`;
+        progressRingFill.style.strokeDashoffset = circumference;
+      }
+
+      const onScroll = () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) : 0;
+
+        // Back to top button visibility & ring
+        if (backToTopBtn) {
+          if (scrollTop > 350) {
+            backToTopBtn.classList.add('visible');
+          } else {
+            backToTopBtn.classList.remove('visible');
+          }
+
+          if (progressRingFill) {
+            const offset = circumference - (scrollPercent * circumference);
+            progressRingFill.style.strokeDashoffset = offset;
+          }
+        }
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // 2. Scrollspy Table of Contents Navigation
+      const tocLinks = document.querySelectorAll('#project-toc-list a');
+      const sections = Array.from(tocLinks)
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+      const updateTocSpy = () => {
+        const scrollPos = window.scrollY + 140;
+        let currentSectionId = '';
+
+        sections.forEach(sec => {
+          if (sec && sec.offsetTop <= scrollPos) {
+            currentSectionId = sec.getAttribute('id');
+          }
+        });
+
+        if (currentSectionId) {
+          tocLinks.forEach(link => {
+            const matches = link.getAttribute('href') === '#' + currentSectionId;
+            link.classList.toggle('active', matches);
+          });
+        }
+      };
+
+      window.addEventListener('scroll', updateTocSpy, { passive: true });
+      updateTocSpy();
+
+      // Smooth TOC Anchor Scroll with Header Offset
+      tocLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href');
+          const targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            const offset = 85;
+            const targetPos = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: targetPos, behavior: 'smooth' });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

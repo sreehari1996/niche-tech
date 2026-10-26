@@ -443,6 +443,14 @@
   }
 
   .btn-arrow {
+    width: 14px;
+    height: 14px;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    color: currentColor;
+    display: inline-block;
+    flex-shrink: 0;
     transition: transform 0.25s ease;
   }
 

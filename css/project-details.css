@@ -1,0 +1,1091 @@
+/* =========================================================================
+   Project Details Stylesheet — Niche Techies
+   Case Study & Project Documentation Template
+   ========================================================================= */
+
+/* Main Page Container */
+.project-details-page {
+  background: #ffffff;
+  color: #0c1524;
+  min-height: 100vh;
+}
+
+/* -------------------------------------------------------------------------
+   1. Hero / Header Showcase Section
+   ------------------------------------------------------------------------- */
+.project-hero-section {
+  position: relative;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  color: #0f172a;
+  padding: 8rem 0 4rem;
+  overflow: hidden;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+@media (min-width: 640px) {
+  .project-hero-section {
+    padding: 8.5rem 0 4.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-hero-section {
+    padding: 9.5rem 0 5.5rem;
+  }
+}
+
+.project-hero-section .hero-ambient-glow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.08) 0%, rgba(37, 99, 235, 0.03) 50%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-hero-section .hero-pattern-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-hero-section .project-hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .project-hero-section .project-hero-container {
+    padding: 0 1.75rem;
+  }
+}
+
+/* Breadcrumbs */
+.project-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.815rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.project-breadcrumbs a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.project-breadcrumbs a:hover {
+  color: #0284c7;
+}
+
+.project-breadcrumbs .crumb-sep {
+  color: #cbd5e1;
+}
+
+.project-breadcrumbs .crumb-current {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* Badge Row */
+.hero-tags-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.hero-tags-row .hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.725rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero-tags-row .hero-pill-badge.badge-primary {
+  background: #e0f2fe;
+  color: #0284c7;
+  border: 1px solid #bae6fd;
+}
+
+.hero-tags-row .hero-pill-badge.badge-emerald {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+
+.hero-tags-row .hero-pill-badge.badge-indigo {
+  background: #ede9fe;
+  color: #6366f1;
+  border: 1px solid #ddd6fe;
+}
+
+/* Hero Title & Subtitle */
+.project-hero-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+  max-width: 980px;
+  margin-bottom: 1.25rem;
+}
+
+.project-hero-title .title-gradient {
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.project-hero-description {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.65;
+  color: #475569;
+  max-width: 860px;
+  margin-bottom: 2.25rem;
+}
+
+/* Key Metadata Info Strip */
+.project-meta-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05);
+}
+
+@media (min-width: 768px) {
+  .project-meta-strip {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1.5rem 2rem;
+  }
+}
+
+.project-meta-strip .meta-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-meta-strip .meta-box .meta-lbl {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.725rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  margin-bottom: 0.3rem;
+}
+
+.project-meta-strip .meta-box .meta-val {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Visual Showcase Mockup */
+.project-showcase-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px -12px rgba(15, 23, 42, 0.12);
+  border: 1px solid #e2e8f0;
+  background: #f1f5f9;
+}
+
+.project-showcase-wrapper .showcase-banner-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .project-showcase-wrapper .showcase-banner-img {
+    height: 480px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-showcase-wrapper .showcase-banner-img {
+    height: 520px;
+  }
+}
+
+.project-showcase-wrapper .hero-floating-hud {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.14);
+}
+
+.project-showcase-wrapper .hero-floating-hud .hud-badge-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #e0f2fe;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.project-showcase-wrapper .hero-floating-hud .hud-badge-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-showcase-wrapper .hero-floating-hud .hud-badge-text .hud-top-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.project-showcase-wrapper .hero-floating-hud .hud-badge-text .hud-sub-label {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.735rem;
+  color: #64748b;
+  line-height: 1.25;
+  margin-top: 0.15rem;
+}
+
+.project-showcase-wrapper .hero-stat-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 12px;
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  box-shadow: 0 8px 20px -4px rgba(15, 23, 42, 0.1);
+}
+
+.project-showcase-wrapper .hero-stat-badge .stat-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.project-showcase-wrapper .hero-stat-badge .stat-info {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.785rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* -------------------------------------------------------------------------
+   2. Main Content & Sidebar Layout
+   ------------------------------------------------------------------------- */
+.project-content-section {
+  padding: 4.5rem 0 6rem;
+  background: #f8fafc;
+}
+
+.project-content-section .project-layout-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .project-content-section .project-layout-container {
+    padding: 0 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-content-section .project-layout-container {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 3rem;
+    align-items: start;
+  }
+}
+
+@media (min-width: 1280px) {
+  .project-content-section .project-layout-container {
+    grid-template-columns: 1fr 370px;
+    gap: 3.5rem;
+  }
+}
+
+.project-main-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* Section Cards */
+.doc-section-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 2rem;
+  box-shadow: 0 6px 20px -4px rgba(15, 23, 42, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (min-width: 640px) {
+  .doc-section-card {
+    padding: 2.5rem;
+  }
+}
+
+.doc-section-card:hover {
+  box-shadow: 0 12px 30px -8px rgba(15, 23, 42, 0.07);
+}
+
+.doc-section-card .section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.765rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #0284c7;
+  margin-bottom: 0.5rem;
+}
+
+.doc-section-card .section-eyebrow .eyebrow-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: #e0f2fe;
+  color: #0284c7;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.doc-section-card .section-heading {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(1.45rem, 2.2vw, 1.85rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+}
+
+.doc-section-card .section-lead-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #475569;
+  margin-bottom: 1.75rem;
+}
+
+.doc-section-card .section-lead-text p {
+  margin-bottom: 1rem;
+}
+
+.doc-section-card .section-lead-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Section 1: Overview Grid */
+.overview-facts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .overview-facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.overview-facts-grid .overview-fact-item {
+  background: #f8fafc;
+  border: 1px solid #eef2f6;
+  border-radius: 14px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.overview-facts-grid .overview-fact-item .fact-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #e0f2fe;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.overview-facts-grid .overview-fact-item .fact-info .fact-label {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.745rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+}
+
+.overview-facts-grid .overview-fact-item .fact-info .fact-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 0.15rem;
+}
+
+/* Section 2: Objectives List / Grid */
+.objectives-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.95rem;
+}
+
+@media (min-width: 640px) {
+  .objectives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.objectives-grid .objective-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1.15rem 1.25rem;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 14px;
+  transition: all 0.25s ease;
+}
+
+.objectives-grid .objective-item:hover {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px -4px rgba(15, 23, 42, 0.06);
+}
+
+.objectives-grid .objective-item .obj-check-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #15803d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.objectives-grid .objective-item .obj-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.915rem;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.45;
+}
+
+/* Section 3: Core Modules Grid */
+.modules-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .modules-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.modules-cards-grid .module-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.modules-cards-grid .module-card:hover {
+  border-color: #0284c7;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px -6px rgba(2, 132, 199, 0.12);
+}
+
+.modules-cards-grid .module-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0284c7, #38bdf8);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.modules-cards-grid .module-card:hover::before {
+  opacity: 1;
+}
+
+.modules-cards-grid .module-card .module-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.modules-cards-grid .module-card .module-top-row .module-icon-wrap {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #f0f9ff;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modules-cards-grid .module-card .module-top-row .module-badge {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+}
+
+.modules-cards-grid .module-card .module-card-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.modules-cards-grid .module-card .module-card-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.885rem;
+  line-height: 1.55;
+  color: #475569;
+}
+
+/* Section 4: Client Requirements Grid */
+.requirements-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .requirements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.requirements-grid .requirement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1.15rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #eef2f6;
+}
+
+.requirements-grid .requirement-item .req-bullet {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0284c7;
+  margin-top: 0.45rem;
+  flex-shrink: 0;
+}
+
+.requirements-grid .requirement-item .req-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.915rem;
+  font-weight: 500;
+  color: #334155;
+  line-height: 1.5;
+}
+
+/* Section 5: Challenges & Solutions Grid */
+.challenges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.challenges-list .challenge-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.challenges-list .challenge-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 20px -4px rgba(15, 23, 42, 0.05);
+}
+
+.challenges-list .challenge-card .challenge-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.55rem;
+}
+
+.challenges-list .challenge-card .challenge-card-title .challenge-alert-icon {
+  color: #f59e0b;
+  flex-shrink: 0;
+}
+
+.challenges-list .challenge-card .challenge-card-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.915rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+/* Section 6 & 7: Pillars List */
+.pillars-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .pillars-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pillars-list .pillar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.15rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+}
+
+.pillars-list .pillar-item .pillar-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #e0f2fe;
+  color: #0284c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pillars-list .pillar-item .pillar-label {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Section 8: Target Audience Grid */
+.audience-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+@media (min-width: 640px) {
+  .audience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.audience-grid .audience-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.15rem 1.25rem;
+  background: #f8fafc;
+  border-radius: 14px;
+  border: 1px solid #f1f5f9;
+  transition: all 0.25s ease;
+}
+
+.audience-grid .audience-item:hover {
+  background: #ffffff;
+  border-color: #0284c7;
+  transform: translateY(-2px);
+}
+
+.audience-grid .audience-item .aud-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f0fdf4;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.audience-grid .audience-item .aud-name {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.915rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Section 9: Outcomes Grid */
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .outcomes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.outcomes-grid .outcome-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.95rem;
+  padding: 1.35rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  transition: all 0.25s ease;
+}
+
+.outcomes-grid .outcome-card:hover {
+  border-color: #10b981;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px -6px rgba(16, 185, 129, 0.12);
+}
+
+.outcomes-grid .outcome-card .outcome-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #ecfdf5;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.outcomes-grid .outcome-card .outcome-content .outcome-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.985rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.2rem;
+}
+
+/* Section 10: Executive Summary Box */
+.summary-highlight-box {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 2rem;
+  margin-top: 1rem;
+  box-shadow: 0 12px 30px -6px rgba(15, 23, 42, 0.35);
+}
+
+.summary-highlight-box .summary-lead {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 0.75rem;
+}
+
+.summary-highlight-box .summary-body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.965rem;
+  line-height: 1.7;
+  color: #e2e8f0;
+}
+
+/* -------------------------------------------------------------------------
+   3. Right Sidebar (Sticky Navigation & Snapshot)
+   ------------------------------------------------------------------------- */
+.project-sidebar-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: sticky;
+  top: 96px;
+}
+
+@media (max-width: 1023px) {
+  .project-sidebar-col {
+    position: static;
+    margin-top: 3rem;
+  }
+}
+
+.sidebar-widget {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  padding: 1.75rem;
+  box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04);
+}
+
+.sidebar-widget .widget-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.15rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Sticky Table of Contents (TOC) */
+.toc-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.toc-nav-list li a {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.835rem;
+  font-weight: 600;
+  color: #64748b;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.toc-nav-list li a .toc-num {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: #94a3b8;
+  width: 22px;
+}
+
+.toc-nav-list li a:hover {
+  background: #f1f5f9;
+  color: #0284c7;
+}
+
+.toc-nav-list li a:hover .toc-num {
+  color: #0284c7;
+}
+
+.toc-nav-list li a.active {
+  background: #e0f2fe;
+  color: #0284c7;
+  font-weight: 700;
+}
+
+.toc-nav-list li a.active .toc-num {
+  color: #0284c7;
+}
+
+/* Snapshot List */
+.snapshot-meta-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.snapshot-meta-list li {
+  display: flex;
+  flex-direction: column;
+}
+
+.snapshot-meta-list li .snap-lbl {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.715rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+}
+
+.snapshot-meta-list li .snap-val {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.885rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 0.15rem;
+}
+
+/* Sidebar CTA Box */
+.sidebar-cta-widget {
+  background: radial-gradient(120% 120% at 50% 0%, #1a2b4b 0%, #0a1120 100%);
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 1.85rem;
+  box-shadow: 0 12px 28px -6px rgba(10, 17, 32, 0.4);
+}
+
+.sidebar-cta-widget .cta-widget-title {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+}
+
+.sidebar-cta-widget .cta-widget-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.865rem;
+  line-height: 1.55;
+  color: #cbd5e1;
+  margin-bottom: 1.35rem;
+}
+
+.sidebar-cta-widget .btn-widget-talk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.72rem 1.25rem;
+  border-radius: 9999px;
+  background: #0284c7;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.sidebar-cta-widget .btn-widget-talk:hover {
+  background: #0369a1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -3px rgba(2, 132, 199, 0.4);
+}
+
+/* -------------------------------------------------------------------------
+   4. Bottom Project Navigation Strip
+   ------------------------------------------------------------------------- */
+.project-pagination-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 0;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.project-pagination-strip .nav-step-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.project-pagination-strip .nav-step-link:hover {
+  transform: translateY(-2px);
+}
+
+.project-pagination-strip .nav-step-link .step-direction {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.725rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #94a3b8;
+}
+
+.project-pagination-strip .nav-step-link .step-target-name {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0284c7;
+  margin-top: 0.2rem;
+}
