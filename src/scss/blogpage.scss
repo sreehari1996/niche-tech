@@ -564,6 +564,26 @@
         text-transform: uppercase;
         color: #94a3b8;
 
+        @media (max-width: 767px) {
+          flex-wrap: wrap;
+          row-gap: 0.35rem;
+          column-gap: 0.65rem;
+
+          .meta-tag {
+            width: 100%;
+            margin-bottom: 0.15rem;
+
+            & + .meta-dot {
+              display: none;
+            }
+          }
+
+          .meta-date,
+          .meta-read {
+            white-space: nowrap;
+          }
+        }
+
         .meta-tag {
           color: #1a2b4b;
           font-weight: 700;

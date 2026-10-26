@@ -351,6 +351,7 @@ function initFormHandler() {
 function initBlogFilter() {
   const filterPills = document.querySelectorAll('.blog-filter-pills .filter-pill');
   const cards = document.querySelectorAll('.blog-grid .blog-card');
+  const pillsContainer = document.querySelector('.blog-filter-pills');
   if (!filterPills.length || !cards.length) return;
 
   filterPills.forEach(pill => {
@@ -364,6 +365,9 @@ function initBlogFilter() {
       });
       pill.classList.add('active');
       pill.setAttribute('aria-selected', 'true');
+
+      // Smoothly scroll active pill into view in mobile slider
+      pill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 
       // Animate card display
       cards.forEach(card => {
@@ -388,6 +392,35 @@ function initBlogFilter() {
       }
     });
   });
+
+  // Drag-to-scroll support for .blog-filter-pills slider
+  if (pillsContainer) {
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    pillsContainer.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - pillsContainer.offsetLeft;
+      scrollLeft = pillsContainer.scrollLeft;
+    });
+
+    pillsContainer.addEventListener('mouseleave', () => {
+      isDown = false;
+    });
+
+    pillsContainer.addEventListener('mouseup', () => {
+      isDown = false;
+    });
+
+    pillsContainer.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - pillsContainer.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      pillsContainer.scrollLeft = scrollLeft - walk;
+    });
+  }
 }
 
 // 7b. Product Stacked Cards Deck with GSAP ScrollTrigger
@@ -1064,18 +1097,28 @@ function initGsapAnimations() {
     }
 
     // J. Contact Box
-    gsap.from('.contact-card-box', {
-      scrollTrigger: {
-        trigger: '.contact-section',
-        start: 'top 80%',
-        once: true
-      },
-      y: 30,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power2.out',
-      clearProps: 'all'
-    });
+    const contactBox = document.querySelector('.contact-card-box');
+    const contactSection = document.querySelector('.contact-section');
+    if (contactBox && contactSection) {
+      if (window.innerWidth >= 768) {
+        gsap.from(contactBox, {
+          scrollTrigger: {
+            trigger: contactSection,
+            start: 'top 85%',
+            once: true
+          },
+          y: 25,
+          opacity: 0,
+          duration: 0.7,
+          ease: 'power2.out',
+          clearProps: 'all'
+        });
+      } else {
+        contactBox.style.opacity = '1';
+        contactBox.style.visibility = 'visible';
+        contactBox.style.transform = 'none';
+      }
+    }
     // Refresh ScrollTrigger when all assets/images are loaded
     window.addEventListener('load', () => {
       ScrollTrigger.refresh();
@@ -1206,6 +1249,7 @@ function initAboutPageGsapAnimations() {
   // B. Foundation & Purpose Section: Modern Tab Navigation (Matching User's Attached Structure)
   const foundationTabs = document.querySelectorAll('.foundation-tab-btn');
   const foundationPanels = document.querySelectorAll('.foundation-panel');
+  const foundationTabsContainer = document.querySelector('.foundation-tabs');
 
   if (foundationTabs.length > 0 && foundationPanels.length > 0) {
     foundationTabs.forEach((tab) => {
@@ -1219,6 +1263,9 @@ function initAboutPageGsapAnimations() {
         tab.classList.add('active');
         tab.setAttribute('aria-selected', 'true');
 
+        // Smoothly scroll active tab into view in mobile slider
+        tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+
         foundationPanels.forEach((panel) => {
           if (panel.id === `panel-${targetTab}`) {
             panel.classList.add('active');
@@ -1226,8 +1273,42 @@ function initAboutPageGsapAnimations() {
             panel.classList.remove('active');
           }
         });
+
+        // Refresh ScrollTrigger calculations after panel switch
+        if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.refresh();
+        }
       });
     });
+
+    // Drag-to-scroll support for .foundation-tabs slider
+    if (foundationTabsContainer) {
+      let isDown = false;
+      let startX = 0;
+      let scrollLeft = 0;
+
+      foundationTabsContainer.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - foundationTabsContainer.offsetLeft;
+        scrollLeft = foundationTabsContainer.scrollLeft;
+      });
+
+      foundationTabsContainer.addEventListener('mouseleave', () => {
+        isDown = false;
+      });
+
+      foundationTabsContainer.addEventListener('mouseup', () => {
+        isDown = false;
+      });
+
+      foundationTabsContainer.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - foundationTabsContainer.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        foundationTabsContainer.scrollLeft = scrollLeft - walk;
+      });
+    }
   }
 
   // C. Technologies Section: Staggered Ripple Reveal of Tech Cells
@@ -1384,7 +1465,11 @@ function initAboutPageGsapAnimations() {
             onUpdate: () => updateCounterAndProgress(currentOffset)
           });
         } else {
-          track.style.transform = `translate3d(${-currentOffset}px, 0, 0)`;
+          if (typeof gsap !== 'undefined') {
+            gsap.set(track, { x: -currentOffset });
+          } else {
+            track.style.transform = `translate3d(${-currentOffset}px, 0, 0)`;
+          }
           updateCounterAndProgress(currentOffset);
         }
       }
@@ -1412,10 +1497,15 @@ function initAboutPageGsapAnimations() {
         startX = e.clientX;
         dragStartOffset = currentOffset;
         viewport.classList.add('is-dragging');
-        track.style.transition = 'none';
+        try {
+          viewport.setPointerCapture(e.pointerId);
+        } catch (err) {}
+        if (typeof gsap !== 'undefined') {
+          gsap.killTweensOf(track);
+        }
       });
 
-      window.addEventListener('pointermove', (e) => {
+      viewport.addEventListener('pointermove', (e) => {
         if (!isDragging) return;
         const dx = e.clientX - startX;
         if (Math.abs(dx) > 5) hasDragged = true;
@@ -1429,21 +1519,28 @@ function initAboutPageGsapAnimations() {
         } else {
           currentOffset = rawOffset;
         }
-        track.style.transform = `translate3d(${-currentOffset}px, 0, 0)`;
+        if (typeof gsap !== 'undefined') {
+          gsap.set(track, { x: -currentOffset });
+        } else {
+          track.style.transform = `translate3d(${-currentOffset}px, 0, 0)`;
+        }
         updateCounterAndProgress(currentOffset);
       });
 
-      function handleDragEnd() {
+      function handleDragEnd(e) {
         if (!isDragging) return;
         isDragging = false;
         viewport.classList.remove('is-dragging');
+        try {
+          if (e && e.pointerId) viewport.releasePointerCapture(e.pointerId);
+        } catch (err) {}
         const step = getStepSize();
         const snappedOffset = Math.round(currentOffset / step) * step;
         slideTo(snappedOffset, true);
       }
 
-      window.addEventListener('pointerup', handleDragEnd);
-      window.addEventListener('pointercancel', handleDragEnd);
+      viewport.addEventListener('pointerup', handleDragEnd);
+      viewport.addEventListener('pointercancel', handleDragEnd);
 
       // Category Filter Tabs
       filterPills.forEach((pill) => {
@@ -1451,6 +1548,9 @@ function initAboutPageGsapAnimations() {
           const filter = pill.getAttribute('data-filter') || 'all';
           filterPills.forEach((p) => p.classList.remove('active'));
           pill.classList.add('active');
+
+          // Smoothly scroll active pill into view in mobile slider
+          pill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 
           const allCards = track.querySelectorAll('.culture-reel-card');
           const visible = [];
@@ -1477,6 +1577,36 @@ function initAboutPageGsapAnimations() {
           if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
         });
       });
+
+      // Drag-to-scroll support for .culture-filter-pills mobile slider
+      const culturePillsContainer = cultureSection.querySelector('.culture-filter-pills');
+      if (culturePillsContainer) {
+        let isPillDown = false;
+        let startPillX = 0;
+        let scrollPillLeft = 0;
+
+        culturePillsContainer.addEventListener('mousedown', (e) => {
+          isPillDown = true;
+          startPillX = e.pageX - culturePillsContainer.offsetLeft;
+          scrollPillLeft = culturePillsContainer.scrollLeft;
+        });
+
+        culturePillsContainer.addEventListener('mouseleave', () => {
+          isPillDown = false;
+        });
+
+        culturePillsContainer.addEventListener('mouseup', () => {
+          isPillDown = false;
+        });
+
+        culturePillsContainer.addEventListener('mousemove', (e) => {
+          if (!isPillDown) return;
+          e.preventDefault();
+          const x = e.pageX - culturePillsContainer.offsetLeft;
+          const walk = (x - startPillX) * 1.5;
+          culturePillsContainer.scrollLeft = scrollPillLeft - walk;
+        });
+      }
 
       // Resize observer to update constraints
       window.addEventListener('resize', () => {

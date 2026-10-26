@@ -24,6 +24,12 @@
     border: none;
     box-shadow: none;
 
+    @media (max-width: 767px) {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+    }
+
     @include lg {
       grid-template-columns: 32% 68%;
     }

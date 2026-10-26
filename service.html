@@ -983,6 +983,10 @@
               card.classList.add('hidden-card');
             }
           });
+
+          if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.refresh();
+          }
         });
       });
 

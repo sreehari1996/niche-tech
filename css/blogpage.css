@@ -837,6 +837,28 @@
   color: #94a3b8;
 }
 
+@media (max-width: 767px) {
+  .blog-card-meta {
+    flex-wrap: wrap;
+    row-gap: 0.35rem;
+    column-gap: 0.65rem;
+  }
+
+  .blog-card-meta .meta-tag {
+    width: 100%;
+    margin-bottom: 0.15rem;
+  }
+
+  .blog-card-meta .meta-tag + .meta-dot {
+    display: none;
+  }
+
+  .blog-card-meta .meta-date,
+  .blog-card-meta .meta-read {
+    white-space: nowrap;
+  }
+}
+
 .blog-card-meta .meta-tag {
   color: #1a2b4b;
   font-weight: 700;

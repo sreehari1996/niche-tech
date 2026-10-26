@@ -1240,6 +1240,31 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+
+    @media (max-width: 767px) {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      padding: 0.25rem 0.25rem 0.5rem 0.25rem;
+      gap: 0.5rem;
+      scroll-behavior: smooth;
+      scroll-snap-type: x proximity;
+      cursor: grab;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &:active {
+        cursor: grabbing;
+      }
+    }
   }
 
   .culture-pill-btn {
@@ -1255,6 +1280,15 @@
     border: 1px solid rgba(255, 255, 255, 0.09);
     cursor: pointer;
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+    @media (max-width: 767px) {
+      flex-shrink: 0;
+      white-space: nowrap;
+      scroll-snap-align: center;
+      padding: 0.48rem 1.15rem;
+      font-size: 0.82rem;
+      user-select: none;
+    }
 
     &:hover {
       background: rgba(56, 189, 248, 0.12);

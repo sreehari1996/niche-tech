@@ -548,6 +548,50 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 767px) {
+  .foundation-header {
+    gap: 1.25rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .foundation-header-text {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .foundation-main-title {
+    font-size: 1.65rem;
+  }
+
+  .foundation-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    padding: 0.3rem 0.35rem;
+    gap: 0.35rem;
+    cursor: grab;
+    touch-action: pan-x;
+  }
+
+  .foundation-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .foundation-tabs:active {
+    cursor: grabbing;
+  }
+}
+
 .foundation-tab-btn {
   display: inline-flex;
   align-items: center;
@@ -564,6 +608,17 @@
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 767px) {
+  .foundation-tab-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    scroll-snap-align: center;
+    padding: 0.55rem 1.15rem;
+    font-size: 0.725rem;
+    user-select: none;
+  }
 }
 
 .foundation-tab-btn:hover {
@@ -659,6 +714,20 @@
   gap: 1rem;
 }
 
+@media (max-width: 767px) {
+  .foundation-stats-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+  }
+}
+
+@media (max-width: 359px) {
+  .foundation-stats-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
 .foundation-stat-box {
   background: #f8fafc;
   border: 1px solid #e2e8f0;
@@ -666,6 +735,24 @@
   padding: 1rem 0.85rem;
   text-align: center;
   transition: all 0.25s ease;
+}
+
+@media (max-width: 767px) {
+  .foundation-stat-box {
+    padding: 0.75rem 0.35rem;
+    min-width: 0;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 359px) {
+  .foundation-stat-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 0.75rem 1rem;
+  }
 }
 
 .foundation-stat-box:hover {
@@ -685,6 +772,20 @@
   margin-bottom: 0.25rem;
 }
 
+@media (max-width: 767px) {
+  .f-stat-num {
+    font-size: clamp(1.15rem, 4.2vw, 1.35rem);
+    margin-bottom: 0.2rem;
+  }
+}
+
+@media (max-width: 359px) {
+  .f-stat-num {
+    margin-bottom: 0;
+    font-size: 1.35rem;
+  }
+}
+
 .f-stat-lbl {
   font-size: 0.7rem;
   color: #64748b;
@@ -695,11 +796,27 @@
   line-height: 1.25;
 }
 
+@media (max-width: 767px) {
+  .f-stat-lbl {
+    font-size: 0.625rem;
+    letter-spacing: 0;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+}
+
 /* Pillars Row */
 .foundation-pillars-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.85rem;
+}
+
+@media (max-width: 767px) {
+  .foundation-pillars-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
 }
 
 .foundation-pillar-box {
@@ -752,6 +869,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.75rem;
+}
+
+@media (max-width: 575px) {
+  .foundation-principles-grid {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
 }
 
 .foundation-principle-card {
@@ -815,6 +939,12 @@
   background: #f8fafc;
   box-shadow: 0 16px 36px -12px rgba(15, 23, 42, 0.1);
   height: 380px;
+}
+
+@media (max-width: 767px) {
+  .foundation-panel-visual {
+    height: clamp(240px, 58vw, 340px);
+  }
 }
 
 .foundation-panel-visual img {
@@ -1115,6 +1245,33 @@
   gap: 0.5rem;
 }
 
+@media (max-width: 767px) {
+  .culture-filter-pills {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0.25rem 0.25rem 0.5rem 0.25rem;
+    gap: 0.5rem;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    cursor: grab;
+  }
+
+  .culture-filter-pills::-webkit-scrollbar {
+    display: none;
+  }
+
+  .culture-filter-pills:active {
+    cursor: grabbing;
+  }
+}
+
 .culture-pill-btn {
   display: inline-flex;
   align-items: center;
@@ -1128,6 +1285,17 @@
   border: 1px solid rgba(255, 255, 255, 0.09);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 767px) {
+  .culture-pill-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+    scroll-snap-align: center;
+    padding: 0.48rem 1.15rem;
+    font-size: 0.82rem;
+    user-select: none;
+  }
 }
 
 .culture-pill-btn:hover {
@@ -1219,6 +1387,7 @@
   cursor: grab;
   user-select: none;
   padding: 0.5rem 0 1rem;
+  touch-action: pan-y;
 }
 
 .about-culture-reel-viewport.is-dragging {
@@ -1229,7 +1398,6 @@
   display: flex;
   gap: 1.25rem;
   will-change: transform;
-  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* Individual Reel Card - Compact vertical footprint */

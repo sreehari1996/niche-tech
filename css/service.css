@@ -755,3 +755,32 @@
 .back-to-top:hover .back-to-top-icon {
   transform: translateY(-2px);
 }
+
+/* =========================================================================
+   6. Contact Section Visibility Guarantee
+   ========================================================================= */
+.contact-section {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+@media (max-width: 767px) {
+  .contact-card-box {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  .contact-visual {
+    display: block !important;
+    min-height: 240px;
+    height: 240px;
+  }
+
+  .contact-main-wrapper {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
