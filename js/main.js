@@ -141,12 +141,8 @@ function initProjectCarousel() {
     workItems.forEach((item, idx) => {
       if (idx === currentIndex) {
         item.classList.add('work-item-active');
-        item.style.background = 'rgba(255, 255, 255, 0.05)';
-        item.style.borderColor = 'rgba(56, 189, 248, 0.38)';
       } else {
         item.classList.remove('work-item-active');
-        item.style.background = '';
-        item.style.borderColor = '';
       }
     });
 
@@ -1005,20 +1001,62 @@ function initGsapAnimations() {
       clearProps: 'all'
     });
 
-    // F. Work Section Items
-    gsap.from('.work-list .work-item', {
-      scrollTrigger: {
-        trigger: '.work-section',
-        start: 'top 80%',
-        once: true
-      },
-      y: 25,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.6,
-      ease: 'power2.out',
-      clearProps: 'all'
-    });
+    // F. Solutions Section Reveal
+    if (document.querySelector('.solutions-section')) {
+      gsap.from('.solutions-header-centered', {
+        scrollTrigger: {
+          trigger: '.solutions-section',
+          start: 'top 82%',
+          once: true
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+
+      gsap.from('.solutions-pillars-grid .solution-pillar-card', {
+        scrollTrigger: {
+          trigger: '.solutions-pillars-grid',
+          start: 'top 84%',
+          once: true
+        },
+        y: 30,
+        opacity: 0,
+        stagger: 0.08,
+        duration: 0.6,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+
+      gsap.from('.solutions-minimal-cta', {
+        scrollTrigger: {
+          trigger: '.solutions-minimal-cta',
+          start: 'top 90%',
+          once: true
+        },
+        y: 20,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+    } else {
+      gsap.from('.work-list .work-item', {
+        scrollTrigger: {
+          trigger: '.work-section',
+          start: 'top 80%',
+          once: true
+        },
+        y: 25,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 0.6,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+    }
 
     // G. Product Section animations are fully managed in initProductStackedDeck()
 

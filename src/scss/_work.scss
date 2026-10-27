@@ -1,18 +1,29 @@
 @import 'variables';
 @import 'mixins';
 
+/* ==========================================================================
+   Our Solutions Section — Refined Human Editorial Showcase (Dark Navy)
+   ========================================================================== */
 .work-section {
-  padding: 4.5rem 0;
+  padding: 5rem 0 5.5rem;
   background-color: #070e1b;
   background-image: 
-    radial-gradient(circle at 15% 90%, rgba(37, 99, 235, 0.08) 0%, transparent 45%),
-    radial-gradient(circle at 85% 20%, rgba(14, 165, 233, 0.05) 0%, transparent 40%);
+    radial-gradient(circle at 15% 90%, rgba(30, 58, 138, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 85% 20%, rgba(15, 25, 45, 0.5) 0%, transparent 45%);
   color: #ffffff;
   position: relative;
   overflow: hidden;
 
   @include md {
     padding: 6.5rem 0 7rem;
+  }
+
+  .anchor-alias {
+    position: absolute;
+    top: -90px;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .work-container {
@@ -32,14 +43,10 @@
   .work-layout {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2.25rem;
-
-    @include sm {
-      gap: 3rem;
-    }
+    gap: 2.5rem;
 
     @include lg {
-      grid-template-columns: 36% 64%;
+      grid-template-columns: 35% 65%;
       gap: 3.5rem;
       align-items: stretch;
     }
@@ -50,7 +57,7 @@
     }
   }
 
-  // Left Sidebar / Info Column
+  // Left Column: Editorial Information & Carousel Controls
   .work-sidebar {
     display: flex;
     flex-direction: column;
@@ -59,7 +66,7 @@
     @include lg {
       padding-right: 2.5rem;
       border-right: 1px solid rgba(255, 255, 255, 0.08);
-      min-height: 560px;
+      min-height: 520px;
     }
 
     .work-badge-pill {
@@ -68,54 +75,46 @@
       gap: 0.6rem;
       padding: 0.4rem 1rem;
       border-radius: 9999px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.04);
       font-family: $font-heading;
       font-size: 0.775rem;
+      font-weight: 700;
       color: #cbd5e1;
-      margin-bottom: 2rem;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.75rem;
       width: fit-content;
-
-      .badge-num,
-      .badge-sep {
-        display: none !important;
-      }
-
-      .badge-label {
-        font-weight: 600;
-        color: #e2e8f0;
-        letter-spacing: 0.04em;
-      }
     }
 
     .work-title {
-      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-family: $font-heading;
+      font-size: clamp(2.3rem, 3.8vw, 3.3rem);
       font-weight: 800;
       letter-spacing: -0.035em;
       color: #ffffff;
       line-height: 1.14;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
     }
 
     .work-desc {
+      font-family: $font-body;
       font-size: 0.95rem;
       line-height: 1.68;
-      color: #8898ac;
-      margin-bottom: 1.5rem;
+      color: #94a3b8;
+      margin-bottom: 1.75rem;
       max-width: 100%;
 
       @include sm {
-        margin-bottom: 2rem;
-        max-width: 360px;
+        max-width: 380px;
       }
     }
 
     .view-projects-link {
       display: inline-flex;
       align-items: center;
-      gap: 0.55rem;
+      gap: 0.6rem;
       font-family: $font-heading;
-      font-size: 0.875rem;
+      font-size: 0.9rem;
       font-weight: 600;
       color: #ffffff;
       transition: $transition-smooth;
@@ -126,7 +125,8 @@
       }
 
       &:hover {
-        color: #c5d4ea;
+        color: #cbd5e1;
+
         svg {
           transform: translateX(4px);
         }
@@ -137,11 +137,7 @@
       display: flex;
       align-items: center;
       gap: 1.5rem;
-      margin-top: 1.5rem;
-
-      @include sm {
-        margin-top: 2.5rem;
-      }
+      margin-top: 1.75rem;
 
       @include lg {
         margin-top: auto;
@@ -154,8 +150,8 @@
         gap: 0.6rem;
 
         .btn-arrow {
-          width: 38px;
-          height: 38px;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
           border: 1px solid rgba(255, 255, 255, 0.15);
           background: rgba(255, 255, 255, 0.04);
@@ -167,8 +163,8 @@
           transition: $transition-smooth;
 
           &:hover {
-            background: rgba(255, 255, 255, 0.16);
-            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(255, 255, 255, 0.35);
             color: #ffffff;
             transform: scale(1.05);
           }
@@ -189,42 +185,33 @@
     }
   }
 
-  // Right Stacked List
+  // Right Column: Stacked Editorial Solution Rows
   .work-list {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 0.75rem;
 
     .work-item {
       display: grid;
-      grid-template-columns: 32px 140px 1fr 24px;
+      grid-template-columns: 34px 170px 1fr 28px;
       align-items: center;
-      gap: 1.25rem;
-      padding: 1.2rem 0.75rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 12px;
-      transition: background 0.3s ease, transform 0.3s ease;
+      gap: 1.5rem;
+      padding: 1.15rem 1.15rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
       cursor: pointer;
 
-      @include md {
-        grid-template-columns: 36px 170px 1fr 28px;
-        gap: 1.75rem;
-        padding: 1.25rem 1rem;
-      }
-
-      &:first-child {
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-      }
-
-      &:hover {
-        background: rgba(255, 255, 255, 0.035);
+      &:hover,
+      &.work-item-active {
+        background: rgba(255, 255, 255, 0.045);
+        border-color: rgba(255, 255, 255, 0.22);
+        transform: translateX(4px);
 
         .work-item-thumb img {
           transform: scale(1.06);
-        }
-
-        .work-item-title {
-          color: #c5d4ea;
         }
 
         .work-item-action {
@@ -238,27 +225,24 @@
         font-size: 0.85rem;
         font-weight: 600;
         color: #64748b;
-        letter-spacing: 0.02em;
+        letter-spacing: 0.04em;
       }
 
       .work-item-thumb {
-        width: 100%;
-        height: 85px;
+        width: 170px;
+        height: 94px;
         border-radius: 10px;
         overflow: hidden;
         background: #0f1c34;
         position: relative;
-
-        @include md {
-          height: 96px;
-        }
+        flex-shrink: 0;
 
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
           display: block;
-          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
       }
 
@@ -268,29 +252,31 @@
 
         .work-item-category {
           font-family: $font-heading;
-          font-size: 0.775rem;
-          font-weight: 500;
-          color: #8898ac;
-          letter-spacing: 0.02em;
+          font-size: 0.7rem;
+          font-weight: 700;
+          letter-spacing: 0.06em;
+          color: #94a3b8;
+          text-transform: uppercase;
           margin-bottom: 0.35rem;
         }
 
         .work-item-title {
-          font-size: clamp(0.95rem, 1.4vw, 1.075rem);
+          font-family: $font-heading;
+          font-size: 1.1rem;
           font-weight: 700;
           color: #ffffff;
           line-height: 1.35;
           letter-spacing: -0.015em;
-          margin-bottom: 0.4rem;
-          transition: color 0.25s ease;
+          margin-bottom: 0.35rem;
+          transition: color 0.2s ease;
         }
 
         .work-item-desc {
           font-family: $font-body;
-          font-size: 0.82rem;
-          line-height: 1.48;
-          color: #94a3b8;
-          margin: 0.2rem 0 0.4rem;
+          font-size: 0.835rem;
+          line-height: 1.5;
+          color: #8898ac;
+          margin: 0 0 0.35rem 0;
           font-weight: 400;
         }
 
@@ -298,18 +284,15 @@
           font-family: $font-heading;
           font-size: 0.775rem;
           font-weight: 600;
-          color: #c5d4ea;
+          color: #cbd5e1;
           display: inline-block;
           text-decoration: underline;
           text-underline-offset: 3px;
           transition: color 0.2s ease;
-        }
 
-        .work-item-date {
-          font-family: $font-body;
-          font-size: 0.75rem;
-          color: #64748b;
-          font-weight: 400;
+          &:hover {
+            color: #ffffff;
+          }
         }
       }
 
@@ -328,21 +311,18 @@
     }
   }
 
-  // Mobile layout: horizontal card slider with scroll-snap
+  // Mobile View (< 768px): Horizontal swipe deck with scroll-snap
   @media (max-width: 767px) {
     .work-layout {
       gap: 1.75rem !important;
     }
 
-    .work-sidebar {
-      .work-sidebar-bottom {
-        margin-top: 1.25rem !important;
-        margin-bottom: 0.25rem !important;
-      }
+    .work-sidebar .work-sidebar-bottom {
+      margin-top: 1.25rem !important;
+      margin-bottom: 0.25rem !important;
     }
 
     .work-list {
-      position: relative !important;
       display: flex !important;
       flex-direction: row !important;
       flex-wrap: nowrap !important;
@@ -353,7 +333,7 @@
       scroll-behavior: smooth !important;
       -webkit-overflow-scrolling: touch !important;
       margin: 0 -1.25rem !important;
-      padding: 0.5rem 1.25rem 1.5rem !important;
+      padding: 0.5rem 1.25rem 1.25rem !important;
       scrollbar-width: none !important;
       -ms-overflow-style: none !important;
 
@@ -380,118 +360,36 @@
         "thumb thumb"
         "info info" !important;
       gap: 0.65rem !important;
-      padding: 1.25rem 1rem !important;
+      padding: 1.15rem 1rem !important;
       margin-bottom: 0 !important;
       border: 1px solid rgba(255, 255, 255, 0.08) !important;
-      border-radius: 16px !important;
+      border-radius: 14px !important;
       background: rgba(255, 255, 255, 0.02) !important;
-      box-sizing: border-box !important;
-      user-select: none;
-
-      &:first-child {
-        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-      }
 
       &.work-item-active {
         background: rgba(255, 255, 255, 0.05) !important;
-        border-color: rgba(56, 189, 248, 0.38) !important;
-        box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.6);
-
-        .work-item-index {
-          color: #7dd3fc !important;
-        }
-
-        .work-item-action {
-          color: #7dd3fc !important;
-          transform: translateX(3px);
-        }
+        border-color: rgba(255, 255, 255, 0.25) !important;
       }
 
       .work-item-index {
         grid-area: index;
-        font-family: $font-heading;
-        font-size: 0.85rem;
-        font-weight: 700;
-        color: #64748b;
-        letter-spacing: 0.04em;
-        display: flex;
-        align-items: center;
       }
 
       .work-item-action {
         grid-area: action;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        color: #64748b;
-        transition: transform 0.25s ease, color 0.25s ease;
-
-        svg {
-          width: 18px;
-          height: 18px;
-        }
       }
 
       .work-item-thumb {
         grid-area: thumb;
         width: 100% !important;
-        height: 165px !important;
-        border-radius: 12px !important;
-        overflow: hidden;
-        margin: 0.35rem 0 0.5rem !important;
-        background: #0f1c34;
-
-        img {
-          width: 100% !important;
-          height: 100% !important;
-          object-fit: cover !important;
-          display: block;
-        }
+        height: 150px !important;
+        border-radius: 10px !important;
+        margin: 0.25rem 0 0.4rem !important;
       }
 
       .work-item-info {
         grid-area: info;
         width: 100%;
-
-        .work-item-title {
-          font-size: 1.05rem !important;
-          font-weight: 700;
-          color: #ffffff;
-          line-height: 1.38;
-          letter-spacing: -0.015em;
-          margin-bottom: 0.45rem;
-        }
-
-        .work-item-desc {
-          font-size: 0.85rem !important;
-          line-height: 1.55;
-          color: #94a3b8;
-          margin: 0 0 0.65rem 0;
-          font-weight: 400;
-        }
-
-        .work-item-readmore {
-          font-size: 0.825rem;
-          font-weight: 600;
-          color: #7dd3fc;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.35rem;
-          text-decoration: none;
-
-          &::after {
-            content: '→';
-            display: inline-block;
-            transition: transform 0.2s ease;
-          }
-
-          &:hover {
-            color: #ffffff;
-            &::after {
-              transform: translateX(3px);
-            }
-          }
-        }
       }
     }
   }
