@@ -892,14 +892,13 @@ function initGsapAnimations() {
       const floatingWrapper = document.querySelector('.hero-floating-wrapper');
       if (floatingWrapper) {
         gsap.to(floatingWrapper, {
-          y: -50,
-          opacity: 0.2,
+          y: -40,
           ease: 'none',
           scrollTrigger: {
             trigger: '.hero-section',
             start: 'top top',
             end: 'bottom top',
-            scrub: 0.6
+            scrub: 0.3
           }
         });
       }
@@ -907,14 +906,13 @@ function initGsapAnimations() {
       const heroContentEl = document.querySelector('.hero-content');
       if (heroContentEl) {
         gsap.to(heroContentEl, {
-          y: -35,
-          opacity: 0.4,
+          y: -25,
           ease: 'none',
           scrollTrigger: {
             trigger: '.hero-section',
             start: 'top top',
             end: 'bottom top',
-            scrub: 0.6
+            scrub: 0.3
           }
         });
       }

@@ -1172,7 +1172,7 @@
     right: -5%;
     width: 550px;
     height: 550px;
-    background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(37, 99, 235, 0.04) 45%, transparent 70%);
+    background: radial-gradient(circle, rgba(26, 43, 75, 0.2) 0%, rgba(15, 25, 45, 0.08) 50%, transparent 70%);
     filter: blur(80px);
     pointer-events: none;
     z-index: 0;
@@ -1187,22 +1187,17 @@
   .culture-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
     font-family: $font-heading;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #38bdf8;
+    color: #94a3b8;
     margin-bottom: 0.85rem;
   }
 
   .culture-eyebrow-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #38bdf8;
-    box-shadow: 0 0 10px #38bdf8;
+    display: none !important;
   }
 
   .culture-title {
@@ -1291,16 +1286,17 @@
     }
 
     &:hover {
-      background: rgba(56, 189, 248, 0.12);
-      color: #f1f5f9;
-      border-color: rgba(56, 189, 248, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.22);
     }
 
     &.active {
-      background: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
-      color: #ffffff;
-      border-color: transparent;
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+      background: #ffffff;
+      color: #060e1d;
+      border-color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
     }
   }
 
@@ -1327,7 +1323,7 @@
     }
 
     .culture-counter-slash {
-      color: #0284c7;
+      color: #64748b;
     }
   }
 
@@ -1350,10 +1346,11 @@
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 
     &:hover {
-      background: #0284c7;
-      border-color: #38bdf8;
+      background: #ffffff;
+      border-color: #ffffff;
+      color: #060e1d;
       transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.45);
+      box-shadow: 0 6px 18px rgba(255, 255, 255, 0.15);
     }
 
     &:active {
@@ -1392,26 +1389,26 @@
   }
 
   .culture-reel-card {
-    flex: 0 0 300px;
-    width: 300px;
-    height: 380px;
+    flex: 0 0 280px;
+    width: 280px;
+    height: 270px;
     position: relative;
-    border-radius: 20px;
+    border-radius: 18px;
     overflow: hidden;
     background: #0b172a;
     border: 1px solid rgba(255, 255, 255, 0.08);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease, opacity 0.3s ease;
 
     @include sm {
-      flex: 0 0 350px;
-      width: 350px;
-      height: 410px;
+      flex: 0 0 340px;
+      width: 340px;
+      height: 290px;
     }
 
     &:hover {
       transform: translateY(-6px);
-      border-color: rgba(56, 189, 248, 0.35);
-      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7), 0 0 24px rgba(56, 189, 248, 0.15);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7);
 
       .culture-card-media img {
         transform: scale(1.08);
@@ -1419,9 +1416,9 @@
 
       .culture-zoom-btn {
         opacity: 1;
-        background: #0284c7;
-        color: #ffffff;
-        border-color: #38bdf8;
+        background: #ffffff;
+        color: #060e1d;
+        border-color: #ffffff;
         transform: scale(1.08);
       }
     }
@@ -1441,6 +1438,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 30%;
       display: block;
       transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -1461,12 +1459,12 @@
 
   .culture-card-badge {
     position: absolute;
-    top: 1.15rem;
-    left: 1.15rem;
+    top: 0.9rem;
+    left: 0.9rem;
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.35rem 0.75rem;
+    padding: 0.3rem 0.7rem;
     border-radius: 9999px;
     background: rgba(6, 14, 29, 0.78);
     backdrop-filter: blur(10px);
@@ -1485,16 +1483,16 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: #38bdf8;
-    box-shadow: 0 0 8px #38bdf8;
+    background: #94a3b8;
+    box-shadow: none;
   }
 
   .culture-zoom-btn {
     position: absolute;
-    top: 1.15rem;
-    right: 1.15rem;
-    width: 36px;
-    height: 36px;
+    top: 0.9rem;
+    right: 0.9rem;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     background: rgba(6, 14, 29, 0.72);
     backdrop-filter: blur(10px);
@@ -1515,7 +1513,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 1.25rem 1.35rem 1.45rem;
+    padding: 0.9rem 1.15rem 1.15rem;
     z-index: 2;
     pointer-events: none;
   }
@@ -1524,7 +1522,7 @@
     display: block;
     font-size: 0.75rem;
     font-weight: 600;
-    color: #38bdf8;
+    color: #94a3b8;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     margin-bottom: 0.35rem;
@@ -1532,10 +1530,10 @@
 
   .culture-card-title {
     font-family: $font-heading;
-    font-size: 1.125rem;
+    font-size: 1.025rem;
     font-weight: 700;
     color: #ffffff;
-    line-height: 1.3;
+    line-height: 1.25;
     margin: 0;
     letter-spacing: -0.01em;
   }
@@ -1560,7 +1558,7 @@
   .culture-progress-fill {
     height: 100%;
     width: 15%;
-    background: linear-gradient(90deg, #0284c7, #38bdf8);
+    background: #ffffff;
     border-radius: 9999px;
     transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease;
   }
@@ -1574,7 +1572,7 @@
     white-space: nowrap;
 
     svg {
-      color: #38bdf8;
+      color: #94a3b8;
       animation: cultureHintShift 1.8s ease-in-out infinite;
     }
   }
@@ -1641,8 +1639,9 @@
     transition: all 0.2s ease;
 
     &:hover {
-      background: #0284c7;
-      border-color: #38bdf8;
+      background: #ffffff;
+      border-color: #ffffff;
+      color: #060e1d;
       transform: rotate(90deg);
     }
   }
@@ -1771,15 +1770,15 @@
 
     .join-title {
       font-family: $font-heading;
-      font-size: clamp(2rem, 6vw, 3.25rem);
+      font-size: clamp(1.65rem, 2.5vw, 2.25rem);
       font-weight: 800;
       color: #0f172a;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.25rem;
+      line-height: 1.22;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.15rem;
 
       @include sm {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
       }
     }
 
@@ -1787,13 +1786,13 @@
       font-size: 0.95rem;
       line-height: 1.65;
       color: #475569;
-      margin-bottom: 2rem;
+      margin-bottom: 1.75rem;
       max-width: 540px;
 
       @include sm {
-        font-size: 1.05rem;
-        line-height: 1.75;
-        margin-bottom: 2.5rem;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
       }
     }
   }
