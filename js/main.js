@@ -1042,7 +1042,34 @@ function initGsapAnimations() {
         ease: 'power2.out',
         clearProps: 'all'
       });
-    } else {
+    } else if (document.querySelector('.what-we-build-section')) {
+      gsap.from('.what-we-build-section .build-header', {
+        scrollTrigger: {
+          trigger: '.what-we-build-section',
+          start: 'top 82%',
+          once: true
+        },
+        y: 25,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+
+      gsap.from('.what-we-build-section .build-card', {
+        scrollTrigger: {
+          trigger: '.build-grid',
+          start: 'top 85%',
+          once: true
+        },
+        y: 25,
+        opacity: 0,
+        stagger: 0.08,
+        duration: 0.6,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+    } else if (document.querySelector('.work-section')) {
       gsap.from('.work-list .work-item', {
         scrollTrigger: {
           trigger: '.work-section',
